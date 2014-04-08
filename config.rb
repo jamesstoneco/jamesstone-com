@@ -123,7 +123,7 @@ configure :build do
   activate :minify_javascript
 
   # uncomment below to activate colosure compiler, causing issues with clearing
-  set :js_compressor, ::Closure::Compiler.new
+  # set :js_compressor, ::Closure::Compiler.new
 
 
   # set :js_compressor, ::Closure::Compiler.new(:compilation_level => 'ADVANCED_OPTIMIZATIONS')
