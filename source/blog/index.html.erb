@@ -2,9 +2,70 @@
 title: "Blog of James Stone: Author, Speaker, Developer and Media Artist"
 seo_desc: I post about Zurb Foundation, responsive web design, ruby and ruby on rails, creative coding and the processing language and ide.
 pageable: true
-per_page: 4
+per_page: 3
 active_nav: blog
 ---
+
+
+<div class="row hide-for-small">
+  <div class="small-12 columns">&nbsp;</div>
+</div>
+
+<!-- header -->
+<div class="row hide-for-small">
+  <div class="small-4 medium-2 large-2 columns home-header-callout-logo hide-for-small" stlye="padding-top:0px;margin-top:0px;top:-170px;">
+    <a href="/"><img src="/favicon-huge.png" alt=""></a>
+  </div>
+  <div class="medium-10 large-10 columns header-callout-text">
+    <h1 class="header-text"><span class="header-text-alt">JAMES</span><wbr>STONE</h1>
+    <p class="header-text">Helping Pixel Pushers Monkey Patch and Code Monkeys Push Pixels Since 2009</p>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="small-12 columns">&nbsp;</div>
+</div>
+
+<div class="row">
+  <div class="medium-8 large-8 columns"> <!-- main content -->
+    <% page_articles.each_slice(1) do | row | %>
+    <div class="row">
+      <% row.each do |article| %>
+      <div class="small-12 columns">
+        <h2 class="entry-title text-center"><%= article.title %></h2>
+      </div>
+      <div class="small-12 medium-8 large-8 small-centered columns">
+        <% test_featured_image = article.data.featured_image %>
+        <% if ( defined?(test_featured_image)) %>
+        <a href="<%= article.url %>"><img src="<%= article.data.featured_image %>"></a>
+        <% end %>
+        <%= link_to "Read article &raquo;", article, :class => "button secondary expand" %>
+        <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+        <p class="entry-summary"><%= strip_html(article.summary(125)) %></p>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+
+    <% if next_page %>
+    <%= link_to '&laquo; previous articles', next_page, :class => "left" %>
+    <% end %>
+
+    <% if prev_page %>
+    <%= link_to 'next articles &raquo;', prev_page, :class => "right" %>
+    <% end %>
+
+
+  </div> <!-- end content -->
+
+  <div class="medium-4 large-3 columns"> <!-- sidebar -->
+    <%= partial "sidebar" %>
+  </div>
+</div>
+<!-- 
+
 
 <div class="content-top-spacing"></div>
 
@@ -63,3 +124,4 @@ active_nav: blog
     </h4>
 </div>
 
+ -->

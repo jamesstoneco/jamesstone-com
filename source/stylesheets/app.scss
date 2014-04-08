@@ -128,18 +128,18 @@ pre + p {
   padding-bottom: $padding-global;
 }
 
-#mos-top-footer {
-  background: $primary-color;
-  padding-top: $padding-global;
-}
+// #mos-top-footer {
+//   background: $primary-color;
+//   padding-top: $padding-global;
+// }
 
-#mos-footer {
-  background: darken($secondary-color, 80%);
-  padding-top: $padding-global/2;
-  padding-bottom: $padding-global/4;
-}
+// #mos-footer {
+//   background: darken($secondary-color, 80%);
+//   padding-top: $padding-global/2;
+//   padding-bottom: $padding-global/4;
+// }
 
-.alt-text {color: #fff !important; }
+.alt-text {color: #eee !important; }
 #mos-footer-nav {padding-top: 12px; }
 #mos-footer-social-nav {padding-top: 12px; }
 .social-icons {font-size: emCalc(44px); }
@@ -277,4 +277,170 @@ html { background: $body-bg;}
 .social-buttons > li {
   position: relative;
   right: 53%;
+}
+
+.home-header {
+// -webkit-background-clip: border-box;
+// -webkit-background-origin: padding-box;
+// -webkit-background-size: auto;
+// -webkit-font-smoothing: antialiased;
+// background-attachment: scroll;
+// background-clip: border-box;
+
+// // background-color: rgb(255, 255, 255);
+// // background:url(http://zurb.com/assets/zurb/background/home-1-2e77f1a031d18b909c9743e7edff447c.jpg) no-repeat center center #fff;
+
+// background-origin: padding-box;
+// // background-size: auto;
+// box-sizing: border-box;
+// display: block;
+
+// height: 400px;
+// // width: 1250px;
+
+// margin-bottom: 0px;
+// margin-left: 0px;
+// margin-right: 0px;
+// margin-top: 0px;
+// padding-bottom: 0px;
+// padding-left: 0px;
+// padding-right: 0px;
+// padding-top: 0px;
+
+// background-position: 50% 0%;
+// background-size: 1250px 400px;
+// background-repeat: no-repeat;
+// zoom: 1;
+
+background: url(/images/home-banner-tedx.jpg) no-repeat center center #fff;
+background-color:#000;
+height: 400px;
+background-size: 1250px 400px;
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  background-size: 2500px 800px;
+
+}
+
+$menu-background-color: #333;
+
+.menu-container {
+  background: $menu-background-color;
+  height: rem-calc(48);
+}
+.menu-container a {
+  margin-bottom: 0;
+}
+
+.menu-button {
+  @include button(rem-calc(14), $menu-background-color, false, false, false, false);
+}
+
+.home-header-callout-box {
+  z-index:-1;
+  background-color: #333;
+  background-color: rgba(51,51,51,0.6);
+  padding-top: $column-gutter/2;
+  padding-bottom: $column-gutter/2;
+}
+
+.home-header-text {
+color: #d4d4d4;
+font-weight: bold;
+}
+.home-header-text-alt {
+color: #acacac;
+font-weight: bold;
+}
+.header-text {
+color: $body-font-color;
+font-weight: bold;
+}
+.header-text-alt {
+color: lighten($body-font-color, 40%);
+font-weight: bold;
+}
+
+.home-header {
+  padding-top:rem-calc(195);
+   position: relative;
+}
+
+$bubble-color: #333;
+
+.bubble {
+  background-color: $bubble-color;
+  border: none;
+}
+
+// .bubble 
+// {
+// position: relative;
+// width: 250px;
+// height: 120px;
+// padding: 0px;
+// background: #FFFFFF;
+// -webkit-border-radius: 10px;
+// -moz-border-radius: 10px;
+// border-radius: 10px;
+// }
+
+.bubble:after 
+{
+position: absolute;
+border-style: solid;
+border-width: 15px 15px 0;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+bottom: -15px;
+left: 110px;
+}
+
+
+.triangle-isosceles {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  // color:#000;
+  background: $bubble-color; /* default background for browsers without gradient support */
+  /* css3 */
+  // background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+  // background:-moz-linear-gradient(#f9d835, #f3961c);
+  // background:-o-linear-gradient(#f9d835, #f3961c);
+  // background:linear-gradient(#f9d835, #f3961c);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content:"";
+  position:absolute;
+  bottom:-15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:$bubble-color transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+.callout-white {
+  background-color: #fff;
+}
+
+.header-callout-text {
+  padding-top: rem-calc(18);
 }
