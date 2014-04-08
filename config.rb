@@ -4,6 +4,9 @@ require 'sanitize'
 require 'uri'
 require 'slim'
 
+# pretty urls, as directories
+activate :directory_indexes
+
 
 # for heroku deploy
 set :build_dir, "tmp"
@@ -111,8 +114,6 @@ set :markdown,  :fenced_code_blocks => true,
                 :autolink => true,
                 :smartypants => true
 
-# pretty urls, as directories
-activate :directory_indexes
 
 # Build-specific configuration
 configure :build do

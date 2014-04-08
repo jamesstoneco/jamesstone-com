@@ -17,6 +17,8 @@ source 'http://rubygems.org'
 # gem "foundation", :git => "git@github.com:zurb/foundation.git", :branch => "5.0-wip"
 # gem "foundation-compass-template", :git => "git@github.com:manofstone/foundation-compass-template.git", :require => false
 
+ruby "2.0.0"
+
 gem "slim"
 
 # gem "bourbon", :require => false
