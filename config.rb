@@ -1,8 +1,13 @@
 require 'builder'
-require 'closure-compiler'
+# require 'closure-compiler'
 require 'sanitize'
 require 'uri'
 require 'slim'
+
+
+# for heroku deploy
+set :build_dir, "tmp"
+
 
 ###
 # Compass
@@ -66,9 +71,9 @@ set :images_dir, 'images'
 
 # foundation patch per http://wanderwort.de/2013/04/11/using-zurb-foundation-with-middleman/
 
-bourbon_path = Gem::Specification.find_by_name('bourbon').gem_dir
+# bourbon_path = Gem::Specification.find_by_name('bourbon').gem_dir
 set :js_assets_paths, [File.join(root, 'bower_components')]
-set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss'), File.join(bourbon_path, 'app/assets/stylesheets')]
+set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
 
 activate :blog do |blog|
   # set options on blog
@@ -162,18 +167,18 @@ end
 
 
 #revised s3_sync
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket                = ENV['MOS_AWS_BUCKET'] # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                = ENV['MOS_AWS_REGION']     # The AWS region for your bucket.
-  s3_sync.aws_access_key_id     = ENV['MOS_AWS_KEY']
-  s3_sync.aws_secret_access_key = ENV['MOS_AWS_SECRET']
-  s3_sync.delete                = true # We delete stray files by default.
-  s3_sync.after_build           = false # We chain after the build step by default. This may not be your desired behavior...
-  s3_sync.prefer_gzip           = true
+# activate :s3_sync do |s3_sync|
+#   s3_sync.bucket                = ENV['MOS_AWS_BUCKET'] # The name of the S3 bucket you are targetting. This is globally unique.
+#   s3_sync.region                = ENV['MOS_AWS_REGION']     # The AWS region for your bucket.
+#   s3_sync.aws_access_key_id     = ENV['MOS_AWS_KEY']
+#   s3_sync.aws_secret_access_key = ENV['MOS_AWS_SECRET']
+#   s3_sync.delete                = true # We delete stray files by default.
+#   s3_sync.after_build           = false # We chain after the build step by default. This may not be your desired behavior...
+#   s3_sync.prefer_gzip           = true
   # caching policy stuff
   # caching_policy 'text/html', max_age: 0, must_revalidate: true
   # s3_sync.default_caching_policy max_age:(300)
-end
+# end
 
 activate :deploy do |deploy|
   deploy.method = :rsync
