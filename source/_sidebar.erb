@@ -1,31 +1,38 @@
 <h4><strong>got updates?<br class="show-for-large-up">
-it's free</strong></h4>
-<p><strong>Learn modern web development from the manofstone newsletter.</strong></p>
+  it's free</strong></h4>
+  <p><strong>Learn modern web development from the manofstone newsletter.</strong></p>
 
-<form>
+  <form>
 
-  <div class="row">
-    <div class="small-12 columns">
-      <input type="text" placeholder="Email">
+    <div class="row">
+      <div class="small-12 columns">
+        <input type="text" placeholder="Email">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="small-8 columns small-centered">
-      <a href="#" class="button radius expand">Get Updates!</a>
+    <div class="row">
+      <div class="small-8 columns small-centered">
+        <a href="#" class="button radius expand">Get Updates!</a>
+      </div>
     </div>
-  </div>
 
-</form>
+  </form>
 
-<blockquote>
-  &ldquo;James is an awesome top contributor.&rdquo; <br>
-  &ndash;<a href="https://twitter.com/ZURBfoundation/status/428343480645980160">ZURBFoundation</a>
-</blockquote>
+  <blockquote>
+    &ldquo;James is an awesome top contributor.&rdquo; <br>
+    &ndash;<a href="https://twitter.com/ZURBfoundation/status/428343480645980160">ZURBFoundation</a>
+  </blockquote>
 
-<h4>Popular Articles</h4>
+  <h4>Popular Articles</h4>
 
-<ul class="no-bullet">
-  <% data.widgets.top_articles.each do | article | %>
-  <li><a href="<%= article["url"] %>"><%= article["title"] %></a><li>
+  <ul class="no-bullet">
+    <% data.widgets.top_articles.each do | article | %>
+      <li><a href="<%= article["url"] %>"><%= article["title"] %></a><li>
     <% end %>
   </ul>
+
+  <h4>Resources</h4>
+
+  <p><a href=""><img src="http://www.placehold.it/400x200/2ba6cb/ffffff/&text=Resource+Guide" alt=""></a></p>
+  <p><a href="/zurb-foundation-quick-reference"><img src="http://www.placehold.it/400x200/2ba6cb/ffffff/&text=Quick+Reference" alt=""></a></p>
+  <p><a href="/zurb-foundation-blueprints"><img src="http://www.placehold.it/400x200/2ba6cb/ffffff/&text=Blueprints" alt=""></a></p>
+  <p><a href="https://leanpub.com/zurb-foundation-performance-guide"><img src="http://www.placehold.it/400x200/2ba6cb/ffffff/&text=BETA:+Performance+Guide" alt=""></a></p>

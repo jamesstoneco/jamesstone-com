@@ -102,6 +102,7 @@ page "/feed.xml", :layout => false
 page "/blog/feed.xml", :layout => false
 
 page "/zurb-foundation-blueprints.html", :layout => "landing"
+page "/zurb-foundation-quick-reference.html", :layout => "landing"
 page "/zurb-foundation-4-blueprints.html", :layout => "landing"
 page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
 
