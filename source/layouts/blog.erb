@@ -5,10 +5,6 @@
 <div class="row">
   <div class="large-12 columns">
     <h2 align="center"><%= current_page.title %></h2>
-    <p align="center">
-      Written by James Stone <time class="timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
-
-    </p>
   </div>
 </div>
 
@@ -17,33 +13,30 @@
     <div class="entry-content">
       <% test_featured_image = current_page.data.featured_image %>
       <% if ( defined?(test_featured_image)) %>
-        <div class="row">
-          <div class="small-12 medium-8 medium-centered large-12 columns">
-            <p><img src="<%= current_page.data.featured_image %>"></p>
-          </div>
-        </div>
+      <p><img src="<%= current_page.data.featured_image %>"></p>
       <% end %>
+
+      <p align="center">
+        Written by James Stone &ndash; Follow him on <a href="https://twitter.com/intent/user?screen_name=manofstone">Twitter</a>
+        <time class="hide timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+
+      </p>
 
 <% permalink_url = "http://www.manofstone.com#{current_page.url}" %>
 
-<div class="row">
-  <div class="small-12 columns">
-      <ul class="social-buttons cf">
-          <li>
-              <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %>" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
-          </li>
-          <li>
-              <a href="https://plus.google.com/share?url=<%= permalink_url %>" class="socialite googleplus-one" data-size="tall" data-href="<%= permalink_url %>" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
-          </li>
-          <li>
-              <a href="http://www.facebook.com/sharer.php?u=<%= permalink_url %>&t=<%= URI.encode(current_page.title) %>" class="socialite facebook-like" data-href="<%= permalink_url %>" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
-          </li>
-          <li>
-              <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= permalink_url %>&title=<%= URI.encode(current_page.title) %>" class="socialite linkedin-share" data-url="<%= permalink_url %>" data-counter="top" rel="nofollow" target="_blank"><span class="vhidden">Share on LinkedIn</span></a>
-          </li>
-      </ul>
-    </div>
-</div>
+      <div class="row">
+        <div class="small-2 columns">
+          <ul class="social-buttons cf left">
+            <li>
+              <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @manofstone" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="small-10 columns">
+          <h3 style="padding-top:60px; color:#ccc;">&laquo; Your 140 characters of fame, right here</h3>
+        </div>
+      </div>
+
 
 
 
@@ -75,6 +68,20 @@
 
       <%= yield %>
 
+      
+    <div class="row">
+      <div class="small-2 columns">
+        <ul class="social-buttons cf left">
+          <li>
+            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @manofstone" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="small-10 columns">
+        <h3 style="padding-top:60px; color:#ccc;">&laquo; Launch this article into the Twitterverse</h3>
+      </div>
+    </div>
+
     </div>
   </div>
 </div>
@@ -93,6 +100,8 @@
     </div>
   </div>
 <% end %>
+
+
 
 
   <div id="products-banner">
