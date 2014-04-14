@@ -2,14 +2,18 @@
 
 <div class="content-top-spacing"></div>
 
+<%= partial "updatesfullwidth" %>
+
+<div class="content-top-spacing"></div>
+
 <div class="row">
   <div class="large-12 columns">
-    <h2 align="center"><%= current_page.title %></h2>
+  <h1><%= current_page.title %></h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="large-8 large-centered columns">
+  <div class="medium-8 large-8 columns"> <!-- content -->
     <div class="entry-content">
       <% test_featured_image = current_page.data.featured_image %>
       <% if ( defined?(test_featured_image)) %>
@@ -19,10 +23,9 @@
       <p align="center">
         Written by James Stone &ndash; Follow him on <a href="https://twitter.com/intent/user?screen_name=manofstone">Twitter</a>
         <time class="hide timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
-
       </p>
 
-<% permalink_url = "http://www.manofstone.com#{current_page.url}" %>
+      <% permalink_url = "http://www.manofstone.com#{current_page.url}" %>
 
       <div class="row">
         <div class="small-2 columns">
@@ -39,31 +42,30 @@
 
 
 
+      <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
+      <div class="row">
+        <div class="small-10 small-centered medium-8 large-10 columns">
+          <div id="disclaimer-aff"class="panel">
+            <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
+            <% if ( defined?(test_amazon_aff_url)) %>
+            <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
+            <% end %>
 
-<% if ( current_page.data.disclaimer_aff.eql?('true')) %>
-  <div class="row">
-    <div class="small-10 small-centered medium-8 large-10 columns">
-      <div id="disclaimer-aff"class="panel">
-        <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
-        <% if ( defined?(test_amazon_aff_url)) %>
-        <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
-        <% end %>
-
-        <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
+            <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-<% end %>
+      <% end %>
 
-<% if ( current_page.data.disclaimer_free.eql?('true')) %>
-  <div class="row">
-    <div class="small-8 small-centered columns">
-      <div id="disclaimer-aff"class="panel">
-        <p>Review Copy Disclaimer: I recieved a copy of this product at no cost from the publisher / manufacturer. The opinions are of my own and I did not recieve any compensation for the review other than the product itself.</p>
+      <% if ( current_page.data.disclaimer_free.eql?('true')) %>
+      <div class="row">
+        <div class="small-8 small-centered columns">
+          <div id="disclaimer-aff"class="panel">
+            <p>Review Copy Disclaimer: I recieved a copy of this product at no cost from the publisher / manufacturer. The opinions are of my own and I did not recieve any compensation for the review other than the product itself.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-<% end %>
+      <% end %>
 
 
       <%= yield %>
@@ -83,44 +85,40 @@
     </div>
 
     </div>
-  </div>
-</div>
 
-<% if ( current_page.data.disclaimer_aff.eql?('true')) %>
-  <div class="row">
-    <div class="small-10 small-centered medium-8 large-10 columns">
-      <div id="disclaimer-aff"class="panel">
-        <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
-        <% if ( defined?(test_amazon_aff_url)) %>
-        <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
-        <% end %>
-
-        <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-
-
-
-  <div id="products-banner">
+    <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
     <div class="row">
-      <div class="small-12 columns">
-        <h2 class="alt-text">Subscribe for Updates <small class="alt-text">Get free and fresh content as soon as it is published.</small></h2>
-        <%= partial "thinemailsignup" %>
+      <div class="small-10 small-centered medium-8 large-10 columns">
+        <div id="disclaimer-aff"class="panel">
+          <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
+          <% if ( defined?(test_amazon_aff_url)) %>
+          <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
+          <% end %>
+
+          <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
+        </div>
       </div>
     </div>
-  </div>
+    <% end %>
+
+    <%= partial("updatesendofarticle") %>
 
 
-<% test_signup_zurb = current_page.data.signup_zurb %>
-<% if ( defined?(test_signup_zurb) and test_signup_zurb == "true") %>
-  <%= partial "zurbsignup" %>
-<% end %>
+    <div class="row">
+      <div class="small-2 columns">
+        <ul class="social-buttons cf left">
+          <li>
+            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @manofstone" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="small-10 columns">
+        <h3 style="padding-top:60px; color:#ccc;">&laquo; Launch this article into the Twitterverse</h3>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="large-8 large-centered columns">
+
+
     <!-- comments -->
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -134,6 +132,9 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="medium-4 large-3 columns"> <!-- sidebar -->
+    <%= partial "sidebar" %>
   </div>
 </div>
 

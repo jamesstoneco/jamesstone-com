@@ -48,10 +48,10 @@ $rem-base: 16 !default;
 // }
 
 // // We use these to control various global styles
-$body-bg: #eee !default;
+$body-bg: #000 !default;
 $body-font-color: #222 !default;
-$body-font-family: "Lato", Helvetica, Arial, sans-serif;
-$body-font-weight: 300;
+$body-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $body-font-weight: 300;
 $body-font-style: normal;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 // $body-font-weight: normal !default;
@@ -59,7 +59,7 @@ $body-font-style: normal;
 
 // // We use these as default colors throughout
 $primary-color: #2ba6cb !default;
-$secondary-color: #e9e9e9 !default;
+$secondary-color: #f00 !default;
 $alert-color: #c60f13 !default;
 $success-color: #5da423 !default;
 
@@ -221,7 +221,7 @@ select { width: 100%; }
 // $include-html-progress-classes: false;
 // $include-html-magellan-classes: false;
 // $include-html-tooltip-classes: false;
-// $column-gutter: emCalc(30);
+$column-gutter: emCalc(30);
 // $header-font-family: $body-font-family;
 // $header-font-weight: 300;
 // $header-font-style: normal;
@@ -244,6 +244,6 @@ $code-font-weight: normal;
 // $keystroke-font: Inconsolas, Consolas, 'Liberation Mono', Courier, monospace;
 // $keystroke-font-size: emCalc(14);
 // $keystroke-font-color: #f00;
-$side-nav-link-color: #fff;
-$side-nav-link-color-active: darken(#000, 30%);
-$side-nav-font-weight: normal;
+// $side-nav-link-color: #fff;
+// $side-nav-link-color-active: darken(#000, 30%);
+// $side-nav-font-weight: normal;
