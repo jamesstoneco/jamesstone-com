@@ -10,10 +10,7 @@ active_nav: home
 
 
 <div class="home-header">
-<!--   <div class="row" style="padding-bottom:120px;">
-<div class="small-12 columns">&nbsp;</div>
-</div>
--->  <!-- <div class="home-header-callout-box"></div> -->
+
 <div class="row home-header-callout-box">
   <div class="small-4 medium-2 large-2 columns home-header-callout-logo hide-for-small" stlye="padding-top:0px;margin-top:0px;top:-170px;">
     <img src="/favicon-huge.png" alt="">
@@ -32,47 +29,7 @@ active_nav: home
 </div>
 
 
-<div class="row panel callout-white radius"> <!-- feature box -->
-  <div class="medium-8 large-8 columns"> <!-- feature box : left column -->
-    <h2>Do You Know What it Takes to <strong>Build Modern Web Apps?</strong></h2>
-
-    <p>If not, now is the time to learn how to</p>
-
-    <ul>
-      <li>Wield the Power of the Most Advanced Responsive Framework in the Known Universe</li>
-      <li>Learn Professional Grade Tools to Win Friends and Code for Other People</li>
-      <li>Go Pro by Designing and Building Web Apps that are Worth Sharing</li>
-    </ul>
-
-    <p>Enter your email below and .click().click().click() that a.button> .now()</p>
-
-    <form>
-
-      <div class="large-10 columns end">
-        <div class="row collapse">
-          <div class="small-12 large-8 columns">
-            <input type="text" placeholder="Email">
-          </div>
-          <div class="small-12 large-4 columns">
-            <a href="#" class="button postfix">Get Updates!</a>
-          </div>
-        </div>
-
-      </div>
-
-    </form>
-
-  </div>
-  <div class="medium-4 large-4 columns"> <!-- feature box : right column -->
-    <div class="panel radius bubble triangle-isosceles">
-      <p class="alt-text"><a href="/updates">Don't miss this chance to take it to the next level, sign up for these updates!</a></p>
-    </div>
-    <p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Expression_of_the_Emotions_Figure_18.png/646px-Expression_of_the_Emotions_Figure_18.png" alt=""></p>
-<!--       <p><img class="th" src="http://image.shutterstock.com/display_pic_with_logo/63009/164387156/stock-vector-sketch-of-chimpanzee-head-vector-illustration-164387156.jpg" alt=""></p>
--->    
-<p>&ldquo;James is an awesome top contributor.&rdquo; &ndash;<a href="https://twitter.com/ZURBfoundation/status/428343480645980160">ZURBFoundation</a></p>
-</div>
-</div> <!-- end feature box -->
+<%= partial "featurebox" %>
 
 <div class="row">
   <div class="medium-8 large-8 columns"> <!-- main content -->
@@ -94,7 +51,9 @@ active_nav: home
       <% end %>
     </div>
     <% end %>
-    <a href="/blog/p2">&laquo; previous articles</a>
+    <p>
+      <a href="/blog/p2">&laquo; previous articles</a>
+    </p>
   </div> <!-- end content -->
 
   <div class="medium-4 large-3 columns"> <!-- sidebar -->

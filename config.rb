@@ -4,12 +4,10 @@ require 'sanitize'
 require 'uri'
 require 'slim'
 
-# pretty urls, as directories
-activate :directory_indexes
 
 
 # for heroku deploy
-set :build_dir, "tmp"
+# set :build_dir, "tmp"
 
 
 ###
@@ -78,10 +76,15 @@ set :images_dir, 'images'
 set :js_assets_paths, [File.join(root, 'bower_components')]
 set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
 
+
+# pretty urls, as directories
+activate :directory_indexes
+
+
 activate :blog do |blog|
   # set options on blog
   blog.prefix = "blog"
-  blog.permalink = ":title.html"
+  blog.permalink = ":title"
   Time.zone = "Paris"
   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   blog.layout = "blog"
