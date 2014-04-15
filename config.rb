@@ -6,39 +6,8 @@ require 'slim'
 
 
 
-# for heroku deploy
-# set :build_dir, "tmp"
 
 
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
-###
-# Page options, layouts, aliases and proxies
-###
-
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
-
-# Proxy pages (http://middlemanapp.com/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
 
 ###
 # Helpers
@@ -77,39 +46,33 @@ set :js_assets_paths, [File.join(root, 'bower_components')]
 set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
 
 
-# pretty urls, as directories
-activate :directory_indexes
-
 
 activate :blog do |blog|
   # set options on blog
   blog.prefix = "blog"
-  blog.permalink = ":title"
+  blog.permalink = ":title.html"
   Time.zone = "Paris"
   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   blog.layout = "blog"
   blog.taglink = ":tag.html"
   blog.tag_template = "blog/tag.html"
-
-  # blog.custom_collections = {
-  #   :category => {
-  #     :link => '/blog/categories/:category.html',
-  #     :template => '/blog/category.html'
-  #   }
-  # }
   blog.paginate = true
   blog.page_link = "p:num"
 end
+
+# pretty urls, as directories, this must run after the blog block
+activate :directory_indexes
+
 
 page "/feed.xml", :layout => false
 page "/blog/feed.xml", :layout => false
 
 page "/zurb-foundation-blueprints.html", :layout => "landing"
 page "/zurb-foundation-quick-reference.html", :layout => "landing"
-page "/zurb-foundation-4-blueprints.html", :layout => "landing"
-page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
+# page "/zurb-foundation-4-blueprints.html", :layout => "landing"
+# page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
 
-page "error.html", :directory_index => false
+# page "error.html", :directory_index => false
 
 # redcarpet configuration
 
