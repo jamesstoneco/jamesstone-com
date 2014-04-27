@@ -1,8 +1,8 @@
 ---
-title: "James Stone: Author, Speaker, Developer and Media Artist"
-seo_desc: James Stone is an Author, Speaker, Developer and Media Artist. He taught game and creative coding at Penn State and served as faculty for Eyebeam.
+title: "James Stone, Author and Blogger"
+seo_desc: James Stone is an Author and a Blogger. He taught game and creative coding at Penn State and served as faculty for Eyebeam.
 pageable: true
-per_page: 3
+per_page: 6
 active_nav: home
 ---
 
@@ -12,12 +12,9 @@ active_nav: home
 <div class="home-header">
 
 <div class="row home-header-callout-box">
-  <div class="small-4 medium-2 large-2 columns home-header-callout-logo hide-for-small" stlye="padding-top:0px;margin-top:0px;top:-170px;">
-    <img src="/favicon-huge.png" alt="">
-  </div>
-  <div class="medium-10 large-10 columns header-callout-text">
+  <div class="small-centered small-10 medium-10 large-8 columns header-callout-text">
     <h1 class="home-header-text"><span class="home-header-text-alt">JAMES</span><wbr>STONE</h1>
-    <p class="home-header-text">Helping Pixel Pushers Monkey Patch and Code Monkeys Push Pixels Since 2009</p>
+    <h6 class="home-header-text">Helping Hackers Build the Modern Web</h6>
   </div>
 </div>
 
@@ -31,47 +28,29 @@ active_nav: home
 
 <%= partial "featurebox" %>
 
-<div class="row">
-  <div class="medium-8 large-8 columns"> <!-- main content -->
-    <% page_articles.each_slice(1) do | row | %>
-    <div class="row">
-      <% row.each do |article| %>
-      <div class="small-12 columns">
-        <h2 class="entry-title text-center"><%= article.title %></h2>
-      </div>
-      <div class="small-12 medium-8 large-8 small-centered columns">
-        <% test_featured_image = article.data.featured_image %>
-        <% if ( defined?(test_featured_image)) %>
-        <a href="<%= article.url %>"><img src="<%= article.data.featured_image %>"></a>
-        <% end %>
-        <%= link_to "Read article &raquo;", article, :class => "button secondary expand" %>
-        <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
-        <p class="entry-summary"><%= strip_html(article.summary(125)) %></p>
-      </div>
-      <% end %>
-    </div>
-    <% end %>
-    <p>
-      <a href="/blog/p2">&laquo; previous articles</a>
-    </p>
-  </div> <!-- end content -->
 
-  <div class="medium-4 large-3 columns"> <!-- sidebar -->
+<div class="row">
+  <% page_articles.each_slice((page_articles.size/2.0).ceil) do | col | %>
+  <div class="medium-4 large-4 columns"> <!-- main content -->
+    <% col.each do |article| %>
+    <div class="panel radius">
+      <%= strip_html(article.summary(125)) %>
+      <h6 class="entry-title"><a href="<%= article.url %>"><%= article.title %></a></h6>
+      <% test_featured_image = article.data.featured_image %>
+      <% if ( defined?(test_featured_image)) %>
+      <a href="<%= article.url %>"><img src="<%= article.data.featured_image %>"></a>
+      <% end %>
+      <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+    </div>
+    <% end %> <!-- article -->
+  </div>
+  <% end %> <!-- col -->
+  <div class="medium-4 large-4 columns"> <!-- sidebar -->
     <%= partial "sidebar" %>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="row">
+  <div class="small-12 columns">
+    <p> <a href="/blog/p2">&laquo; previous articles</a> </p>
+ </div>
+</div>

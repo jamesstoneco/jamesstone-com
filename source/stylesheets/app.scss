@@ -1,8 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:700,400,300);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+$body-bg: #eee !default;
+$body-font-color: #222 !default;
+
+// // We use these as default colors throughout
+// $primary-color: #2ba6cb !default;
+// $primary-color: #0287FB !default;
+$primary-color: #E41A89 !default;
+// $primary-color: #B51CD0 !default;
+// $secondary-color: #B51CD0 !default;
+$secondary-color: #ddd !default;
+$alert-color: #E41A89 !default;
+$success-color: #5da423 !default;
+
+// // We use these to make sure border radius matches unless we want it different.
+$global-radius: 6px !default;
+// // We use this to control whether or not CSS classes come through in the gem files.
+$include-print-styles: false !default;
+
+$panel-bg: darken(#fff, 2.5%);
+$panel-border-style: solid;
+$panel-border-size: 1px;
+
+
+
+$code-color: #eee;
+$code-font-family: Inconsolas, Consolas, 'Liberation Mono', Courier, monospace;
+$code-font-weight: normal;
+
+$body-font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-family: 'Oswald', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-weight: 400;
+
+$button-font-weight: 700;
+$button-font-family: $header-font-family;
+
+
+$side-nav-link-color: #fff;
+$side-nav-link-color-active: darken(#000, 30%);
+$side-nav-font-weight: normal;
+
+$tabbar-bg: $primary-color !default;
+$tabbar-color: $body-bg !default;
+$tabbar-right-section-border: none 0px lighten($tabbar-bg, 10%) !default;
+$tabbar-left-section-border: none 0px darken($tabbar-bg, 10%) !default;
+$tabbar-header-color: lighten($body-bg, 10%) !default;
+$tabbar-header-weight: normal !default;
+$off-canvas-bg: darken($secondary-color, 80%) !default;
+$menu-slide: "transform 400ms ease" !default;
+
 // @import "foundation";
 
 // Global Foundation Settings
 // @import "settings";
-@import "settings.minimal";
+@import "settings";
 
 // Comment out this import if you don't want to use normalize
 @import "normalize";
@@ -322,22 +374,22 @@ background-size: 1250px 400px;
 
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) { 
-  background-size: 2500px 800px;
+// @media
+// only screen and (-webkit-min-device-pixel-ratio: 2),
+// only screen and (   min--moz-device-pixel-ratio: 2),
+// only screen and (     -o-min-device-pixel-ratio: 2/1),
+// only screen and (        min-device-pixel-ratio: 2),
+// only screen and (                min-resolution: 192dpi),
+// only screen and (                min-resolution: 2dppx) { 
+//   background-size: 2500px 800px;
 
-}
+// }
 
 $menu-background-color: #333;
 
 .menu-container {
   background: $menu-background-color;
-  height: rem-calc(48);
+  height: rem-calc(50);
 }
 .menu-container a {
   margin-bottom: 0;
@@ -347,33 +399,37 @@ $menu-background-color: #333;
   @include button(rem-calc(14), $menu-background-color, false, false, false, false);
 }
 
-.home-header-callout-box {
-  z-index:-1;
-  background-color: #333;
-  background-color: rgba(51,51,51,0.6);
-  padding-top: $column-gutter/2;
-  padding-bottom: $column-gutter/2;
+.home-header-callout-box > h3 {
 }
+
+// .home-header-callout-box {
+//   z-index:-1;
+//   background-color: #333;
+//   background-color: rgba(51,51,51,0.6);
+//   padding-top: $column-gutter/2;
+//   padding-bottom: $column-gutter/2;
+// }
 
 .home-header-text {
 color: #d4d4d4;
-font-weight: bold;
+// font-weight: bold;
 }
 .home-header-text-alt {
 color: #acacac;
-font-weight: bold;
+// font-weight: bold;
 }
-.header-text {
-color: $body-font-color;
-font-weight: bold;
-}
+// .header-text {
+// color: $body-font-color;
+// font-weight: bold;
+// }
+
 .header-text-alt {
 color: lighten($body-font-color, 40%);
-font-weight: bold;
+// font-weight: bold;
 }
 
 .home-header {
-  padding-top:rem-calc(195);
+  padding-top:rem-calc(185);
    position: relative;
 }
 
@@ -459,4 +515,16 @@ left: 110px;
 
 .unstyled-link-alt {
   color: $body-bg;
+}
+
+h2.feature-headline {
+  font-weight: 300;
+}
+h2.feature-headline > strong {
+  font-weight: 400;
+}
+
+.menu-button-small {
+  font-size: 130%;
+  line-height: 10%;
 }

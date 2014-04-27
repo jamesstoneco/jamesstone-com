@@ -21,7 +21,7 @@
       <% end %>
 
       <p align="center">
-        Written by James Stone &ndash; Follow him on <a href="https://twitter.com/intent/user?screen_name=manofstone">Twitter</a>
+        Written by James Stone &ndash; Follow him on <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">Twitter</a>
         <time class="hide timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
       </p>
 
@@ -31,7 +31,7 @@
         <div class="small-2 columns">
           <ul class="social-buttons cf left">
             <li>
-              <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @manofstone" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+              <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @jamesstoneco" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
             </li>
           </ul>
         </div>
@@ -69,21 +69,6 @@
 
 
       <%= yield %>
-
-      
-    <div class="row">
-      <div class="small-2 columns">
-        <ul class="social-buttons cf left">
-          <li>
-            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @manofstone" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="small-10 columns">
-        <h3 style="padding-top:60px; color:#ccc;">&laquo; Launch this article into the Twitterverse</h3>
-      </div>
-    </div>
-
     </div>
 
     <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
@@ -101,14 +86,13 @@
     </div>
     <% end %>
 
-    <%= partial("updatesendofarticle") %>
 
 
     <div class="row">
       <div class="small-2 columns">
         <ul class="social-buttons cf left">
           <li>
-            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @manofstone" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @jamesstoneco" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
           </li>
         </ul>
       </div>
@@ -117,6 +101,7 @@
       </div>
     </div>
 
+    <%= partial("updatesendofarticle") %>
 
 
     <!-- comments -->

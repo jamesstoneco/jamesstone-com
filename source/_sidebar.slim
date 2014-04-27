@@ -1,7 +1,4 @@
-.row
-  .medium-8.medium-centered.large-7.large-centered.columns
-
-.panel
+.panel.radius
   h4
     strong
       | Got my Quick Reference?
@@ -19,21 +16,23 @@
         small.error You must enter your email to recieve updates.
     .row
       .small-12.columns
-        input#mc-embedded-subscribe.button.tiny.radius.secondary.expand name="subscribe" type="submit" value="Download Now &raquo;"
+        input#mc-embedded-subscribe.button.radius.expand name="subscribe" type="submit" value="Download Now &raquo;"
     #mce-responses.clear
     #mce-error-response.response style="display:none"
     #mce-success-response.response style="display:none"
 
-blockquote
-  | &ldquo;James is an awesome top contributor.&rdquo;
-  br
-    | &ndash;
-    a href="https://twitter.com/ZURBfoundation/status/428343480645980160"  ZURBFoundation
-h4 Popular Articles
-ul.no-bullet
-  - data.widgets.top_articles.each do | article |
-    li
-      a href=article["url"] = article["title"]
+.panel.radius
+  p
+    | &ldquo;James is an awesome top contributor.&rdquo;
+    br
+      | &ndash;
+      a href="https://twitter.com/ZURBfoundation/status/428343480645980160"  ZURBFoundation
+.panel.radius
+  h4 Popular Articles
+  ul.no-bullet
+    - data.widgets.top_articles.each do | article |
+      li
+        a href=article["url"] = article["title"]
 
 / h4 Resources
 / p: a href="": img alt="" src="http://www.placehold.it/400x200/2ba6cb/ffffff/&text=Resource+Guide"

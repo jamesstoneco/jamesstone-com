@@ -1,10 +1,8 @@
 require 'builder'
-# require 'closure-compiler'
+require 'closure-compiler'
 require 'sanitize'
 require 'uri'
 require 'slim'
-
-
 
 
 
@@ -30,6 +28,7 @@ helpers do
   def strip_all_html(str)
     Sanitize.clean(str)
   end
+
 end
 
 
@@ -91,7 +90,7 @@ configure :build do
   activate :minify_javascript
 
   # uncomment below to activate colosure compiler, causing issues with clearing
-  # set :js_compressor, ::Closure::Compiler.new
+  set :js_compressor, ::Closure::Compiler.new
 
 
   # set :js_compressor, ::Closure::Compiler.new(:compilation_level => 'ADVANCED_OPTIMIZATIONS')

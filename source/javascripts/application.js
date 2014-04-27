@@ -10,52 +10,41 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require jquery/dist/jquery
 //= require foundation/js/foundation
 //= require foundation/js/foundation/foundation.abide
 //= require foundation/js/foundation/foundation.accordion
+
+
 // require foundation/js/foundation/foundation.alert
-//= require foundation/js/foundation/foundation.clearing
-//= require foundation/js/foundation/foundation.dropdown
+
+// move this to specific pages on blog, load on the fly
+// require foundation/js/foundation/foundation.clearing
+
+// require foundation/js/foundation/foundation.dropdown
 // require foundation/js/foundation/foundation.equalizer
-//= require foundation/js/foundation/foundation.interchange
+// require foundation/js/foundation/foundation.interchange
 // require foundation/js/foundation/foundation.joyride
 // require foundation/js/foundation/foundation.magellan
-//= require foundation/js/foundation/foundation.offcanvas
+// require foundation/js/foundation/foundation.offcanvas
 // require foundation/js/foundation/foundation.orbit
 // require foundation/js/foundation/foundation.reveal
 // require foundation/js/foundation/foundation.slider
 // require foundation/js/foundation/foundation.tab
 // require foundation/js/foundation/foundation.tooltip
-//= require foundation/js/foundation/foundation.topbar
+// require foundation/js/foundation/foundation.topbar
 //= require vendor/highlight
-//= require vendor/processing
-//= require vendor/jquery.timeago
+// require vendor/processing
+// move this to specific pages on blog, load on the fly
 //= require vendor/socialite/socialite
-// vendor/socialite/extensions/socialite.hackernews
 //= require_directory .
 
 $(document).foundation();
 
-$(document).ready(function() {
-  $("time.timeago").timeago();
-  hljs.initHighlightingOnLoad();
-  Socialite.load("blog-social");
-  $(".search-submit-button").click( function() {
-    $(".search-form").submit();
-  });
-});
+Socialite.load("blog-social");
+hljs.initHighlightingOnLoad();
 
-// google analytics below
-// var _gaq = _gaq || [];
-// _gaq.push(['_setAccount', 'UA-19284762-1']);
-// _gaq.push(['_trackPageview']);
-
-// (function() {
-//   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-//   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-//   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-// })();
-
+// ga code below
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

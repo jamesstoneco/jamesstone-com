@@ -24,7 +24,7 @@ gem 'nokogiri'
 gem "slim"
 
 # google closure compiler
-# gem "closure-compiler"
+gem "closure-compiler"
 
 # for deploying to rackspace cloud
 gem "middleman-deploy"
