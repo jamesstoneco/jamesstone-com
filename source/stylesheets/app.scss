@@ -1,27 +1,56 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:700,400,300);
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-$body-bg: #eee !default;
+$brand-dark-blue: #2F5C90 !default;
+$brand-violet: #BD10E0 !default;
+$brand-packt-orage: #EB8B2A !default;
+
+// The $base-line-height is 100% while $base-font-size is 150%
+$base-line-height: 120%;
+
+// $row-width: 1000px;
+// $column-gutter: 20px;
+// $total-columns: 12;
+
+
+
+$body-bg: #E5E5E5 !default;
 $body-font-color: #222 !default;
 
 // // We use these as default colors throughout
 // $primary-color: #2ba6cb !default;
 // $primary-color: #0287FB !default;
-$primary-color: #E41A89 !default;
+// $primary-color: #E41A89 !default;
+$primary-color: $brand-dark-blue !default;
 // $primary-color: #B51CD0 !default;
 // $secondary-color: #B51CD0 !default;
-$secondary-color: #ddd !default;
-$alert-color: #E41A89 !default;
+$secondary-color: #eee !default;
+$alert-color: $brand-violet !default;
 $success-color: #5da423 !default;
 
 // // We use these to make sure border radius matches unless we want it different.
-$global-radius: 6px !default;
+$global-radius: 3px !default;
 // // We use this to control whether or not CSS classes come through in the gem files.
 $include-print-styles: false !default;
 
-$panel-bg: darken(#fff, 2.5%);
+$panel-bg: scale-color($secondary-color, $lightness: 10%);
 $panel-border-style: solid;
 $panel-border-size: 1px;
+
+// We use this % to control how much we darken things on hover
+// $panel-function-factor: -11%;
+$panel-border-color: scale-color($panel-bg, $lightness: -100%);
+
+// We use these to set default inner padding and bottom margin
+// $panel-margin-bottom: rem-calc(20);
+// $panel-padding: rem-calc(20);
+
+// We use these to set default font colors
+// $panel-font-color: #333;
+// $panel-font-color-alt: #fff;
+
+$panel-header-adjust: false;
+$callout-panel-link-color: $brand-violet;
 
 
 
@@ -32,23 +61,20 @@ $code-font-weight: normal;
 $body-font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $header-font-family: 'Oswald', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $header-font-weight: 400;
-
-$button-font-weight: 700;
-$button-font-family: $header-font-family;
+$header-font-color: scale-color($brand-dark-blue, $saturation: -50%);
 
 
-$side-nav-link-color: #fff;
-$side-nav-link-color-active: darken(#000, 30%);
-$side-nav-font-weight: normal;
+$button-font-weight: 400;
+$button-font-family: $body-font-family;
 
-$tabbar-bg: $primary-color !default;
-$tabbar-color: $body-bg !default;
-$tabbar-right-section-border: none 0px lighten($tabbar-bg, 10%) !default;
-$tabbar-left-section-border: none 0px darken($tabbar-bg, 10%) !default;
-$tabbar-header-color: lighten($body-bg, 10%) !default;
-$tabbar-header-weight: normal !default;
-$off-canvas-bg: darken($secondary-color, 80%) !default;
-$menu-slide: "transform 400ms ease" !default;
+
+$h1-font-size: rem-calc(44);
+$h2-font-size: rem-calc(37);
+$h3-font-size: rem-calc(27);
+$h4-font-size: rem-calc(23);
+$h5-font-size: rem-calc(18);
+$h6-font-size: 1rem;
+
 
 // @import "foundation";
 
@@ -98,7 +124,7 @@ $menu-slide: "transform 400ms ease" !default;
 @import "foundation/components/visibility";
 
 
-
+@import "compass/css3/box-shadow";
 
 
 
@@ -128,8 +154,8 @@ pre {
 .resume-bullets { padding-left: emCalc(40px); }
 
 span.inline-code {
-	color: $body-font-color;
-	background: darken($body-bg, 20%);
+	color: $body-bg;
+	background: $brand-dark-blue;
 	padding-left: emCalc(4px);
 	padding-right: emCalc(4px);
 }
@@ -212,7 +238,7 @@ nav.tab-bar:after  {
 }
 
 .content-top-spacing {
-  padding-top: emCalc(30px);
+  padding-top: emCalc(80px);
 }
 
 .title a {
@@ -388,50 +414,34 @@ background-size: 1250px 400px;
 $menu-background-color: #333;
 
 .menu-container {
-  background: $menu-background-color;
-  height: rem-calc(50);
+  // background: $menu-background-color;
+  // height: rem-calc(25);
+  position: relative; // for z-index to work
+  z-index: 100;
 }
+.menu-container > .row {
+  height: 0;
+}
+
+.menu-container > .row > .columns {
+    padding-top: rem-calc(15);
+}
+
 .menu-container a {
   margin-bottom: 0;
 }
 
 .menu-button {
-  @include button(rem-calc(14), $menu-background-color, false, false, false, false);
+  @include button(rem-calc(12), $menu-background-color, false, false, false, false);
 }
 
-.home-header-callout-box > h3 {
+.menu-button-small {
+  @include button(rem-calc(10), $menu-background-color, false, false, false, false);
+  font-size: 180%;
+  line-height: 10%;
 }
 
-// .home-header-callout-box {
-//   z-index:-1;
-//   background-color: #333;
-//   background-color: rgba(51,51,51,0.6);
-//   padding-top: $column-gutter/2;
-//   padding-bottom: $column-gutter/2;
-// }
 
-.home-header-text {
-color: #d4d4d4;
-// font-weight: bold;
-}
-.home-header-text-alt {
-color: #acacac;
-// font-weight: bold;
-}
-// .header-text {
-// color: $body-font-color;
-// font-weight: bold;
-// }
-
-.header-text-alt {
-color: lighten($body-font-color, 40%);
-// font-weight: bold;
-}
-
-.home-header {
-  padding-top:rem-calc(185);
-   position: relative;
-}
 
 $bubble-color: #333;
 
@@ -509,22 +519,207 @@ left: 110px;
   padding-bottom: rem-calc($rem-base);
 }
 
-.unstyled-link {
+.unstyled-link p {
   color: $body-font-color;
+}
+h1 a.unstyled-link, h2 a.unstyled-link, h3 a.unstyled-link, h4 a.unstyled-link, h5 a.unstyled-link, h6 a.unstyled-link {
+  color: $header-font-color;
 }
 
 .unstyled-link-alt {
   color: $body-bg;
 }
 
-h2.feature-headline {
+.feature-headline {
   font-weight: 300;
 }
-h2.feature-headline > strong {
+.feature-headline > strong {
   font-weight: 400;
 }
 
-.menu-button-small {
-  font-size: 130%;
-  line-height: 10%;
+
+
+.home-header-text {
+color: $brand-violet;
+}
+.home-header-text-alt {
+color: scale-color($brand-dark-blue, $lightness: 40%);
+// $panel-bg: scale-color($secondary-color, $lightness: 10%);
+}
+
+.text-alt {
+color: $body-bg;
+// $panel-bg: scale-color($secondary-color, $lightness: 10%);
+}
+
+
+.header-text-alt {
+color: lighten($body-font-color, 40%);
+}
+
+.home-header {
+  padding-top:rem-calc(185);
+   position: relative;
+}
+
+.home-header-callout-box {
+  background-color: #000;
+  background-color: rgba(51,51,51,0.8);
+  // padding-top: $column-gutter/2;
+  padding-bottom: $column-gutter/2;
+}
+.dot-kern {
+  letter-spacing: rem-calc(-3);
+}
+
+
+// responsive type on mobile mq
+
+// $font-size-small-multiplier: 4;
+
+// @media #{$small-only} {
+//   h1 {
+//     font-size: rem-calc($h1-font-size);
+//   }
+//  }
+
+$card-padding: 15px;
+
+.card {
+  @include panel(#fff, 0px, false);
+  border-style: none;
+  @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child {
+    padding-top: $card-padding;
+  }
+  h1, h2, h3, h4, h5, h6, p, form, .card-pad {
+    padding-right: $card-padding;
+    padding-left: $card-padding;
+  }
+  ul {
+    padding-right: $card-padding;
+    padding-left: $card-padding;
+  }
+  p:last-child,ul:last-child,small:last-child {
+    padding-bottom: $card-padding;
+  }
+
+}
+
+.feature-box ul {
+    padding-left: $card-padding*3;
+}
+
+div.card.article, div.card.product {
+    position: relative;
+}
+
+div.card.article:hover, div.card.product:hover, div.card.sidebar-test:hover, div.card.sidebar-signup:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .8;
+}
+
+// flipper
+
+/* entire container, keeps perspective */
+.flip-container{
+/*perspective*/
+-webkit-perspective:1000;
+   -moz-perspective:1000;
+    -ms-perspective:1000;
+     -o-perspective:1000;
+        perspective:1000;
+}
+/* flip the pane when hovered */
+.flip-container.flip .flipper{
+/*transform*/
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+}
+@media #{$small-only} {
+  .flip-container, .front, .back {
+    width:100%;
+    height:460px;
+    }
+    .back > .card {
+    width:100%;
+    height:440px;
+    }
+}
+@media #{$medium-up} {
+  .flip-container, .front, .back {
+    width:100%;
+    height:370px;
+    }
+    .back > .card {
+    width:100%;
+    height:350px;
+    }
+}
+
+/* flip speed goes here */
+.flipper{
+/*transition*/
+-webkit-transition:0.6s;
+   -moz-transition:0.6s;
+     -o-transition:0.6s;
+        transition:0.6s;
+/*transform-style*/
+-webkit-transform-style:preserve-3d;
+   -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+     -o-transform-style:preserve-3d;
+        transform-style:preserve-3d;
+position:relative;
+}
+/* hide back of pane during swap */
+.front, .back{
+/*backface-visibility*/
+-webkit-backface-visibility:hidden;
+   -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+     -o-backface-visibility:hidden;
+        backface-visibility:hidden;
+position:absolute;
+top:0;
+left:0;
+}
+/* front pane, placed above back */
+.front{
+z-index:2;
+}
+/* back, initially hidden pane */
+.back{
+/*transform*/
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+}
+
+
+.button-packt-cta {
+  @include button($button-med, $brand-packt-orage, true, true, false, false, false);
+}
+
+p.disclaimer {
+  font-size: $small-font-size;
+}
+
+.error-packt {
+  background: $brand-packt-orage !important;
+}
+
+.button-resource {
+  @include button($button-lrg, $brand-dark-blue, false, true, false, false, false);
+  margin-bottom: 0px;
+}
+
+.entry-title {
+  padding-top: rem-calc(10);
 }

@@ -1,5 +1,5 @@
 ---
-title: How to use ZURB Foundation 5 Grids with Dynamic Data
+title: How to Use ZURB Foundation 5 Grids with Dynamic Data
 date: 2014/01/30
 time: 13:35 PM CET
 tags: ZURB Foundation, Responsive Web Design, Web Design, Mobile, Video
@@ -7,9 +7,8 @@ featured_image: "/blog/featured-images/featured-video.jpg"
 signup_zurb: "true"
 ---
 
-I wanted to reach out and thank everyone for their kind comments and great questions from my last screencast, [Getting Started with the ZURB Foundation 5 Grid](getting-started-with-the-zurb-foundation-5-grid). I thought that there are probally a lot of people dealing with dynamic data across a variety of different languages and templating engines. I wanted to address some common issues that I come across using the ZURB Foundation 5 grid and how to solve them.
+I wanted to address some common issues that I come across using the ZURB Foundation 5 grid with dynamic data and how to solve them.SPLIT\_SUMMARY\_BEFORE\_THIS
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
 
 If you enjoy this screencast, don't forget to subscribe so you will be the first to know when I publish my next video. If you have any ideas for future episodes or just want to reach out, I would love to hear from you in the comments. Hope you like it, and let me know what you think.
 

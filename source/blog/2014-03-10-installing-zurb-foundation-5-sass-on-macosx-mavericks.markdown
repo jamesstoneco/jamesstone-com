@@ -7,9 +7,11 @@ featured_image: "/blog/featured-images/install-guide-mavericks.jpg"
 signup_zurb: "true"
 ---
 
-Recently William Hernebrink ( [@WH_IxD](http://www.twitter.com/WH_IxD) ), a student from Sweeden, posted a comment on one of my youtube videos asking how to install ZURB Foundation 5. I made an offer to walk him through it if we could document the process for everyone else. What follows is a refinement of that conversation and what I consider to be best practice of setting up a proper development environment on Mac OS X Mavericks for running the lastest ZURB Foundation 5.2.
+Recently William Hernebrink ( [@WH_IxD](http://www.twitter.com/WH_IxD) ), a student from Sweeden, posted a comment on one of my youtube videos asking how to install ZURB Foundation 5.SPLIT\_SUMMARY\_BEFORE\_THIS
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
+I made an offer to walk him through it if we could document the process for everyone else. What follows is a refinement of that conversation and what I consider to be best practice of setting up a proper development environment on Mac OS X Mavericks for running the lastest ZURB Foundation 5.2.
+
+
 
 <div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/KdFZnvLPnz4?rel=0" frameborder="0" allowfullscreen></iframe></div>
 

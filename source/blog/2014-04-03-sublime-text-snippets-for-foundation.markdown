@@ -7,9 +7,7 @@ featured_image: "/blog/featured-images/code.jpg"
 signup_zurb: "true"
 ---
 
-If you love Sublime Text and you love ZURB Foundation then if you are like me, you are going to really love the Sublime Text Snippets for ZURB Foundation.
-
-SPLIT\_SUMMARY\_BEFORE\_THIS
+If you love Sublime Text and you love ZURB Foundation then if you are like me, you are going to really love the Sublime Text Snippets for ZURB Foundation.SPLIT\_SUMMARY\_BEFORE\_THIS
 
 I have been using ZURB Foundation for quite some time and I can tell you one of the major time wasters is going back and forth to the docs to copy and paste the more complex structures. Sure, you can memorize exactly how the topbar and accordion work, but I am pretty lazy. I am only memorizing things that I use a lot, meaning at least 40 - 50 times per day.
 
@@ -17,6 +15,6 @@ Thats why I am glad that I came across the ZURB Foundation snippets. They are a 
 
 I am not sure if these are official or not because they are not in the package manager yet, but I came across them in the official ZURB GitHub. So, if you know how to install Sublime Text plugins manually, [jump over to the repo and go crazy](https://github.com/zurb/foundation-5-sublime-snippets). For those that want a short demo with step-by-step instructions on how to get started, check out the screencast below.
 
-<div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/Gx-9cgNlZlQ?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/uxpfzE5CNvk?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
 So are you a daily ZURB Foundation user? Do you love Sublime Text? Have you used or plan on using these snippets in your workflow? If so I would love to hear from you in the comments.

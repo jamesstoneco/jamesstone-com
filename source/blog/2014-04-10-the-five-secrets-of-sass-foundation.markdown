@@ -7,9 +7,10 @@ featured_image: "/blog/featured-images/sass-foundation.jpg"
 signup_zurb: "true"
 ---
 
-Recently I had a lot of really great questions on my [Getting Sassy with ZURB Foundation 5 Screencast](https://www.youtube.com/watch?v=Gx-9cgNlZlQ) and I started thinking about what kinds of things are important to know. In this article I give you my 5 best secrets, 6 if you count the bonus, of how I work with Sass in ZURB Foundation 5.
+Recently I had a lot of really great questions on my [Getting Sassy with ZURB Foundation 5 Screencast](https://www.youtube.com/watch?v=Gx-9cgNlZlQ) and I started thinking about what kinds of things are important to know.SPLIT\_SUMMARY\_BEFORE\_THIS
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
+In this article I give you my 5 best secrets, 6 if you count the bonus, of how I work with Sass in ZURB Foundation 5.
+
 
 ## 1. Unbound Variable Error
 

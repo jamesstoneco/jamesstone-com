@@ -8,9 +8,10 @@ disclaimer_aff: "true"
 amazon_aff_url: "http://www.amazon.com/gp/product/B00H4UTHVM/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00H4UTHVM&linkCode=as2&tag=jamestonport-20"
 ---
 
-I recently picked up this book and read it over a short trip to Armenia. I was pleasantly surprised with a very personal tour de force explanation of how he became an accidental entrepreneur of sorts and how this evolved into his current online business, [caveofprogramming.com](http://caveofprogramming.com). 
+This book pleasantly surprised me with a very personal tour de force explanation of how he became an accidental entrepreneur of sorts.SPLIT\_SUMMARY\_BEFORE\_THIS
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
+And also how this evolved into his current online business, [caveofprogramming.com](http://caveofprogramming.com). 
+
 
 What I really like about this ebook over others, is that John has an active business and he describes exactly what his strategies are. He explains how to effectively teach something that is somewhat marketable, in his case programming, and to make money with it. He tells you how to get started, even if webcasting and video are not your forte, and how to test the waters in your area. 
 

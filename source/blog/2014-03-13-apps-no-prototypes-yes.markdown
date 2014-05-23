@@ -6,9 +6,10 @@ tags: Web Development, Prototype, Career, Iteration
 featured_image: "/blog/featured-images/no-coding.jpg"
 ---
 
-This is completely counterintuitive but **stop trying to build apps**. Whether you are just learning to code or someone unafraid of the command line, do yourself a favor and build prototypes first. What do I mean by a prototype, let me explain, my definition might be a little different than yours.
+This is completely counterintuitive but **stop trying to build apps**. Whether you are just learning to code or someone unafraid of the command line, do yourself a favor and build prototypes first.SPLIT\_SUMMARY\_BEFORE\_THIS
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
+What do I mean by a prototype, let me explain, my definition might be a little different than yours.
+
 
 So I hold an M.F.A. in Studio Art but I will level with you. I got a C in my first college art class. Heres why. We would get assignments like this: draw some fruit aka the still life, spend about 5 hours drawing, and it should look good. 
 

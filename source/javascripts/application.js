@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery/dist/jquery
+//= require fastclick/lib/fastclick
 //= require foundation/js/foundation
 //= require foundation/js/foundation/foundation.abide
 //= require foundation/js/foundation/foundation.accordion
@@ -41,6 +42,22 @@
 
 $(document).foundation();
 
+$(".card.article, .sidebar-test").click(function(){
+	window.location = $(this).find("a:first").attr("href");
+	return false;
+});
+
+// Show URL on Mouse Hover
+$(".card.article, .card.product, .sidebar-test").hover(function () {
+	window.status = $(this).find("a:first").attr("href");
+}, function () {
+	window.status = "";
+});
+$(".front").click(function(){
+	$( "div.flip-container" ).toggleClass( "flip" )
+});
+
+
 Socialite.load("blog-social");
 hljs.initHighlightingOnLoad();
 
@@ -51,5 +68,5 @@ hljs.initHighlightingOnLoad();
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-19284762-1', 'manofstone.com');
+ga('create', 'UA-19284762-1', 'jamesstone.co');
 ga('send', 'pageview');
