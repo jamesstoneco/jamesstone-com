@@ -3,7 +3,7 @@ title: The 5 Secrets of Sass Foundation
 date: 2014/04/10
 time: 16:23 PM CET
 tags: ZURB Foundation, Sass, Scss, Responsive Web Design, Web Design, Mobile, Video
-featured_image: "/blog/featured-images/sass-foundation.jpg"
+featured_image: "/blog/featured-images/sass-secrets.jpg"
 signup_zurb: "true"
 ---
 

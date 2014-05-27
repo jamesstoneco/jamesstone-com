@@ -1,7 +1,7 @@
 ---
 title: "James Stone, Author and Blogger"
 seo_desc: James Stone is an Author and a Blogger. He taught game and creative coding at Penn State and served as faculty for Eyebeam.
-pageable: true
+pageable: false
 per_page: 8
 active_nav: home
 ---
@@ -31,10 +31,12 @@ active_nav: home
 </div>
 
 
-
+<%= page_articles.size %><br>
+<%= [*page_articles].size %>
 
 <div class="row">
-  <% page_articles.each_slice((page_articles.size/2.0).ceil) do | col | %>
+  <% h = Hash[*page_articles] %>
+  <% [h.keys, h.values].each do |col| %>
   <div class="medium-4 large-4 columns"> <!-- main content -->
     <% col.each do |article| %>
     <div class="card article">
