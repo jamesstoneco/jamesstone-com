@@ -30,10 +30,6 @@ active_nav: home
   <div class="small-12 columns">&nbsp;</div>
 </div>
 
-
-<%= page_articles.size %><br>
-<%= [*page_articles].size %>
-
 <div class="row">
   <% h = Hash[*page_articles] %>
   <% [h.keys, h.values].each do |col| %>

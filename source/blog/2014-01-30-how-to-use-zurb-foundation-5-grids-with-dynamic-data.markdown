@@ -98,7 +98,7 @@ Modifications to the index.html, starting at line 107 ( [view on github](https:/
 
 ## Ruby/Slim Templates
 
-If you are looking for a more effecient way to handle this situation with Ruby and Ruby SLIM templates, check out my post called [Ruby Slim and Zurb Foundation](ruby-slim-and-zurb-foundation). It covers ZURB Foundation version 4 but the syntax is identical to ZURB Foundation 5 for this example.
+If you are looking for a more effecient way to handle this situation with Ruby and Ruby SLIM templates, check out my post called [Ruby Slim and Zurb Foundation](/blog/ruby-slim-and-zurb-foundation). It covers ZURB Foundation version 4 but the syntax is identical to ZURB Foundation 5 for this example.
 
 So what did you think of this video? Do you use dynamic data or templates in your work with ZURB Foundation? Do you have any ideas for future screencasts? If so, I would love to hear from you in the comments.
 

@@ -3,7 +3,6 @@
 // Licensed under MIT Open Source
 
 @import "global";
-@import "grid";
 
 //
 // @variables
@@ -39,13 +38,14 @@ $accordion-content-active-bg-color: #fff !default;
           font-size: $accordion-navigation-font-size;
           &:hover { background: $accordion-navigation-hover-bg-color; }
         }
-      }
-      .content {
-        display: none;
-        padding: $accordion-content-padding;
-        &.active {
-          display: block;
-          background: $accordion-content-active-bg-color;
+        
+        > .content {
+          display: none;
+          padding: $accordion-content-padding;
+          &.active {
+            display: block;
+            background: $accordion-content-active-bg-color;
+          }
         }
       }
     }

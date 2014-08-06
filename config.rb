@@ -86,9 +86,9 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   set :js_compressor, ::Closure::Compiler.new
-  activate :gzip
+  # activate :gzip
 
-  activate :asset_hash
+  # activate :asset_hash
 
   # for cdn
 

@@ -109,7 +109,7 @@ $h6-font-size: 1rem;
 // @import "foundation/components/pricing-tables";
 // @import "foundation/components/progress-bars";
 // @import "foundation/components/range-slider";
-// @import "foundation/components/reveal";
+@import "foundation/components/reveal";
 // @import "foundation/components/side-nav";
 // @import "foundation/components/split-buttons";
 // @import "foundation/components/sub-nav";
@@ -704,7 +704,7 @@ z-index:2;
 
 
 .button-packt-cta {
-  @include button($button-med, $brand-packt-orage, true, true, false, false, false);
+  @include button($button-med, $brand-packt-orage, true, true, false, false);
 }
 
 p.disclaimer {
@@ -716,10 +716,17 @@ p.disclaimer {
 }
 
 .button-resource {
-  @include button($button-lrg, $brand-dark-blue, false, true, false, false, false);
+  @include button($button-lrg, $brand-dark-blue, false, true, false, false);
   margin-bottom: 0px;
 }
 
 .entry-title {
   padding-top: rem-calc(10);
+}
+
+.disclaimer-amazon {
+  @include button(rem-calc(2px), $brand-dark-blue, true, false, false, false);
+  margin-bottom: 0px;
+  // button($padding:$button-med, $bg:$button-bg, $radius:false, $full-width:false, $disabled:false, $is-prefix:false) {
+
 }

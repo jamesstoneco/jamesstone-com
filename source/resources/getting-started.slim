@@ -1,0 +1,56 @@
+---
+title: "Getting Started on JAMESSTONE.co"
+seo_desc: James Stone is an Author and a Blogger. He taught game and creative coding at Penn State and served as faculty for Eyebeam.
+---
+
+.row
+  .medium-8.columns
+    .card
+      h1 Getting Started 
+      h2 Learn Web Development with James
+      p Here is some intro paragraph.
+
+
+    .card
+      h4 Action Item: Setup ZURB Foundation
+      p After learning about what all the different underlying techonolies do, use one of the videos below to set up your own dev environment for either Windows or Mac OS X. I cover Mavericks and Windows 7.
+
+    .card
+      .flex-video.widescreen
+        iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/Pm5vvimIJKY?rel=0" width="960"
+      h4 Understanding the Ecosystem
+      p Learn what all the different technologies of ZURB Foundation do.
+    .card
+      .flex-video.widescreen
+        iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/kk6KpKK5Jjc?rel=0" width="960"
+      h4 Mavericks Install
+      p Some introduction text.
+    .card
+      .flex-video.widescreen
+        iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/kk6KpKK5Jjc?rel=0" width="960"
+      h4 Windows Install
+      p Some introduction text.
+
+    / - videos = [{:title => "ZURB Foundation 5 Grids - Getting Started", :video_id => "kk6KpKK5Jjc"}, {:title => "ZURB Foundation 5 Grids - Getting Started", :video_id => "kk6KpKK5Jjc"}, {:title => "ZURB Foundation 5 Grids - Getting Started", :video_id => "kk6KpKK5Jjc"}, ]
+    / - videos.each_slice(2) do | c |
+    /   .row
+    /     - c.each do | v |
+    /       .small-6.columns
+    /         .card
+    /           .flex-video.widescreen
+    /             iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/#{v[:video_id]}?rel=0" width="960"
+    /           h4 #{v[:title]}
+    /           p Some introduction text.
+    .card
+      h3 Resources
+
+      - links = [{:title => "Install ZURB Foundation, Mavericks", :url => "/blog/installing-zurb-foundation-5-sass-on-macosx-mavericks"}, {:title => "Get Started with the Grid", :url => "http://www.youtube.com/watch?v=kk6KpKK5Jjc"}, {:title => "Learn the History of ZURB and Foundation", :url => "/blog/zurbians-and-yetis-a-brief-history"}, {:title => "Learn about the Medium / Tablet Grid", :url => "/blog/zurb-foundation-5-medium-grid"}, {:title => "Learn About Mobile First", :url => "/blog/mobile-first-and-why-you-should-care"}, {:title =>  "Create Semantic UI Style Grids", :url => "/blog/semantic-ui-style-layouts-in-zurb-foundation"}]
+      ul.no-bullet
+      - links.each do | l |
+        li: a href="#{l[:url]}"  #{l[:title]}
+  .medium-4.columns
+    = partial "sidebar"
+
+
+
+

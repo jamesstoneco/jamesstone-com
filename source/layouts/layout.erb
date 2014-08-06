@@ -49,7 +49,67 @@
 
     <%= partial "footer" %>
 
+        
+    <div id="madmimi-signup-modal" class="reveal-modal" data-reveal>
+
+    <div class="row">
+        <div class="medium-9 columns">
+            <h2>ZURB Foundation is more powerful than you think</h2>
+            <p class="lead">Learn what you have been missing from the guy who wrote the book</p>
+            <p>My name is James Stone and I am the author of ZURB Foundation Blueprints and an overall ZURB Foundation fanatic. </p>
+            <p>If you are looking to take your game to the next level this is one of best kept secrets. I will take you behind the scenes to look at tools, tricks and tips I use on a daily basis.</p>
+            <p>The only way to gain access is to subscribe to my list.</p>
+<div class="panel">
+    
+        <form accept-charset="UTF-8" action="https://madmimi.com/signups/subscribe/115083" id="mad_mimi_signup_form" method="post" target="_blank">
+    
+           <div style="margin:0;padding:0;display:inline">
+              <input name="utf8" type="hidden" value="✓"/>
+              <input name="authenticity_token" type="hidden" value="L+P69BVM0aGjmhkfpWPZjPaEPl9goi38Dkslov2zuE4="/>
+           </div>
+            
+            <div class="row">
+                <div class="medium-1 columns">
+                  <p>NAME</p>
+                    
+                </div>
+                <div class="medium-3 columns mimi_field required">
+                    
+              <input id="signup_name" name="signup[name]" type="text" data-required-field="This field is required"/ style="width:100%;">
+                </div>
+                <div class="medium-1 columns">
+                <p>EMAIL</p>
+                    
+                </div>
+                <div class="medium-3 columns mimi_field required">
+              <input id="signup_email" name="signup[email]" type="text" data-required-field="This field is required" placeholder="you@example.com"/ style="width:100%;">
+                    
+                </div>
+                <div class="medium-4 columns">
+                    
+              <input type="submit" class="submit button-packt-cta" value="Subscribe" id="webform_submit_button" data-default-text="Subscribe" data-submitting-text="Sending..." data-invalid-text="↑ You forgot some required fields" data-choose-list="↑ Choose a list"></input>
+                </div>
+            </div>
+    
+    
+    
+        </form>
+</div>
+
+        </div>
+        <div class="medium-3 columns">
+        <img src="/images/james-new-headshot.jpg" alt="">
+        <img src="/images/zurb-foundation-blueprints/final-mocked-cover.png" alt="">
+        </div>
+    </div>
+
+    
+
+        <a class="close-reveal-modal">&#215;</a>
+    </div> <!-- modal : madmimi-signup-modal -->
+
     <%= javascript_include_tag  "application", :defer => "defer" %>
+    <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/2d65437142d0b1cd14d63f1a5f85061680ff94ad.js" defer></script>
 
   </body>
 </html>
