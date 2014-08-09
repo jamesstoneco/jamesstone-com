@@ -1,7 +1,30 @@
 # block visitors referred from semalt.com
 RewriteEngine on
+# handle http ref spam
 RewriteCond %{HTTP_REFERER} semalt\.com [NC]
+RewriteCond %{HTTP_REFERER} http://semalt.semalt.com/crawler.php [NC]
 RewriteRule .* - [F]
+
+
+
+# RewriteRule ^ - [L]
+
+
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+
+# RewriteCond %{REQUEST_URI} ^/zurb-foundation-blueprints($|/)
+# rewriterule (.*) https://www.jamesstone.co/zurb-foundation-blueprints [l,nc]
+
+# redirect everything over ssl
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.jamesstone.co/$1 [R,L] 
+
+
+RewriteCond %{REQUEST_URI} ^/aso($|/)
+rewriterule (.*) http://www.asmallorange.com?a_aid=JAMESSTONEco [l,nc]
+# RewriteRule ^.*$ /exampletwo/index.html [L]
+
 # custom 404 page
 ErrorDocument 404 /404/index.html
 

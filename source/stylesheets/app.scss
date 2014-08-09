@@ -605,6 +605,26 @@ $card-padding: 15px;
   }
 
 }
+.card-landing {
+  @include panel(#fff, 0px, false);
+  border-style: none;
+  @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
+  // h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child {
+  //   padding-top: $card-padding;
+  // }
+  // h1, h2, h3, h4, h5, h6, p, form, .card-pad {
+  //   padding-right: $card-padding;
+  //   padding-left: $card-padding;
+  // }
+  // ul {
+  //   padding-right: $card-padding;
+  //   padding-left: $card-padding;
+  // }
+  // p:last-child,ul:last-child,small:last-child {
+  //   padding-bottom: $card-padding;
+  // }
+
+}
 
 .feature-box ul {
     padding-left: $card-padding*3;
