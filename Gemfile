@@ -20,7 +20,7 @@ gem "puma"
 gem "builder"
 gem "redcarpet"
 gem "middleman-blog"
-gem 'nokogiri'
+gem 'nokogiri', "1.2.3"
 gem "slim"
 
 # google closure compiler
