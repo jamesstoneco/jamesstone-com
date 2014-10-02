@@ -28,7 +28,7 @@
 // require foundation/js/foundation/foundation.joyride
 // require foundation/js/foundation/foundation.magellan
 // require foundation/js/foundation/foundation.offcanvas
-// require foundation/js/foundation/foundation.orbit
+//= require foundation/js/foundation/foundation.orbit
 //= require foundation/js/foundation/foundation.reveal
 // require foundation/js/foundation/foundation.slider
 // require foundation/js/foundation/foundation.tab
@@ -38,6 +38,7 @@
 // require vendor/processing
 // move this to specific pages on blog, load on the fly
 //= require vendor/socialite/socialite
+//= require wookmark-jquery/jquery.wookmark.js
 //= require_directory .
 
 $(document).foundation();
@@ -84,3 +85,17 @@ dc.src = '//tag.getdrip.com/6233478.js';
 var s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(dc, s);
 })();
+
+// TODO: reflows correctly on resize, but not on open, maybe only issue on reload
+// woorkmark on main pageview
+$(window).ready( function() {
+	$('#reflow-grid li').wookmark({
+	  // Prepare layout options.
+	  itemWidth: 280, // Optional min width of a grid item
+	  autoResize: true, // This will auto-update the layout when the browser window is resized.
+	  container: $('#reflow-grid'), // Optional, used for some extra CSS styling
+	  offset: 20, // Optional, the distance between grid items
+	  outerOffset: 20, // Optional the distance from grid to parent
+  	  flexibleWidth: '100%' // Optional, the maximum width of a grid item
+	});
+});

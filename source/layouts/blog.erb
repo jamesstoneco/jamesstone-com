@@ -3,37 +3,17 @@
 <div class="content-top-spacing hide-for-small-only"></div>
 
 <div class="row">
-  <div class="medium-8 large-8 columns"> <!-- content -->
+  <div class="small-12 columns"> <!-- content -->
 
-<!--    <div class="row">
-     <div class="small-6 columns">
-        <div class="card">
-         <% permalink_url = "http://www.jamesstone.co#{current_page.url}" %>
-         
-          <div class="row">
-            <div class="small-2 columns">
-              <ul class="social-buttons cf left">
-                <li>
-                  <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @jamesstoneco" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="small-10 columns">
-              <h3 style="padding-top:60px; color:#ccc;">&laquo; Your 140 characters of fame, right here</h3>
-            </div>
-          </div>
-       </div>
-     </div>
-   </div> -->
+ <% permalink_url = "http://www.jamesstone.co#{current_page.url}" %>
 
-
-
-<div class="card"><h1><%= current_page.title %></h1>
+<div class="card">
+  <h1 class="text-center"><%= current_page.title %></h1>
   
     <div class="entry-content">
       <% test_featured_image = current_page.data.featured_image %>
       <% if ( defined?(test_featured_image)) %>
-      <p><img src="<%= current_page.data.featured_image %>"></p>
+      <p class="text-center"><img src="<%= current_page.data.featured_image %>"></p>
       <% end %>
   
       <p align="center">
@@ -94,14 +74,14 @@
   <div class="large-6 columns">
     <div class="card">
       <div class="row">
-        <div class="small-2 columns">
+        <div class="small-3 columns">
           <ul class="social-buttons cf left">
             <li>
               <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @jamesstoneco" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
             </li>
           </ul>
         </div>
-        <div class="small-10 columns">
+        <div class="small-9 columns">
           <h3 style="padding-top:60px; color:#ccc; padding-left:30px;">&laquo; to the Twitterverse</h3>
         </div>
       </div>
@@ -126,17 +106,14 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
 
   </div>
 
 
-  <div class="medium-4 large-4 columns"> <!-- sidebar -->
-    <%= partial "sidebar" %>
-  </div>
 </div>
 
 

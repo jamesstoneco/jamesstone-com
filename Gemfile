@@ -4,6 +4,11 @@ source 'http://rubygems.org'
 
 ruby "2.0.0"
 
+#gem "compass", "1.0.1"
+# gem "sass", "3.3.14"
+gem "compass", "0.12.7"
+gem "sass", "3.2.19"
+
 
 gem "middleman", "~>3.2.2"
 # for heroku install
@@ -27,5 +32,8 @@ gem "slim"
 gem "closure-compiler"
 
 # for deploying to rackspace cloud
-gem "middleman-deploy"
+# gem "middleman-deploy"
+# gem 'middleman-bitballoon'
+# gem 'middleman-twitter-cards', :git => 'git@github.com:stevenosloan/middleman-twitter-cards.git'
+
 gem 'sanitize'

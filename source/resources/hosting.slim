@@ -1,0 +1,131 @@
+---
+title: "Getting Started on JAMESSTONE.co"
+seo_desc: James Stone is an Author and a Blogger. He taught game and creative coding at Penn State and served as faculty for Eyebeam.
+---
+
+.content-top-spacing
+.row
+  .small-12.columns
+    .card
+      h1 Resources: Hosting 
+      h2 One of the single most important decisions when it comes to Web Development
+      p Whether you are new to web dev or just getting back in the game, figuring out a good company to host with can be tricky. Everyone has an opinion on this and if you get it wrong, it can be a real headache.
+      p Sure you can move your entire rig somewhere else, but that takes time, coordination and planning to get it right. I have been hosting with a variety of companies over the years and I wanted to share my experience with you.
+
+
+      .row: .small-10.columns.small-centered.panel
+
+        p Disclosure:  Please note that some of the links on this page are affiliate links. At  no additional cost to you, I will earn a commission if you decide to make a purchase. All of the companies that I am affiliate for I have used personally and have experience with their services. I am recommending them here because I think they might be useful to you, not because of the small commissions I receive. Please do not purchase these products if they do not solve a problem for you or if you feel they are unnecessary. One small note on prices, often monthly services are advertised at the yearly subscription rate. Assume if you want to go month-to-month the price will be slightly higher. Do your research, check things out and be a smart consumer.
+
+      ul.button-group.text-center.radius
+        li: a.button href="#starter" starter
+        li: a.button href="#static" static site enthusiast
+        li: a.button href="#hacker" midnight hacker
+        li: a.button href="#safe" the safe bet
+        li: a.button href="#easy" the easy way out
+
+      h1#starter Starter
+      markdown:
+
+        A Small Orange: hosting packages starting at $4.35/mo and $35/yr (ssl from $25/yr/domain)
+
+        Everyone needs to start somewhere and A Small Orange is the company I currently use for this site and recommend to my clients. They offer all of the basics such as php, mysql, one-click-wordpress (and other cms) installs but there is something important that sets them apart from the rest.
+
+        They are not unlimited.
+
+        Yes, you read that right and that is a good thing. 
+
+        If you go on the internet and search for hosting you will see a whole slew of internet marketers recommending often two companies: Bluehost and Hostgator. Now, I don't have anything against these companies but you should be aware of a couple of things if you consider them.
+
+        First off, they raise the prices on you in the 2nd year. They get you in at a low yearly price and then hope it's too much trouble for you to move later. Its like renting a place and the landlord doubles your rent after your lease expires. I used to recommend Dreamhost because I thought they had a great service, but after one of my clients came back complaining about the price doubling I went on a search to find what I considered an ideal low cost host.
+
+        A Fast Orange is that host. First of all, they won't raise the price on you drastically like that. There are different coupons and offers that you can find that reduce the price of your first year, but they are up front about the pricing. You know the price and the discount going in. It isn't buried at the bottom of the page in a small font, hoping you won't read it.
+
+        So coming back to the original point, about unlimitedness. The other guys offer unlimited storage and unlimited bandwidth. It sounds too good to be true and it is. One thing to consider is that if your hosting provider oversells their resources  (or encourages users that will do this) then you will end up on a very slow server indeed. I used to host my sites originally back on GoDaddy and I had this exact problem.
+
+        Since ASO limited both the bandwidth and disk space based on what you pay for it doesn't attract those who want to host huge sites and tie up all the resources. And if you are thinking you need a lot of resources, it is not true. I use the middleman static website generator and this site is less than 50mb and can fit on their Tiny plan.
+
+        Another important reason why I would recommend ASO is that they have great support. Usually everything goes great, but sometimes you can run into issues where you need help. They have a chat at the bottom of their page and I have gotten stellar support every time that I have asked. They are smart, have great communication skills and solve problems. I have only once had to wait in a short queue when contacting support.
+
+        There are a ton of great reasons to go for ASO, including their fun design, use of renewable power and great prices but here is my final reason I think you should check them out. The Guarantee.
+
+        If things don't work out within 90 days they will refund your money. That is fantastic. Most places only will give you one-third of that. Not only that if you have problems later, they will prorate it so you will get that 90 days free even if you are not satisfied much later on.
+
+        Soon I am going to be adding a set of screencasts and articles specifically how to host a ZURB Foundation website on ASO and how to get great performance. I am also working with A Small Orange to prepare a special offer for you. Stay tuned.
+
+      p.text-center: a.button href="/aso" Take me to the A Small Orange Webpage &raquo;
+
+      h1#static Static Site Enthusiast
+
+      markdown:
+
+        Bit Ballon : Free on subdomain, $5/mo custom domain (ssl $20/mo/domain)
+
+        Bit Balloon is the ideal hosting partner for a site like mine. In fact, I am going to be moving this site over some time in the near future so expect a full write up. It is basically a hosting service designed for easy deployment and super high performance of static websites. Sites just like this one, generated with static site generators such as Middleman are ideal candidates.
+
+        Here is a quick breakdown:
+
+        * free hosting on a subdomain - try everything out for free instantly
+        * low cost hosting on custom domain
+        * mechanism for creating short / cloaked links
+        * automatically optimizes your site
+        * hosted on Rackspace and Akamai CDN - get very fast load times world wide (2x the speed of ASO from my limited testing on the Pingdom Amsterdam server)
+
+        Advanced features
+
+        * middleman-balloon gem / extension for middleman
+        * magic forms - easily capture form data on your site
+        * api integrated with zapier - use zapier to process your form information
+        * full rest api - go crazy
+        * beta: supports automatic middleman deployment from a github push
+
+        How easy is it, well just drop your site into the droplet below. It will automatically take your site and deploy it in seconds.
+
+      .row: .small-10.medium-8.columns.small-centered
+        a.bb-dropzone-widget href="https://www.bitballoon.com?af=js"  BitBalloon
+        javascript:
+          (function(w,d) { if(!w.bb_embed) { var e = d.createElement("script"); e.async=1; e.src = "https://www.bitballoon.com/embed/script.js"; d.body.appendChild(e); } })(window, document);
+
+      p
+        | And, if you are not using middleman they support a bunch of other static site generators. In fact, they are the same people behind 
+        a href="http://staticgen.com" staticgen.com
+        | .
+
+      p.text-center: a.button href="/bb" Go Static with BitBalloon &raquo;
+
+      h1#hacker Midnight Hacker
+
+      markdown:
+
+        Digital Ocean : starting at $5/mo (512mb ram, 20gb ssd disk, 1tb transfer)
+
+        DO is a realitively new player in the VPS scene but they are fantastic amd offer excellent value and speed for the price. It is roughly 1/3 the price of RackSpace and you can for up a droplet in seconds. They also offer affordable hosting in amsterdam if you are looking for lower latency to europe.
+
+        So if you ever wanted to setup your own server for the first time DO is the place to do it. They have plenty of tutorials and  articles on how to setup just about anything.
+
+      p.text-center: a.button href="/do" Roll Your Own with Digital Ocean &raquo;
+
+      h1#safe The Safe Bet
+
+      markdown:
+
+        RackSpace : starting at $23.36/mo (1gb ram, 20gb ssd disk, 200Mb/s tranfer)
+
+      p.text-center: a.button href="/rs" Play it Safe with Fanatical Support at RackSpace &raquo;
+
+      h1#easy The Easy Way Out
+
+      markdown:
+
+        Heroku : starting at free for 1 dyno (times out after an hour) and $34.50 for 2 dynos
+
+      p.text-center: a.button href="https://www.heroku.com" Deploy your app with Git Push at Heroku &raquo;
+
+
+
+
+
+
+
+
+
