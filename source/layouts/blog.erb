@@ -17,7 +17,7 @@
       <% end %>
   
       <p align="center">
-        Written by James Stone &ndash; Follow him on <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">Twitter</a>
+        Written by James Stone &ndash; <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">Follow him on Twitter</a>
         <time class="hide timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
       </p>
   
@@ -70,27 +70,22 @@
     <% end %></div>
 
 
-<div class="row">
-  <div class="large-6 columns">
-    <div class="card">
-      <div class="row">
-        <div class="small-3 columns">
-          <ul class="social-buttons cf left">
-            <li>
-              <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @jamesstoneco" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
-            </li>
-          </ul>
-        </div>
-        <div class="small-9 columns">
-          <h3 style="padding-top:60px; color:#ccc; padding-left:30px;">&laquo; to the Twitterverse</h3>
-        </div>
+    <div class="row">
+    <div class="large-6 columns large-offset-3">
+        <div class="card">
+            <div class="small-3 columns">
+              <ul class="social-buttons cf left">
+                <li>
+                  <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= current_page.title %> via @jamesstoneco" data-url="<%= permalink_url %>" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="small-9 columns">
+              <h3 style="padding-top:60px; color:#ccc; padding-left:30px;">&laquo; to the Twitterverse</h3>
+            </div>
+          </div>
       </div>
     </div>
-  </div>
-    <div class="large-6 columns">
-    <%= partial("updatesendofarticle") %>
-    </div>
-</div>
 
 
 
