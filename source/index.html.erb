@@ -6,14 +6,9 @@ per_page: 15
 active_nav: home
 ---
 
-
 <div class="content-top-spacing"></div>
 
-TEST
-
 <%= partial "featurebox" %>
-
-
 
 <div class="row">
   <% page_articles.each_slice((page_articles.size/3.0).ceil) do | col | %>

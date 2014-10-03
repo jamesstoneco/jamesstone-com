@@ -2,7 +2,7 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-ruby "2.0.0"
+# ruby "2.0.0" # commented out for bb build
 
 #gem "compass", "1.0.1"
 # gem "sass", "3.3.14"
