@@ -6,6 +6,17 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
+    <script>
+    var _rollbarConfig = {
+        accessToken: "d2c05e428ea145a5ad7954092c83833b",
+        captureUncaught: true,
+        payload: {
+            environment: "production"
+        }
+    };
+    !function(a,b){function c(b){this.shimId=++h,this.notifier=null,this.parentShim=b,this.logger=function(){},a.console&&void 0===a.console.shimId&&(this.logger=a.console.log)}function d(b,c,d){!d[4]&&a._rollbarWrappedError&&(d[4]=a._rollbarWrappedError,a._rollbarWrappedError=null),b.uncaughtError.apply(b,d),c&&c.apply(a,d)}function e(b){var d=c;return g(function(){if(this.notifier)return this.notifier[b].apply(this.notifier,arguments);var c=this,e="scope"===b;e&&(c=new d(this));var f=Array.prototype.slice.call(arguments,0),g={shim:c,method:b,args:f,ts:new Date};return a._rollbarShimQueue.push(g),e?c:void 0})}function f(a,b){if(b.hasOwnProperty&&b.hasOwnProperty("addEventListener")){var c=b.addEventListener;b.addEventListener=function(b,d,e){c.call(this,b,a.wrap(d),e)};var d=b.removeEventListener;b.removeEventListener=function(a,b,c){d.call(this,a,b&&b._wrapped?b._wrapped:b,c)}}}function g(a,b){return b=b||this.logger,function(){try{return a.apply(this,arguments)}catch(c){b("Rollbar internal error:",c)}}}var h=0;c.init=function(a,b){var e=b.globalAlias||"Rollbar";if("object"==typeof a[e])return a[e];a._rollbarShimQueue=[],a._rollbarWrappedError=null,b=b||{};var h=new c;return g(function(){if(h.configure(b),b.captureUncaught){var c=a.onerror;a.onerror=function(){var a=Array.prototype.slice.call(arguments,0);d(h,c,a)};var g,i,j="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(g=0;g<j.length;++g)i=j[g],a[i]&&a[i].prototype&&f(h,a[i].prototype)}return a[e]=h,h},h.logger)()},c.prototype.loadFull=function(a,b,c,d){var e=g(function(){var a=b.createElement("script"),e=b.getElementsByTagName("script")[0];a.src=d.rollbarJsUrl,a.async=!c,a.onload=f,e.parentNode.insertBefore(a,e)},this.logger),f=g(function(){if(void 0===a._rollbarPayloadQueue)for(var b,c,d,e,f=new Error("rollbar.js did not load");b=a._rollbarShimQueue.shift();)for(d=b.args,e=0;e<d.length;++e)if(c=d[e],"function"==typeof c){c(f);break}},this.logger);g(function(){c?e():a.addEventListener?a.addEventListener("load",e,!1):a.attachEvent("onload",e)},this.logger)()},c.prototype.wrap=function(b){try{if("function"!=typeof b)return b;if(b._isWrap)return b;if(!b._wrapped){b._wrapped=function(){try{return b.apply(this,arguments)}catch(c){throw a._rollbarWrappedError=c,c}},b._wrapped._isWrap=!0;for(var c in b)b.hasOwnProperty(c)&&(b._wrapped[c]=b[c])}return b._wrapped}catch(d){return b}};for(var i="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError".split(","),j=0;j<i.length;++j)c.prototype[i[j]]=e(i[j]);var k="//d37gvrvc0wt4s1.cloudfront.net/js/v1.1/rollbar.min.js";_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||k;var l=c.init(a,_rollbarConfig);l.loadFull(a,b,!1,_rollbarConfig)}(window,document);
+    </script>
+
     <!-- ****** faviconit.com favicons ****** -->
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
@@ -30,15 +41,26 @@
     
     <meta name='yandex-verification' content='4d1b71b148f932e6' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/jamesmanofstone" />
-    <link rel="author" href="https://plus.google.com/+JamesStoneAuthorSpeakerDeveloperMediaArtist/posts"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/jamesmanofstone" />
+    <link rel="author" href="//plus.google.com/+JamesStoneAuthorSpeakerDeveloperMediaArtist/posts"/>
     <% test_seo_desc = current_page.data.seo_desc %>
     <% if defined?(test_seo_desc) %>
     <meta name="description" content="<%= current_page.data.seo_desc %>">
     <% end %>
     <title><%= current_page.data.title || "James Stone" %></title>
     <%= stylesheet_link_tag "app" %>
-    <%= javascript_include_tag "vendor/modernizr", :defer => "defer" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <script>
+    var _prum = [['id', '53e9902aabe53dcb0adcf2d9'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+    (function() {
+        var s = document.getElementsByTagName('script')[0]
+          , p = document.createElement('script');
+        p.async = 'async';
+        p.src = '//rum-static.pingdom.net/prum.min.js';
+        s.parentNode.insertBefore(p, s);
+    })();
+    </script>
   </head>
 
   <body>
@@ -49,67 +71,9 @@
 
     <%= partial "footer" %>
 
-        
-    <div id="madmimi-signup-modal" class="reveal-modal" data-reveal>
-
-    <div class="row">
-        <div class="medium-9 columns">
-            <h2>ZURB Foundation is more powerful than you think</h2>
-            <p class="lead">Learn what you have been missing from the guy who wrote the book</p>
-            <p>My name is James Stone and I am the author of ZURB Foundation Blueprints and an overall ZURB Foundation fanatic. </p>
-            <p>If you are looking to take your game to the next level this is one of best kept secrets. I will take you behind the scenes to look at tools, tricks and tips I use on a daily basis.</p>
-            <p>The only way to gain access is to subscribe to my list.</p>
-<div class="panel">
-    
-        <form accept-charset="UTF-8" action="https://madmimi.com/signups/subscribe/115083" id="mad_mimi_signup_form" method="post" target="_blank">
-    
-           <div style="margin:0;padding:0;display:inline">
-              <input name="utf8" type="hidden" value="✓"/>
-              <input name="authenticity_token" type="hidden" value="L+P69BVM0aGjmhkfpWPZjPaEPl9goi38Dkslov2zuE4="/>
-           </div>
-            
-            <div class="row">
-                <div class="medium-1 columns">
-                  <p>NAME</p>
-                    
-                </div>
-                <div class="medium-3 columns mimi_field required">
-                    
-              <input id="signup_name" name="signup[name]" type="text" data-required-field="This field is required"/ style="width:100%;">
-                </div>
-                <div class="medium-1 columns">
-                <p>EMAIL</p>
-                    
-                </div>
-                <div class="medium-3 columns mimi_field required">
-              <input id="signup_email" name="signup[email]" type="text" data-required-field="This field is required" placeholder="you@example.com"/ style="width:100%;">
-                    
-                </div>
-                <div class="medium-4 columns">
-                    
-              <input type="submit" class="submit button-packt-cta" value="Subscribe" id="webform_submit_button" data-default-text="Subscribe" data-submitting-text="Sending..." data-invalid-text="↑ You forgot some required fields" data-choose-list="↑ Choose a list"></input>
-                </div>
-            </div>
-    
-    
-    
-        </form>
-</div>
-
-        </div>
-        <div class="medium-3 columns">
-        <img src="/images/james-new-headshot.jpg" alt="">
-        <img src="/images/zurb-foundation-blueprints/final-mocked-cover.png" alt="">
-        </div>
-    </div>
-
-    
-
-        <a class="close-reveal-modal">&#215;</a>
-    </div> <!-- modal : madmimi-signup-modal -->
-
     <%= javascript_include_tag  "application", :defer => "defer" %>
-    <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/2d65437142d0b1cd14d63f1a5f85061680ff94ad.js" defer></script>
+
+    <script src="//clarity.fm/assets/widget_loader.js" defer></script>
 
   </body>
 </html>

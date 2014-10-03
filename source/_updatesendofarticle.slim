@@ -1,15 +1,11 @@
 .card
-  h3 If you enjoyed this post, sign up for free updates
-  form#mc-embedded-subscribe-form2.custom action="http://jamesjamesjames.us5.list-manage1.com/subscribe/post?u=d4dbc5cdf8&amp;id=30ca2edfef" data-abide="" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-    input#mce-REF name="REF" type="hidden" value="#{current_page.url}"
+  h3 If you enjoyed this post
+  p You might also like my free Getting Started with ZURB Foundation Email Course
+  form.custom action="https://www.getdrip.com/forms/1981075/submissions" data-drip-embedded-form="1696" data-abide="" method="post" target="_blank"
+    input name="fields[signup_url]" type="hidden" value="#{current_page.url}"
     .row.collapse
       .small-8.columns
-        input#mce-EMAIL2.required.email name="EMAIL" placeholder="email" required="" type="email"
-        small.error You must enter your email to recieve updates.
+        input.required.email name="fields[email]" placeholder="Enter your e-mail..." required="" type="email"
+        small.error You must enter your email address.
       .small-4.columns
-        input#mc-embedded-subscribe2.button.postfix.radius name="subscribe" type="submit" value="Get Updates!"
-    #mce-responses.clear
-    #mce-error-response.response style="display:none"
-    #mce-success-response.response style="display:none"
-  /! end email form
-  p.text-center Subscribe now and I will send you my ZURB Foundation Quick Reference for free.
+        input.button.postfix.radius name="subscribe" type="submit" value="Enroll"

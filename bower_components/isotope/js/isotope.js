@@ -1,5 +1,5 @@
 /*!
- * Isotope v2.0.0
+ * Isotope v2.0.1
  * Filter & sort magical layouts
  * http://isotope.metafizzy.co
  */
@@ -549,6 +549,17 @@ function isotopeDefinition( Outlayer, getSize, matchesSelector, Item, LayoutMode
     }
   };
 
+  Isotope.prototype.shuffle = function() {
+    // update random sortData
+    for ( var i=0, len = this.items.length; i < len; i++ ) {
+      var item = this.items[i];
+      item.sortData.random = Math.random();
+    }
+    this.options.sortBy = 'random';
+    this._sort();
+    this._layout();
+  };
+
   /**
    * trigger fn without transition
    * kind of hacky to have this in the first place
@@ -566,6 +577,20 @@ function isotopeDefinition( Outlayer, getSize, matchesSelector, Item, LayoutMode
     // re-enable transition for reveal
     this.options.transitionDuration = transitionDuration;
     return returnValue;
+  };
+
+  // ----- helper methods ----- //
+
+  /**
+   * getter method for getting filtered item elements
+   * @returns {Array} elems - collection of item elements
+   */
+  Isotope.prototype.getFilteredItemElements = function() {
+    var elems = [];
+    for ( var i=0, len = this.filteredItems.length; i < len; i++ ) {
+      elems.push( this.filteredItems[i].element );
+    }
+    return elems;
   };
 
   // -----  ----- //

@@ -6,48 +6,62 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
+    <script>
+    var _rollbarConfig = {
+        accessToken: "d2c05e428ea145a5ad7954092c83833b",
+        captureUncaught: true,
+        payload: {
+            environment: "production"
+        }
+    };
+    !function(a,b){function c(b){this.shimId=++h,this.notifier=null,this.parentShim=b,this.logger=function(){},a.console&&void 0===a.console.shimId&&(this.logger=a.console.log)}function d(b,c,d){!d[4]&&a._rollbarWrappedError&&(d[4]=a._rollbarWrappedError,a._rollbarWrappedError=null),b.uncaughtError.apply(b,d),c&&c.apply(a,d)}function e(b){var d=c;return g(function(){if(this.notifier)return this.notifier[b].apply(this.notifier,arguments);var c=this,e="scope"===b;e&&(c=new d(this));var f=Array.prototype.slice.call(arguments,0),g={shim:c,method:b,args:f,ts:new Date};return a._rollbarShimQueue.push(g),e?c:void 0})}function f(a,b){if(b.hasOwnProperty&&b.hasOwnProperty("addEventListener")){var c=b.addEventListener;b.addEventListener=function(b,d,e){c.call(this,b,a.wrap(d),e)};var d=b.removeEventListener;b.removeEventListener=function(a,b,c){d.call(this,a,b&&b._wrapped?b._wrapped:b,c)}}}function g(a,b){return b=b||this.logger,function(){try{return a.apply(this,arguments)}catch(c){b("Rollbar internal error:",c)}}}var h=0;c.init=function(a,b){var e=b.globalAlias||"Rollbar";if("object"==typeof a[e])return a[e];a._rollbarShimQueue=[],a._rollbarWrappedError=null,b=b||{};var h=new c;return g(function(){if(h.configure(b),b.captureUncaught){var c=a.onerror;a.onerror=function(){var a=Array.prototype.slice.call(arguments,0);d(h,c,a)};var g,i,j="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(g=0;g<j.length;++g)i=j[g],a[i]&&a[i].prototype&&f(h,a[i].prototype)}return a[e]=h,h},h.logger)()},c.prototype.loadFull=function(a,b,c,d){var e=g(function(){var a=b.createElement("script"),e=b.getElementsByTagName("script")[0];a.src=d.rollbarJsUrl,a.async=!c,a.onload=f,e.parentNode.insertBefore(a,e)},this.logger),f=g(function(){if(void 0===a._rollbarPayloadQueue)for(var b,c,d,e,f=new Error("rollbar.js did not load");b=a._rollbarShimQueue.shift();)for(d=b.args,e=0;e<d.length;++e)if(c=d[e],"function"==typeof c){c(f);break}},this.logger);g(function(){c?e():a.addEventListener?a.addEventListener("load",e,!1):a.attachEvent("onload",e)},this.logger)()},c.prototype.wrap=function(b){try{if("function"!=typeof b)return b;if(b._isWrap)return b;if(!b._wrapped){b._wrapped=function(){try{return b.apply(this,arguments)}catch(c){throw a._rollbarWrappedError=c,c}},b._wrapped._isWrap=!0;for(var c in b)b.hasOwnProperty(c)&&(b._wrapped[c]=b[c])}return b._wrapped}catch(d){return b}};for(var i="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError".split(","),j=0;j<i.length;++j)c.prototype[i[j]]=e(i[j]);var k="//d37gvrvc0wt4s1.cloudfront.net/js/v1.1/rollbar.min.js";_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||k;var l=c.init(a,_rollbarConfig);l.loadFull(a,b,!1,_rollbarConfig)}(window,document);
+    </script>
+
     <meta name="google-site-verification" content="9FUywMd926za9lLIK5X7myny7HYoAF48CHemANB8Zu0" />
     <meta name='yandex-verification' content='4d1b71b148f932e6' />
 
     <!-- ****** faviconit.com favicons ****** -->
-    <!-- Basic favicons -->
-    <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64" href="/favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
-    <!-- For Opera Speed Dial -->
-    <link rel="icon" type="image/png" sizes="195x195" href="/favicon-195.png">
-    <!-- For iPad with high-resolution Retina Display running iOS ≥ 7 -->
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
-    <!-- For iPad with high-resolution Retina Display running iOS ≤ 6 -->
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
-    <!-- For iPhone with high-resolution Retina Display running iOS ≥ 7 -->
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
-    <!-- For iPhone with high-resolution Retina Display running iOS ≤ 6 -->
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
-    <!-- For Google TV devices -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/favicon-196.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
-    <!-- For iPad Mini -->
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
     <link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
-    <!-- For first- and second-generation iPad -->
     <link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
-    <!-- For non-Retina iPhone, iPod Touch and Android 2.1+ devices -->
     <link rel="apple-touch-icon" href="favicon-57.png">
-    <!-- Windows 8 Tiles -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="/favicon-144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
     <!-- ****** faviconit.com favicons ****** -->
 
-
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/jamesmanofstone" />
-    <link rel="author" href="https://plus.google.com/+JamesStoneAuthorSpeakerDeveloperMediaArtist/posts"/>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:site" content="@JAMESSTONEco" />
+    <meta property="twitter:creator" content="@JAMESSTONEco" />
+    <meta property="twitter:url" content="<%= "http://www.jamesstone.co#{current_page.url}" %>" />
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/jamesmanofstone" />
+    <link rel="author" href="//plus.google.com/+JamesStoneAuthorSpeakerDeveloperMediaArtist/posts"/>
+
+    <meta property="twitter:title" content="<%= current_page.data.title || "James Stone" %>" />
     <meta property="og:title" content="<%= current_page.data.title || "James Stone" %>" />
-    <meta property="og:url" content="<%= URI.join("http://www.manofstone.com", current_page.url) %>" />
+    <meta property="og:url" content="<%= URI.join("https://www.jamesstone.co", current_page.url) %>" />
     <% unless current_page.data.featured_image.nil? %>
-    <meta property="og:image" content="<%= "http://www.manofstone.com#{asset_url(current_page.data.featured_image)}" %>"/>
+    <meta property="twitter:image" content="<%= "https://www.jamesstone.co#{asset_url(current_page.data.featured_image)}" %>" />
+    <meta property="og:image" content="<%= "https://www.jamesstone.co#{asset_url(current_page.data.featured_image)}" %>"/>
     <% end %>
     <% unless current_page.data.seo_desc.nil? %>
+    <meta property="twitter:description" content="<%= current_page.data.seo_desc %>" />
     <meta property="og:description" content="<%= current_page.data.seo_desc %>">
     <meta name="description" content="<%= current_page.data.seo_desc %>">
     <% else %>
@@ -56,7 +70,18 @@
     <% end %>
     <title><%= current_page.data.title || "James Stone" %></title>
     <%= stylesheet_link_tag "app" %>
-    <%= javascript_include_tag "vendor/modernizr", :defer => "defer" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <script>
+    var _prum = [['id', '53e9902aabe53dcb0adcf2d9'],
+                 ['mark', 'firstbyte', (new Date()).getTime()]];
+    (function() {
+        var s = document.getElementsByTagName('script')[0]
+          , p = document.createElement('script');
+        p.async = 'async';
+        p.src = '//rum-static.pingdom.net/prum.min.js';
+        s.parentNode.insertBefore(p, s);
+    })();
+    </script>
   </head>
 
   <body>
@@ -67,10 +92,10 @@
 
     <%= partial "footer" %>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" defer></script>
-
     <%= javascript_include_tag  "application", :defer => "defer" %>
-    <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/2d65437142d0b1cd14d63f1a5f85061680ff94ad.js" defer></script>
+
+    <script src="//clarity.fm/assets/widget_loader.js" defer></script>
+
 
 
   </body>

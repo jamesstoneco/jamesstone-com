@@ -53,8 +53,8 @@ activate :blog do |blog|
   Time.zone = "Paris"
   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   blog.layout = "blog"
-  blog.taglink = ":tag.html"
-  blog.tag_template = "blog/tag.html"
+  # blog.taglink = ":tag.html"
+  # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "p:num"
 end
@@ -66,8 +66,13 @@ activate :directory_indexes
 page "/feed.xml", :layout => false
 page "/blog/feed.xml", :layout => false
 
+# landing pages below
+
 page "/zurb-foundation-blueprints.html", :layout => "landing"
 page "/zurb-foundation-quick-reference.html", :layout => "landing"
+page "/advanced-zurb-foundation.html", :layout => "landing"
+page "/advanced-zurb-foundation-course.html", :layout => "landing"
+page "/free-zurb-foundation-course.html", :layout => "landing"
 # page "/zurb-foundation-4-blueprints.html", :layout => "landing"
 # page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
 
@@ -85,7 +90,7 @@ set :markdown,  :fenced_code_blocks => true,
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  set :js_compressor, ::Closure::Compiler.new
+  # set :js_compressor, ::Closure::Compiler.new
   # activate :gzip
 
   # activate :asset_hash
@@ -103,13 +108,21 @@ end
 
 
 
-activate :deploy do |deploy|
-  deploy.method = :rsync
-  deploy.host   = ENV['MOS_WWW_HOST']
-  deploy.path   = ENV['MOS_WWW_PATH']
-  # Optional Settings
-  deploy.user  = ENV['MOS_WWW_USER'] # no default
-  deploy.port  = ENV['MOS_WWW_PORT'] # ssh port, default: 22
-  deploy.clean = true # remove orphaned files on remote host, default: false
-  # deploy.flags = "-rltgoDvzO --no-p --del -e" # add custom flags, default: -avze
-end
+# activate :deploy do |deploy|
+#   deploy.method = :rsync
+#   deploy.host   = ENV['MOS_WWW_HOST']
+#   deploy.path   = ENV['MOS_WWW_PATH']
+#   # Optional Settings
+#   deploy.user  = ENV['MOS_WWW_USER'] # no default
+#   deploy.port  = ENV['MOS_WWW_PORT'] # ssh port, default: 22
+#   deploy.clean = true # remove orphaned files on remote host, default: false
+#   # deploy.flags = "-rltgoDvzO --no-p --del -e" # add custom flags, default: -avze
+# end
+
+# activate :bitballoon do |bitballoon|
+#   bitballoon.token = ENV["BB_TOKEN"]
+#   bitballoon.site  = "my-bitballoon-site.bitballoon.com"
+
+#   # Optional: always run a build before deploying
+#   bitballoon.build_before = true
+# end

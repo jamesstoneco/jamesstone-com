@@ -13,7 +13,7 @@ An awesome infographic, a keynote by Luke Wroblewski, AtoZ CSS, a F5 Nav Templat
 
 ## Responsive Web Design Statistics
 
-<a href="http://www.nerdgraph.com/responsive-web-design-statistics/" title="Responsive Web Design Statistics" rel="nofollow"><img width="620" height="1105" src="http://www.nerdgraph.com/wp-content/uploads/infrographic-responsive-mobile-design-statistics-2013-620x1105.jpg" class="attachment-endless-feature-image wp-post-image" alt="infrographic-responsive-mobile-design-statistics-2013" /></a>
+<a href="http://www.nerdgraph.com/responsive-web-design-statistics/" title="Responsive Web Design Statistics" rel="nofollow"><img width="620" height="1105" src="/images/blog/2014/in-form-26/infrographic-responsive-mobile.jpg" class="attachment-endless-feature-image wp-post-image" alt="infrographic-responsive-mobile-design-statistics-2013" /></a>
 
 Echoing some of the things that Luke W is talking about is this fantastic infographic courtesy of nerdgraph.  
 

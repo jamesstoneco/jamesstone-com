@@ -28,7 +28,7 @@
 // require foundation/js/foundation/foundation.joyride
 // require foundation/js/foundation/foundation.magellan
 // require foundation/js/foundation/foundation.offcanvas
-// require foundation/js/foundation/foundation.orbit
+//= require foundation/js/foundation/foundation.orbit
 //= require foundation/js/foundation/foundation.reveal
 // require foundation/js/foundation/foundation.slider
 // require foundation/js/foundation/foundation.tab
@@ -38,6 +38,7 @@
 // require vendor/processing
 // move this to specific pages on blog, load on the fly
 //= require vendor/socialite/socialite
+//= require wookmark-jquery/jquery.wookmark.js
 //= require_directory .
 
 $(document).foundation();
@@ -72,198 +73,29 @@ ga('create', 'UA-19284762-1', 'jamesstone.co');
 ga('send', 'pageview');
 
 
-// madmimi form validation below
+// getdrip below
+var _dcq = _dcq || [];
+var _dcs = _dcs || {}; 
+_dcs.account = '6233478';
 
-// (function() {
-//   var form = document.getElementById('mad_mimi_signup_form'),
-//       submit = document.getElementById('webform_submit_button'),
-//       validEmail = /.+@.+\..+/,
-//       isValid;
+(function() {
+var dc = document.createElement('script');
+dc.type = 'text/javascript'; dc.async = true; 
+dc.src = '//tag.getdrip.com/6233478.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(dc, s);
+})();
 
-//   form.onsubmit = function(event) {
-//     validate();
-//     if(!isValid) {
-//       revalidateOnChange();
-//       return false;
-//     }
-//   };
-
-//   function validate() {
-//     isValid = true;
-//     emailValidation();
-//     fieldAndListValidation();
-//     updateFormAfterValidation();
-//   }
-
-//   function emailValidation() {
-//     var email = document.getElementById('signup_email');
-//     if(!validEmail.test(email.value)) {
-//       textFieldError(email);
-//       isValid = false;
-//     } else {
-//       removeTextFieldError(email);
-//     }
-//   }
-
-//   function fieldAndListValidation() {
-//     var fields = form.querySelectorAll('.mimi_field.required');
-//     for(var i = 0; i < fields.length; ++i) {
-//       var field = fields[i],
-//           type  = fieldType(field);
-//       if(type == 'checkboxes' || type == 'radio_buttons') {
-//         checkboxAndRadioValidation(field);
-//       } else {
-//         textAndDropdownValidation(field, type);
-//       }
-//     }
-//   }
-
-//   function fieldType(field) {
-//     var type = field.querySelectorAll('.field_type');
-//     if(type.length > 0) {
-//       return type[0].getAttribute('data-field-type');
-//     } else if(field.className.indexOf('checkgroup') >= 0) {
-//       return 'checkboxes';
-//     } else {
-//       return 'text_field';
-//     }
-//   }
-
-//   function checkboxAndRadioValidation(field) {
-//     var inputs   = field.getElementsByTagName('input'),
-//         selected = false;
-//     for(var i = 0; i < inputs.length; ++i) {
-//       var input = inputs[i];
-//       if((input.type == 'checkbox' || input.type == 'radio') && input.checked) selected = true;
-//     }
-//     if(selected) {
-//       field.className = field.className.replace(/ invalid/g, '');
-//     } else {
-//       if(field.className.indexOf('invalid') == -1) field.className += ' invalid';
-//       isValid = false;
-//     }
-//   }
-
-//   function textAndDropdownValidation(field, type) {
-//     var inputs = field.getElementsByTagName('input');
-//     for(var i = 0; i < inputs.length; ++i) {
-//       var input = inputs[i];
-//       if(input.name.indexOf('signup') >= 0) {
-//         if(type == 'text_field') {
-//           textValidation(input);
-//         } else {
-//           dropdownValidation(field, input);
-//         }
-//       }
-//     }
-//     htmlEmbedDropdownValidation(field);
-//   }
-
-//   function textValidation(input) {
-//     if(input.id == 'signup_email') return;
-//     var val = input.value;
-//     if(val == '') {
-//       textFieldError(input);
-//       isValid = false;
-//       return;
-//     } else {
-//       removeTextFieldError(input)
-//     }
-//   }
-
-//   function dropdownValidation(field, input) {
-//     var val = input.value;
-//     if(val == '') {
-//       if(field.className.indexOf('invalid') == -1) field.className += ' invalid';
-//       onSelectCallback(input);
-//       isValid = false;
-//       return;
-//     } else {
-//       field.className = field.className.replace(/ invalid/g, '');
-//     }
-//   }
-
-//   function htmlEmbedDropdownValidation(field) {
-//     var dropdowns = field.querySelectorAll('.mimi_html_dropdown');
-//     for(var i = 0; i < dropdowns.length; ++i) {
-//       var dropdown = dropdowns[i],
-//           val      = dropdown.value;
-//       if(val == '') {
-//         if(field.className.indexOf('invalid') == -1) field.className += ' invalid';
-//         isValid = false;
-//         dropdown.onchange = validate;
-//         return;
-//       } else {
-//         field.className = field.className.replace(/ invalid/g, '');
-//       }
-//     }
-//   }
-
-//   function textFieldError(input) {
-//     input.className   = 'required invalid';
-//     input.placeholder = input.getAttribute('data-required-field');
-//   }
-
-//   function removeTextFieldError(input) {
-//     input.className   = 'required';
-//     input.placeholder = '';
-//   }
-
-//   function onSelectCallback(input) {
-//     if(typeof Widget != 'undefined' && Widget.BasicDropdown != undefined) {
-//       var dropdownEl = input.parentNode,
-//           instances  = Widget.BasicDropdown.instances;
-//       for(var i = 0; i < instances.length; ++i) {
-//         var instance = instances[i];
-//         if(instance.wrapperEl == dropdownEl) {
-//           instance.onSelect = validate;
-//         }
-//       }
-//     }
-//   }
-
-//   function updateFormAfterValidation() {
-//     form.className   = setFormClassName();
-//     submit.value     = submitButtonText();
-//     submit.disabled  = !isValid;
-//     submit.className = isValid ? 'submit' : 'disabled';
-//   }
-
-//   function setFormClassName() {
-//     var name = form.className;
-//     if(isValid) {
-//       return name.replace(/\s?mimi_invalid/, '');
-//     } else {
-//       if(name.indexOf('mimi_invalid') == -1) {
-//         return name += ' mimi_invalid';
-//       } else {
-//         return name;
-//       }
-//     }
-//   }
-
-//   function submitButtonText() {
-//     var invalidFields = document.querySelectorAll('.invalid'),
-//         text;
-//     if(isValid || invalidFields == undefined) {
-//       text = submit.getAttribute('data-default-text');
-//     } else {
-//       if(invalidFields.length > 1 || invalidFields[0].className.indexOf('checkgroup') == -1) {
-//         text = submit.getAttribute('data-invalid-text');
-//       } else {
-//         text = submit.getAttribute('data-choose-list');
-//       }
-//     }
-//     return text;
-//   }
-
-//   function revalidateOnChange() {
-//     var fields = form.querySelectorAll(".mimi_field.required");
-//     for(var i = 0; i < fields.length; ++i) {
-//       var inputs = fields[i].getElementsByTagName('input');
-//       for(var j = 0; j < inputs.length; ++j) {
-//         inputs[j].onchange = validate;
-//       }
-//     }
-//   }
-// })();
+// TODO: reflows correctly on resize, but not on open, maybe only issue on reload
+// woorkmark on main pageview
+$(window).ready( function() {
+	$('#reflow-grid li').wookmark({
+	  // Prepare layout options.
+	  itemWidth: 280, // Optional min width of a grid item
+	  autoResize: true, // This will auto-update the layout when the browser window is resized.
+	  container: $('#reflow-grid'), // Optional, used for some extra CSS styling
+	  offset: 20, // Optional, the distance between grid items
+	  outerOffset: 20, // Optional the distance from grid to parent
+  	  flexibleWidth: '100%' // Optional, the maximum width of a grid item
+	});
+});

@@ -1,6 +1,46 @@
 
 
+
+
 <div class="row" style="padding-top:30px;">
+  <div class="medium-4 columns">
+    <div class="card">
+      <h2>Resources</h2>
+        <ul class="no-bullet" style="padding-bottom:1rem;">
+         <li><a href="/resources/getting-started">Getting Started</a></li>
+         <li><a href="//www.youtube.com/user/JamesManOfStone">Screencasts on YouTube</a></li>
+         <li><a href="/zurb-foundation-quick-reference">Quick Reference</a></li>
+         <li><a href="/zurb-foundation-blueprints">Blueprints Book</a></li>
+         <li><a href="//leanpub.com/zurb-foundation-performance-guide">ZURB Performance Guide</a></li>
+         <li><a href="/resources/hosting">Hosting</a></li>
+       </ul>
+
+      <h2 class="hide">Top Articles</h2>
+      <ul class="no-bullet hide">      
+        <% data.widgets.top_articles.each do | article | %>
+          <li><a href="<%= article["url"]%>"><%= article["title"]%></a></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+  <div class="medium-4 columns">
+    <div class="card">
+      <h2>Book 15 Minutes</h2>
+      <p class="text-center">
+        <iframe class="clarity-widget" scrolling="no" style="overflow-y: hidden;overflow-x: hidden;" data-c-id="25579" data-c-width="" frameborder="0"></iframe>
+      </p>
+    </div>
+  </div>
+  <div class="medium-4 columns">
+    <div class="card">
+      <h2>If you made it all the way down here...</h2>
+      <p>you probally want more great stuff. Sign up for my updates and you will be the first to recieve it.</p>
+      <%= partial "emailsignup" %>
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="medium-6 columns">
     <p>Copyright 2009-2014, James Stone, All Rights Reserved.</p>
   </div>
@@ -8,6 +48,7 @@
     <ul class="button-group right">
       <li><a href="/privacy" class="button secondary tiny">Privacy Policy</a></li>
       <li><a href="/tos" class="button secondary tiny">Terms of Service</a></li>
+      <li><a href="/contact" class="button secondary tiny">Contact</a></li>
     </ul>
   </div>
 </div>
