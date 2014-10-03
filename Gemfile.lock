@@ -109,7 +109,7 @@ DEPENDENCIES
   compass (= 0.12.7)
   middleman (~> 3.2.2)
   middleman-blog
-  nokogiri (= 1.2.3)
+  nokogiri (~> 1.2.3)
   puma
   rack-contrib
   redcarpet
