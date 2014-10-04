@@ -64,6 +64,10 @@ activate :directory_indexes
 
 
 page "/feed.xml", :layout => false
+page "/redirects.html.erb", :layout => false
+# page "/_redirects.erb", :layout => false
+# page '_redirects', append_extension: false
+
 page "/blog/feed.xml", :layout => false
 
 # landing pages below
@@ -104,6 +108,15 @@ configure :build do
   #   '//assets.jamesstone.co'.to_s
   # end
 
+end
+
+
+
+after_build do |builder|
+  src = File.join(config[:source],"_redirects")
+  dst = File.join(config[:build_dir],"_redirects")
+  builder.source_paths << File.dirname(__FILE__)
+  builder.copy_file(src,dst)
 end
 
 
