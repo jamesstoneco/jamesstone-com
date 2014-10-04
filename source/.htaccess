@@ -3,7 +3,7 @@ RewriteEngine on
 # handle http ref spam
 RewriteCond %{HTTP_REFERER} semalt\.com [NC]
 RewriteCond %{HTTP_REFERER} semalt.semalt\.com [NC]
-RewriteCond %{REMOTE_HOST} \.semalt\.com$ [NC]
+# RewriteCond %{REMOTE_HOST} \.semalt\.com$ [NC]
 RewriteCond %{HTTP_REFERER} ^([^.]+.)*?semalt.com [NC]
 # additional knows spammers
 RewriteCond %{HTTP_REFERER} ^([^.]+.)*?200please.com [NC]
