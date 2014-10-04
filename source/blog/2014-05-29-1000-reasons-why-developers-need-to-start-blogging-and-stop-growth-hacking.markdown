@@ -5,13 +5,6 @@ time: 3:26 PM CET
 tags: Developers, Marketing, Blog
 featured_image: "/blog/featured-images/imac-user-profile.jpg"
 signup_zurb: "true"
-twitter:
-- card: "summary"
-  title: "Victory of the Daleks"
-  description: "Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?"
-  img_src: "http://placehold.it/250x250"
-  site: "@stevenosloan"
-  creator: "@stevenosloan"
 ---
 
 You may not want to hear this, but **step away from the marketing automation tools** and start offering genuine content that is of use to others.SPLIT\_SUMMARY\_BEFORE\_THIS
