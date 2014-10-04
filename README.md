@@ -1,25 +1,27 @@
-image_optim find **/*.{png,jpg,jpeg,gif}
+# jamesstone.com middleman based site
 
-be middleman build && be middleman s3_sync
+note: this repo auto-deploys to bitballoon. Please work on staging branch and send a PR.
 
-## Building
+Staging deploys to [jamesstone-staging.bitballoon.com](http://jamesstone-staging.bitballoon.com)
+Status: [www.bitballoon.com/sites/jamesstone-staging](https://www.bitballoon.com/sites/jamesstone-staging)
 
-bundle exec middleman build
+Site will automatically redeploy with a `git push origin master` on either branch respectively...
 
-## Staging
+Please do not work directly on master unless instructed to do so.
 
-staging is on a heroku staging remote
+Master deploys to: [jamesstone.com](https://www.jamesstone.com)
+Status: [www.bitballoon.com/sites/jamesstone-com](https://www.bitballoon.com/sites/jamesstone-com)
 
-git push staging name-of-branch-to-push:master
+# YML Tags
 
-### Create Staging Server
+* title: title at top of page, used for name in google search
+* seo\_desc: a short paragraph used for the description for search engines
+* published: false (will not show on site or build)
 
-heroku apps:create host-name-of-staging-server --remote staging
+## Blog Specific YML Tags
 
-## Deployment
-
-bundle exec middleman deploy
-
-you must build it before deploying
-
-bundle exec middleman build
+* date: date published in YYYY/DD/MM format
+* time: time published in 3:57 PM CET format CET = Paris, PST = Pacific
+* tags: currently not used
+* featured\_image: full path to the featured image at the top of the article "/blog/featured-images/multitool.jpg"
+* signup\_zurb: no longer used, please remove
