@@ -50,7 +50,8 @@ activate :blog do |blog|
   # set options on blog
   blog.prefix = "blog"
   blog.permalink = ":title.html"
-  Time.zone = "Paris"
+  # Time.zone = "Paris"
+  Time.zone = "Pacific Time (US & Canada)"
   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   blog.layout = "blog"
   # blog.taglink = ":tag.html"

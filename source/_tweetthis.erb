@@ -1,0 +1,25 @@
+ <% permalink_url = "https://www.jamesstone.com#{current_page.url}".sub(/(\/)+$/,'') %>
+
+<div class="row">
+  <div class="small-12 columns small-centered"><div class="panel callout">
+      
+        
+        <div class="row">
+          <div class="medium-8 columns">
+          <h3>&ldquo;<%= quote %>&rdquo;</h3>
+            <% if defined?(person) %>
+              <% if defined?(twitter_account) %>
+                <p>--<a href="//twitter.com/<%= twitter_account %>"><%= person %></a></p>
+              <% else %>
+                <p>--<%= person %></p>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="medium-4 columns">
+        <%= link_to '<i class="fi-social-twitter"></i> Tweet This', "https://twitter.com/intent/tweet?source=tweetbutton&text=#{quote} #{permalink_url}&via=JAMESSTONEco", :class => "button expand" %></a>
+            
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
