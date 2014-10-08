@@ -27,12 +27,12 @@ Status: [www.bitballoon.com/sites/jamesstone-com](https://www.bitballoon.com/sit
 * signup\_zurb: no longer used, please remove
 * highlights:
 example
-   highlights:
-   - How to expand your reach
-   - The importance of building a platform
-   - Do what you love
-   - Write about everything
-   - Why being authentic wins over automation
+     highlights:
+     - How to expand your reach
+     - The importance of building a platform
+     - Do what you love
+     - Write about everything
+     - Why being authentic wins over automation
 
 
 # erb specific blog items
@@ -41,8 +41,8 @@ note: you must rename the file to .md.erb . this will make it so it no longer re
 
 ## tweetthis
 
-   <%= partial(:tweetthis, :locals => {:quote => "Get out of the building", :person => "Steve Blank", :twitter_account => "sgblank"}) %>
+     <%= partial(:tweetthis, :locals => {:quote => "Get out of the building", :person => "Steve Blank", :twitter_account => "sgblank"}) %>
 
-   <%= partial(:tweetthis, :locals => {:quote => "Some cool tweet", :person => "Steve Blank") %>
+     <%= partial(:tweetthis, :locals => {:quote => "Some cool tweet", :person => "Steve Blank") %>
 
-   <%= partial(:tweetthis, :locals => {:quote => "Some cool tweet") %>
+     <%= partial(:tweetthis, :locals => {:quote => "Some cool tweet") %>
