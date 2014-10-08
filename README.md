@@ -26,7 +26,10 @@ Status: [www.bitballoon.com/sites/jamesstone-com](https://www.bitballoon.com/sit
 * featured\_image: full path to the featured image at the top of the article "/blog/featured-images/multitool.jpg"
 * signup\_zurb: no longer used, please remove
 * highlights:
-example
+
+example:
+
+
      highlights:
      - How to expand your reach
      - The importance of building a platform
