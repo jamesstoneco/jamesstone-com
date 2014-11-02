@@ -126,7 +126,7 @@ $h6-font-size: 1rem;
 // @import "lazyYT.css";
 
 
-@import "compass/css3/box-shadow";
+// @import "compass/css3/box-shadow";
 
 
 
@@ -590,7 +590,8 @@ $card-padding: 15px;
 .card {
   @include panel(#fff, 0px, false);
   border-style: none;
-  @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
+  // TODO: refactor in to straight css, no prefixes
+  // @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
   h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child {
     padding-top: $card-padding;
   }
@@ -610,7 +611,8 @@ $card-padding: 15px;
 .card-landing {
   @include panel(#fff, 0px, false);
   border-style: none;
-  @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
+  // TODO: refactor in to straight css, no prefixes
+  // @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
   // h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child {
   //   padding-top: $card-padding;
   // }

@@ -61,6 +61,13 @@ activate :blog do |blog|
   blog.page_link = "p:num"
 end
 
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 9']
+  # config.cascade  = false
+  # config.inline   = true
+  # config.ignore   = ['hacks.css']
+end
+
 # pretty urls, as directories, this must run after the blog block
 activate :directory_indexes
 

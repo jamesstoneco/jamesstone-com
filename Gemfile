@@ -29,6 +29,7 @@ gem "puma"
 gem "builder"
 gem "redcarpet"
 gem "middleman-blog"
+gem "middleman-autoprefixer"
 # gem 'nokogiri', "~>1.2.3"
 gem "slim"
 
