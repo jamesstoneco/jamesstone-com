@@ -89,7 +89,7 @@ s.parentNode.insertBefore(dc, s);
 
 // TODO: reflows correctly on resize, but not on open, maybe only issue on reload
 // woorkmark on main pageview
-$(window).ready( function() {
+/*$(window).ready( function() {
 	$('#reflow-grid li').wookmark({
 	  // Prepare layout options.
 	  itemWidth: 280, // Optional min width of a grid item
@@ -100,5 +100,5 @@ $(window).ready( function() {
   	  flexibleWidth: '100%' // Optional, the maximum width of a grid item
 	});
 });
-
+*/
 $('.lazyYT').lazyYT();
