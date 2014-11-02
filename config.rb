@@ -42,6 +42,7 @@ set :images_dir, 'images'
 
 # bourbon_path = Gem::Specification.find_by_name('bourbon').gem_dir
 set :js_assets_paths, [File.join(root, 'bower_components')]
+# set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss', 'bower_compononents/lazyYT')]
 set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
 
 

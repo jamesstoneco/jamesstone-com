@@ -278,7 +278,7 @@
   window.Foundation = {
     name : 'Foundation',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     media_queries : {
       small : S('.foundation-mq-small').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
@@ -630,12 +630,13 @@
   Foundation.libs.abide = {
     name : 'abide',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       live_validate : true,
       focus_on_invalid : true,
       error_labels: true, // labels with a for="inputId" will recieve an `error` class
+      error_class: 'error',
       timeout : 1000,
       patterns : {
         alpha: /^[a-zA-Z]+$/,
@@ -648,7 +649,7 @@
         cvv : /^([0-9]){3,4}$/,
 
         // http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#valid-e-mail-address
-        email : /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+        email : /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/,
 
         url: /^(https?|ftp|file|ssh):\/\/(((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/,
         // abc.de
@@ -662,6 +663,8 @@
         dateISO: /^\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2}$/,
         // MM/DD/YYYY
         month_day_year : /^(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.]\d{4}$/,
+        // DD/MM/YYYY
+        day_month_year : /^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.]\d{4}$/,
 
         // #FFF or #FFFFFF
         color: /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
@@ -717,7 +720,7 @@
     reset : function (form) {
       form.removeAttr(this.invalid_attr);
       $(this.invalid_attr, form).removeAttr(this.invalid_attr);
-      $('.error', form).not('small').removeClass('error');
+      $('.' + this.settings.error_class, form).not('small').removeClass(this.settings.error_class);
     },
 
     validate : function (els, e, is_ajax) {
@@ -793,7 +796,8 @@
             is_radio = el.type === "radio",
             is_checkbox = el.type === "checkbox",
             label = this.S('label[for="' + el.getAttribute('id') + '"]'),
-            valid_length = (required) ? (el.value.length > 0) : true;
+            valid_length = (required) ? (el.value.length > 0) : true,
+            el_validations = [];
 
         var parent, valid;
 
@@ -808,31 +812,31 @@
 
         if (validator) {
           valid = this.settings.validators[validator].apply(this, [el, required, parent]);
-          validations.push(valid);
+          el_validations.push(valid);
         }
 
         if (is_radio && required) {
-          validations.push(this.valid_radio(el, required));
+          el_validations.push(this.valid_radio(el, required));
         } else if (is_checkbox && required) {
-          validations.push(this.valid_checkbox(el, required));
+          el_validations.push(this.valid_checkbox(el, required));
         } else {
-          
+
           if (el_patterns[i][1].test(value) && valid_length ||
             !required && el.value.length < 1 || $(el).attr('disabled')) {
-            validations.push(true);
+            el_validations.push(true);
           } else {
-            validations.push(false);
+            el_validations.push(false);
           }
 
-          validations = [validations.every(function(valid){return valid;})];
+          el_validations = [el_validations.every(function(valid){return valid;})];
 
-          if(validations[0]){
+          if(el_validations[0]){
             this.S(el).removeAttr(this.invalid_attr);
             el.setAttribute('aria-invalid', 'false');
             el.removeAttribute('aria-describedby');
-            parent.removeClass('error');
+            parent.removeClass(this.settings.error_class);
             if (label.length > 0 && this.settings.error_labels) {
-              label.removeClass('error').removeAttr('role');
+              label.removeClass(this.settings.error_class).removeAttr('role');
             }
             $(el).triggerHandler('valid');
           } else {
@@ -840,21 +844,21 @@
             el.setAttribute('aria-invalid', 'true');
 
             // Try to find the error associated with the input
-            var errorElem = parent.find('small.error, span.error');
+            var errorElem = parent.find('small.'+this.settings.error_class, 'span.'+this.settings.error_class);
             var errorID = errorElem.length > 0 ? errorElem[0].id : "";
             if (errorID.length > 0) el.setAttribute('aria-describedby', errorID);
 
             // el.setAttribute('aria-describedby', $(el).find('.error')[0].id);
-            parent.addClass('error');
+            parent.addClass(this.settings.error_class);
             if (label.length > 0 && this.settings.error_labels) {
-              label.addClass('error').attr('role', 'alert');
+              label.addClass(this.settings.error_class).attr('role', 'alert');
             }
             $(el).triggerHandler('invalid');
           }
-
         }
+        validations.push(el_validations[0]);
       }
-
+      validations = [validations.every(function(valid){return valid;})];
       return validations;
     },
 
@@ -863,9 +867,9 @@
           valid = (el.is(':checked') || !required);
 
       if (valid) {
-        el.removeAttr(this.invalid_attr).parent().removeClass('error');
+        el.removeAttr(this.invalid_attr).parent().removeClass(this.settings.error_class);
       } else {
-        el.attr(this.invalid_attr, '').parent().addClass('error');
+        el.attr(this.invalid_attr, '').parent().addClass(this.settings.error_class);
       }
 
       return valid;
@@ -885,9 +889,9 @@
       // Has to count up to make sure the focus gets applied to the top error
       for (var i=0; i < count; i++) {
         if (valid) {
-          this.S(group[i]).removeAttr(this.invalid_attr).parent().removeClass('error');
+          this.S(group[i]).removeAttr(this.invalid_attr).parent().removeClass(this.settings.error_class);
         } else {
-          this.S(group[i]).attr(this.invalid_attr, '').parent().addClass('error');
+          this.S(group[i]).attr(this.invalid_attr, '').parent().addClass(this.settings.error_class);
         }
       }
 
@@ -901,10 +905,12 @@
 
       if (valid) {
         this.S(el).removeAttr(this.invalid_attr);
-        parent.removeClass('error');
+        parent.removeClass(this.settings.error_class);
+        if (label.length > 0 && settings.error_labels) label.removeClass(this.settings.error_class);
       } else {
         this.S(el).attr(this.invalid_attr, '');
-        parent.addClass('error');
+        parent.addClass(this.settings.error_class);
+        if (label.length > 0 && settings.error_labels) label.addClass(this.settings.error_class);
       }
 
       return valid;
@@ -916,9 +922,9 @@
         valid = others.filter(':checked').length > 0;
 
       if (valid) {
-        el.removeAttr(this.invalid_attr).parent().removeClass('error');
+        el.removeAttr(this.invalid_attr).parent().removeClass(this.settings.error_class);
       } else {
-        el.attr(this.invalid_attr, '').parent().addClass('error');
+        el.attr(this.invalid_attr, '').parent().addClass(this.settings.error_class);
       }
 
       if (!doNotValidateOthers) {
@@ -939,9 +945,10 @@
   Foundation.libs.accordion = {
     name : 'accordion',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
+      content_class: 'content',
       active_class: 'active',
       multi_expand: false,
       toggleable: true,
@@ -963,12 +970,12 @@
             settings = accordion.data(self.attr_name(true) + '-init'),
             target = S('#' + this.href.split('#')[1]),
             aunts = $('> dd', accordion),
-            siblings = aunts.children('.content'),
+            siblings = aunts.children('.'+settings.content_class),
             active_content = siblings.filter('.' + settings.active_class);
         e.preventDefault();
 
         if (accordion.attr(self.attr_name())) {
-          siblings = siblings.add('[' + groupSelector + '] dd > .content');
+          siblings = siblings.add('[' + groupSelector + '] dd > .'+settings.content_class);
           aunts = aunts.add('[' + groupSelector + '] dd');
         }
 
@@ -1005,7 +1012,7 @@
   Foundation.libs.alert = {
     name : 'alert',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       callback: function (){}
@@ -1049,7 +1056,7 @@
   Foundation.libs.clearing = {
     name : 'clearing',
 
-    version: '5.4.2',
+    version: '5.4.7',
 
     settings : {
       templates : {
@@ -1608,10 +1615,12 @@
   Foundation.libs.dropdown = {
     name : 'dropdown',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       active_class: 'open',
+      disabled_class: 'disabled',
+      mega_class: 'mega',
       align: 'bottom',
       is_hover: false,
       opened: function(){},
@@ -1653,11 +1662,11 @@
           }
 
           var settings = target.data(self.attr_name(true) + '-init') || self.settings;
-          
+
           if(S(e.target).data(self.data_attr()) && settings.is_hover) {
             self.closeall.call(self);
           }
-          
+
           if (settings.is_hover) self.open.apply(self, [dropdown, target]);
         })
         .on('mouseleave.fndtn.dropdown', '[' + this.attr_name() + '], [' + this.attr_name() + '-content]', function (e) {
@@ -1667,7 +1676,7 @@
               var settings = $this.data(self.data_attr(true) + '-init') || self.settings;
               if (settings.is_hover) self.close.call(self, S('#' + $this.data(self.data_attr())));
             } else {
-              var target = S('[' + self.attr_name() + '="' + S(this).attr('id') + '"]'),
+              var target   = S('[' + self.attr_name() + '="' + S(this).attr('id') + '"]'),
                   settings = target.data(self.attr_name(true) + '-init') || self.settings;
               if (settings.is_hover) self.close.call(self, $this);
             }
@@ -1679,8 +1688,8 @@
           if (S(e.target).closest('[' + self.attr_name() + ']').length > 0) {
             return;
           }
-          if (!(S(e.target).data('revealId')) && 
-            (parent.length > 0 && (S(e.target).is('[' + self.attr_name() + '-content]') || 
+          if (!(S(e.target).data('revealId')) &&
+            (parent.length > 0 && (S(e.target).is('[' + self.attr_name() + '-content]') ||
               $.contains(parent.first()[0], e.target)))) {
             e.stopPropagation();
             return;
@@ -1726,7 +1735,7 @@
     closeall: function() {
       var self = this;
       $.each(self.S('[' + this.attr_name() + '-content]'), function() {
-        self.close.call(self, self.S(this))
+        self.close.call(self, self.S(this));
       });
     },
 
@@ -1737,7 +1746,7 @@
         dropdown.prev('[' + this.attr_name() + ']').addClass(this.settings.active_class);
         dropdown.data('target', target.get(0)).trigger('opened').trigger('opened.fndtn.dropdown', [dropdown, target]);
         dropdown.attr('aria-hidden', 'false');
-        target.attr('aria-expanded', 'true')
+        target.attr('aria-expanded', 'true');
         dropdown.focus();
     },
 
@@ -1750,6 +1759,9 @@
     },
 
     toggle : function (target) {
+      if (target.hasClass(this.settings.disabled_class)) {
+        return;
+      }
       var dropdown = this.S('#' + target.data(this.data_attr()));
       if (dropdown.length === 0) {
         // No dropdown found, not continuing
@@ -1777,12 +1789,13 @@
     },
 
     css : function (dropdown, target) {
-      var left_offset = Math.max((target.width() - dropdown.width()) / 2, 8);
-      
+      var left_offset = Math.max((target.width() - dropdown.width()) / 2, 8),
+          settings = target.data(this.attr_name(true) + '-init') || this.settings;
+
       this.clear_idx();
 
       if (this.small()) {
-        var p = this.dirs.bottom.call(dropdown, target);
+        var p = this.dirs.bottom.call(dropdown, target, settings);
 
         dropdown.attr('style', '').removeClass('drop-left drop-right drop-top').css({
           position : 'absolute',
@@ -1793,7 +1806,6 @@
 
         dropdown.css(Foundation.rtl ? 'right':'left', left_offset);
       } else {
-        var settings = target.data(this.attr_name(true) + '-init') || this.settings;
 
         this.style(dropdown, target, settings);
       }
@@ -1802,7 +1814,7 @@
     },
 
     style : function (dropdown, target, settings) {
-      var css = $.extend({position: 'absolute'}, 
+      var css = $.extend({position: 'absolute'},
         this.dirs[settings.align].call(dropdown, target, settings));
 
       dropdown.attr('style', '').css(css);
@@ -1824,29 +1836,27 @@
       },
       top: function (t, s) {
         var self = Foundation.libs.dropdown,
-            p = self.dirs._base.call(this, t),
-            pip_offset_base = 8;
+            p = self.dirs._base.call(this, t);
 
         this.addClass('drop-top');
 
-        if (t.outerWidth() < this.outerWidth() || self.small()) {
-          self.adjust_pip(pip_offset_base, p);
+        if (t.outerWidth() < this.outerWidth() || self.small() || this.hasClass(s.mega_menu)) {
+          self.adjust_pip(this,t,s,p);
         }
 
         if (Foundation.rtl) {
-          return {left: p.left - this.outerWidth() + t.outerWidth(), 
+          return {left: p.left - this.outerWidth() + t.outerWidth(),
             top: p.top - this.outerHeight()};
         }
 
         return {left: p.left, top: p.top - this.outerHeight()};
       },
-      bottom: function (t, s) {
+      bottom: function (t,s) {
         var self = Foundation.libs.dropdown,
-            p = self.dirs._base.call(this, t),
-            pip_offset_base = 8;
+            p = self.dirs._base.call(this, t);
 
-        if (t.outerWidth() < this.outerWidth() || self.small()) {
-          self.adjust_pip(pip_offset_base, p);
+        if (t.outerWidth() < this.outerWidth() || self.small() || this.hasClass(s.mega_menu)) {
+          self.adjust_pip(this,t,s,p);
         }
 
         if (self.rtl) {
@@ -1872,11 +1882,15 @@
     },
 
     // Insert rule to style psuedo elements
-    adjust_pip : function (pip_offset_base, p) {
-      var sheet = Foundation.stylesheet;
+    adjust_pip : function (dropdown,target,settings,position) {
+      var sheet = Foundation.stylesheet,
+          pip_offset_base = 8;
 
-      if (this.small()) {
-        pip_offset_base += p.left - 8;
+      if (dropdown.hasClass(settings.mega_class)) {
+        pip_offset_base = position.left + (target.outerWidth()/2) - 8;
+      }
+      else if (this.small()) {
+        pip_offset_base += position.left - 8;
       }
 
       this.rule_idx = sheet.cssRules.length;
@@ -1899,7 +1913,7 @@
     clear_idx : function () {
       var sheet = Foundation.stylesheet;
 
-      if (this.rule_idx) {
+      if (typeof this.rule_idx !== 'undefined') {
         sheet.deleteRule(this.rule_idx);
         sheet.deleteRule(this.rule_idx);
         delete this.rule_idx;
@@ -1928,7 +1942,7 @@
   Foundation.libs.equalizer = {
     name : 'equalizer',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       use_tallest: true,
@@ -2003,7 +2017,7 @@
   Foundation.libs.interchange = {
     name : 'interchange',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     cache : {},
 
@@ -2350,7 +2364,7 @@
   Foundation.libs.joyride = {
     name : 'joyride',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     defaults : {
       expose                   : false,     // turn on or off the expose feature
@@ -2455,8 +2469,10 @@
           this.end(this.settings.abort_on_close);
         }.bind(this))
 
-        .on("keyup.joyride", function(e) {
-          if (!this.settings.keyboard) return;
+        .on("keyup.fndtn.joyride", function(e) {
+          // Don't do anything if keystrokes are disabled
+          // or if the joyride is not being shown
+          if (!this.settings.keyboard || !this.settings.riding) return;
 
           switch (e.which) {
             case 39: // right arrow
@@ -2720,7 +2736,7 @@
         // skip non-existant targets
         } else if (this.settings.$li && this.settings.$target.length < 1) {
 
-          this.show();
+          this.show(init, is_prev);
 
         } else {
 
@@ -3264,7 +3280,7 @@
   Foundation.libs['magellan-expedition'] = {
     name : 'magellan-expedition',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       active_class: 'active',
@@ -3272,7 +3288,7 @@
       destination_threshold: 20, // pixels from the top of destination for it to be considered active
       throttle_delay: 30, // calculation throttling to increase framerate
       fixed_top: 0 // top distance in pixels assigend to the fixed element on scroll
-    }, 
+    },
 
     init : function (scope, method, options) {
       Foundation.inherit(this, 'throttle');
@@ -3295,10 +3311,10 @@
               settings = expedition.data('magellan-expedition-init'),
               hash = this.hash.split('#').join(''),
               target = $("a[name='"+hash+"']");
-          
+
           if (target.length === 0) {
             target = $('#'+hash);
-            
+
           }
 
 
@@ -3318,7 +3334,7 @@
           });
         })
         .on('scroll.fndtn.magellan', self.throttle(this.check_for_arrivals.bind(this), settings.throttle_delay));
-      
+
       $(window)
         .on('resize.fndtn.magellan', self.throttle(this.set_expedition_position.bind(this), settings.throttle_delay));
     },
@@ -3454,7 +3470,7 @@
   Foundation.libs.offcanvas = {
     name : 'offcanvas',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       open_method: 'move',
@@ -4005,7 +4021,7 @@
   Foundation.libs.orbit = {
     name: 'orbit',
 
-    version: '5.4.2',
+    version: '5.4.7',
 
     settings: {
       animation: 'slide',
@@ -4080,7 +4096,7 @@
   Foundation.libs.reveal = {
     name : 'reveal',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     locked : false,
 
@@ -4147,7 +4163,7 @@
           e.preventDefault();
 
           if (!self.locked) {
-            var settings = S('[' + self.attr_name() + '].open').data(self.attr_name(true) + '-init'),
+            var settings = S('[' + self.attr_name() + '].open').data(self.attr_name(true) + '-init') || self.settings,
                 bg_clicked = S(e.target)[0] === S('.' + settings.bg_class)[0];
 
             if (bg_clicked) {
@@ -4286,6 +4302,7 @@
           $.ajax(ajax_settings);
         }
       }
+      self.S(window).trigger('resize');
     },
 
     close : function (modal) {
@@ -4524,7 +4541,7 @@
   Foundation.libs.slider = {
     name : 'slider',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings: {
       start: 0,
@@ -4656,8 +4673,7 @@
       }
       $handle.attr('aria-valuenow', value);
 
-
-      if (settings.input_id != '') {
+      if (settings.display_selector != '') {
         $(settings.display_selector).each(function(){
           if (this.hasOwnProperty('value')) {
             $(this).val(value);
@@ -4765,7 +4781,7 @@
   Foundation.libs.tab = {
     name : 'tab',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       active_class: 'active',
@@ -4820,17 +4836,11 @@
       S(window).on('hashchange.fndtn.tab', function (e) {
         e.preventDefault();
         self.handle_location_hash_change();
-
-      }).on('keyup', function (e) {
-        if (e.keyword == 9) {
-          // active tab
-          console.log(document.querySelector('[data-tab] .tab-title :focus'))
-        }
-      });
-      ;
+      });
     },
 
     handle_location_hash_change : function () {
+
       var self = this,
           S = this.S;
 
@@ -4838,12 +4848,18 @@
         var settings = S(this).data(self.attr_name(true) + '-init');
         if (settings.deep_linking) {
           // Match the location hash to a label
-          var hash = self.scope.location.hash;
+          var hash;
+          if (settings.scroll_to_content) {
+            hash = self.scope.location.hash;
+          } else {
+            // prefix the hash to prevent anchor scrolling
+            hash = self.scope.location.hash.replace('fndtn-', '');
+          }
           if (hash != '') {
             // Check whether the location hash references a tab content div or
             // another element on the page (inside or outside the tab content div)
             var hash_element = S(hash);
-            if (hash_element.hasClass('content') && hash_element.parent().hasClass('tab-content')) {
+            if (hash_element.hasClass('content') && hash_element.parent().hasClass('tabs-content')) {
               // Tab content div
               self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=' + hash + ']').parent());
             } else {
@@ -4856,7 +4872,7 @@
             }
           } else {
             // Reference the default tab hashes which were initialized in the init function
-            for (var ind in self.default_tab_hashes) {
+            for (var ind = 0; ind < self.default_tab_hashes.length; ind++) {
               self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=' + self.default_tab_hashes[ind] + ']').parent());
             }
           }
@@ -4874,7 +4890,7 @@
           siblings = tab.siblings(),
           settings = tabs.data(this.attr_name(true) + '-init'),
           interpret_keyup_action = function(e) {
-            // Light modification of Heydon Pickering's Practical ARIA Examples: http://heydonworks.com/practical_aria_examples/js/a11y.js 
+            // Light modification of Heydon Pickering's Practical ARIA Examples: http://heydonworks.com/practical_aria_examples/js/a11y.js
 
             // define current, previous and next (possible) tabs
 
@@ -4927,34 +4943,21 @@
       }
 
       if (settings.deep_linking) {
-        // Get the scroll Y position prior to moving to the hash ID
-        var cur_ypos = $('body,html').scrollTop();
-
-        // Update the location hash to preserve browser history
-        // Note that the hash does not need to correspond to the
-        // tab content ID anchor; it can be an ID inside or outside of the tab
-        // content div.
-        if (location_hash != undefined) {
-          window.location.hash = location_hash;
-        } else {
-          window.location.hash = target_hash;
-        }
 
         if (settings.scroll_to_content) {
-          // If the user is requesting the content of a tab, then scroll to the
-          // top of the title area; otherwise, scroll to the element within
-          // the content area as defined by the hash value.
+          // retain current hash to scroll to content
+          window.location.hash = location_hash || target_hash;
           if (location_hash == undefined || location_hash == target_hash) {
             tab.parent()[0].scrollIntoView();
           } else {
             S(target_hash)[0].scrollIntoView();
           }
         } else {
-          // Adjust the scrollbar to the Y position prior to setting the hash
-          // Only do this for the tab content anchor, otherwise there will be
-          // conflicts with in-tab anchor links nested in the tab-content div
-          if (location_hash == undefined || location_hash == target_hash) {
-            $('body,html').scrollTop(cur_ypos);
+          // prefix the hashes so that the browser doesn't scroll down
+          if (location_hash != undefined) {
+            window.location.hash = 'fndtn-' + location_hash.replace('#', '');
+          } else {
+            window.location.hash = 'fndtn-' + target_hash.replace('#', '');
           }
         }
       }
@@ -4967,13 +4970,13 @@
       tab_link.attr({"aria-selected": "true",  tabindex: 0});
       siblings.removeClass(settings.active_class)
       siblings.find('a').attr({"aria-selected": "false",  tabindex: -1});
-      target.siblings().removeClass(settings.active_class).attr({"aria-hidden": "true",  tabindex: -1}).end().addClass(settings.active_class).attr('aria-hidden', 'false').find(':first-child').attr('tabindex', 0);
+      target.siblings().removeClass(settings.active_class).attr({"aria-hidden": "true",  tabindex: -1});
+      target.addClass(settings.active_class).attr('aria-hidden', 'false').removeAttr("tabindex");
       settings.callback(tab);
-      target.children().attr('tab-index', 0);
       target.triggerHandler('toggled', [tab]);
       tabs.triggerHandler('toggled', [target]);
 
-      tab_link.on('keydown', interpret_keyup_action );
+      tab_link.off('keydown').on('keydown', interpret_keyup_action );
     },
 
     data_attr: function (str) {
@@ -4996,7 +4999,7 @@
   Foundation.libs.tooltip = {
     name : 'tooltip',
 
-    version : '5.4.2',
+    version : '5.4.7',
 
     settings : {
       additional_inheritable_classes : [],
@@ -5297,7 +5300,7 @@
   Foundation.libs.topbar = {
     name : 'topbar',
 
-    version: '5.4.2',
+    version: '5.4.7',
 
     settings : {
       index : 0,

@@ -39,6 +39,7 @@
 // move this to specific pages on blog, load on the fly
 //= require vendor/socialite/socialite
 //= require wookmark-jquery/jquery.wookmark.js
+//= require lazyYT/lazyYT
 //= require_directory .
 
 $(document).foundation();
@@ -99,3 +100,5 @@ $(window).ready( function() {
   	  flexibleWidth: '100%' // Optional, the maximum width of a grid item
 	});
 });
+
+$('.lazyYT').lazyYT();

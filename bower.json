@@ -4,6 +4,7 @@
   "private": "true",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
-    "wookmark-jquery": "~1.4.8"
+    "wookmark-jquery": "~1.4.8",
+    "lazyYT": "git@github.com:tylerpearson/lazyYT.git#~0.3.4"
   }
 }
