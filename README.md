@@ -25,3 +25,27 @@ Status: [www.bitballoon.com/sites/jamesstone-com](https://www.bitballoon.com/sit
 * tags: currently not used
 * featured\_image: full path to the featured image at the top of the article "/blog/featured-images/multitool.jpg"
 * signup\_zurb: no longer used, please remove
+* highlights:
+
+example:
+
+
+     highlights:
+     - How to expand your reach
+     - The importance of building a platform
+     - Do what you love
+     - Write about everything
+     - Why being authentic wins over automation
+
+
+# erb specific blog items
+
+note: you must rename the file to .md.erb . this will make it so it no longer renders nicely in prose.io. place it with at least one line above and below with blank space.
+
+## tweetthis
+
+     <%= partial(:tweetthis, :locals => {:quote => "Get out of the building", :person => "Steve Blank", :twitter_account => "sgblank"}) %>
+
+     <%= partial(:tweetthis, :locals => {:quote => "Some cool tweet", :person => "Steve Blank") %>
+
+     <%= partial(:tweetthis, :locals => {:quote => "Some cool tweet") %>
