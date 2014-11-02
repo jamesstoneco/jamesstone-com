@@ -125,7 +125,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   closure-compiler
-  compass
+  compass (= 1.0.1)
   middleman (~> 3.2.2)
   middleman-autoprefixer
   middleman-blog
@@ -133,5 +133,5 @@ DEPENDENCIES
   rack-contrib
   redcarpet
   sanitize
-  sass
+  sass (= 3.4.7)
   slim

@@ -10,8 +10,8 @@ source 'http://rubygems.org'
 # use this one => 
 # gem "compass", "0.12.7"
 # gem "sass", "3.2.19"
-gem "compass"
-gem "sass"
+gem "compass", "1.0.1"
+gem "sass", "3.4.7"
 
 
 gem "middleman", "~>3.2.2"
