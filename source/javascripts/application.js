@@ -55,50 +55,26 @@ $(".card.article, .card.product, .sidebar-test").hover(function () {
 }, function () {
 	window.status = "";
 });
-$(".front").click(function(){
-	$( "div.flip-container" ).toggleClass( "flip" )
-});
 
 
-Socialite.load("blog-social");
-hljs.initHighlightingOnLoad();
+// $(".front").click(function(){
+// 	$( "div.flip-container" ).toggleClass( "flip" )
+// });
+
+
 
 // ga code below
 
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+// })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-19284762-1', 'jamesstone.co');
-ga('send', 'pageview');
+// ga('create', 'UA-19284762-1', 'jamesstone.co');
+// ga('send', 'pageview');
 
 
-// getdrip below
-var _dcq = _dcq || [];
-var _dcs = _dcs || {}; 
-_dcs.account = '6233478';
-
-(function() {
-var dc = document.createElement('script');
-dc.type = 'text/javascript'; dc.async = true; 
-dc.src = '//tag.getdrip.com/6233478.js';
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(dc, s);
-})();
-
-// TODO: reflows correctly on resize, but not on open, maybe only issue on reload
-// woorkmark on main pageview
-/*$(window).ready( function() {
-	$('#reflow-grid li').wookmark({
-	  // Prepare layout options.
-	  itemWidth: 280, // Optional min width of a grid item
-	  autoResize: true, // This will auto-update the layout when the browser window is resized.
-	  container: $('#reflow-grid'), // Optional, used for some extra CSS styling
-	  offset: 20, // Optional, the distance between grid items
-	  outerOffset: 20, // Optional the distance from grid to parent
-  	  flexibleWidth: '100%' // Optional, the maximum width of a grid item
-	});
-});
-*/
 $('.lazyYT').lazyYT();
+
+Socialite.load("blog-social");
+hljs.initHighlightingOnLoad();
