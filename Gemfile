@@ -4,14 +4,14 @@ source 'http://rubygems.org'
 
 # ruby "2.0.0" # commented out for bb build
 
-#gem "compass", "1.0.1"
-# gem "sass", "3.3.14"
+gem "compass", "1.0.1"
+gem "sass", "3.3.14"
 
 # use this one => 
-# gem "compass", "0.12.7"
-# gem "sass", "3.2.19"
-gem "compass", "1.0.1"
-gem "sass", "3.4.7"
+
+
+# gem "compass", "1.0.1"
+# gem "sass", "3.4.7"
 
 
 gem "middleman", "~>3.2.2"
