@@ -1,0 +1,53 @@
+---
+title: Why performance is not a four letter word
+date: 2014/11/14
+time: 10:30 AM PST
+tags: Developers, Performance
+featured_image: "/blog/featured-images/performance.svg"
+featured_image_wide: "/blog/featured-images/performance-wide.svg"
+highlights: 
+ - How my site got slow
+ - What are the stats, how slow
+ - Widgets and Embeds were the enemy
+ - The final results
+---
+
+On launch performance is critical. But, over time, all sites tend to get bloated, even this one. The question is, what do you do when it happens?
+
+SPLIT\_SUMMARY\_BEFORE\_THIS
+
+
+It can be quite difficult sometimes to get buy in on pushing the performance of the site. Sure there are great statistics that show that faster load times increase conversions and SEO rankings but often people don’t want to invest the time into tuning their site or app for performance.
+
+As a developer I am always interested to see what is going on under the hood. When a see a new site I often open up Chrome Dev Tools to see how it was built. Often my next step is to check out the performance using one of my favorite tools, tools.pingdom.com. The reality here is I am often comparing to my own site and seeing how I stack up.
+
+So what happens when your once screaming fast site starts to get slower and slower. Well, in my case, I am hosting with BitBalloon. BitBalloon is an amazingly fast CDN based hosting solution for statically generated sites such as this one. I use Middleman to build my blog in a private GitHub repo and can push my changes up with a simple git push origin master.
+
+With my hosting being top shelf that really only leaves myself to blame. Lets take a look at what was happening historically.
+
+## Historical Load Time
+
+![Pingdom Tools Report of Historical Page Load Time](../../images/blog/2014/performance/jamesstone-page-load-time.jpg)
+
+Lower is better. Notice that the site was now taking nearly 3 times as long to load.
+
+## Historical Page Size vs. Number of Connections
+
+![Pingdom Tools Report of Historical Page Size vs. Number of Connections](../../images/blog/2014/performance/jamesstone-page-size-requests.jpg)
+
+Lower is better in both cases. You will see there seems to be a direct correlation between the number of connections and the size of the site. The site historically has gotten larger in size and has increased the number of connections.
+
+
+
+## Before
+
+![](../../images/blog/2014/performance/jamesstone-current-overview.jpg)
+
+## After
+
+![](../../images/blog/2014/performance/jamesstone-staging-overview.jpg)
+
+
+
+
+
