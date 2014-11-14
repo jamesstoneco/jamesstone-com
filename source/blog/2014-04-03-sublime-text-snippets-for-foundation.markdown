@@ -15,6 +15,7 @@ Thats why I am glad that I came across the ZURB Foundation snippets. They are a 
 
 I am not sure if these are official or not because they are not in the package manager yet, but I came across them in the official ZURB GitHub. So, if you know how to install Sublime Text plugins manually, [jump over to the repo and go crazy](https://github.com/zurb/foundation-5-sublime-snippets). For those that want a short demo with step-by-step instructions on how to get started, check out the screencast below.
 
-<div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/uxpfzE5CNvk?rel=0" frameborder="0" allowfullscreen></iframe></div>
+
+<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="uxpfzE5CNvk" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
 
 So are you a daily ZURB Foundation user? Do you love Sublime Text? Have you used or plan on using these snippets in your workflow? If so I would love to hear from you in the comments.

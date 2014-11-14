@@ -1,6 +1,6 @@
 ---
-title: "James Stone, Author and Blogger"
-seo_desc: "James Stone is an Author and a Blogger. He is ZURB Foundation Certified Preferred and a top contributor to the project. James has spoken at the HTML5 Developers Conference, TEDxPSU and the UMD Design | Cultures + Creativity Honors College and is a Mentor at Coding House"
+title: "James Stone: Learn Foundation, SVG, JavaScript + more"
+seo_desc: "The best place to learn ZURB Foundation, SVG and JavaScript. James is a Dev + Designer based out of San Francisco, passionate about UX + Design. He has spoken at at the HTML5 Developers Conference, TEDxPSU and the UMD Design | Cultures + Creativity Honors College and is a Mentor at Coding House."
 pageable: false
 per_page: 15
 active_nav: home
@@ -12,14 +12,14 @@ published: true
 <%= partial "featurebox" %>
 
 <div class="row">
-  <% page_articles.each_slice((page_articles.size/3.0).ceil) do | col | %>
+  <% page_articles.group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
   <div class="medium-4 large-4 columns"> <!-- main content -->
     <% col.each do |article| %>
     <div class="card article">
       <a class="article-link" href="<%= article.url %>"></a>
         <% test_featured_image = article.data.featured_image %>
           <% if ( defined?(test_featured_image)) %>
-            <img src="<%= article.data.featured_image %>">
+            <img src="<%= article.data.featured_image %>" alt="<%= article.title %>">
           <% end %>
           <h3 class="entry-title"><%= article.title %></h3>
       <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
@@ -29,6 +29,7 @@ published: true
       </div>
   <% end %> <!-- col -->
 </div>
+
 
 <div class="row">
   <div class="small-12 columns">

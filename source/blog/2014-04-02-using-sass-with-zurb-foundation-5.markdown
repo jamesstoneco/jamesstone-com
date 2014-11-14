@@ -9,7 +9,8 @@ signup_zurb: "true"
 
 Learn how to use Sass and Scss with ZURB Foundation 5. In this video I show you how easy it is to get started, how the different Scss files work and how to experiment with changes.SPLIT\_SUMMARY\_BEFORE\_THIS
 
-<div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/Gx-9cgNlZlQ?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="Gx-9cgNlZlQ" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
+
 
 Video description from YouTube:
 

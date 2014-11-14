@@ -25,9 +25,7 @@ Join the 15,000 people who have watched this screencast and get started learning
 
 Setting up the Project &bull; Starting with the Desktop Grid &bull; Nested Desktop Grids &bull; Adding Placeholder Images &bull; Creating the Mobile Experience &bull; Refining the Tablet Experience
 
-
-
-<div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/kk6KpKK5Jjc?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="kk6KpKK5Jjc" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
 
 ### Original Post
 

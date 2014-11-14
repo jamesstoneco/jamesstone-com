@@ -12,7 +12,8 @@ I wanted to address some common issues that I come across using the ZURB Foundat
 
 If you enjoy this screencast, don't forget to subscribe so you will be the first to know when I publish my next video. If you have any ideas for future episodes or just want to reach out, I would love to hear from you in the comments. Hope you like it, and let me know what you think.
 
-<div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/UjN_aX84Qco?rel=0" frameborder="0" allowfullscreen></iframe></div>
+
+<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="UjN_aX84Qco" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
 
 Video description from YouTube:
 

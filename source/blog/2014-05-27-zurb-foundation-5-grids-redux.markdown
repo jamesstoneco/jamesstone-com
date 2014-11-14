@@ -17,7 +17,7 @@ On [Stack Overflow I kept seeing a lot of questions dealing with the grids](http
 
 To try and answer these questions in a simple and understandable way, I jumped into Sublime Text and put together a short screencast. Today that video has been viewed by over 9,000 people since I posted it in Decemeber.
 
-<div class="flex-video widescreen"><iframe width="960" height="720" src="//www.youtube.com/embed/kk6KpKK5Jjc?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="kk6KpKK5Jjc" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
 
 Today, I will take the ideas in this video further by explaining my workflow more in detail.
 

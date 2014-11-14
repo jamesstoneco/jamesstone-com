@@ -5,7 +5,7 @@
 <div class="row" style="padding-top:30px;">
   <div class="medium-4 columns">
     <div class="card">
-      <h2>Resources</h2>
+      <h3>Resources</h3>
         <ul class="no-bullet" style="padding-bottom:1rem;">
          <li><a href="/resources/getting-started">Getting Started</a></li>
          <li><a href="//www.youtube.com/user/JamesManOfStone">Screencasts on YouTube</a></li>
@@ -15,7 +15,7 @@
          <li><a href="/resources/hosting">Hosting</a></li>
        </ul>
 
-      <h2 class="hide">Top Articles</h2>
+      <h3 class="hide">Top Articles</h3>
       <ul class="no-bullet hide">      
         <% data.widgets.top_articles.each do | article | %>
           <li><a href="<%= article["url"]%>"><%= article["title"]%></a></li>
@@ -26,7 +26,7 @@
   </div>
   <div class="medium-4 columns">
     <div class="card">
-      <h2>Lets Talk</h2>
+      <h3>Lets Talk</h3>
         <p>
         <a href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request" class="button expand radius tiny secondary" target="_blank">Quick Question? Book 15 mintues &raquo;</a> <br>
         <a href="/consulting" class="button expand radius tiny secondary">Consulting Services &raquo;</a>
@@ -37,7 +37,7 @@
   </div>
   <div class="medium-4 columns">
     <div class="card">
-      <h2>If you made it all the way down here...</h2>
+      <h3>If you made it all the way down here...</h3>
       <p>you probally want more great stuff. Sign up for my updates and you will be the first to recieve it.</p>
       <%= partial "emailsignup" %>
     </div>
