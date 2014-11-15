@@ -113,7 +113,7 @@ $h6-font-size: 1rem;
 @import "foundation/components/grid";
 @import "foundation/components/inline-lists";
 // @import "foundation/components/joyride";
-// @import "foundation/components/keystrokes";
+@import "foundation/components/keystrokes";
 // @import "foundation/components/labels";
 // @import "foundation/components/magellan";
 @import "foundation/components/orbit";
@@ -168,11 +168,14 @@ pre {
 .clearing-thumbs li { float: left; margin-right: 10px; max-width: 100%; }
 .resume-bullets { padding-left: emCalc(40px); }
 
+
+code { border: none; }
+
 span.inline-code {
-	color: $body-bg;
-	background: $brand-dark-blue;
-	padding-left: emCalc(4px);
-	padding-right: emCalc(4px);
+  color: $body-bg;
+  background: $brand-dark-blue;
+  padding-left: emCalc(4px);
+  padding-right: emCalc(4px);
 }
 
 pre {
