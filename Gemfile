@@ -16,8 +16,8 @@ gem "sass", "3.3.14"
 
 gem "middleman", "~>3.2.2"
 # for heroku install
-gem "rack-contrib"
-gem "puma"
+# gem "rack-contrib"
+# gem "puma"
 
 
 # Cross-templating language block fix for Ruby 1.8
@@ -30,6 +30,7 @@ gem "builder"
 gem "redcarpet"
 gem "middleman-blog"
 gem "middleman-autoprefixer"
+gem "middleman-livereload"
 # gem 'nokogiri', "~>1.2.3"
 gem "slim"
 
