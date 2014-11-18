@@ -1,14 +1,14 @@
 {
   "name": "lazyYT",
   "homepage": "https://github.com/tylerpearson/lazyYT",
-  "version": "0.3.4",
-  "_release": "0.3.4",
+  "version": "0.3.3",
+  "_release": "0.3.3",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.4",
-    "commit": "319c3c9609321f54d35335d68d71f0eb02e10660"
+    "tag": "0.3.3",
+    "commit": "82a629886c549b708c9c2387cab2794903db23f4"
   },
   "_source": "https://github.com/tylerpearson/lazyYT.git",
-  "_target": "~0.3.4",
+  "_target": "0.3.3",
   "_originalSource": "https://github.com/tylerpearson/lazyYT.git"
 }

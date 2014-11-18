@@ -39,7 +39,7 @@
 // move this to specific pages on blog, load on the fly
 //= require vendor/socialite/socialite
 //= require wookmark-jquery/jquery.wookmark.js
-//= require lazyYT/lazyYT
+//= require vendor/lazyYT
 //= require_directory .
 
 $(document).foundation();
