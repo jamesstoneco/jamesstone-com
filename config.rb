@@ -75,7 +75,8 @@ activate :directory_indexes
 page "/feed.xml", :layout => false
 page "/redirects.html.erb", :layout => false
 # page "/_redirects.erb", :layout => false
-# page '_redirects', append_extension: false
+# page '404.html', append_extension: false
+page "/404.html", :directory_index => false
 
 page "/blog/feed.xml", :layout => false
 
