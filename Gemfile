@@ -31,15 +31,9 @@ gem "redcarpet"
 gem "middleman-blog"
 gem "middleman-autoprefixer"
 gem "middleman-livereload"
-# gem 'nokogiri', "~>1.2.3"
 gem "slim"
 
 # google closure compiler
 gem "closure-compiler"
-
-# for deploying to rackspace cloud
-# gem "middleman-deploy"
-# gem 'middleman-bitballoon'
-# gem 'middleman-twitter-cards', :git => 'git@github.com:stevenosloan/middleman-twitter-cards.git'
 
 gem 'sanitize'
