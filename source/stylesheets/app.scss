@@ -608,20 +608,24 @@ $card-padding: 15px;
   border-style: none;
   // TODO: refactor in to straight css, no prefixes
   // @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
-  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child {
+  & h1:first-child, & h2:first-child, & h3:first-child, & h4:first-child, & h5:first-child, & h6:first-child, & p:first-child {
     padding-top: $card-padding;
   }
-  h1, h2, h3, h4, h5, h6, p, form, .card-pad {
+  & h1, & h2, & h3, & h4, & h5, & h6, & p, & form, & .card-pad {
     padding-right: $card-padding;
     padding-left: $card-padding;
   }
-  ul {
+  & ul {
     padding-right: $card-padding;
     padding-left: $card-padding;
   }
-  p:last-child,ul:last-child,small:last-child {
+  & p:last-child, & ul:last-child, & small:last-child {
     padding-bottom: $card-padding;
   }
+  & .flex-video {
+    padding-top: 0;
+  }
+
 
 }
 .card-landing {
@@ -833,4 +837,13 @@ p.disclaimer {
   padding-bottom: rem-calc(10);
   padding-left: rem-calc(20);
   padding-right: rem-calc(20);
+}
+
+.youtube-thumbnail {
+  // margin-top: -30px;
+  // margin-bottom: -30px; // 56.34%;
+  padding-bottom: 56.34%; // 56.34%;
+  overflow: hidden;
+  position: relative;
+  top:0;
 }

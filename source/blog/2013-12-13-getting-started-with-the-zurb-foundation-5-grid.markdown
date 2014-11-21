@@ -5,6 +5,9 @@ time: 10:55 PM CET
 tags: ZURB Foundation, Responsive Web Design, Web Design, Mobile
 featured_image: "/blog/featured-images/featured-video.jpg"
 signup_zurb: "true"
+video: "true"
+video_type: "youtube"
+video_id: "kk6KpKK5Jjc"
 ---
 
 Learning the ZURB Foundation Grid can be easy. Check out this screencast where you will learn how to use Sublime Text 2/3 and Emmet (formerly Zen Coding) to start building out custom layouts without pulling your hair out.
@@ -24,8 +27,6 @@ Join the 15,000 people who have watched this screencast and get started learning
 </div>
 
 Setting up the Project &bull; Starting with the Desktop Grid &bull; Nested Desktop Grids &bull; Adding Placeholder Images &bull; Creating the Mobile Experience &bull; Refining the Tablet Experience
-
-<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="kk6KpKK5Jjc" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
 
 ### Original Post
 
