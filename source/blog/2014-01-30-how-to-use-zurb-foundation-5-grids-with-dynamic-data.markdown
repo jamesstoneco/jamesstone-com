@@ -5,15 +5,14 @@ time: 13:35 PM CET
 tags: ZURB Foundation, Responsive Web Design, Web Design, Mobile, Video
 featured_image: "/blog/featured-images/featured-video.jpg"
 signup_zurb: "true"
+video: "true"
+video_type: "youtube"
+video_id: "UjN_aX84Qco"
 ---
 
 I wanted to address some common issues that I come across using the ZURB Foundation 5 grid with dynamic data and how to solve them.SPLIT\_SUMMARY\_BEFORE\_THIS
 
-
 If you enjoy this screencast, don't forget to subscribe so you will be the first to know when I publish my next video. If you have any ideas for future episodes or just want to reach out, I would love to hear from you in the comments. Hope you like it, and let me know what you think.
-
-
-<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="UjN_aX84Qco" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
 
 Video description from YouTube:
 

@@ -16,11 +16,23 @@ active_nav: blog
     <% col.each do |article| %>
     <div class="card article">
       <a class="article-link" href="<%= article.url %>"></a>
-        <% test_featured_image = article.data.featured_image %>
-          <% if ( defined?(test_featured_image)) %>
-            <img src="<%= article.data.featured_image %>">
+      <% test_video          = article.data.video %>
+      <% test_video_type     = article.data.video_type %>
+      <% test_video_id       = article.data.video_id %>
+      <% test_featured_image = article.data.featured_image %>
+      <% image_url           = "" %>
+      <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+        <% if test_video == "true" %>
+          <% if test_video_type == "youtube" %>
+          <div class="flex-video widescreen">
+          <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+          </div>
           <% end %>
-          <h3 class="entry-title"><%= article.title %></h3>
+        <% elsif ( defined?(test_featured_image)) %>
+          <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+        <% end %>
+      <% end %>
+      <h3 class="entry-title"><%= article.title %></h3>
       <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
       <%= strip_html(article.summary(125)) %>
     </div>

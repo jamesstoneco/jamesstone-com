@@ -12,26 +12,34 @@
     <div class="entry-content">
       <% test_featured_image_wide = current_page.data.featured_image_wide %>
       <% test_featured_image = current_page.data.featured_image %>
-      <% if not current_page.data.featured_image_wide.nil? %>
-        <img src="<%= current_page.data.featured_image_wide %>" style="width:100%;">
-        <h1 class="text-center" style="padding-top: 3rem;"><%= current_page.title %></h1>
-      <% elsif not current_page.data.featured_image.nil? %>
-        <h1 class="text-center"><%= current_page.title %></h1>
-       <p class="text-center"><img src="<%= current_page.data.featured_image %>"></p>
+
+      <% test_video          = current_page.data.video %>
+      <% test_video_type     = current_page.data.video_type %>
+      <% test_video_id       = current_page.data.video_id %>
+
+      <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+        <% if test_video == "true" %>
+          <% if test_video_type == "youtube" %>
+            <div class="flex-video widescreen">
+          <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+          </div>
+          <% end %>
+        <% elsif not current_page.data.featured_image_wide.nil? %>
+          <img src="<%= current_page.data.featured_image_wide %>" style="width:100%;">
+          <h1 class="text-center" style="padding-top: 1rem;"><%= current_page.title %></h1>
+        <% elsif not current_page.data.featured_image.nil? %>
+          <h1 class="text-center"><%= current_page.title %></h1>
+          <p class="text-center"><img src="<%= current_page.data.featured_image %>"></p>
+        <% end %>
       <% end %>
 
 
-  
-      <p align="center" style="padding-bottom: 2rem;">
-        Written by James Stone &ndash; <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">Follow him on Twitter</a>
+      <p align="center">
+        by James Stone &ndash; <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">Follow him on Twitter</a>
         <time class="hide timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
       </p>
   
    
-
-  
-  
-  
       <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
       <div class="row">
         <div class="small-10 small-centered medium-8 large-10 columns">

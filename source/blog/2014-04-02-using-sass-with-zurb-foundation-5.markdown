@@ -5,12 +5,12 @@ time: 15:10 PM CET
 tags: ZURB Foundation, Sass, Scss, Responsive Web Design, Web Design, Mobile, Video
 featured_image: "/blog/featured-images/sass-foundation.jpg"
 signup_zurb: "true"
+video: "true"
+video_type: "youtube"
+video_id: "Gx-9cgNlZlQ"
 ---
 
 Learn how to use Sass and Scss with ZURB Foundation 5. In this video I show you how easy it is to get started, how the different Scss files work and how to experiment with changes.SPLIT\_SUMMARY\_BEFORE\_THIS
-
-<div class="flex-video widescreen"> <div class="lazyYT" data-youtube-id="Gx-9cgNlZlQ" data-ratio="16:9" data-parameters="&rel=0">loading...</div></div>
-
 
 Video description from YouTube:
 

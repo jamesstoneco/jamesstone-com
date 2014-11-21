@@ -5,7 +5,6 @@ time: 3:57 PM CET
 tags: Developers, Marketing, Blog
 featured_image: "/blog/featured-images/multitool.jpg"
 signup_zurb: "true"
-highlights: []
 ---
 
 An awesome infographic, a keynote by Luke Wroblewski, AtoZ CSS, a F5 Nav Template and some awesome ideas on how to approach reactive apps on mobile.
