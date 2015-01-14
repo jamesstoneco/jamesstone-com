@@ -1,0 +1,27 @@
+<%  
+
+proxies = []
+sitemap.resources.each do |resource|
+	ext = resource.ext.gsub('.','').to_sym
+	if resource.template? && !resource.ignored? && !(@app.api_formats.include?(ext))
+		@app.api_formats.each do |format|
+		    path = "#{resource.destination_path.split('.').first}.#{format}"
+		    proxy = ::Middleman::Sitemap::Resource.new(@app.sitemap, path)
+		    proxy.proxy_to "api.#{format}"
+		    proxy.add_metadata locals: template_data(resource, format)
+		    proxy.add_metadata options: { layout: false }
+		    proxies << proxy
+		  end
+	end
+end
+
+
+%>
+<%= proxies %>
+
+
+OTHER STUFF
+
+<% blog.articles.each do | p | %>
+{title: "<%= p.title %>", date: "<%= p.date %>""} ,
+<%  end %>

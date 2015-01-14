@@ -6,7 +6,6 @@ require 'slim'
 
 
 
-
 ###
 # Helpers
 ###
@@ -98,6 +97,9 @@ set :markdown_engine, :redcarpet
 set :markdown,  :fenced_code_blocks => true,
                 :autolink => true,
                 :smartypants => true
+
+
+# activate :api
 
 
 # Build-specific configuration
