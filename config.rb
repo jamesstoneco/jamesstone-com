@@ -32,16 +32,12 @@ end
 
 
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
 # foundation patch per http://wanderwort.de/2013/04/11/using-zurb-foundation-with-middleman/
 
-# bourbon_path = Gem::Specification.find_by_name('bourbon').gem_dir
 set :js_assets_paths, [File.join(root, 'bower_components')]
-# set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss', 'bower_compononents/lazyYT')]
 set :sass_assets_paths, [File.join(root, 'bower_components/foundation-apps/scss')]
 
 
@@ -50,12 +46,9 @@ activate :blog do |blog|
   # set options on blog
   blog.prefix = "blog"
   blog.permalink = ":title.html"
-  # Time.zone = "Paris"
   Time.zone = "Pacific Time (US & Canada)"
   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   blog.layout = "blog"
-  # blog.taglink = ":tag.html"
-  # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "p:num"
 end
@@ -73,8 +66,6 @@ activate :directory_indexes
 
 page "/feed.xml", :layout => false
 page "/redirects.html.erb", :layout => false
-# page "/_redirects.erb", :layout => false
-# page '404.html', append_extension: false
 page "/404.html", :directory_index => false
 
 page "/blog/feed.xml", :layout => false
@@ -100,29 +91,16 @@ set :markdown,  :fenced_code_blocks => true,
                 :smartypants => true
 
 
-# activate :api
-
 
 # Build-specific configuration
 configure :build do
+  activate :ngannotate
   activate :minify_css
   activate :minify_javascript
   # set :js_compressor, ::Closure::Compiler.new
   # activate :gzip
-
   # activate :asset_hash
-
-  # for cdn
-
-  # enable asset hosts
-  # activate :asset_host
-
-  # set :asset_host do |asset|
-  #   '//assets.jamesstone.co'.to_s
-  # end
-
 end
-
 
 
 after_build do |builder|
@@ -131,19 +109,6 @@ after_build do |builder|
   builder.source_paths << File.dirname(__FILE__)
   builder.copy_file(src,dst)
 end
-
-
-
-# activate :deploy do |deploy|
-#   deploy.method = :rsync
-#   deploy.host   = ENV['MOS_WWW_HOST']
-#   deploy.path   = ENV['MOS_WWW_PATH']
-#   # Optional Settings
-#   deploy.user  = ENV['MOS_WWW_USER'] # no default
-#   deploy.port  = ENV['MOS_WWW_PORT'] # ssh port, default: 22
-#   deploy.clean = true # remove orphaned files on remote host, default: false
-#   # deploy.flags = "-rltgoDvzO --no-p --del -e" # add custom flags, default: -avze
-# end
 
 # activate :bitballoon do |bitballoon|
 #   bitballoon.token = ENV["BB_TOKEN"]

@@ -26,6 +26,8 @@ gem "middleman", "~>3.2.2"
 
 gem 'multi_json', '~> 1.10.1'
 
+gem 'middleman-ngannotate'
+
 # Cross-templating language block fix for Ruby 1.8
 # platforms :mri_18 do
 #   gem "ruby18_source_location"
