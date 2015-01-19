@@ -1,1 +1,0 @@
-!function(){"use strict";angular.module("foundation",["foundation.core","foundation.accordion","foundation.actionsheet","foundation.common","foundation.iconic","foundation.interchange","foundation.modal","foundation.notification","foundation.offcanvas","foundation.panel","foundation.popup","foundation.tabs"])}();
