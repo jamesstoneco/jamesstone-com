@@ -1,6 +1,10 @@
 [
 <% blog.articles.each_with_index do | p, index | %>
-<%= p.metadata[:page].to_json %>
+<% tempHash = p.metadata[:page] %>
+<% tempHash[:url] = p.url %>
+<% tempHash[:tags] = p.tags %>
+<% tempHash[:summary] = p.summary %>
+<%= tempHash.to_json %>
 <%= ',' unless index == blog.articles.size - 1 %>
 <%  end %>
 ]
