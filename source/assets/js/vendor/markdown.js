@@ -1,0 +1,1 @@
+angular.module("markdown",[]).directive("markdown",function(){return{restrict:"A",link:function(scope,element){element.html(marked(element.html()))}}});

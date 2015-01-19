@@ -42,7 +42,7 @@ set :images_dir, 'images'
 # bourbon_path = Gem::Specification.find_by_name('bourbon').gem_dir
 set :js_assets_paths, [File.join(root, 'bower_components')]
 # set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss', 'bower_compononents/lazyYT')]
-set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
+set :sass_assets_paths, [File.join(root, 'bower_components/foundation-apps/scss')]
 
 
 
@@ -86,6 +86,7 @@ page "/zurb-foundation-quick-reference.html", :layout => "landing"
 page "/advanced-zurb-foundation.html", :layout => "landing"
 page "/advanced-zurb-foundation-course.html", :layout => "landing"
 page "/free-zurb-foundation-course.html", :layout => "landing"
+page "/ng-templates/*", :directory_index => false, :layout => false
 # page "/zurb-foundation-4-blueprints.html", :layout => "landing"
 # page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
 

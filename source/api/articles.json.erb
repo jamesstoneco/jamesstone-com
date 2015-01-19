@@ -1,3 +1,6 @@
-<% blog.articles.each do | p | %>
+[
+<% blog.articles.each_with_index do | p, index | %>
 <%= p.metadata[:page].to_json %>
+<%= ',' unless index == blog.articles.size - 1 %>
 <%  end %>
+]

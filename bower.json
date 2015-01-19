@@ -1,10 +1,21 @@
 {
-  "name": "foundation-compass-app",
-  "version": "0.0.1",
+  "name": "JamesStone.com Foundation for Apps App",
+  "version": "2.0.0",
   "private": "true",
+  "authors": [
+    "James Stone Intermedia"
+  ],
+  "description": "Template project for Foundation for Apps by ZURB.",
+  "homepage": "https://jamesstone.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "foundation": "zurb/bower-foundation",
-    "wookmark-jquery": "~1.4.8",
+    "foundation-apps": "~1.0.0",
     "lazyYT": "https://github.com/tylerpearson/lazyYT.git#0.3.3"
   }
 }

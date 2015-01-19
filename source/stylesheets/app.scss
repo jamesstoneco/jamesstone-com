@@ -1,3 +1,5 @@
+
+
 /* 
 
 font-family: 'Distill Medium'
@@ -92,55 +94,7 @@ $h6-font-size: 1rem;
 // Global Foundation Settings
 // @import "settings";
 @import "settings";
-
-// Comment out this import if you don't want to use normalize
-@import "normalize";
-
 @import "foundation";
-
-
-@import "foundation/components/accordion";
-// @import "foundation/components/alert-boxes";
-// @import "foundation/components/block-grid";
-// @import "foundation/components/breadcrumbs";
-@import "foundation/components/button-groups";
-@import "foundation/components/buttons";
-@import "foundation/components/clearing";
-// @import "foundation/components/dropdown";
-// @import "foundation/components/dropdown-buttons";
-@import "foundation/components/flex-video";
-@import "foundation/components/forms";
-@import "foundation/components/grid";
-@import "foundation/components/inline-lists";
-// @import "foundation/components/joyride";
-@import "foundation/components/keystrokes";
-// @import "foundation/components/labels";
-// @import "foundation/components/magellan";
-@import "foundation/components/orbit";
-// @import "foundation/components/pagination";
-@import "foundation/components/panels";
-// @import "foundation/components/pricing-tables";
-// @import "foundation/components/progress-bars";
-// @import "foundation/components/range-slider";
-@import "foundation/components/reveal";
-// @import "foundation/components/side-nav";
-// @import "foundation/components/split-buttons";
-// @import "foundation/components/sub-nav";
-// @import "foundation/components/switch";
-// @import "foundation/components/tables";
-// @import "foundation/components/tabs";
-@import "foundation/components/thumbs";
-// @import "foundation/components/tooltips";
-// @import "foundation/components/top-bar";
-@import "foundation/components/type";
-// @import "foundation/components/offcanvas";
-@import "foundation/components/visibility";
-
-// @import "lazyYT.css";
-
-
-// @import "compass/css3/box-shadow";
-
 
 
 @import "highlight-styles/solarized_dark";
@@ -449,15 +403,15 @@ $menu-background-color: #333;
   margin-bottom: 0;
 }
 
-.menu-button {
-  @include button(rem-calc(12), $menu-background-color, false, false, false, false);
-}
+// .menu-button {
+//   @include button(rem-calc(12), $menu-background-color, false, false, false, false);
+// }
 
-.menu-button-small {
-  @include button(rem-calc(10), $menu-background-color, false, false, false, false);
-  font-size: 180%;
-  line-height: 10%;
-}
+// .menu-button-small {
+//   @include button(rem-calc(10), $menu-background-color, false, false, false, false);
+//   font-size: 180%;
+//   line-height: 10%;
+// }
 
 
 
@@ -584,7 +538,7 @@ color: lighten($body-font-color, 40%);
   background-color: #000;
   background-color: rgba(51,51,51,0.8);
   // padding-top: $column-gutter/2;
-  padding-bottom: $column-gutter/2;
+  // padding-bottom: $column-gutter/2;
 }
 .dot-kern {
   letter-spacing: rem-calc(-3);
@@ -604,7 +558,7 @@ color: lighten($body-font-color, 40%);
 $card-padding: 15px;
 
 .card {
-  @include panel(#fff, 0px, false);
+  // @include panel(#fff, 0px, false);
   border-style: none;
   // TODO: refactor in to straight css, no prefixes
   // @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
@@ -629,7 +583,7 @@ $card-padding: 15px;
 
 }
 .card-landing {
-  @include panel(#fff, 0px, false);
+  // @include panel(#fff, 0px, false);
   border-style: none;
   // TODO: refactor in to straight css, no prefixes
   // @include single-box-shadow(darken($body-bg, 5%), 1px, 1px, false, false, false);
@@ -684,26 +638,26 @@ div.card.article:hover, div.card.product:hover, div.card.sidebar-test:hover, div
      -o-transform:rotateY(180deg);
         transform:rotateY(180deg);
 }
-@media #{$small-only} {
-  .flip-container, .front, .back {
-    width:100%;
-    height:460px;
-    }
-    .back > .card {
-    width:100%;
-    height:440px;
-    }
-}
-@media #{$medium-up} {
-  .flip-container, .front, .back {
-    width:100%;
-    height:370px;
-    }
-    .back > .card {
-    width:100%;
-    height:350px;
-    }
-}
+// @media #{$small-only} {
+//   .flip-container, .front, .back {
+//     width:100%;
+//     height:460px;
+//     }
+//     .back > .card {
+//     width:100%;
+//     height:440px;
+//     }
+// }
+// @media #{$medium-up} {
+//   .flip-container, .front, .back {
+//     width:100%;
+//     height:370px;
+//     }
+//     .back > .card {
+//     width:100%;
+//     height:350px;
+//     }
+// }
 
 /* flip speed goes here */
 .flipper{
@@ -748,7 +702,7 @@ z-index:2;
 
 
 .button-packt-cta {
-  @include button($button-med, $brand-packt-orage, true, true, false, false);
+  // @include button($button-med, $brand-packt-orage, true, true, false, false);
 }
 
 p.disclaimer {
@@ -760,7 +714,7 @@ p.disclaimer {
 }
 
 .button-resource {
-  @include button($button-lrg, $brand-dark-blue, false, true, false, false);
+  // @include button($button-lrg, $brand-dark-blue, false, true, false, false);
   margin-bottom: 0px;
 }
 
@@ -769,7 +723,7 @@ p.disclaimer {
 }
 
 .disclaimer-amazon {
-  @include button(rem-calc(2px), $brand-dark-blue, true, false, false, false);
+  // @include button(rem-calc(2px), $brand-dark-blue, true, false, false, false);
   margin-bottom: 0px;
   // button($padding:$button-med, $bg:$button-bg, $radius:false, $full-width:false, $disabled:false, $is-prefix:false) {
 

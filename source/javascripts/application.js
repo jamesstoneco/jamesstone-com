@@ -10,51 +10,101 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery/dist/jquery
+
 //= require fastclick/lib/fastclick
-//= require foundation/js/foundation
-//= require foundation/js/foundation/foundation.abide
-//= require foundation/js/foundation/foundation.accordion
+//= require viewport-units-buggyfill/viewport-units-buggyfill
+//= require tether/tether
+//= require angular/angular
+//= require angular-animate/angular-animate
+//= require ui-router/release/angular-ui-router
 
+// require_directory ../../bower_compontents/foundation-apps/js/vendor
+// require_directory ../../bower_compontents/foundation-apps/js/angular
 
-// require foundation/js/foundation/foundation.alert
+//= require foundation-apps/js/vendor/iconic.min
 
-// move this to specific pages on blog, load on the fly
-// require foundation/js/foundation/foundation.clearing
-
-// require foundation/js/foundation/foundation.dropdown
-// require foundation/js/foundation/foundation.equalizer
-// require foundation/js/foundation/foundation.interchange
-// require foundation/js/foundation/foundation.joyride
-// require foundation/js/foundation/foundation.magellan
-// require foundation/js/foundation/foundation.offcanvas
-//= require foundation/js/foundation/foundation.orbit
-//= require foundation/js/foundation/foundation.reveal
-// require foundation/js/foundation/foundation.slider
-// require foundation/js/foundation/foundation.tab
-// require foundation/js/foundation/foundation.tooltip
-// require foundation/js/foundation/foundation.topbar
-//= require vendor/highlight
-// require vendor/processing
-// move this to specific pages on blog, load on the fly
-//= require vendor/socialite/socialite
-//= require wookmark-jquery/jquery.wookmark.js
-//= require vendor/lazyYT
+//= require foundation-apps/js/angular/foundation
+//= require foundation-apps/js/angular/components/accordion/accordion
+//= require foundation-apps/js/angular/components/actionsheet/actionsheet
+//= require foundation-apps/js/angular/components/common/common
+//= require foundation-apps/js/angular/components/iconic/iconic
+//= require foundation-apps/js/angular/components/interchange/interchange
+//= require foundation-apps/js/angular/components/modal/modal
+//= require foundation-apps/js/angular/components/notification/notification
+//= require foundation-apps/js/angular/components/offcanvas/offcanvas
+//= require foundation-apps/js/angular/components/panel/panel
+//= require foundation-apps/js/angular/components/popup/popup
+//= require foundation-apps/js/angular/components/tabs/tabs
+//= require foundation-apps/js/angular/services/foundation.core
+//= require foundation-apps/js/angular/services/foundation.dynamicRouting.animations
+//= require foundation-apps/js/angular/services/foundation.dynamicRouting
+//= require foundation-apps/js/angular/vendor/markdown
 //= require_directory .
 
-$(document).foundation();
+(function() {
+  'use strict';
 
-$(".card.article, .sidebar-test").click(function(){
-	window.location = $(this).find("a:first").attr("href");
-	return false;
-});
+  var App = angular.module('application', [
+    'ui.router',
+    'ngAnimate',
 
-// Show URL on Mouse Hover
-$(".card.article, .card.product, .sidebar-test").hover(function () {
-	window.status = $(this).find("a:first").attr("href");
-}, function () {
-	window.status = "";
-});
+    //foundation
+    'foundation',
+    'foundation.dynamicRouting',
+    'foundation.dynamicRouting.animations'
+  ])
+  	.controller('ArticlesCtrl', function($scope, $http) {
+	  $http.get('api/articles.json').
+	    success(function(data, status, headers, config) {
+	      $scope.articles = data;
+	    }).
+	    error(function(data, status, headers, config) {
+	      // log error
+	    });
+	})
+
+    .config(config)
+    .run(run)
+  ;
+
+  config.$inject = ['$urlRouterProvider', '$locationProvider'];
+
+  function config($urlProvider, $locationProvider) {
+    $urlProvider.otherwise('/');
+
+    $locationProvider.html5Mode({
+      enabled:false,
+      requireBase: false
+    });
+
+    $locationProvider.hashPrefix('!');
+  }
+
+  function run() {
+    FastClick.attach(document.body);
+  }
+
+
+
+})();
+
+
+// routes
+
+var foundationRoutes = [{"name":"home","url":"/","path":"/ng-templates/home.html"}]; 
+
+
+// $(".card.article, .sidebar-test").click(function(){
+// 	window.location = $(this).find("a:first").attr("href");
+// 	return false;
+// });
+
+// // Show URL on Mouse Hover
+// $(".card.article, .card.product, .sidebar-test").hover(function () {
+// 	window.status = $(this).find("a:first").attr("href");
+// }, function () {
+// 	window.status = "";
+// });
 
 
 // $(".front").click(function(){
@@ -74,10 +124,10 @@ $(".card.article, .card.product, .sidebar-test").hover(function () {
 // ga('send', 'pageview');
 
 
-$('.lazyYT').lazyYT();
+// $('.lazyYT').lazyYT();
 
-Socialite.load("blog-social");
-hljs.initHighlightingOnLoad();
+// Socialite.load("blog-social");
+// hljs.initHighlightingOnLoad();
 
 
 
