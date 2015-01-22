@@ -115,8 +115,8 @@ set :markdown,  :fenced_code_blocks => true,
 
 # Build-specific configuration
 configure :build do
-  activate :minify_css
-  activate :minify_javascript
+  # activate :minify_css
+  # activate :minify_javascript
   # set :js_compressor, ::Closure::Compiler.new
   # activate :gzip
 
