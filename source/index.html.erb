@@ -11,8 +11,9 @@ published: true
 
 <%= partial "featurebox" %>
 
+
 <div class="row">
-  <% page_articles.group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
+  <% page_articles('blog').group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
   <div class="medium-4 large-4 columns"> <!-- main content -->
     <% col.each do |article| %>
     <div class="card article">
