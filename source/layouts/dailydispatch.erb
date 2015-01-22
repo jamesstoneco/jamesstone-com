@@ -1,0 +1,166 @@
+<% wrap_layout :blog_layout do %>
+
+<div class="content-top-spacing hide-for-small-only"></div>
+
+<div class="row">
+  <div class="small-12 columns"> <!-- content -->
+
+ <% permalink_url = "https://www.jamesstone.com#{current_page.url}".sub(/(\/)+$/,'') %>
+
+
+ <div class="row">
+  <div class="medium-5 columns medium-offset-1">
+
+  <div data-alert class="alert-box info radius">
+
+      <p align="center">
+      This is a Daily Dispatch by James Stone. Here he shows a small snippet from his WIP (Work In Progress) daily. These are short focused posts on what he is working on that day. If you are looking for more extensive articles you can check out his <a href="/">blog</a> or <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">follow him on Twitter</a>.</p>
+
+  <a href="#" class="close">&times;</a>
+</div>
+</div>
+
+  <div class="medium-5 columns end">
+  <div data-alert class="alert-box info radius">
+
+      <p align="center">
+      Disclaimer: unless otherwise stated, some of the links below may be affiliate links. This means that I earn a small commision if you chose to purchase from them. I never recommend something I haven't read or used myself, but please use your best judgement
+      </p>
+
+  <a href="#" class="close">&times;</a>
+</div>
+
+
+  </div>
+</div>
+
+
+<div class="card">
+  
+    <div class="entry-content">
+      <% test_featured_image_wide = current_page.data.featured_image_wide %>
+      <% test_featured_image = current_page.data.featured_image %>
+
+      <% test_video          = current_page.data.video %>
+      <% test_video_type     = current_page.data.video_type %>
+      <% test_video_id       = current_page.data.video_id %>
+
+      <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+        <% if test_video == "true" %>
+          <% if test_video_type == "youtube" %>
+            <div class="flex-video widescreen">
+          <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+          </div>
+          <% end %>
+        <% elsif not current_page.data.featured_image_wide.nil? %>
+          <img src="<%= current_page.data.featured_image_wide %>" style="width:100%;">
+          <h1 class="text-center" style="padding-top: 1rem;"><%= current_page.title %></h1>
+        <% elsif not current_page.data.featured_image.nil? %>
+          <h1 class="text-center"><%= current_page.title %></h1>
+          <p class="text-center"><img src="<%= current_page.data.featured_image %>"></p>
+        <% else %>
+            <h1 class="text-center"><%= current_page.title %></h1>
+            <h3 class="text-center">
+            Daily Dispatch for 
+        <time class="timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y') %></time>
+
+            </h3>
+        <% end %>
+      <% end %>
+   
+      <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
+      <div class="row">
+        <div class="small-10 small-centered medium-8 large-10 columns">
+          <div id="disclaimer-aff"class="panel">
+            <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
+            <% if ( defined?(test_amazon_aff_url)) %>
+            <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
+            <% end %>
+  
+            <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  
+      <% if ( current_page.data.disclaimer_free.eql?('true')) %>
+      <div class="row">
+        <div class="small-8 small-centered columns">
+          <div id="disclaimer-aff"class="panel">
+            <p>Review Copy Disclaimer: I recieved a copy of this product at no cost from the publisher / manufacturer. The opinions are of my own and I did not recieve any compensation for the review other than the product itself.</p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  
+        <% unless current_page.data.highlights.nil? %>
+        <div class="left">
+          <h2>Article Highlights</h2>
+          <ul>
+              <% current_page.data.highlights.each do |h| %>
+                  <li><%= h %></li>
+              <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+
+  
+      <%= yield %>
+
+
+
+    </div>
+  
+    <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
+    <div class="row">
+      <div class="small-10 small-centered medium-8 large-10 columns">
+        <div id="disclaimer-aff"class="panel">
+          <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
+          <% if ( defined?(test_amazon_aff_url)) %>
+          <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
+          <% end %>
+  
+          <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
+        </div>
+      </div>
+    </div>
+    <% end %></div>
+
+
+
+<div class="card">
+  <!-- comments -->
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'manofstone';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+
+  </div>
+
+
+</div>
+
+
+<!-- Reveal Modals begin -->
+<div id="disclaimer-amazon-modal" class="reveal-modal small" data-reveal>
+  <h2>Amazon Affiliate Disclaimer</h2>
+  <p>I sometimes link to books or other products that I have read, used, enjoyed or even possibly hated. I proclaim that my views and context are that of my own but <strong>it is important that you know that I am compensated by Amazon Affiliates if you use the link and decide to purchase</strong> that item.</p>
+  <p>Currently I accept this payment as an Amazon Kindle Giftcard so basically, by purchasing through this link, you are supporting both your and my reading habit simultaneously, and for that I thank you.</p>
+  <p>If you want to avoid that all together, just copy and paste and let google be your friend.</p>
+  <p>There is a set of guidelines put out by the FTC and requires this type of disclosure for blogs only. Print and other publications are exempt. Although there is no enforcement of this yet, I want to be up front with you so when you click on that link on jamesstone.co you know exactly what the deal is.</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<% end %>
