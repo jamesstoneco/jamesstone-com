@@ -1,11 +1,7 @@
 require 'builder'
-require 'closure-compiler'
 require 'sanitize'
 require 'uri'
 require 'slim'
-
-
-
 
 ###
 # Helpers
@@ -15,7 +11,9 @@ require 'slim'
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-activate :livereload
+configure :development do
+  activate :livereload
+end
 
 # Methods defined in the helpers block are available in templates
 helpers do
