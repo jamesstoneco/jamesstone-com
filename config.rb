@@ -13,6 +13,10 @@ require 'slim'
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  activate :autoprefixer do |config|
+    config.browsers = ['last 2 versions', 'Explorer >= 9']
+  end
+
 end
 
 # Methods defined in the helpers block are available in templates
@@ -74,12 +78,6 @@ activate :blog do |blog|
   # blog.page_link = "p:num"
 end
 
-activate :autoprefixer do |config|
-  config.browsers = ['last 2 versions', 'Explorer >= 9']
-  # config.cascade  = false
-  # config.inline   = true
-  # config.ignore   = ['hacks.css']
-end
 
 # pretty urls, as directories, this must run after the blog block
 activate :directory_indexes
@@ -140,6 +138,11 @@ after_build do |builder|
   dst = File.join(config[:build_dir],"_redirects")
   builder.source_paths << File.dirname(__FILE__)
   builder.copy_file(src,dst)
+
+  activate :autoprefixer do |config|
+    config.browsers = ['last 2 versions', 'Explorer >= 9']
+  end
+
 end
 
 
@@ -162,3 +165,4 @@ end
 #   # Optional: always run a build before deploying
 #   bitballoon.build_before = true
 # end
+
