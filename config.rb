@@ -49,6 +49,7 @@ set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
 
 activate :blog do |blog|
   # set options on blog
+  blog.name = "blog"
   blog.prefix = "blog"
   blog.permalink = ":title.html"
   # Time.zone = "Paris"
@@ -59,6 +60,20 @@ activate :blog do |blog|
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "p:num"
+end
+
+activate :blog do |blog|
+  # set options on blog
+  blog.name = "daily-dispatch"
+  blog.prefix = "daily-dispatch"
+  blog.permalink = ":year/:month/:day/:title.html"
+  Time.zone = "Pacific Time (US & Canada)"
+  blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
+  blog.layout = "dailydispatch"
+  # blog.taglink = ":tag.html"
+  # blog.tag_template = "blog/tag.html"
+  # blog.paginate = true
+  # blog.page_link = "p:num"
 end
 
 activate :autoprefixer do |config|
