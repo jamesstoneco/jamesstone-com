@@ -1,13 +1,13 @@
 <% wrap_layout :blog_layout do %>
 
-<div class="content-top-spacing hide-for-small-only"></div>
+<br>
 
 <div class="row">
-  <div class="small-12 columns"> <!-- content -->
+  <div class="large-12 columns medium-centered"> <!-- content -->
 
  <% permalink_url = "https://www.jamesstone.com#{current_page.url}".sub(/(\/)+$/,'') %>
 
-<div class="card">
+<div>
   
     <div class="entry-content">
       <% test_featured_image_wide = current_page.data.featured_image_wide %>
@@ -28,8 +28,8 @@
           <img src="<%= current_page.data.featured_image_wide %>" style="width:100%;">
           <h1 class="text-center" style="padding-top: 1rem;"><%= current_page.title %></h1>
         <% elsif not current_page.data.featured_image.nil? %>
-          <h1 class="text-center"><%= current_page.title %></h1>
           <p class="text-center"><img src="<%= current_page.data.featured_image %>"></p>
+          <h1 class="text-center"><%= current_page.title %></h1>
         <% end %>
       <% end %>
 
@@ -66,21 +66,24 @@
       <% end %>
   
         <% unless current_page.data.highlights.nil? %>
-        <div class="left">
-          <h2>Article Highlights</h2>
-          <ul>
-              <% current_page.data.highlights.each do |h| %>
-                  <li><%= h %></li>
-              <% end %>
-          </ul>
+        <div class="medium-6 columns medium-centered">
+          <div class="panel callout radius">
+            <h4 class="text-center">Article Highlights</h4>
+            <ul class="text-center no-bullet">
+                <% current_page.data.highlights.each do |h| %>
+                    <li><%= h %></li>
+                <% end %>
+            </ul>
+          </div>
         </div>
       <% end %>
 
 
 
   
-      <%= yield %>
-
+<div class="row">
+  <div class="large-8 columns large-centered"><%= yield %></div>
+</div>
 
 
     </div>

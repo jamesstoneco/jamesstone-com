@@ -11,7 +11,7 @@
                 <path d="M17.6327993,3.58806858 L7.4242914,3.58806858 L7.4242914,0 L22,0 L22,22 L0,22 L0,13.1251088 L3.71040657,13.1251088 L3.71040657,18.2930393 L17.6327993,18.2930393 L17.6327993,3.58806858 Z" id="Fill-10"></path>
             </g>
         </g>
-        <text id="JamesStone.com" sketch:type="MSTextLayer" font-family="Palatino" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+        <text id="JamesStone.com" sketch:type="MSTextLayer" font-family="Palatino" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#888888">
             <tspan x="74.5" y="22.34375">JamesStone.com</tspan>
         </text>
     </g>

@@ -1,3 +1,10 @@
+
+
+
+$shadow-color: #000000;
+
+
+
 .flush-bottom {
 	margin-bottom: 0;
 }
@@ -39,37 +46,80 @@ section.videos {
 	padding-bottom: rem-calc(60);
 	background: lighten(#000, 20%);
 	& h2 {
-	margin-bottom: rem-calc(30);
+		margin-bottom: rem-calc(30);
 		color: darken( #FFF, 20%) ;
 		text-align: center;
 	}
 }
 
 section.products {
-	padding-top: rem-calc(60);
+	padding-top: rem-calc(30);
+	margin-top: rem-calc(25);
 	padding-bottom: rem-calc(60);
 	img.pad-top { padding-top: rem-calc(34); }
-}
-
-section.hero {
-
-	background: lighten(#000, 30%);
-	& h2, & h4 {
-		color: #fff;
+	background: $secondary-color;
+	& h2 {
+		text-align: center;
+	padding-bottom: rem-calc(10);
 	}
 }
 
-section.as-seen-on {
-	padding-top: rem-calc(15);
+section.hero {
+	background-position: center top; 
+	padding-bottom: rem-calc(20);
+
+	// @include arrow(bottom, center, red, black);
+
+// background: url('http://thumb7.shutterstock.com/display_pic_with_logo/323638/130981685/stock-photo-black-industrial-metallic-background-with-dots-floor-130981685.jpg');
+// background: url('http://thumb9.shutterstock.com/display_pic_with_logo/323638/129683756/stock-photo-black-metallic-background-with-squares-and-space-for-text-129683756.jpg');
+// background: lighten(#000, 30%);
+background: radial-gradient(lighten(#000, 70%) 5%, lighten(#000, 30%) 50%, lighten(#000, 10%) 99%);
+background-repeat: no-repeat;
+background-size: 100% auto;
+
+& h4 {
+	text-align: center;
+	color: darken(#fff, 30%);
+	padding-bottom: rem-calc(20);
+}
+& h2 {
+	color: #fff;
+	padding-top:rem-calc(15);
+	padding-bottom:rem-calc(15);
+	text-align: center;
+	font-weight: normal;
+	// box-shadow: 0px 4px 0px rgba($shadow-color, 0.5), 0px 8px 5px rgba($shadow-color, 0.3);
+	text-shadow: 2px 2px 6px rgba($shadow-color, 0.7);
+
+}
+& .short-points p {
+	padding-top: rem-calc(20);
+	color: darken(#FFFFFF, 14%);
+	text-align: center;
+	text-shadow: 2px 2px 6px rgba($shadow-color, 0.4);
+}
+& p {
+	padding-top: rem-calc(5);
+	text-align: center;
+	color: darken(#FFFFFF, 45%);
+	text-shadow: 2px 2px 6px rgba($shadow-color, 0.4);
+}
+}
+
+section.bling {
+	padding-top: rem-calc(20);
 	padding-bottom: rem-calc(30);
 	& .logo {
 		width: 25%;
 		float: left;
-		padding-right: rem-calc(30);
+		& img {
+					padding-right: rem-calc(30);
 		padding-left: rem-calc(30);
-		&.tedxpsu { padding-top: rem-calc(22); }
-		&.codeschool { padding-top: rem-calc(28); }
-		&.zurb { padding-top: rem-calc(27); }
+
+		}
+		&.tedxpsu { padding-top: rem-calc(16); }
+		&.codeschool { padding-top: rem-calc(22); }
+		&.zurb { padding-top: rem-calc(18); }
 	}
 	& h4 {
 		font-size: rem-calc(22);
@@ -86,49 +136,97 @@ section.articles {
 }
 
 .card {
-	background: darken(#FFF, 5%);
-	// border: solid 1px darken(#FFF, 20%);
-	-webkit-box-shadow: 1px 1px 0 darken(#FFF, 40%);
-	&.callout {
-		-webkit-box-shadow: 1px 20px 75px darken(#FFF, 60%);
-	}
-	& p {
-		padding-left: rem-calc(15);
-		padding-right: rem-calc(15);
-		line-height: 1.2;
-	}
-	& p.leadin {
-		padding-top: rem-calc(15);
-		font-size: rem-calc(20);
-		font-weight: bold;
-	}
+	// background: darken(#FFF, 5%);
+	background: #FFF;
+// border: solid 1px darken(#FFF, 20%);
+box-shadow: 1px 1px 0 darken(#FFF, 40%);
+&.callout {
+	box-shadow: 1px 20px 75px darken(#FFF, 60%);
+}
+& p {
+	padding-left: rem-calc(15);
+	padding-right: rem-calc(15);
+	line-height: 1.2;
+}
+& p.leadin {
+	padding-top: rem-calc(15);
+	font-size: rem-calc(20);
+	font-weight: bold;
+}
 }
 
 
 
 
-// section.hero {
-// 	background-position: center top; 
-
-//   /*background: url('http://image.shutterstock.com/display_pic_with_logo/911803/197086964/stock-vector-isometric-plastic-lego-building-blocks-and-tiles-197086964.jpg');*/
-//   /*background: url('http://thumb101.shutterstock.com/display_pic_with_logo/1434386/174447713/stock-vector-template-of-plastic-parts-for-text-colors-enjoy-174447713.jpg');*/
-//   /*background: url('http://thumb7.shutterstock.com/display_pic_with_logo/1434386/150625709/stock-vector-plastic-constructor-150625709.jpg');*/
-//   background: url('http://thumb7.shutterstock.com/display_pic_with_logo/323638/130981685/stock-photo-black-industrial-metallic-background-with-dots-floor-130981685.jpg');
-//   /*background: url('http://thumb9.shutterstock.com/display_pic_with_logo/323638/129683756/stock-photo-black-metallic-background-with-squares-and-space-for-text-129683756.jpg');*/
-//   /*background: url('http://thumb1.shutterstock.com/display_pic_with_logo/323638/125274224/stock-photo-elegant-black-metallic-background-with-chess-pattern-and-space-for-text-125274224.jpg');*/
-//   background-repeat: no-repeat;
-//   background-size: 100% auto;
-// }
 
 .transparent-form input[type="email"] {
-background: rgba(0,0,0, 0.1); 
-border-color: rgba(255,255,255, 0.5); 
-color: #FFF !important;
-/*border-radius: 3px;*/
+	background: rgba(0,0,0, 0.1); 
+	border-color: rgba(255,255,255, 0.5); 
+	color: #FFF !important;
+	padding-top: rem-calc(15);
+	padding-bottom: rem-calc(15);
+	padding-left: rem-calc(20);
+	padding-right: rem-calc(20);
+	font-size: rem-calc(18);
+	font-weight: normal;
 }
+
+
 .transparent-form .button {
-/*background: rgba(180, 180, 180, 0.8); */
-/*border-color: rgba(255,255,255, 0.5); */
-color: #FFF !important;
-/*border-radius: 3px;*/
+	padding-top: rem-calc(2);
+	font-size: rem-calc(18);
+	font-weight: normal;
+	box-shadow: 0px 4px 0px rgba($shadow-color, 0.5), 0px 8px 5px rgba($shadow-color, 0.3);
+	text-shadow: 2px 2px 6px rgba($shadow-color, 0.7);
+	background: #FF6600;
+}
+
+.text-white {
+	color: #FFFFFF;
+}
+.text-light-grey {
+	color: darken(#FFFFFF, 30%);
+}
+
+section.articles {
+	padding-top: rem-calc(40);
+	padding-bottom: rem-calc(20);
+	background: darken(#FFFFFF, 15%);
+	& h2 {
+		text-align: center;
+		padding-bottom: rem-calc(20);
+	}
+}
+
+section.testimonials {
+padding-top: rem-calc(40);
+padding-bottom: rem-calc(40);
+& h2 {
+	padding-bottom: rem-calc(5);
+}
+
+background: $secondary-color;
+}
+
+section.cta {
+padding-top: rem-calc(40);
+padding-bottom: rem-calc(40);
+margin-bottom: rem-calc(40);
+
+	background: $primary-color;
+	& h2, & h4 {
+		color: #FFF;
+	}
+
+	& .button {
+		// padding-top: rem-calc();
+		font-size: rem-calc(18);
+		font-weight: normal;
+		box-shadow: 0px 4px 0px rgba($shadow-color, 0.5), 0px 8px 5px rgba($shadow-color, 0.3);
+		text-shadow: 2px 2px 6px rgba($shadow-color, 0.7);
+		background: #FF6600;
+		// background: #FFFFFF;
+		// color: $primary-color;
+
+	}
 }

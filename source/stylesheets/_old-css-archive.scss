@@ -1,4 +1,4 @@
-
+/* 
 $paragraph-margin-bottom: emCalc(20);
 $primary-color-yellow: #ffe12f;
 $primary-color-magenta: #ea2b7f;
@@ -191,9 +191,8 @@ padding-bottom:0px;
 .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 * html .cf { zoom: 1; }
 *:first-child+html .cf { zoom: 1; }
-/*
- * Socialite Look-a-like defaults
- */
+
+ // * Socialite Look-a-like defaults
 
 .social-buttons { display: block; list-style: none; padding: 0; margin: 20px; }
 .social-buttons > li { display: block; margin: 0; padding: 10px; float: left; }
@@ -350,8 +349,8 @@ left: 110px;
   padding:15px;
   margin:1em 0 3em;
   // color:#000;
-  background: $bubble-color; /* default background for browsers without gradient support */
-  /* css3 */
+  background: $bubble-color; //default background for browsers without gradient support 
+  // css3 
   // background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
   // background:-moz-linear-gradient(#f9d835, #f3961c);
   // background:-o-linear-gradient(#f9d835, #f3961c);
@@ -361,16 +360,16 @@ left: 110px;
   border-radius:10px;
 }
 
-/* creates triangle */
+// creates triangle 
 .triangle-isosceles:after {
   content:"";
   position:absolute;
-  bottom:-15px; /* value = - border-top-width - border-bottom-width */
-  left:50px; /* controls horizontal position */
-  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  bottom:-15px; // value = - border-top-width - border-bottom-width 
+  left:50px; // controls horizontal position 
+  border-width:15px 15px 0; // vary these values to change the angle of the vertex 
   border-style:solid;
   border-color:$bubble-color transparent;
-  /* reduce the damage in FF3.0 */
+  // reduce the damage in FF3.0 
   display:block;
   width:0;
 }
@@ -517,18 +516,18 @@ div.card.article:hover, div.card.product:hover, div.card.sidebar-test:hover, div
 
 // flipper
 
-/* entire container, keeps perspective */
+// entire container, keeps perspective 
 .flip-container{
-/*perspective*/
+//perspective
 -webkit-perspective:1000;
    -moz-perspective:1000;
     -ms-perspective:1000;
      -o-perspective:1000;
         perspective:1000;
 }
-/* flip the pane when hovered */
+// flip the pane when hovered 
 .flip-container.flip .flipper{
-/*transform*/
+//transform
 -webkit-transform:rotateY(180deg);
    -moz-transform:rotateY(180deg);
     -ms-transform:rotateY(180deg);
@@ -556,14 +555,14 @@ div.card.article:hover, div.card.product:hover, div.card.sidebar-test:hover, div
     }
 }
 
-/* flip speed goes here */
+// flip speed goes here 
 .flipper{
-/*transition*/
+//transition
 -webkit-transition:0.6s;
    -moz-transition:0.6s;
      -o-transition:0.6s;
         transition:0.6s;
-/*transform-style*/
+//transform-style
 -webkit-transform-style:preserve-3d;
    -moz-transform-style:preserve-3d;
     -ms-transform-style:preserve-3d;
@@ -571,9 +570,9 @@ div.card.article:hover, div.card.product:hover, div.card.sidebar-test:hover, div
         transform-style:preserve-3d;
 position:relative;
 }
-/* hide back of pane during swap */
+// hide back of pane during swap 
 .front, .back{
-/*backface-visibility*/
+//backface-visibility
 -webkit-backface-visibility:hidden;
    -moz-backface-visibility:hidden;
     -ms-backface-visibility:hidden;
@@ -583,13 +582,13 @@ position:absolute;
 top:0;
 left:0;
 }
-/* front pane, placed above back */
+// front pane, placed above back 
 .front{
 z-index:2;
 }
-/* back, initially hidden pane */
+// back, initially hidden pane 
 .back{
-/*transform*/
+//transform
 -webkit-transform:rotateY(180deg);
    -moz-transform:rotateY(180deg);
     -ms-transform:rotateY(180deg);
@@ -637,11 +636,11 @@ p.disclaimer {
 //   height: auto;
 // }
 
-/* #reflow-grid {
+// #reflow-grid {
   list-style-type: none;
   // background: #f00;
 }
- */
+ 
 .widescreen-youtube-min {
   padding-bottom: 51.75%;
 }
@@ -697,4 +696,4 @@ p.disclaimer {
   overflow: hidden;
   position: relative;
   top:0;
-}
+} */
