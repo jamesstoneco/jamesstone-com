@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="252px" height="30px" viewBox="0 0 252 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>js logo prototype site</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo-overlay" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-1" fill="#2F5C90" sketch:type="MSShapeGroup" x="0" y="0" width="57" height="30"></rect>
+            <g id="Fill-5-+-Fill-10" transform="translate(4.000000, 4.000000)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                <path d="M27,18.2849908 L44.629871,18.2849908 L44.629871,13.2552527 L27,13.2552527 L27,0 L49,0 L49,3.71767049 L31.3736719,3.71767049 L31.3736719,8.74566945 L49,8.74566945 L49,22 L27,22 L27,18.2849908 Z" id="Fill-5"></path>
+                <path d="M17.6327993,3.58806858 L7.4242914,3.58806858 L7.4242914,0 L22,0 L22,22 L0,22 L0,13.1251088 L3.71040657,13.1251088 L3.71040657,18.2930393 L17.6327993,18.2930393 L17.6327993,3.58806858 Z" id="Fill-10"></path>
+            </g>
+        </g>
+        <text id="JamesStone.com" sketch:type="MSTextLayer" font-family="Palatino" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#888888">
+            <tspan x="74.5" y="22.34375">JamesStone.com</tspan>
+        </text>
+    </g>
+</svg>

@@ -11,12 +11,10 @@ require 'slim'
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-  activate :autoprefixer do |config|
-    config.browsers = ['last 2 versions', 'Explorer >= 9']
-  end
+activate :livereload
 
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
 
 # Methods defined in the helpers block are available in templates

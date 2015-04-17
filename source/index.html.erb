@@ -2,50 +2,222 @@
 title: "James Stone: Learn Foundation, SVG, JavaScript + more"
 seo_desc: "The best place to learn ZURB Foundation, SVG and JavaScript. James is a Dev + Designer based out of San Francisco, passionate about UX + Design. He has spoken at at the HTML5 Developers Conference, TEDxPSU and the UMD Design | Cultures + Creativity Honors College and is a Mentor at Coding House."
 pageable: false
-per_page: 15
+per_page: 13
 active_nav: home
 published: true
----
+videos: 
+- id: "hbp28iu3av"
+  image: "ba64560eca67edd0d46ed28e72143fc2d220b543"
+- id: "tzoaz66p8u"
+  image: "fbd361dbf9be53126746087f91afe73c5652ac47"
+- id: "e44vqpqmo6"
+  image: "7eb2f5073bd2d8240e30019b50c2f26140897ddb"
 
-<div class="content-top-spacing"></div>
+- id: "jd9284wfd7"
+  image: "f3a6882dcf86cea2d2e4180975dbdbd2caedb7d0"
+- id: "hr865g6lre"
+  image: "1881a48e2d8d697d256885ef470b11950d99bb64"
+- id: "bllp7vntge"
+  image: "36ff64ea3dad17e6100a9828342e1ac3e35bedb5"
+---
 
 <%= partial "featurebox" %>
 
 
+<section class="bling">
+
 <div class="row">
-  <% page_articles('blog').group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
-  <div class="medium-4 large-4 columns"> <!-- main content -->
-    <% col.each do |article| %>
-    <div class="card article">
-      <a class="article-link" href="<%= article.url %>"></a>
+  <div class="medium-6 columns medium-centered">
+    <div class="row">
+      <div class="small-3 columns"><a target="_blank" href="http://tedxtalks.ted.com/video/TEDxPSU-James-Stone-A-Technolog;search%3Ajames%20stone"><img src="/images/index/logos/logo-tedx.png" alt=""></a></div>
+      <div class="small-3 columns"><a target="_blank" href="http://html5devconf.com/archives/april2013/speakers.html#j_stone"><img src="/images/index/logos/logo-html5dev.png" alt=""></a></div>
+      <div class="small-3 columns"><a target="_blank" href="https://www.codeschool.com/screencasts/sublime-text-3"><img src="/images/index/logos/logo-codeschool.png" alt=""></a></div>
+      <div class="small-3 columns"><a target="_blank" href="http://foundation.zurb.com/develop/resources.html#tutorials"><img src="/images/index/logos/logo-zurb.png" alt=""></a></div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<div class="row"></div>
+
+<section class="products" id="products">
+<h2>Products designed to help you learn fast</h2>
+  <div class="row">
+    <div class="medium-8 columns"><a target="_blank" href="/zurb-foundation-blueprints"><img src="/images/landing/zf-bp-hero%402x.jpg" alt=""></a>
+    </div>
+    <div class="medium-4 columns">
+    <br class="show-for-small-only">
+      <a target="_blank" href="/zurb-foundation-quick-reference"><img src="/images/landing/zf-quickref-hero.jpg" alt=""></a>
+    <br class="show-for-small-only">
+    <br class="show-for-small-only">
+      <a target="_blank" href="https://leanpub.com/zurb-foundation-performance-guide"><img style="border: solid 1px #ccc; margin-top: 5px;" class="" src="images/index/products/leanpub-zurb-perf.png" alt=""></a>
+      <br>
+    </div>
+  </div>
+</section>
+
+<section class="videos" id="videos">
+
+  <h2>Friendly screencasts to walk you through step-by-step</h2>
+
+
+
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
+
+  <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
+
+<% current_page.data.videos.each_slice(3) do | vid_block | %>
+  <div class="row video-row">
+  <% vid_block.each do | vid | %>
+    <div class="small-10 medium-4 columns small-centered medium-uncentered"> <a href="//fast.wistia.net/embed/iframe/<%= vid.id %>?popover=true" class="wistia-popover[height=360,playerColor=7b796a,width=640]"><img src="https://embed-ssl.wistia.com/deliveries/<%= vid.image %>.jpg?image_play_button=true&image_play_button_color=7b796ae0&image_crop_resized=300x169" alt="" /></a>
+    <br class="show-for-small-only"> 
+    <br class="show-for-small-only"> 
+    </div>
+<% end %>
+  </div>
+<% end %>
+</section>
+
+<section class="testimonials">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2 class="text-center">What people are saying about James</h2>
+    </div>
+    <div class="small-6 medium-3 columns end testimonial">
+      <div class="image-wrap">
+        <a target="_blank" href="https://twitter.com/zurbfoundation/status/448920873034977282"><img src="/images/index/twitter/zurb-foundation.png" alt=""></a>
+      </div>
+      <p><a target="_blank" href="https://twitter.com/zurbfoundation/status/448920873034977282">ZURB Foundation</a></p>
+      <blockquote>Thanks James! Your site and help on the forum make this community stronger!</blockquote>
+    </div>
+    <div class="small-6 medium-3 columns end testimonial">
+      <div class="image-wrap">
+        <a target="_blank" href="https://twitter.com/jamesstoneco/status/525140340068466689"><img src="/images/index/twitter/ethan.png" alt=""></a>
+      </div>
+      <p><a target="_blank" href="https://twitter.com/jamesstoneco/status/525140340068466689">Ethan Schoonover</a></p>
+      <blockquote>Hey! Thanks for all things Foundation related! I just started getting into Found. last year. So great!</blockquote>
+    </div>
+    <div class="small-6 medium-3 columns end testimonial">
+      <div class="image-wrap">
+        <a target="_blank" href="https://twitter.com/_pastorello/status/547054814186979328"><img src="/images/index/testimonials/pastorello.jpg" alt=""></a>
+      </div>
+      <p><a target="_blank" href="https://twitter.com/_pastorello/status/547054814186979328">Luca Pastorello</a></p>
+      <blockquote>Hi! i'm just starting to following the "getting started" page on your site :) it's full of awesome stuff, thank you!</blockquote>
+    </div>
+    <div class="small-6 medium-3 columns end testimonial">
+      <div class="image-wrap">
+        <a target="_blank" href="https://twitter.com/zurbfoundation/status/490156593250447360"><img src="/images/index/twitter/codinghouse.png" alt=""></a>
+      </div>
+      <p><a target="_blank" href="https://twitter.com/zurbfoundation/status/490156593250447360">Coding House</a></p>
+      <blockquote>Thank You @JAMESSTONEco for the great presentation on @ZURBfoundation, and the general tips and tricks.</blockquote>
+    </div>
+  </div>
+
+      <div class="row hide">
+      <div class="small-12 columns">
+        <p class="text-right"> <a href="http://www.twitter.com/JAMESSTONEco">Latest from the Twitterverse &raquo;</a> </p>
+      </div>
+    </div>
+
+
+</section>
+
+
+
+
+<section class="articles" id="articles">
+<h2>Dive deeper with comprehensive articles</h2>
+  <div class="row">
+    <% page_articles('blog').group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
+    <div class="medium-4 large-4 columns"> <!-- main content -->
+
+      <% col.each do |article| %>
       <% test_video          = article.data.video %>
       <% test_video_type     = article.data.video_type %>
       <% test_video_id       = article.data.video_id %>
       <% test_featured_image = article.data.featured_image %>
-      <% image_url           = "" %>
-      <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+
+      <% unless test_video %>
+
+      <div class="card article">
+        <a class="article-link" href="<%= article.url %>"></a>
+        <% image_url           = "" %>
+        <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
         <% if test_video == "true" %>
-          <% if test_video_type == "youtube" %>
-          <div class="flex-video widescreen">
+        <% if test_video_type == "youtube" %>
+        <div class="flex-video widescreen">
           <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
-          </div>
-          <% end %>
-        <% elsif ( defined?(test_featured_image)) %>
-          <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+        </div>
         <% end %>
-      <% end %>
-      <h3 class="entry-title"><%= article.title %></h3>
-      <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
-      <%= strip_html(article.summary(125)) %>
-    </div>
-    <% end %> <!-- article -->
+        <% elsif ( defined?(test_featured_image)) %>
+        <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+        <% end %>
+        <% end %>
+        <p class="leadin"><%= article.title %></h3>
+          <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+          <%= strip_html(article.summary(125)) %>
+          <a href="<%= article.url %>" class="button expand secondary flush-bottom">Read &raquo;</a>
+        </div>
+        <br>
+        <% end %> <!-- check for video -->
+        <% end %> <!-- article -->
+
       </div>
-  <% end %> <!-- col -->
-</div>
+      <% end %> <!-- col -->
+
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <p> <a href="/blog/p2">&laquo; previous articles</a> </p>
+      </div>
+    </div>
+
+  </section>
 
 
-<div class="row">
-  <div class="small-12 columns">
-    <p> <a href="/blog/p2">&laquo; previous articles</a> </p>
- </div>
-</div>
+
+
+
+  <div class="row hide">
+    <% page_articles('blog').group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
+    <div class="medium-4 large-4 columns"> <!-- main content -->
+      <% col.each do |article| %>
+      <div class="card article">
+        <a class="article-link" href="<%= article.url %>"></a>
+        <% test_video          = article.data.video %>
+        <% test_video_type     = article.data.video_type %>
+        <% test_video_id       = article.data.video_id %>
+        <% test_featured_image = article.data.featured_image %>
+        <% image_url           = "" %>
+        <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+        <% if test_video == "true" %>
+        <% if test_video_type == "youtube" %>
+        <div class="flex-video widescreen">
+          <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+        </div>
+        <% end %>
+        <% elsif ( defined?(test_featured_image)) %>
+        <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+        <% end %>
+        <% end %>
+        <h3 class="entry-title"><%= article.title %></h3>
+        <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+        <%= strip_html(article.summary(125)) %>
+      </div>
+      <% end %> <!-- article -->
+    </div>
+    <% end %> <!-- col -->
+  </div>
+
+<section class="cta">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2 class="text-center">Need some help with ZURB Foundation?</h2>
+      <h4 class="text-center">Schedule a Clarity.fm call + screenshare and you can talk directly to James ASAP.</h4>
+      <br>
+      <p class="text-center flush-bottom"><a href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request" class="button radius" target="_blank">Schedule 15 minutes today &raquo;</a></p>
+    </div>
+  </div>
+</section>
