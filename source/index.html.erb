@@ -25,22 +25,32 @@ videos:
 
 
 <section class="bling">
-<div class="medium-8 large-5 columns medium-centered">
-    <div class="logo tedxpsu"> <a target="_blank" href="http://tedxtalks.ted.com/video/TEDxPSU-James-Stone-A-Technolog;search%3Ajames%20stone"><img src="http://cityportals-statecollegecom-assets.s3.amazonaws.com/assets/news/images/543179_3533.jpg" alt=""></a> </div>
-    <div class="logo html5devconf"> <a target="_blank" href="http://html5devconf.com/archives/april2013/speakers.html#j_stone"><img src="http://html5devconf.com/images/logo.svg" alt=""></a> </div>
-    <div class="logo codeschool"> <a target="_blank" href="https://www.codeschool.com/screencasts/sublime-text-3"><img src="https://d1tijy5l7mg5kk.cloudfront.net/assets/brand/brand-horizontal-tagline-f58a19a865421fa8f2d9d5040af42562.svg" alt=""></a> </div>
-    <div class="logo zurb"> <a target="_blank" href="http://foundation.zurb.com/develop/resources.html#tutorials"><img src="http://zurb.com/blog_uploads/0000/1424/zurb-logo-large.png" alt=""></a> </div>
-  </div> 
+
+<div class="row">
+  <div class="medium-6 columns medium-centered">
+    <div class="row">
+      <div class="small-3 columns"><a target="_blank" href="http://tedxtalks.ted.com/video/TEDxPSU-James-Stone-A-Technolog;search%3Ajames%20stone"><img src="/images/index/logos/logo-tedx.png" alt=""></a></div>
+      <div class="small-3 columns"><a target="_blank" href="http://html5devconf.com/archives/april2013/speakers.html#j_stone"><img src="/images/index/logos/logo-html5dev.png" alt=""></a></div>
+      <div class="small-3 columns"><a target="_blank" href="https://www.codeschool.com/screencasts/sublime-text-3"><img src="/images/index/logos/logo-codeschool.png" alt=""></a></div>
+      <div class="small-3 columns"><a target="_blank" href="http://foundation.zurb.com/develop/resources.html#tutorials"><img src="/images/index/logos/logo-zurb.png" alt=""></a></div>
+    </div>
+  </div>
+</div>
+
 </section>
 
 <div class="row"></div>
 
 <section class="products" id="products">
-<h2>Products Designed to Teach + Save Time</h2>
+<h2>Products designed to help you learn fast</h2>
   <div class="row">
-    <div class="small-8 columns"><a target="_blank" href="/zurb-foundation-blueprints"><img src="/images/landing/zf-bp-hero%402x.jpg" alt=""></a></div>
-    <div class="small-4 columns">
+    <div class="medium-8 columns"><a target="_blank" href="/zurb-foundation-blueprints"><img src="/images/landing/zf-bp-hero%402x.jpg" alt=""></a>
+    </div>
+    <div class="medium-4 columns">
+    <br class="show-for-small-only">
       <a target="_blank" href="/zurb-foundation-quick-reference"><img src="/images/landing/zf-quickref-hero.jpg" alt=""></a>
+    <br class="show-for-small-only">
+    <br class="show-for-small-only">
       <a target="_blank" href="https://leanpub.com/zurb-foundation-performance-guide"><img style="border: solid 1px #ccc; margin-top: 5px;" class="" src="images/index/products/leanpub-zurb-perf.png" alt=""></a>
       <br>
     </div>
@@ -49,7 +59,7 @@ videos:
 
 <section class="videos" id="videos">
 
-  <h2>Learn ZURB Foundation by Taking Action</h2>
+  <h2>Friendly screencasts to walk you through step-by-step</h2>
 
 
 
@@ -60,7 +70,10 @@ videos:
 <% current_page.data.videos.each_slice(3) do | vid_block | %>
   <div class="row video-row">
   <% vid_block.each do | vid | %>
-    <div class="small-4 columns"> <a href="//fast.wistia.net/embed/iframe/<%= vid.id %>?popover=true" class="wistia-popover[height=360,playerColor=7b796a,width=640]"><img src="https://embed-ssl.wistia.com/deliveries/<%= vid.image %>.jpg?image_play_button=true&image_play_button_color=7b796ae0&image_crop_resized=300x169" alt="" /></a> </div>
+    <div class="small-10 medium-4 columns small-centered medium-uncentered"> <a href="//fast.wistia.net/embed/iframe/<%= vid.id %>?popover=true" class="wistia-popover[height=360,playerColor=7b796a,width=640]"><img src="https://embed-ssl.wistia.com/deliveries/<%= vid.image %>.jpg?image_play_button=true&image_play_button_color=7b796ae0&image_crop_resized=300x169" alt="" /></a>
+    <br class="show-for-small-only"> 
+    <br class="show-for-small-only"> 
+    </div>
 <% end %>
   </div>
 <% end %>
@@ -71,32 +84,32 @@ videos:
     <div class="small-12 columns">
       <h2 class="text-center">What people are saying about James</h2>
     </div>
-    <div class="small-3 columns end testimonial">
+    <div class="small-6 medium-3 columns end testimonial">
       <div class="image-wrap">
-        <img src="https://pbs.twimg.com/profile_images/540601078916452352/gIke9rjv.png" alt="">
+        <a target="_blank" href="https://twitter.com/zurbfoundation/status/448920873034977282"><img src="/images/index/twitter/zurb-foundation.png" alt=""></a>
       </div>
-      <p>ZURB Foundation</p>
+      <p><a target="_blank" href="https://twitter.com/zurbfoundation/status/448920873034977282">ZURB Foundation</a></p>
       <blockquote>Thanks James! Your site and help on the forum make this community stronger!</blockquote>
     </div>
-    <div class="small-3 columns end testimonial">
+    <div class="small-6 medium-3 columns end testimonial">
       <div class="image-wrap">
-        <img src="https://pbs.twimg.com/profile_images/2023111653/es_simple_512_us_24b.png" alt="">
+        <a target="_blank" href="https://twitter.com/jamesstoneco/status/525140340068466689"><img src="/images/index/twitter/ethan.png" alt=""></a>
       </div>
-      <p>Ethan Schoonover</p>
+      <p><a target="_blank" href="https://twitter.com/jamesstoneco/status/525140340068466689">Ethan Schoonover</a></p>
       <blockquote>Hey! Thanks for all things Foundation related! I just started getting into Found. last year. So great!</blockquote>
     </div>
-    <div class="small-3 columns end testimonial">
+    <div class="small-6 medium-3 columns end testimonial">
       <div class="image-wrap">
-        <img src="/images/index/testimonials/pastorello.jpg" alt="">
+        <a target="_blank" href="https://twitter.com/_pastorello/status/547054814186979328"><img src="/images/index/testimonials/pastorello.jpg" alt=""></a>
       </div>
-      <p>Luca Pastorello</p>
+      <p><a target="_blank" href="https://twitter.com/_pastorello/status/547054814186979328">Luca Pastorello</a></p>
       <blockquote>Hi! i'm just starting to following the "getting started" page on your site :) it's full of awesome stuff, thank you!</blockquote>
     </div>
-    <div class="small-3 columns end testimonial">
+    <div class="small-6 medium-3 columns end testimonial">
       <div class="image-wrap">
-        <img src="https://pbs.twimg.com/profile_images/477157394850385920/ZGyWlzlu.png" alt="">
+        <a target="_blank" href="https://twitter.com/zurbfoundation/status/490156593250447360"><img src="/images/index/twitter/codinghouse.png" alt=""></a>
       </div>
-      <p>Coding House</p>
+      <p><a target="_blank" href="https://twitter.com/zurbfoundation/status/490156593250447360">Coding House</a></p>
       <blockquote>Thank You @JAMESSTONEco for the great presentation on @ZURBfoundation, and the general tips and tricks.</blockquote>
     </div>
   </div>

@@ -108,24 +108,7 @@ background-size: 100% auto;
 
 section.bling {
 	padding-top: rem-calc(20);
-	padding-bottom: rem-calc(30);
-	& .logo {
-		width: 25%;
-		float: left;
-		& img {
-					padding-right: rem-calc(30);
-		padding-left: rem-calc(30);
-
-		}
-		&.tedxpsu { padding-top: rem-calc(16); }
-		&.codeschool { padding-top: rem-calc(22); }
-		&.zurb { padding-top: rem-calc(18); }
-	}
-	& h4 {
-		font-size: rem-calc(22);
-		font-weight: normal;
-		color: lighten(#000, 60%);
-	}
+	// padding-bottom: rem-calc(30);
 }
 
 section.articles {
