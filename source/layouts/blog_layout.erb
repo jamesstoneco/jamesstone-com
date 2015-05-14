@@ -47,18 +47,19 @@
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:site" content="@JAMESSTONEco" />
     <meta property="twitter:creator" content="@JAMESSTONEco" />
-    <meta property="twitter:url" content="<%= "http://www.jamesstone.co#{current_page.url}" %>" />
+    <meta property="twitter:url" content="<%= "http://www.jamesstone.com#{current_page.url}" %>" />
 
 
     <link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/jamesstonecom" />
     <link rel="author" href="//plus.google.com/+JamesStoneAuthorSpeakerDeveloperMediaArtist/posts"/>
+    <link rel=“canonical” href=“<%= URI.join("https://www.jamesstone.com", current_page.url) %>”>
 
     <meta property="twitter:title" content="<%= current_page.data.title || "James Stone" %>" />
     <meta property="og:title" content="<%= current_page.data.title || "James Stone" %>" />
-    <meta property="og:url" content="<%= URI.join("https://www.jamesstone.co", current_page.url) %>" />
+    <meta property="og:url" content="<%= URI.join("https://www.jamesstone.com", current_page.url) %>" />
     <% unless current_page.data.featured_image.nil? %>
-    <meta property="twitter:image" content="<%= "https://www.jamesstone.co#{asset_url(current_page.data.featured_image)}" %>" />
-    <meta property="og:image" content="<%= "https://www.jamesstone.co#{asset_url(current_page.data.featured_image)}" %>"/>
+    <meta property="twitter:image" content="<%= "https://www.jamesstone.com#{asset_url(current_page.data.featured_image)}" %>" />
+    <meta property="og:image" content="<%= "https://www.jamesstone.com#{asset_url(current_page.data.featured_image)}" %>"/>
     <% end %>
     <% unless current_page.data.seo_desc.nil? %>
     <meta property="twitter:description" content="<%= current_page.data.seo_desc %>" />
