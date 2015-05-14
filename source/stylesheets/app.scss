@@ -1,7 +1,7 @@
 $font-family-sans-serif: 'Myriad Pro', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;
 $font-family-serif: 'Palatino', 'Minion Pro', 'Palatino Linotype', 'Georgia', 'Serif';
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
-$base-line-height: 120%;
+$base-line-height: 150%;
 
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
 // $blockquote-padding: rem-calc(9 20 0 19);
@@ -53,8 +53,10 @@ $header-line-height: 1.4;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-$paragraph-font-size: rem-calc(16);
-$paragraph-line-height: rem-calc(26);
+// $paragraph-font-size: rem-calc(20);
+$paragraph-font-size: 1.125rem;
+$paragraph-line-height: 1.7;
+// $paragraph-line-height: rem-calc(26);
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
