@@ -38,6 +38,8 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+set :trailing_slash, false
+
 # foundation patch per http://wanderwort.de/2013/04/11/using-zurb-foundation-with-middleman/
 
 # bourbon_path = Gem::Specification.find_by_name('bourbon').gem_dir
