@@ -1,107 +1,131 @@
 <% wrap_layout :blog_layout do %>
 
+<% unless current_page.data.outline.nil? %>
+<div class="magellan-container hide-for-small-only" data-magellan-expedition="fixed" data-options="destination_threshold:10;throttle_delay:0;">
+  <dl class="sub-nav">
+    <dd>Article Highlights:</dd>
+    <!-- <dd data-magellan-arrival="intro"><a href="#intro">Intro</a></dd> -->
+    <% current_page.data.outline.each do |h| %>
+    <dd data-magellan-arrival="<%= h.id %>"><a href="#<%= h.id %>"><%= h.heading %></a></dd>
+    <% end %>
+  </dl>
+</div>
+<% end %>
+
+
 <br>
 
 <div class="row">
   <div class="large-12 columns medium-centered"> <!-- content -->
+    <!-- <a data-magellan-destination="intro" name="intro"></a> -->
 
- <% permalink_url = "https://www.jamesstone.com#{current_page.url}".sub(/(\/)+$/,'') %>
+    <% permalink_url = "https://www.jamesstone.com#{current_page.url}".sub(/(\/)+$/,'') %>
 
-<div>
-  
-    <div class="entry-content">
-      <% test_featured_image_wide = current_page.data.featured_image_wide %>
-      <% test_featured_image = current_page.data.featured_image %>
+    <div>
 
-      <% test_video          = current_page.data.video %>
-      <% test_video_type     = current_page.data.video_type %>
-      <% test_video_id       = current_page.data.video_id %>
+      <div class="entry-content">
+        <% test_featured_image_wide = current_page.data.featured_image_wide %>
+        <% test_featured_image = current_page.data.featured_image %>
 
-      <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+        <% test_video          = current_page.data.video %>
+        <% test_video_type     = current_page.data.video_type %>
+        <% test_video_id       = current_page.data.video_id %>
+
+        <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
         <% if test_video == "true" %>
-          <% if test_video_type == "youtube" %>
-            <div class="flex-video widescreen">
+        <% if test_video_type == "youtube" %>
+        <div class="flex-video widescreen">
           <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
-          </div>
-          <% end %>
-        <% elsif not current_page.data.featured_image_wide.nil? %>
-          <img src="<%= current_page.data.featured_image_wide %>" style="width:100%;">
-          <h1 class="text-center" style="padding-top: 1rem;"><%= current_page.title %></h1>
-        <% elsif not current_page.data.featured_image.nil? %>
-          <p class="text-center"><img src="<%= current_page.data.featured_image %>"></p>
-          <h1 class="text-center"><%= current_page.title %></h1>
+        </div>
         <% end %>
-      <% end %>
+        <% elsif not current_page.data.featured_image_wide.nil? %>
+        <img src="<%= current_page.data.featured_image_wide %>" style="width:100%;">
+        <h1 class="text-center" style="padding-top: 1rem;"><%= current_page.title %></h1>
+        <% elsif not current_page.data.featured_image.nil? %>
+        <p class="text-center"><img src="<%= current_page.data.featured_image %>"></p>
+        <h1 class="text-center"><%= current_page.title %></h1>
+        <% end %>
+        <% end %>
 
 
-      <p align="center">
-        by James Stone &ndash; <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">Follow him on Twitter</a>
-        <time class="hide timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
-      </p>
-  
-   
-      <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
-      <div class="row">
-        <div class="small-10 small-centered medium-8 large-10 columns">
-          <div id="disclaimer-aff"class="panel">
-            <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
-            <% if ( defined?(test_amazon_aff_url)) %>
-            <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
-            <% end %>
-  
-            <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
+        <p align="center">
+          by James Stone &ndash; <a href="https://twitter.com/intent/user?screen_name=jamesstoneco">Follow him on Twitter</a>
+          <time class="hide timeago published" datetime="<%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").to_time.iso8601 %>"><%= Time.parse("#{current_page.date.strftime('%B %e, %Y')} #{current_page.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+        </p>
+
+
+        <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
+        <div class="row">
+          <div class="small-10 small-centered medium-8 large-10 columns">
+            <div id="disclaimer-aff"class="panel">
+              <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
+              <% if ( defined?(test_amazon_aff_url)) %>
+              <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
+              <% end %>
+
+              <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <% end %>
-  
-      <% if ( current_page.data.disclaimer_free.eql?('true')) %>
-      <div class="row">
-        <div class="small-8 small-centered columns">
-          <div id="disclaimer-aff"class="panel">
-            <p>Review Copy Disclaimer: I recieved a copy of this product at no cost from the publisher / manufacturer. The opinions are of my own and I did not recieve any compensation for the review other than the product itself.</p>
+        <% end %>
+
+        <% if ( current_page.data.disclaimer_free.eql?('true')) %>
+        <div class="row">
+          <div class="small-8 small-centered columns">
+            <div id="disclaimer-aff"class="panel">
+              <p>Review Copy Disclaimer: I recieved a copy of this product at no cost from the publisher / manufacturer. The opinions are of my own and I did not recieve any compensation for the review other than the product itself.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <% end %>
-  
+        <% end %>
+
         <% unless current_page.data.highlights.nil? %>
         <div class="medium-6 columns medium-centered">
           <div class="panel callout radius">
             <h4 class="text-center">Article Highlights</h4>
             <ul class="text-center no-bullet">
-                <% current_page.data.highlights.each do |h| %>
-                    <li><%= h %></li>
-                <% end %>
+              <% current_page.data.highlights.each do |h| %>
+              <li><%= h %></li>
+              <% end %>
             </ul>
           </div>
         </div>
-      <% end %>
+        <% end %>
+
+<!-- <div class="magellan-container" data-magellan-expedition="fixed" data-options="destination_threshold:65;throttle_delay:0;">
+  <dl class="sub-nav">
+    <dd data-magellan-arrival="arrival" class=""><a href="#arrival">Arrival</a></dd>
+    <dd data-magellan-arrival="destination" class=""><a href="#destination">Destination</a></dd>
+    <dd data-magellan-arrival="js" class=""><a href="#js">Javascript</a></dd>
+  </dl>
+</div>
+-->
 
 
 
-  
+
+
 <div class="row">
   <div class="large-10 columns large-centered"><%= yield %></div>
 </div>
 
 
+</div>
+
+<% if ( current_page.data.disclaimer_aff.eql?('true')) %>
+<div class="row">
+  <div class="small-10 small-centered medium-8 large-10 columns">
+    <div id="disclaimer-aff"class="panel">
+      <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
+      <% if ( defined?(test_amazon_aff_url)) %>
+      <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
+      <% end %>
+
+      <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
     </div>
-  
-    <% if ( current_page.data.disclaimer_aff.eql?('true')) %>
-    <div class="row">
-      <div class="small-10 small-centered medium-8 large-10 columns">
-        <div id="disclaimer-aff"class="panel">
-          <% test_amazon_aff_url = current_page.data.amazon_aff_url %>
-          <% if ( defined?(test_amazon_aff_url)) %>
-          <a href="<%= current_page.data.amazon_aff_url %>" class="button large expand">View on Amazon &raquo;</a>
-          <% end %>
-  
-          <p>This post contains Amazon Affiliate Links, which help support my insatiable kindle habit. It is possible for me to make more than I can read, however, this is also incredibly unlikely.</p>
-        </div>
-      </div>
-    </div>
-    <% end %></div>
+  </div>
+</div>
+<% end %></div>
 
 
 
@@ -109,19 +133,19 @@
   <!-- comments -->
   <div id="disqus_thread"></div>
   <script type="text/javascript">
-      var disqus_shortname = 'manofstone';
-      var disqus_url = '<%= URI.join("https://www.jamesstone.com", current_page.url) %>';
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
+    var disqus_shortname = 'manofstone';
+    var disqus_url = '<%= URI.join("https://www.jamesstone.com", current_page.url) %>';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
   </script>
 </div>
 
 
-  </div>
+</div>
 
 
 </div>

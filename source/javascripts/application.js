@@ -26,7 +26,7 @@
 // require foundation/js/foundation/foundation.equalizer
 // require foundation/js/foundation/foundation.interchange
 // require foundation/js/foundation/foundation.joyride
-// require foundation/js/foundation/foundation.magellan
+//= require foundation/js/foundation/foundation.magellan
 // require foundation/js/foundation/foundation.offcanvas
 //= require foundation/js/foundation/foundation.orbit
 //= require foundation/js/foundation/foundation.reveal

@@ -5,18 +5,27 @@ time: 8:10 PM PST
 tags: Foundation
 featured_image: "/blog/featured-images/five-ways.svg"
 featured_image_wide: "/blog/featured-images/five-ways-wide.svg"
-highlights: 
- - CSS Download
- - Sass/CSS
- - Semantic HTML/Sass Mixins
- - Angular Foundation
- - Which is right for me?
+outline:
+ - heading: "1. CSS + Javascript Download"
+   id: "way-1"
+ - heading: "2. Sass or SCSS"
+   id: "way-2"
+ - heading: "3. Semantic Mixins"
+   id: "way-3"
+ - heading: "4. Sass Only"
+   id: "way-4"
+ - heading: "5. Angular-Foundation"
+   id: "way-5"
+ - heading: "Which one should I use?"
+   id: "which-one"
 ---
 
 This article discusses the 3 official ways of using ZURB Foundation and 2 unofficial but equally powerful ways. SPLIT\_SUMMARY\_BEFORE\_THIS
 At the end of each section I will highlight the pros and cons for each approach. If you have any questions, feel free to leave a comment at the end.
 
-## \#1. CSS + Javascript Download
+<a name="way-1"></a>
+<h2 data-magellan-destination="way-1">#1. CSS + Javascript Download</h2>
+
 
 If you are new to Web Development or ZURB Foundation this is likely the way you have used ZURB Foundation. It was the first way I used it and it is the gateway drug for bigger and better things such as Sass, Semantic HTML and Google Angular.
 
@@ -46,7 +55,8 @@ Cons:
 * not very flexible
 * you end up overriding a lot of CSS
 
-## \#2. Sass or SCSS
+<a name="way-2"></a>
+<h2 data-magellan-destination="way-2">#2. Sass or SCSS</h2>
 
 Sass and SCSS are used almost interchangeably and the word you will most is Sass to refer to both. Scss is just a CSS Syntax style variant of Sass and is fully compatible with existing CSS files if you were wondering.
 
@@ -73,7 +83,8 @@ Cons
 * you can break things
 * you will need to likely pre-compile and create a build pipeline, more work
 
-## \#3. Semantic Mixins
+<a name="way-3"></a>
+<h2 data-magellan-destination="way-3">#3. Semantic Mixins</h2>
 
 Largely the Holy Grail in web developer circles, this is like [CSS Zen Garden](http://www.csszengarden.com) on steroids. The idea is that you only use classes (and html5 elements) to describe the information purely and do not describe the presentational (visual) aspect of them at all. If you want a deeper introduction, [check out this article on wikipedia](http://en.wikipedia.org/wiki/Semantic_HTML).
 
@@ -99,7 +110,8 @@ Cons:
 * bad decisions and lock you into technical debt
 * not as well documented as the presentational classes
 
-## \#4. Sass Only
+<a name="way-4"></a>
+<h2 data-magellan-destination="way-4">#4. Sass Only</h2>
 
 Another less advertised way to work with Foundation is to go Sass only. This basically means removing all components that have a JS by their name in the official docs.
 
@@ -121,7 +133,9 @@ Cons:
 * static interactivity
 * may not fit all needs
 
-## \#5. Angular-Foundation
+
+<a name="way-5"></a>
+<h2 data-magellan-destination="way-5">#5. Angular-Foundation</h2>
 
 Probably one of the coolest ways to use Foundation which is also not well know is the [Angular-Foundation project](http://pineconellc.github.io/angular-foundation). Basically what they have done is to rewrite all of the jQuery based JavaScript Foundation components as Angular based directives and accompanying templates.
 
@@ -145,7 +159,9 @@ Cons
 * Documentation is limited
 * Implementation takes much longer than standard jQuery based Foundation, assuming you are not using Angular
 
-## In conclusion, which one should I use?
+
+<a name="which-one"></a>
+<h2 data-magellan-destination="which-one">In conclusion, which one should I use?</h2>
 
 Like in most things engineering related, the answer is it depends. 
 

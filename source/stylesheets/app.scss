@@ -1,7 +1,42 @@
+$primary-color: #2F5C90;
+// $primary-color: #FF0000;
+$secondary-color: #e7e7e7;
+
+
 $font-family-sans-serif: 'Myriad Pro', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;
 $font-family-serif: 'Palatino', 'Minion Pro', 'Palatino Linotype', 'Georgia', 'Serif';
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $base-line-height: 150%;
+
+
+
+// We use these to control margin and padding
+$sub-nav-list-margin: rem-calc(-4 0 18);
+$sub-nav-list-padding-top: rem-calc(4);
+
+// We use this to control the definition
+$sub-nav-font-size: 12px;
+$sub-nav-font-color: #999;
+$sub-nav-font-weight: normal;
+$sub-nav-text-decoration: none;
+$sub-nav-border-radius: 6px;
+
+// We use these to control the active item styles
+$sub-nav-active-font-weight: bold;
+$sub-nav-active-bg: darken($secondary-color, 7%);
+$sub-nav-active-color: #fff;
+$sub-nav-active-padding: rem-calc(3 9);
+$sub-nav-active-cursor: default;
+
+// We use these to the item divider
+$sub-nav-item-divider: "";
+$sub-nav-item-divider-margin: rem-calc(12);
+
+
+
+
+// $magellan-bg: #eee;
+// $magellan-padding: 10px;
 
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
 // $blockquote-padding: rem-calc(9 20 0 19);
@@ -108,8 +143,6 @@ $paragraph-text-rendering: optimizeLegibility;
 // $blockquote-cite-link-color: $blockquote-cite-font-color;
 
 
-$primary-color: #2F5C90;
-// $primary-color: #FF0000;
 
 @import "settings";
 
@@ -136,7 +169,7 @@ $primary-color: #2F5C90;
 // @import "foundation/components/joyride";
 @import "foundation/components/keystrokes";
 // @import "foundation/components/labels";
-// @import "foundation/components/magellan";
+@import "foundation/components/magellan";
 @import "foundation/components/orbit";
 // @import "foundation/components/pagination";
 @import "foundation/components/panels";
@@ -144,9 +177,9 @@ $primary-color: #2F5C90;
 // @import "foundation/components/progress-bars";
 // @import "foundation/components/range-slider";
 @import "foundation/components/reveal";
-// @import "foundation/components/side-nav";
+@import "foundation/components/side-nav";
 // @import "foundation/components/split-buttons";
-// @import "foundation/components/sub-nav";
+@import "foundation/components/sub-nav";
 // @import "foundation/components/switch";
 // @import "foundation/components/tables";
 // @import "foundation/components/tabs";
@@ -171,3 +204,16 @@ $primary-color: #2F5C90;
 // @import "old-css-archive";
 
 
+
+
+
+// .magellan-container {
+// 	padding-top: rem-calc(50);
+// 	background-color: none !important;
+// }
+
+// .side-nav {
+// 	& dd {
+// 	   margin-bottom: 0;
+// 	}
+// }
