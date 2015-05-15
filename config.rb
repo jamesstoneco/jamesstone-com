@@ -2,6 +2,13 @@ require 'builder'
 require 'sanitize'
 require 'uri'
 require 'slim'
+require 'nokogiri'
+
+
+
+# set :markdown_engine, :redcarpet
+# set :markdown, :fenced_code_blocks => true, :autolink => true,
+#   :smartypants => true, :tables => true, :with_toc_data => true
 
 ###
 # Helpers
@@ -16,6 +23,11 @@ activate :livereload
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
+
+# set :markdown_engine, :redcarpet
+# set :markdown, renderer: toc_renderer, with_toc_data: true
+
+# set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, with_toc_data: true
 
 # Methods defined in the helpers block are available in templates
 helpers do
@@ -165,4 +177,8 @@ end
 #   # Optional: always run a build before deploying
 #   bitballoon.build_before = true
 # end
+
+
+
+
 
