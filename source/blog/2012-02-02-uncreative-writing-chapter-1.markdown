@@ -1,7 +1,6 @@
 ---
 title: Uncreative Writing, Chapter 1
 date: 2012/02/02
-tags: rhizome, writing
 ---
 
 In a graduate seminar this semester I am reading a book by Kenneth Goldsmith called [Uncreative Writing](http://www.amazon.com/gp/product/0231149913/). He teaches poetry at UPenn a class of the same name where he tells his students that they will not be doing any creative writing of any kind, that everything will be stolen and plagiarized, two big no-no's in academia. In fact his final assignment is to purchase a term paper from a "paper mill" and then defend it.

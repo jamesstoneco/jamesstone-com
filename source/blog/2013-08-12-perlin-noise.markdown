@@ -1,7 +1,7 @@
 ---
 title: Perlin Noise
 date: 2013/08/12
-tags: studio, processing, artlab, toxi, arduino
+tags: p5
 ---
 
 

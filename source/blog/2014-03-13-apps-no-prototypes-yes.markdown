@@ -2,7 +2,7 @@
 title: Apps NO, Prototypes YES
 date: 2014/03/13
 time: 12:32 PM CET
-tags: Web Development, Prototype, Career, Iteration
+tags: opinion
 featured_image: "/blog/featured-images/no-coding.jpg"
 ---
 

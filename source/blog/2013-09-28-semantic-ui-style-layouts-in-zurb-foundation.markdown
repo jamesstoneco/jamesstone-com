@@ -1,15 +1,13 @@
 ---
 title: Semantic UI Style Grids in Zurb Foundation
 date: 2013/09/28
-tags: ZURB Foundation, Semantic-UI, grid, semantic, sass, mixins, media queries
-signup_zurb: "true"
 featured_image: /blog/featured-images/grid-windows.jpg
 ---
 
-This is the first in a series of Foundation Quicktips, short articles that solve practical problems. Lately [Semantic UI](http://semantic-ui.com/) has been the buzz around HN and the like and there is good reason. The UI elements look fantastic and they provide a new style "semantic" markup that make things like 3 column grids more readable in HTML. I am a big fan of more readable code, so lets take a look at how to accomplish the same thing using Zurb Foundation 4 Sass Mixins.
+Lately [Semantic UI](http://semantic-ui.com/) has been the buzz around HN and the like and there is good reason. SPLIT\_SUMMARY\_BEFORE\_THIS
+The UI elements look fantastic and they provide a new style "semantic" markup that make things like 3 column grids more readable in HTML. I am a big fan of more readable code, so lets take a look at how to accomplish the same thing using Zurb Foundation 4 Sass Mixins.
 
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
 
 First lets take a look at the example for Semantic UI:
 

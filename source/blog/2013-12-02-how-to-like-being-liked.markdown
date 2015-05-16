@@ -2,7 +2,7 @@
 title: "How to Like Being Liked"
 date: 2013/12/02
 time: 13:32 PM CET
-tags: Ruby, Middleman, Facebook, Socialite, JavaScript
+tags: middleman, js
 featured_image: /blog/featured-images/facebook-like.jpg
 ---
 

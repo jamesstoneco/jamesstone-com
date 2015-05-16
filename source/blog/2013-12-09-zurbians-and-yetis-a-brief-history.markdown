@@ -2,7 +2,6 @@
 title: ZURBians and Yetis a Brief History
 date: 2013/12/09
 time: 4:24 PM CET
-tags: ZURB Foundation, Responsive Web Design, Web Design, Mobile
 featured_image: "/blog/featured-images/zurbians-and-yetis.jpg"
 signup_zurb: "true"
 ---

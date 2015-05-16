@@ -2,7 +2,7 @@
 title: Mobile First and Why You Should Care (It's Optional)
 date: 2013/12/10
 time: 12:36 PM CET
-tags: ZURB Foundation, Responsive Web Design, Web Design, Mobile
+tags: mobile-first, opinion
 featured_image: "/blog/featured-images/mobile-first-icons.jpg"
 signup_zurb: "true"
 ---

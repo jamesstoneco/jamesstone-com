@@ -2,14 +2,13 @@
 title: Using Zurb Ink with MailChimp
 date: 2013/11/13
 time: 8:00 PM CET
-tags: Zurb Ink, MailChimp, Email, rwd, responsive
-signup_zurb: "true"
+tags: foundation-email
 featured_image: /blog/featured-images/iphone-blur.jpg
 ---
 
-Zurb Ink is for email as Zurb Foundation is for the web. [Zurb teased us late last year](http://zurb.com/article/1119/create-emails-for-any-device-introducing-) with their responsive email templates but they have now taken it one huge step further. They have created a easy to use responsive framework that is available with the same permissive MIT license. I wanted to see how difficult it would be to use this new framework with MailChimp, my newsletter and email provider. Turns out, it was super simple. Lets take a look at how I went about it.
+Zurb Ink is for email as Zurb Foundation is for the web. [Zurb teased us late last year](http://zurb.com/article/1119/create-emails-for-any-device-introducing-) with their responsive email templates but they have now taken it one huge step further. SPLIT\_SUMMARY\_BEFORE\_THIS
+ They have created a easy to use responsive framework that is available with the same permissive MIT license. I wanted to see how difficult it would be to use this new framework with MailChimp, my newsletter and email provider. Turns out, it was super simple. Lets take a look at how I went about it.
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
 
 Email and mobile email is becoming so important today. Not only is a lot of traffic going mobile but email is increasing an important tool for connecting with your audience and increasing engagement with your apps. Giving your customers a great mobile experience through email seems to be the next level of responsive design and modern website marketing and engagement.
 

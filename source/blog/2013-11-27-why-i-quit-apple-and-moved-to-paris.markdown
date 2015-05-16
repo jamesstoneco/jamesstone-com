@@ -2,7 +2,7 @@
 title: "Why I Quit Apple and Moved to Paris"
 date: 2013/11/27
 time: 03:22 PM CET
-tags: Career, Inspriration, Travel
+tags: opinion
 featured_image: /blog/featured-images/james-chateau.jpg
 ---
 

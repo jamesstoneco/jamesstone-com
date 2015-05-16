@@ -1,7 +1,6 @@
 ---
 title: 10 Things I Love About Ruby
 date: 2013/11/07
-tags: Ruby
 featured_image: /blog/featured-images/ruby-love.jpg
 ---
 

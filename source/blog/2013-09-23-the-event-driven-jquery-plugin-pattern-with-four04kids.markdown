@@ -1,13 +1,13 @@
 ---
 title: The Event Driven jQuery Plugin Pattern with four04kids
 date: 2013/09/23
-tags: Pattern, jQuery, jQuery Plugin, JavaScript, CoffeeScript, Event Driven, Mustache
+tags: js
 featured_image: /blog/featured-images/pattern-giraffe.jpg
 ---
 
-Last night I was chatting with [Jeffrey Horn](http://jeffreyhorn.com/) and found out he was at Startup Weekend in Seattle and working on a new project called [four04kids](http://404kids.org/). Pretty cool idea, they encourage you to add a simple javascript to your 404 error page and it asks if you have seen missing children in your area. I thought this was a great idea and something really positive they were bringing to the community and added their js embed to [my error page on this site](http://www.manofstone.com/WAT).
+Last night I was chatting with [Jeffrey Horn](http://jeffreyhorn.com/) and found out he was at Startup Weekend in Seattle and working on a new project called [four04kids](http://404kids.org/). SPLIT\_SUMMARY\_BEFORE\_THIS
+Pretty cool idea, they encourage you to add a simple javascript to your 404 error page and it asks if you have seen missing children in your area. I thought this was a great idea and something really positive they were bringing to the community and added their js embed to [my error page on this site](http://www.manofstone.com/WAT).
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
 
 I chatted with him for a bit about their future directions and that a jQuery Plugin version was in the road map. In the spirit of Open Source and Gitrdone I jumped in to refactor their existing code into a proper jQuery Plugin to the best of my ability. What follows is what I learned in the several hour process and how I implemented the Event Driven jQuery Plugin Pattern as written about by Doug Avery in his excellent article titled, [A Few jQuery Plugin Patterns](http://viget.com/inspire/jquery-plugin-patterns) on the [Viget Inspire Blog](http://viget.com/inspire/).
 

@@ -24,6 +24,9 @@ activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
 
+# Word frequency sort:
+activate :similar
+
 # set :markdown_engine, :redcarpet
 # set :markdown, renderer: toc_renderer, with_toc_data: true
 
@@ -70,8 +73,8 @@ activate :blog do |blog|
   Time.zone = "Pacific Time (US & Canada)"
   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   blog.layout = "blog"
-  # blog.taglink = ":tag.html"
-  # blog.tag_template = "blog/tag.html"
+  blog.taglink = "tag/:tag.html"
+  blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "p:num"
 end

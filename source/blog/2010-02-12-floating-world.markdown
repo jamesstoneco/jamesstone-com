@@ -1,7 +1,6 @@
 ---
 title: Floating World
 date: 2010/02/12
-tags: ecology, fcp, physical computing, video
 ---
 
 ## Tent City/Campground For Displaced Human and Bird Song

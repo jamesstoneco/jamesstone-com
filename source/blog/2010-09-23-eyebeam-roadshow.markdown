@@ -1,7 +1,6 @@
 ---
 title: Eyebeam Roadshow
 date: 2010/09/23
-tags: 01sj, arduino, code, physical computing
 ---
 
 The first device, activating a shattered LCD panel was created by Randy Sarafan and the remaining two devices were created by myself with the help of Ez Cothran.

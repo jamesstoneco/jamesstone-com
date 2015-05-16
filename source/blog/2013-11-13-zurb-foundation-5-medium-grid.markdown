@@ -2,7 +2,7 @@
 title: Zurb Foundation 5 Medium Grid
 date: November 13, 2013
 time: 4:00 PM CET
-tags: Zurb Foundation, rwd, responsive
+tags: foundation-sites
 signup_zurb: "true"
 featured_image: /blog/featured-images/ipad-gadgets-desk.jpg
 ---

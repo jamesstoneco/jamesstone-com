@@ -1,7 +1,6 @@
 ---
 title: Good WP Code Snippet Plugin
 date: 2011/10/22
-tags: code, wordpress
 ---
 
 I have been searching around for a good code snippet plugin for word press. I really like the style of [codecolorer](http://wordpress.org/extend/plugins/codecolorer/), however, I wanted something with a clean style and also would allow for the copy to clipboard functionality. A lot of the time I refer to my website in class and have students use processing or arduino code and having the copy button really simplifies things.

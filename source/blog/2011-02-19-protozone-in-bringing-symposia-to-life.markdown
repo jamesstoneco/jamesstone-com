@@ -1,7 +1,6 @@
 ---
 title: Protozone in Bringing Symposia to Life
 date: 2011/02/19
-tags: ecology
 ---
 
 

@@ -2,9 +2,8 @@
 title: Getting Started with the ZURB Foundation 5 Grid
 date: 2013/12/13
 time: 10:55 PM CET
-tags: ZURB Foundation, Responsive Web Design, Web Design, Mobile
+tags: foundation-sites
 featured_image: "/blog/featured-images/featured-video.jpg"
-signup_zurb: "true"
 video: "true"
 video_type: "youtube"
 video_id: "kk6KpKK5Jjc"

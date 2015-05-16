@@ -1,7 +1,6 @@
 ---
 title: GSOC Processing GUI Toolkit Proposal
 date: 2012/04/05
-tags: code, java, processing
 ---
 
 The GUI Toolkit will allow the rapid development of a UI visually and write framework code for interaction. By capitalizing on the amazing work of Andreas Schlegel in the ControlP5 library ([http://www.sojamo.de/libraries/controlP5](http://www.sojamo.de/libraries/controlP5)) the goal is to create a set of tools that allows the rapid and graphical creation, alignment and customization of UI elements. Additionally a new color picker will be written for ControlP5.

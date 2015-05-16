@@ -2,7 +2,6 @@
 title: It's a Write/Read Mobile/Responsive Realtime Web
 date: 2014/06/11
 time: 3:57 PM CET
-tags: Developers, Marketing, Blog
 featured_image: "/blog/featured-images/multitool.jpg"
 signup_zurb: "true"
 ---

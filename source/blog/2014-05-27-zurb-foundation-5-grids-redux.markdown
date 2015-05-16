@@ -2,7 +2,7 @@
 title: ZURB Foundation 5 Grids Redux
 date: 2014/05/27
 time: 11:44 AM CET
-tags: ZURB Foundation, Grids, Responsive Web Design, Web Design, Mobile, Video
+tags: foundation-sites
 featured_image: "/blog/featured-images/grids3.jpg"
 signup_zurb: "true"
 ---

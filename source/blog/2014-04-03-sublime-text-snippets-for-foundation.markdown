@@ -2,7 +2,7 @@
 title: Sublime Text Snippets for Foundation
 date: 2014/04/03
 time: 10:59 AM CET
-tags: ZURB Foundation, Sublime Text, Snippets, Responsive Web Design, Web Design, Mobile, Video
+tags: foundation-sites, sublime-text
 featured_image: "/blog/featured-images/code.jpg"
 signup_zurb: "true"
 video: "true"

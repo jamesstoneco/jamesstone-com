@@ -1,7 +1,6 @@
 ---
 title: Wordookie Processing Library Compiled for Java 1.5
 date: 2011/07/28
-tags: code, fix, library, processing, wordookie
 ---
 
 I am playing around with the Wordookie (Worldle like) Processing library and had to recompile it with the Java 1.5 JDK which was a bit of a pain. It seems to be working for me now on Macosx and might save some people some time in working with the library. I am linking to the complete distribution with a recompiled Wordookie.jar file.

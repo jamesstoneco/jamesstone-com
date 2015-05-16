@@ -1,7 +1,6 @@
 ---
 title: CNC PC Board Test
 date: 2011/08/03
-tags: cnc, electronics
 ---
 
 ![](http://www.manofstone.com/wp-content/uploads/2011/08/cnc-pc-board-test-300x163.jpg)

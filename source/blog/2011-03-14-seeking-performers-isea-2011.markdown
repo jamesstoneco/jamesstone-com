@@ -1,7 +1,6 @@
 ---
 title: Seeking Performers and Activists in Istanbul
 date: 2011/03/14
-tags: hacitism, isea2011, performance, sound, wearable
 ---
 
 As Mr. Bricolage, Thomas Asmuth and myself have been selected to present our [Touchstone Workshop](http://kidneutrino.blogspot.com/2011/03/project-selected-for-isea2011-istanbul.html) at ISEA 2011 in Instanbul, Turkey. We are currently seeking both performers and activists to parcitipate in the workshop.

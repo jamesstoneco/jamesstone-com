@@ -1,7 +1,7 @@
 ---
 title: "Shoehorn Zurb Foundation into Weird Stuff #1 MiddleMan"
 date: 2013/10/02
-tags: ZURB Foundation, Middleman
+tags: foundation-sites, middleman
 signup_zurb: "true"
 featured_image: /blog/featured-images/middleman-foundation.jpg
 ---

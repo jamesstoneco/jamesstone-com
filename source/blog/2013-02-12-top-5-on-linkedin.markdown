@@ -1,7 +1,6 @@
 ---
 title: Top 5% on LinkedIn
 date: 2013/02/12
-tags: linkedin, social
 ---
 
 Saw this in my inbox this morning.

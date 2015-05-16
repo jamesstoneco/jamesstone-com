@@ -1,7 +1,6 @@
 ---
 title: Zero1 Open House, Lighting Assistant
 date: 2009/04/22
-tags: 01sj
 ---
 
 I assisted CADRE MFA Alumn Sheila Malone with the lighting and sound at the event.  I assisted with setting up the lights, testing the sound, and will setup and ran the lighting and sound equipment during the event.

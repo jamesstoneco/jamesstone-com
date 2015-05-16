@@ -1,7 +1,7 @@
 ---
 title: Experimenting with Lidar data in Processing
 date: 2011/02/21
-tags: arduino, physical computing
+published: false
 ---
 
 experimenting with lidar arduino data, visualized as an animation

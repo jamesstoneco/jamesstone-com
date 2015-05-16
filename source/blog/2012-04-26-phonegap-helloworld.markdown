@@ -1,7 +1,6 @@
 ---
 title: Hello World on Phonegap (Bundle not of found type)
 date: 2012/04/26
-tags: android, code, eclipse, java, mobile, phonegap
 ---
 
 

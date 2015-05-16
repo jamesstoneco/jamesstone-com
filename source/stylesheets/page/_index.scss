@@ -121,8 +121,8 @@ section.articles {
 .card {
 	// background: darken(#FFF, 5%);
 	background: #FFF;
-// border: solid 1px darken(#FFF, 20%);
-box-shadow: 1px 1px 0 darken(#FFF, 40%);
+	// border: solid 1px darken(#FFF, 20%);
+	box-shadow: 1px 1px 0 darken(#FFF, 20%);
 &.callout {
 	box-shadow: 1px 20px 75px darken(#FFF, 60%);
 }

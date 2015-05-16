@@ -18,3 +18,6 @@ gem 'sanitize'
 
 gem "middleman-livereload"
 
+gem "middleman-blog-similar"
+gem 'levenshtein-ffi', :require => 'levenshtein'
+# gem 'damerau-levenshtein'

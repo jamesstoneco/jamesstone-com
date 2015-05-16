@@ -1,0 +1,68 @@
+---
+pageable: true
+per_page: 3
+---
+
+
+<div class="page-index">
+  <section class="articles" id="articles">
+    <p class="text-center flush-bottom">
+      <% blog('blog').tags.keys.sort.each do |tag| %>
+      <a href="/blog/tag/<%= tag %>" class="button tiny radius <%= 'secondary' unless tagname == tag %>"><%= tag %></a>
+      <% end %>
+    </p>
+    
+    
+    <div class="row">
+      <div class="medium-12 columns">
+        <% page_articles('blog').group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
+        <div class="medium-4 large-4 columns end"> <!-- main content -->
+          
+          <% col.each do |article| %>
+          <% test_video          = article.data.video %>
+          <% test_video_type     = article.data.video_type %>
+          <% test_video_id       = article.data.video_id %>
+          <% test_featured_image = article.data.featured_image %>
+          
+          
+          <div class="card article">
+            <a class="article-link" href="<%= article.url %>"></a>
+            <% image_url           = "" %>
+            <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+            <% if test_video == "true" %>
+            <% if test_video_type == "youtube" %>
+            <div class="flex-video widescreen">
+              <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+            </div>
+            <% end %>
+            <% elsif ( defined?(test_featured_image)) %>
+            <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+            <% end %>
+            <% end %>
+            <p class="leadin"><%= article.title %></h3>
+              <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+              <%= strip_html(article.summary(125)) %>
+              <a href="<%= article.url %>" class="button expand secondary flush-bottom">Read &raquo;</a>
+            </div>
+            <br>
+            <% end %> <!-- article -->
+            
+          </div>
+          <% end %> <!-- col -->
+          
+        </div>
+        <% if paginate %>
+        <% if next_page %>
+        
+        <div class="row">
+          <div class="small-12 columns">
+            <p> <%= link_to 'more articles &raquo;', next_page %> </p>
+          </div>
+        </div>
+        <% end %>
+        <% end %></div>
+      </div>
+      
+      
+    </section>
+  </div>

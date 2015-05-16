@@ -2,8 +2,7 @@
 title: Mobile First by Luke Wroblewski
 date: 2013/12/04
 time: 17:22 PM CET
-tags: Review, Book, Mobile First, Zurb Foundation, Responsive Web Design, Web Design, Mobile
-signup_zurb: "true"
+tags: mobile-first, book
 featured_image: "/blog/featured-images/review-mobile-first.jpg"
 disclaimer_aff: "true"
 amazon_aff_url: "http://www.amazon.com/gp/product/1937557022/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1937557022&linkCode=as2&tag=manocom-20"

@@ -2,7 +2,7 @@
 title: How to Make a Great Living Teaching Online by John Purcell
 date: 2014/03/12
 time: 9:15 PM CET
-tags: Book, Review, Teaching, Marketing
+tags: book, marketing
 featured_image: "/blog/featured-images/book-review.jpg"
 disclaimer_aff: "true"
 amazon_aff_url: "http://www.amazon.com/gp/product/B00H4UTHVM/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00H4UTHVM&linkCode=as2&tag=jamestonport-20"

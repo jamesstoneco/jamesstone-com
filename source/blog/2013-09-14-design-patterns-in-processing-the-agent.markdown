@@ -1,13 +1,13 @@
 ---
 title: Design Patterns in Processing, the Agent
 date: 2013/09/14
-tags: Pattern, Studio, Processing
+tags: p5
 featured_image: /blog/featured-images/grey-blocks.jpg
 ---
 
-No this is not the GoF. You won't find Singletons or Factories or anything like that here. What I am attempting to define and describe are patterns used in Processing (p5) which could also be used in similar languages, libraries or applications that use OOP and have a game style loop.
+No this is not the GoF. You won't find Singletons or Factories or anything like that here. SPLIT\_SUMMARY\_BEFORE\_THIS
+What I am attempting to define and describe are patterns used in Processing (p5) which could also be used in similar languages, libraries or applications that use OOP and have a game style loop.
 
-SPLIT\_SUMMARY\_BEFORE\_THIS
 
 ## So what is the Agent and what is it used for?
 

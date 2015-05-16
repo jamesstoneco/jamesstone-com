@@ -1,7 +1,6 @@
 ---
 title: Grad School Books
 date: 2010/07/17
-tags: book review, grad school
 ---
 
 This summer I am trying to decompress and analyse my decision to go to graduate school and also explore the career option of staying in academia. I have been scouring the net looking for books that explain how to “survive” grad school, what to expect, or what the career of teaching is like and the transition into such a career, etc. Here are a couple of the books I have been reading and some of my notes about each one. Most tend to be focused on Ph.D. students in either Science or Humanities but I believe there is a lot of valuable information available if you are looking for it. I would love to find a book specific to fine art MFA’s but I haven’t found any. There is a ton of books about creative writing MFA’s. (no irony there)

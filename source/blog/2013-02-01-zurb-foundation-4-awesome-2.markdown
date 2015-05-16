@@ -1,9 +1,6 @@
 ---
 title: Zurb Foundation 4, Awesome!
 date: 2013/02/01
-tags: Zurb Foundation, jquery, zepto, zurb
-signup_zurb: "true"
-
 ---
 
 I just got back from the Zurb Foundation Meetup where they gave us a walkthrough of some of the new features. I had a great time and here are some of the takeaways from the presentation:

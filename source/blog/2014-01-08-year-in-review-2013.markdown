@@ -2,7 +2,7 @@
 title: Year in Review 2013
 date: 2014/01/08
 time: 4:14 PM CET
-tags: Marketing
+tags: marketing
 featured_image: "/blog/featured-images/paris-marche-de-noel.jpg"
 ---
 

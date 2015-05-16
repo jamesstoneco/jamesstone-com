@@ -2,7 +2,7 @@
 title: 6 Myths about Modern CSS Frameworks
 date: 2014/03/25
 time: 16:27 PM CET
-tags: ZURB Foundation, Web Development, CSS
+tags: foundation-sites, sass
 featured_image: "/blog/featured-images/no-myths.jpg"
 ---
 

@@ -2,9 +2,8 @@
 title: Using Sass with ZURB Foundation 5
 date: 2014/04/02
 time: 15:10 PM CET
-tags: ZURB Foundation, Sass, Scss, Responsive Web Design, Web Design, Mobile, Video
+tags: foundation-sites, sass
 featured_image: "/blog/featured-images/sass-foundation.jpg"
-signup_zurb: "true"
 video: "true"
 video_type: "youtube"
 video_id: "Gx-9cgNlZlQ"

@@ -1,7 +1,6 @@
 ---
 title: Mr. Bricolage Touchstone Kickstarter Funded
 date: 2011/07/24
-tags: isea2011, performance, wearable
 ---
 
 
