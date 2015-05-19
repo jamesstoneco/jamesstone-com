@@ -123,6 +123,10 @@ section.articles {
 	background: #FFF;
 	// border: solid 1px darken(#FFF, 20%);
 	box-shadow: 1px 1px 0 darken(#FFF, 20%);
+
+	& .flex-video {
+		// padding-top: 0 !important;
+	}
 &.callout {
 	box-shadow: 1px 20px 75px darken(#FFF, 60%);
 }
@@ -212,4 +216,18 @@ margin-bottom: rem-calc(40);
 		// color: $primary-color;
 
 	}
+}
+
+.yt-thumb {
+	position: relative;
+	margin-top: -18% !important;
+	// top: rem-calc(-53);
+}
+
+.yt-thumb-container {
+	padding-bottom: 47.5% !important;
+}
+
+.clickable {
+	cursor: pointer;
 }

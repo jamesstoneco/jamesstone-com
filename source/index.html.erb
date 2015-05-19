@@ -37,11 +37,13 @@ videos:
   </div>
 </div>
 
+<br>
+
 </section>
 
 <div class="row"></div>
 
-<section class="products" id="products">
+<section class="products hide" id="products">
 <h2>Products designed to help you learn fast</h2>
   <div class="row">
     <div class="medium-8 columns"><a target="_blank" href="/zurb-foundation-blueprints"><img src="/images/landing/zf-bp-hero%402x.jpg" alt=""></a>
@@ -57,25 +59,6 @@ videos:
   </div>
 </section>
 
-<section class="videos" id="videos">
-
-  <h2>Friendly screencasts to walk you through step-by-step</h2>
-
-
-
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
-
-<% current_page.data.videos.each_slice(3) do | vid_block | %>
-  <div class="row video-row">
-  <% vid_block.each do | vid | %>
-    <div class="small-10 medium-4 columns small-centered medium-uncentered"> <a href="//fast.wistia.net/embed/iframe/<%= vid.id %>?popover=true" class="wistia-popover[height=360,playerColor=7b796a,width=640]"><img src="https://embed-ssl.wistia.com/deliveries/<%= vid.image %>.jpg?image_play_button=true&image_play_button_color=7b796ae0&image_crop_resized=300x169" alt="" /></a>
-    <br class="show-for-small-only"> 
-    <br class="show-for-small-only"> 
-    </div>
-<% end %>
-  </div>
-<% end %>
-</section>
 
 <section class="testimonials">
   <div class="row">
@@ -122,6 +105,26 @@ videos:
 </section>
 
 
+<section class="videos" id="videos">
+
+  <h2>Friendly screencasts to walk you through step-by-step</h2>
+
+
+
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
+
+<% current_page.data.videos.each_slice(3) do | vid_block | %>
+  <div class="row video-row">
+  <% vid_block.each do | vid | %>
+    <div class="small-10 medium-4 columns small-centered medium-uncentered"> <a href="//fast.wistia.net/embed/iframe/<%= vid.id %>?popover=true" class="wistia-popover[height=360,playerColor=7b796a,width=640]"><img src="https://embed-ssl.wistia.com/deliveries/<%= vid.image %>.jpg?image_play_button=true&image_play_button_color=7b796ae0&image_crop_resized=300x169" alt="" /></a>
+    <br class="show-for-small-only"> 
+    <br class="show-for-small-only"> 
+    </div>
+<% end %>
+  </div>
+<% end %>
+</section>
+
 
 
 <section class="articles" id="articles">
@@ -147,15 +150,16 @@ videos:
       <% test_featured_image = article.data.featured_image %>
 
 
-      <div class="card article">
+      <div class="card article clickable">
         <a class="article-link" href="<%= article.url %>"></a>
         <% image_url           = "" %>
         <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
         <% if test_video == "true" %>
         <% if test_video_type == "youtube" %>
-        <div class="flex-video widescreen">
-          <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+        <div class="flex-video yt-thumb-container">
+          <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/hqdefault.jpg" alt="">
         </div>
+          <!-- div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div -->
         <% end %>
         <% elsif ( defined?(test_featured_image)) %>
         <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">

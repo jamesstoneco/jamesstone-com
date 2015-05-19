@@ -25,27 +25,28 @@ per_page: 12
           <% test_featured_image = article.data.featured_image %>
           
           
-          <div class="card article">
-            <a class="article-link" href="<%= article.url %>"></a>
-            <% image_url           = "" %>
-            <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
-            <% if test_video == "true" %>
-            <% if test_video_type == "youtube" %>
-            <div class="flex-video widescreen">
-              <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
-            </div>
-            <% end %>
-            <% elsif ( defined?(test_featured_image)) %>
-            <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
-            <% end %>
-            <% end %>
-            <p class="leadin"><%= article.title %></h3>
-              <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
-              <%= strip_html(article.summary(125)) %>
-              <a href="<%= article.url %>" class="button expand secondary flush-bottom">Read &raquo;</a>
-            </div>
-            <br>
-            <% end %> <!-- article -->
+      <div class="card article clickable">
+        <a class="article-link" href="<%= article.url %>"></a>
+        <% image_url           = "" %>
+        <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+        <% if test_video == "true" %>
+        <% if test_video_type == "youtube" %>
+        <div class="flex-video yt-thumb-container">
+          <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/hqdefault.jpg" alt="">
+        </div>
+          <!-- div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div -->
+        <% end %>
+        <% elsif ( defined?(test_featured_image)) %>
+        <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+        <% end %>
+        <% end %>
+        <p class="leadin"><%= article.title %></h3>
+          <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+          <%= strip_html(article.summary(125)) %>
+          <a href="<%= article.url %>" class="button expand secondary flush-bottom">Read &raquo;</a>
+        </div>
+        <br>
+        <% end %> <!-- article -->
             
           </div>
           <% end %> <!-- col -->
