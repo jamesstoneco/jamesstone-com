@@ -156,15 +156,16 @@
       <% test_featured_image = article.data.featured_image %>
 
 
-      <div class="card article">
+      <div class="card article clickable">
         <a class="article-link" href="<%= article.url %>"></a>
         <% image_url           = "" %>
         <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
         <% if test_video == "true" %>
         <% if test_video_type == "youtube" %>
-        <div class="flex-video widescreen">
-          <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+        <div class="flex-video yt-thumb-container">
+          <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/hqdefault.jpg" alt="">
         </div>
+          <!-- div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div -->
         <% end %>
         <% elsif ( defined?(test_featured_image)) %>
         <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
