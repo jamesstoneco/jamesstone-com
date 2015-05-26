@@ -150,10 +150,11 @@ section.articles {
 	background: rgba(0,0,0, 0.1); 
 	border-color: rgba(255,255,255, 0.5); 
 	color: #FFF !important;
-	padding-top: rem-calc(15);
-	padding-bottom: rem-calc(15);
-	padding-left: rem-calc(20);
-	padding-right: rem-calc(20);
+	// BUG: ff displays strangely
+	// padding-top: rem-calc(15);
+	// padding-bottom: rem-calc(15);
+	// padding-left: rem-calc(20);
+	// padding-right: rem-calc(20);
 	font-size: rem-calc(18);
 	font-weight: normal;
 }
