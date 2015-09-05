@@ -35,65 +35,67 @@ var app = angular.module('memberApp', [
 
 app.controller('MembershipCtrl', ['$scope', '$firebase', '$firebaseAuth', '$window',
 	function($scope, $firebase, $firebaseAuth, $window) {
-        var ref = new Firebase("https://jamesstone.firebaseio.com/");
+    var ref = new Firebase("https://jamesstone.firebaseio.com/");
 
-        $scope.authObj = $firebaseAuth(ref);
+    $scope.authObj = $firebaseAuth(ref);
 
-        $scope.authObj.$onAuth(function(authData) {
-        	if (authData) {
+    $scope.authObj.$onAuth(function(authData) {
+     if (authData) {
         		$scope.authData = authData; // load auth data into scope onAuth
         	}
         })
 
-        $scope.login = function() {
-        	$scope.authObj.$authWithPassword({
-        		email: $scope.email,
-        		password: $scope.password
-        	}).then(function(authData) {
-        		$scope.authData = authData;
-        		$scope.accountError = "";
-                $window.location.href="/dashboard"; // hard redirect to dashboard
-            }).catch(function(error) {
-                if (error.toString().indexOf("password is incorrect") > -1) {
-                   $scope.accountError = "password is incorrect";
-               } else if (error.toString().indexOf("user does not exist") > -1) {
-                   $scope.accountError = "user does not exist, maybe you want to signup?";
-               } else {
-              // catchall error
-              $scope.accountError = error.toString();
-            }
-            });
-        }
+    $scope.login = function() {
+     $scope.authObj.$authWithPassword({
+      email: $scope.email,
+      password: $scope.password
+    }).then(function(authData) {
+      $scope.authData = authData;
+      $scope.accountError = "";
+      $window.location.href="/dashboard"; 
+    }).catch(function(error) {
+      if (error.toString().indexOf("password is incorrect") > -1) {
+       $scope.accountError = "password is incorrect";
+     } else if (error.toString().indexOf("user does not exist") > -1) {
+       $scope.accountError = "user does not exist, maybe you want to signup?";
+     } else {
+      $scope.accountError = error.toString();
+    }
+  });
+  }
 
-        $scope.resetPassword = function() {
-        	if ($scope.debug) console.log("password reset");
-        	$scope.authObj.$resetPassword({
-        		email: $scope.email
-        	}).then(function() {
-                $scope.accountError = "Your password has been sent to " + $scope.email;
-            }).catch(function(error) {
-                $scope.accountError = error.toString();
-            });
-        }
+  $scope.resetPassword = function() {
+   if ($scope.debug) console.log("password reset");
+   $scope.authObj.$resetPassword({
+    email: $scope.email
+  }).then(function() {
+    $scope.accountError = "Your password has been sent to " + $scope.email;
+  }).catch(function(error) {
+    $scope.accountError = error.toString();
+  });
+}
 
-        $scope.signup = function() {
-            $scope.authObj.$createUser({
-                email: $scope.email,
-                password: $scope.password
-            }).then(function(authData) {
-              $scope.accountError = "Account was created for " + $scope.email;
-              $scope.login();
-          }).catch(function(error) {
-                $scope.accountError = error.toString();
-          });
-      }
+$scope.signup = function() {
+  $scope.authObj.$createUser({
+    email: $scope.email,
+    password: $scope.password
+  }).then(function(authData) {
+    $scope.accountError = "Account was created for " + $scope.email;
+    $scope.login();
+  }).catch(function(error) {
+    $scope.accountError = error.toString();
+  });
+}
 
-      $scope.logout = function() {
-       $scope.authObj.$unauth();
-       $scope.authData = false;
-       $scope.accountError = "You have been logged out.";
+$scope.logout = function() {
+ $scope.authObj.$unauth();
+ $scope.authData = false;
+ $scope.accountError = "You have been logged out.";
 
-   }
+}
+$scope.openLink = function(linkToOpen) {
+  $window.location.href = linkToOpen;
+}
 }]);
 
 

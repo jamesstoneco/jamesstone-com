@@ -150,8 +150,7 @@ videos:
       <% test_featured_image = article.data.featured_image %>
 
 
-      <div class="card article clickable">
-        <a class="article-link" href="<%= article.url %>"></a>
+      <div class="card article clickable" ng-click="openLink('<%= article.url %>')">
         <% image_url           = "" %>
         <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
         <% if test_video == "true" %>
