@@ -217,3 +217,10 @@ $paragraph-text-rendering: optimizeLegibility;
 // 	   margin-bottom: 0;
 // 	}
 // }
+
+
+
+.alert-box a {
+	color: $white;
+	text-decoration: underline;
+}

@@ -116,6 +116,7 @@ page "/zurb-foundation-quick-reference.html", :layout => "landing"
 page "/advanced-zurb-foundation.html", :layout => "landing"
 page "/advanced-zurb-foundation-course.html", :layout => "landing"
 page "/free-zurb-foundation-course.html", :layout => "landing"
+page "/course/zurb-foundation-beyond-the-template/*", :layout => "locked"
 # page "/zurb-foundation-4-blueprints.html", :layout => "landing"
 # page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
 
