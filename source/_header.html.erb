@@ -10,14 +10,28 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <!-- <li><a href="/#products">Products</a></li> -->
-        <li><a href="/#videos">Videos</a></li>
-        <li><a href="/#articles">Articles</a></li>
-        <li class="active"><a href="/resources/getting-started">Get Started</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a target="_blank" href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request">Book 15 Minutes</a></li>
-        <li><a href="/resources/hosting">Resources</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li class="has-dropdown">
+          <a href="">Menu</a>
+          <ul class="dropdown">
+            <li><a href="/#videos">Videos</a></li>
+            <li><a href="/#articles">Articles</a></li>
+            <li class="active"><a href="/resources/getting-started">Get Started</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a target="_blank" href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request">Book 15 Minutes</a></li>
+            <li><a href="/resources/hosting">Resources</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>    
+        </li>
+        <li class="has-dropdown">
+          <a href="">{{ authData.password.email || "Account"}}</a>
+          <ul class="dropdown">
+            <li ng-if="authData"><a href="">Profile</a></li>
+            <li ng-if="authData"><a href="">Logout</a></li>
+            <li ng-if="!authData"><a href="">Login</a></li>
+            <li ng-if="!authData"><a href="">Sign up</a></li>
+          </ul>
+        </li>
       </ul>
 
       <!-- Left Nav Section -->
@@ -25,3 +39,91 @@
       </ul>
     </section>
   </nav>
+
+
+
+
+  <div ng-controller="MainNavCtrl">
+    <top-bar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/"><img src="/images/header/js-logo.svg" alt=""></a></h1>
+      </li>
+      <li toggle-top-bar class="menu-icon"><a href="#">Menu</a></li>
+    </ul>
+
+    <top-bar-section>
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="">Menu</a>
+        <ul class="dropdown">
+          <li><a href="/#videos">Videos</a></li>
+          <li><a href="/#articles">Articles</a></li>
+          <li class="active"><a href="/resources/getting-started">Get Started</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a target="_blank" href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request">Book 15 Minutes</a></li>
+          <li><a href="/resources/hosting">Resources</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>    
+      </li>
+      <li class="has-dropdown">
+        <a href="">{{ authData.password.email || "Account"}}</a>
+        <ul class="dropdown">
+          <li><a href="/profile">Profile</a></li>
+          <li><a ng-click="logout()">Logout</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign up</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="#">Left</a></li>
+    </ul>
+  </top-bar-section>
+</top-bar>
+</div>
+
+<div class="panel radius">
+  
+  <div ng-show="authData">
+    {{ authData.password.email}}
+    <button class="secondary small" ui-sref="form.load">Load Saved Cast</button>
+    <button class="secondary small" ng-click="saveCast()">Save This Cast</button>
+    <button class="secondary small" ng-click="logout()">Logout</button>
+  </div>
+  <div ng-hide="authData">
+    <div class="row">
+  
+      <!-- Optional classes: [success alert secondary] [radius round] -->
+      <div ng-show="accountError" data-alert class="alert-box alert">
+        {{ accountError }}
+        <a href="#" class="close">&times;</a>
+      </div>
+  
+      <div class="medium-3 columns">
+        <label for="email">Email</label>
+        <input type="email" name="email" ng-model="email">
+      </div>
+      <div class="medium-3 columns">
+        <label for="password">Password</label>
+        <input type="password" name="password" ng-model="password">
+      </div>
+      <div class="medium-2 columns">
+        <button style="margin-top: 20px;" class="postfix" ng-click="login()">Login</button>
+      </div>
+      <div class="medium-2 columns end">
+        <button style="margin-top: 20px;" class="postfix secondary" ng-click="signup()">Signup</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <p class="text-center"><a ng-click="resetPassword()">Forgot password?</a></p>
+      </div>
+    </div>
+  </div>
+  
+  </div>
