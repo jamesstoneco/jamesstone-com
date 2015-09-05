@@ -1,7 +1,6 @@
 <% wrap_layout :blog_layout do %>
 
 
-
 <% unless current_page.data.outline.nil? %>
 
 <ul class="button-group">
@@ -37,7 +36,9 @@
         <% if test_video == "true" %>
         <% if test_video_type == "youtube" %>
         <div class="flex-video widescreen">
-          <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div>
+        <div ob-lazytube href="http://www.youtube.com/watch?v=<%= test_video_id %>" rel="0"></div>
+
+          <!-- <div class="lazyYT" data-youtube-id="<%= test_video_id %>" data-ratio="16:9" data-parameters="rel=0">loading...</div> -->
         </div>
         <% end %>
         <% elsif not current_page.data.featured_image_wide.nil? %>

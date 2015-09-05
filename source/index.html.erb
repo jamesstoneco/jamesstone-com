@@ -6,19 +6,12 @@ per_page: 12
 active_nav: home
 published: true
 videos: 
-- id: "hbp28iu3av"
-  image: "ba64560eca67edd0d46ed28e72143fc2d220b543"
-- id: "tzoaz66p8u"
-  image: "fbd361dbf9be53126746087f91afe73c5652ac47"
-- id: "e44vqpqmo6"
-  image: "7eb2f5073bd2d8240e30019b50c2f26140897ddb"
-
-- id: "jd9284wfd7"
-  image: "f3a6882dcf86cea2d2e4180975dbdbd2caedb7d0"
-- id: "hr865g6lre"
-  image: "1881a48e2d8d697d256885ef470b11950d99bb64"
-- id: "bllp7vntge"
-  image: "36ff64ea3dad17e6100a9828342e1ac3e35bedb5"
+- id: "kk6KpKK5Jjc"
+- id: "KdFZnvLPnz4"
+- id: "Pm5vvimIJKY"
+- id: "Gx-9cgNlZlQ"
+- id: "UjN_aX84Qco"
+- id: "8n9eNLSjg7U"
 ---
 
 <%= partial "featurebox" %>
@@ -116,9 +109,13 @@ videos:
 <% current_page.data.videos.each_slice(3) do | vid_block | %>
   <div class="row video-row">
   <% vid_block.each do | vid | %>
-    <div class="small-10 medium-4 columns small-centered medium-uncentered"> <a href="//fast.wistia.net/embed/iframe/<%= vid.id %>?popover=true" class="wistia-popover[height=360,playerColor=7b796a,width=640]"><img src="https://embed-ssl.wistia.com/deliveries/<%= vid.image %>.jpg?image_play_button=true&image_play_button_color=7b796ae0&image_crop_resized=300x169" alt="" /></a>
-    <br class="show-for-small-only"> 
-    <br class="show-for-small-only"> 
+    <div class="small-10 medium-4 columns small-centered medium-uncentered"> 
+
+    <div class="flex-video widescreen">
+      <div ob-lazytube="" href="http://www.youtube.com/watch?v=<%= vid.id %>" rel="0"></div>
+    </div>
+
+
     </div>
 <% end %>
   </div>

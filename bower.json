@@ -4,6 +4,7 @@
   "private": "true",
   "dependencies": {
     "angular-foundation": "~0.6.0",
+    "angular-lazytube": "~0.2.2",
     "angularfire": "~1.1.2",
     "foundation": "zurb/bower-foundation",
     "lazyYT": "https://github.com/tylerpearson/lazyYT.git#0.3.3",
