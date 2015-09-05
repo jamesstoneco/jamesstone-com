@@ -1,0 +1,35 @@
+---
+title: "James Stone: Learn Foundation, SVG, JavaScript + more"
+seo_desc: "The best place to learn ZURB Foundation, SVG and JavaScript. James is a Dev + Designer based out of San Francisco, passionate about UX + Design. He has spoken at at the HTML5 Developers Conference, TEDxPSU and the UMD Design | Cultures + Creativity Honors College and is a Mentor at Coding House."
+---
+
+<br class="hide-for-small-only">
+
+
+<div class="row">
+  <div class="small-12 columns">
+    <alert ng-if="accountError" type="alert">{{ accountError }}</alert>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="medium-4 medium-push-4 columns medium-offset-2 panel">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" ng-model="email">
+    <label for="password">Password</label>
+    <input type="password" name="password" ng-model="password">
+    <button style="margin-top: 20px;" class="postfix" ng-click="login()">Login &raquo;</button>
+    <p class="text-center"><a ng-click="resetPassword()">Forgot password?</a></p>
+    <p class="text-center">Need an account? <a href="/signup">Signup</a></p>
+  </div>
+  <div class="medium-4 columns medium-pull-4 end panel">
+  <h3>James Stone Login</h3>
+    <hr>
+
+  </div>
+</div>
+

@@ -3,15 +3,15 @@
 
 
 <% unless current_page.data.outline.nil? %>
-<div class="magellan-container hide-for-small-only" data-magellan-expedition="fixed" data-options="destination_threshold:10;throttle_delay:0;">
-  <dl class="sub-nav">
-    <dd>Article Highlights:</dd>
-    <!-- <dd data-magellan-arrival="intro"><a href="#intro">Intro</a></dd> -->
+
+<ul class="button-group">
     <% current_page.data.outline.each do |h| %>
-    <dd data-magellan-arrival="<%= h.id %>"><a href="#<%= h.id %>"><%= h.heading %></a></dd>
+  <li><a class="button secondary tiny" href="#<%= h.id %>"><%= h.heading %></a></li>
     <% end %>
-  </dl>
+</ul>
 </div>
+
+
 <% end %>
 
 

@@ -63,31 +63,36 @@
     </script>
 </head>
 
-<body ng-app="memberApp">
-
-    <%= partial "header" %>
-
-    <%= yield %>
-
-    <%= partial "footer" %>
-
-<script src="//fast.wistia.net/static/embed_shepherd-v1.js"></script>
-<script>
-    window.wistiaEmbedShepherdReady = function(){
-      wistiaEmbeds.bind("conversion", function(video, type, email, firstName, lastName) {
-        _dcq.push(["identify", {
-          email: email,
-          first_name: firstName,
-          last_name: lastName
-      }]);
-        _dcq.push(["track", "Submitted Wistia Turnstile", { video: video._name }]);
-    });
-  }
-</script>
+<body>
+<div ng-app="memberApp">
+        <div ng-controller="MembershipCtrl">
 
 
-<%= javascript_include_tag  "application", :defer => "defer" %>
+            <%= partial "header" %>
 
+            <%= yield %>
+
+            <%= partial "footer" %>
+
+            <script src="//fast.wistia.net/static/embed_shepherd-v1.js"></script>
+            <script>
+                window.wistiaEmbedShepherdReady = function(){
+                  wistiaEmbeds.bind("conversion", function(video, type, email, firstName, lastName) {
+                    _dcq.push(["identify", {
+                      email: email,
+                      first_name: firstName,
+                      last_name: lastName
+                  }]);
+                    _dcq.push(["track", "Submitted Wistia Turnstile", { video: video._name }]);
+                });
+              }
+          </script>
+
+
+          <%= javascript_include_tag  "application", :defer => "defer" %>
+
+      </div>
+  </div>
 
 </body>
 </html>

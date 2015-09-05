@@ -17,8 +17,8 @@
 // require ui-router/release/angular-ui-router
 //= require firebase/firebase-debug
 //= require angularfire/dist/angularfire
-//= require angular-foundation/mm-foundation-tpls
-//= require angular-foundation/mm-foundation
+//= require mm-foundation-templates-override
+// require angular-foundation/mm-foundation
 // require fastclick/lib/fastclick
 // require vendor/highlight
 // require vendor/socialite/socialite
@@ -33,48 +33,36 @@ var app = angular.module('memberApp', [
 	'mm.foundation',
 	]);
 
-app.controller('FormCtrl', ['$scope', '$rootScope', '$firebase', '$firebaseAuth',
-	function($scope, $firebase, $firebaseAuth) {
-
-        $scope.debug = false; // set to false for production
-
-        $scope.state = $state; // expose state to scope for nav elements
-        var fireUrl = "https://jamesstone.firebaseio.com";
-        var ref = new Firebase(fireUrl);
-        var sync = $firebase(ref);
+app.controller('MembershipCtrl', ['$scope', '$firebase', '$firebaseAuth', '$window',
+	function($scope, $firebase, $firebaseAuth, $window) {
+        var ref = new Firebase("https://jamesstone.firebaseio.com/");
 
         $scope.authObj = $firebaseAuth(ref);
 
         $scope.authObj.$onAuth(function(authData) {
         	if (authData) {
-        		if ($scope.debug) console.log("authData");
-        		if ($scope.debug) console.log(authData);
-        		$scope.authData = authData;
+        		$scope.authData = authData; // load auth data into scope onAuth
         	}
         })
 
         $scope.login = function() {
-        	if ($scope.debug) console.log("login");
         	$scope.authObj.$authWithPassword({
         		email: $scope.email,
         		password: $scope.password
         	}).then(function(authData) {
-        		if ($scope.debug) console.log(authData);
         		$scope.authData = authData;
         		$scope.accountError = "";
-        	}).catch(function(error) {
-            // if ($scope.debug) console.log(error);
-            if (error.toString().indexOf("password is incorrect") > -1) {
-            	$scope.accountError = "password is incorrect";
-            } else if (error.toString().indexOf("user does not exist") > -1) {
-            	$scope.accountError = "user does not exist, maybe you want to signup?";
-            } else {
+                $window.location.href="/dashboard"; // hard redirect to dashboard
+            }).catch(function(error) {
+                if (error.toString().indexOf("password is incorrect") > -1) {
+                   $scope.accountError = "password is incorrect";
+               } else if (error.toString().indexOf("user does not exist") > -1) {
+                   $scope.accountError = "user does not exist, maybe you want to signup?";
+               } else {
               // catchall error
               $scope.accountError = error.toString();
-          }
-
-
-      });
+            }
+            });
         }
 
         $scope.resetPassword = function() {
@@ -82,36 +70,31 @@ app.controller('FormCtrl', ['$scope', '$rootScope', '$firebase', '$firebaseAuth'
         	$scope.authObj.$resetPassword({
         		email: $scope.email
         	}).then(function() {
-        		if ($scope.debug) console.log(authData);
-        		$scope.accountError = "password was sent to your email";
-        	}).catch(function(error) {
-        		$scope.accountError = error.toString();
-        	});
+                $scope.accountError = "Your password has been sent to " + $scope.email;
+            }).catch(function(error) {
+                $scope.accountError = error.toString();
+            });
         }
 
         $scope.signup = function() {
-        	if ($scope.debug) console.log("login");
-        	$scope.authObj.$createUser({
-        		email: $scope.email,
-        		password: $scope.password
-        	}).then(function(authData) {
-        		if ($scope.debug) console.log(authData);
-        		$scope.authData = authData;
-        	}).catch(function(error) {
-        		if ($scope.debug) console.log(error);
-        	});
-        }
+            $scope.authObj.$createUser({
+                email: $scope.email,
+                password: $scope.password
+            }).then(function(authData) {
+              $scope.accountError = "Account was created for " + $scope.email;
+              $scope.login();
+          }).catch(function(error) {
+                $scope.accountError = error.toString();
+          });
+      }
 
-        $scope.logout = function() {
-        	if ($scope.debug) console.log("logout");
-        	$scope.authObj.$unauth();
-        	$scope.authData = false;
-        }
-    }]);
+      $scope.logout = function() {
+       $scope.authObj.$unauth();
+       $scope.authData = false;
+       $scope.accountError = "You have been logged out.";
 
-app.controller('MainNavCtrl', function ($scope) { 
-	// not sure what I need here
-});
+   }
+}]);
 
 
 

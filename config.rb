@@ -106,6 +106,9 @@ page "/404.html", :directory_index => false
 
 page "/blog/feed.xml", :layout => false
 
+page "/template/*", :directory_index => false
+
+
 # landing pages below
 
 page "/zurb-foundation-blueprints.html", :layout => "landing"
