@@ -2,6 +2,12 @@ backend:
   name: netlify-api
   url: http://localhost:8080
 
+production:
+  backend:
+    name: github-api
+    repo: jamesstoneco/jamesstone-com
+    branch: cms
+
 media_folder: "source/images/uploads" # Folder where user uploaded files should go
 public_folder: "source"
 

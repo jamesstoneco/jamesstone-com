@@ -14,6 +14,10 @@ layout: false
   <link rel="stylesheet" href="//cms.netlify.com/assets/cms.css" />
   <!-- Include a CMS specific stylesheet here -->
 
+  <% if ENV['CMS_ENV'] == "production" %>
+  <script>window.CMS_ENV = 'production';</script>
+  <% end %>
+
   <base href="/admin/">
 </head>
 <body>
@@ -41,7 +45,7 @@ layout: false
         <li><a class="button secondary tiny" href="#{{ item.id }}">{{item.heading}}</a></li>
       {{/cms-preview}}
     </ul>
-    
+
   </script>
 
   <script src="//cms.netlify.com/assets/vendor.js"></script>
