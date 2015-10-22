@@ -1,0 +1,50 @@
+---
+layout: false
+---
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Content Manager</title>
+  <!-- Include the stylesheets from your site here -->
+  <%= stylesheet_link_tag "app" %>
+
+  <link rel="stylesheet" href="//cms.netlify.com/assets/cms.css" />
+  <!-- Include a CMS specific stylesheet here -->
+
+  <base href="/admin/">
+</head>
+<body>
+
+  <script type="text/x-handlebars" data-template-name='cms/preview/post'>
+    <div class="row">
+      <div class="large-12 columns medium-centered">
+        {{#if entry.featured_image_wide }}
+          {{cms-preview field="featured_image_wide" }}
+          <h1 class="text-center" style="padding-top: 1rem;">{{ entry.title }}</h1>
+        {{else}}
+          <p class="text-center">
+            {{cms-preview field="featured_image" }}
+          </p>
+          <h1 class="text-center"> {{entry.title}} </h1>
+        {{/if}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-10 columns large-centered">{{cms-preview field="body"}}</div>
+    </div>
+
+    <ul class="button-group">
+      {{#cms-preview field="outline" as |item|}}
+        <li><a class="button secondary tiny" href="#{{ item.id }}">{{item.heading}}</a></li>
+      {{/cms-preview}}
+    </ul>
+    
+  </script>
+
+  <script src="//cms.netlify.com/assets/vendor.js"></script>
+  <script src="//cms.netlify.com/assets/cms.js"></script>
+</body>
+</html>
