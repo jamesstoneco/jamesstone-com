@@ -20,7 +20,7 @@ videos:
     <div class="small-12 columns">
       <h2 class="text-center">Join our community today to get a ton of exclusive goodies</h2>
       <p class="text-center">For starters you'll get 4 exclusive video lessons and much more!</p>
-      <p class="text-center"> <a href="" class="button">Learn More SVG</a> </p>
+      <p class="text-center"> <a href="" class="button dropdown">Learn More</a> </p>
 
     </div>
   </div>
@@ -218,19 +218,18 @@ videos:
 
 
 
+<% page_articles('blog').each_slice(4) do | row | %>
+  <div class="row align-stretch">
 
-  <div class="row">
-    <% page_articles('blog').group_by.with_index{ |a,i| i % 3 }.values.each do | col | %>
-    <div class="medium-4 large-4 columns"> <!-- main content -->
-
-      <% col.each do |article| %>
+    <% row.each do |article| %>
+    <div class="columns"> <!-- main content -->
       <% test_video          = article.data.video %>
       <% test_video_type     = article.data.video_type %>
       <% test_video_id       = article.data.video_id %>
       <% test_featured_image = article.data.featured_image %>
 
 
-      <div class="card article clickable" ng-click="openLink('<%= article.url %>')">
+      <div class="card article clickable align-stretch" ng-click="openLink('<%= article.url %>')">
         <% image_url           = "" %>
         <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
         <% if test_video == "true" %>
@@ -247,15 +246,15 @@ videos:
         <p class="leadin"><%= article.title %></h3>
           <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
           <%= strip_html(article.summary(125)) %>
-          <a href="<%= article.url %>" class="button expand secondary flush-bottom">Read &raquo;</a>
+          <a href="<%= article.url %>" class="button hollow">Read Article</a>
         </div>
-        <br>
+      </div>
         <% end %> <!-- article -->
 
-      </div>
-      <% end %> <!-- col -->
 
     </div>
+    <br>
+        <% end %> <!-- row -->
 
     <div class="row">
       <div class="small-12 columns">

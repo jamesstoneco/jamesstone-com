@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 $body-font-family: 'Montserrat',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $global-width: rem-calc(1900);
+// $global-width: rem-calc(1300);
 $primary-color: #28BB9C;
 
 
@@ -32,3 +32,24 @@ section.hero {
 .round {
 	border-radius: 9999px;
 }
+
+$card-radius: 12px;
+
+.card {
+	// display: flex;
+	// flex-direction: column;
+	text-align: center;
+	height: 100%;
+	border: 1px solid #EAF1F5;
+	border-radius: $card-radius;
+	& img {
+		border-top-left-radius: $card-radius;
+		border-top-right-radius: $card-radius;
+
+	}
+	& .button { 
+		border-color: #E4E4E4;
+		border-radius: 9999px;
+	}
+}
+
