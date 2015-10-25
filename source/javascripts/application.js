@@ -102,18 +102,3 @@ $scope.openLink = function(linkToOpen) {
 
 
 
-// jQuery based below
-// $(document).foundation();
-// $(".card.article, .sidebar-test").click(function(){
-// 	window.location = $(this).find("a:first").attr("href");
-// 	return false;
-// });
-// $(".card.article, .card.product, .sidebar-test").hover(function () {
-// 	window.status = $(this).find("a:first").attr("href");
-// }, function () {
-// 	window.status = "";
-// });
-// $('.lazyYT').lazyYT();
-// Socialite.load("blog-social");
-// hljs.initHighlightingOnLoad();
-
