@@ -1,5 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 @import 'foundation';
 // @import 'motion-ui';
+
+
+$body-font-family: 'Montserrat',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 
 @include foundation-everything; // blanket include
 
