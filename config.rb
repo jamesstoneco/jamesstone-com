@@ -61,7 +61,7 @@ set :trailing_slash, false
 set :js_assets_paths, [File.join(root, 'bower_components')]
 # set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss', 'bower_compononents/lazyYT')]
 # set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
-set :sass_assets_paths, [File.join(root, 'bower_components/foundation-sites-6/scss')]
+set :sass_assets_paths, [File.join(root, 'bower_components/foundation-sites-6/scss'), File.join(root, 'bower_components/motion-ui')]
 
 
 
