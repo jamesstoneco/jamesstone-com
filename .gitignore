@@ -20,6 +20,7 @@ doc/
 # build and other stuff
 build
 .cache
+bower_components
 
 #macosx
 .DS_Store
