@@ -1,11 +1,34 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+$body-font-family: 'Montserrat',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+// $global-width: rem-calc(1900);
+$primary-color: #28BB9C;
+
+
+
 @import 'foundation';
 // @import 'motion-ui';
 
 
-$body-font-family: 'Montserrat',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+@include foundation-flex-grid;
 
 @include foundation-everything; // blanket include
 
 
+
+
+section.hero {
+	background: url('http://www.placehold.it/2000x1000');
+	width: 100%;
+	height: 450px;
+	h2, p {
+		color: #fff;
+	}
+	h2 { 
+		margin-top: rem-calc(130);
+	}
+}
+
+.round {
+	border-radius: 9999px;
+}
