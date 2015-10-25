@@ -1,12 +1,18 @@
 {
-  "name": "jamesstone-com-middleman-app",
-  "version": "3.0.0",
-  "private": "true",
+  "name": "jamesstone-com",
+  "homepage": "https://github.com/jamesstoneco/jamesstone-com",
+  "authors": [
+    "James Stone <james@jamesstone.co>"
+  ],
+  "description": "Front-end components for JamesStone.com v3",
+  "main": "",
+  "moduleType": [],
+  "license": "none",
+  "private": true,
   "dependencies": {
-    "angular-foundation": "~0.6.0",
+  	"angular-foundation": "~0.6.0",
+    "angularfire": "~1.1.3",
     "angular-lazytube": "~0.2.2",
-    "angularfire": "~1.1.2",
-    // "foundation": "zurb/bower-foundation",
-    "foundation-sites-6": "git@github.com:zurb/foundation-sites-6.git#develop",
+    "foundation-sites-6": "git@github.com:zurb/foundation-sites-6.git#develop"
   }
 }
