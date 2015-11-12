@@ -1,8 +1,30 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+// @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-$body-font-family: 'Montserrat',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'proxima-nova',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+// $body-font-family: 'Montserrat',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $global-width: rem-calc(1300);
-$primary-color: #28BB9C;
+
+$topaz: #1abc9c;
+$ice-blue: #f0f9ff;
+$pinkish-grey: #bfbfbf;
+$pale-grey: #e4edf3;
+$pale-teal: #7bb7cb;
+$greeny-blue: #49b9a0;
+$windows-blue: #3d89bc;
+$leather: #bc8834;
+$dark-salmon: #bf594e;
+$deep-lavender: #8352af;
+$greyblue: #76b4c5;
+$cool-grey: #95a5a6;
+$brownish-grey: #66655d;
+$pale-teal: #7ab6c8;
+$grey-white: #dcdcdc;
+$steel-grey: #7f8c8d;
+$cement: #9f9e97;
+$white: #ffffff;
+
+
+$primary-color: $topaz;
 
 
 
@@ -18,9 +40,12 @@ $primary-color: #28BB9C;
 
 
 section.hero {
-	background: url('http://www.placehold.it/2000x1000');
+	background: url('../images/2015-redesign/background-ted.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom center;
 	width: 100%;
-	height: 450px;
+	height: 580px;
 	h2, p {
 		color: #fff;
 	}
@@ -35,11 +60,13 @@ section.hero {
 
 $card-radius: 12px;
 
-.card {
+.flex-card {
 	// display: flex;
-	// flex-direction: column;
+	// flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
+
 	text-align: center;
-	height: 100%;
 	border: 1px solid #EAF1F5;
 	border-radius: $card-radius;
 	& img {
@@ -51,5 +78,84 @@ $card-radius: 12px;
 		border-color: #E4E4E4;
 		border-radius: 9999px;
 	}
+	& p {
+		border: solid 1px #00f;
+		flex: 1 0 auto;
+	}
 }
 
+.flex-card-container {
+
+}
+
+// * { 
+// 	border: solid 1px #f00;
+// }
+
+
+
+
+.video-overlay {
+	display: inline-block;
+	position: relative;
+	height: 0;
+	width: 100%;
+	// padding-top: 0;
+	padding-bottom: 56.25%;
+	margin-bottom: rem-calc(15);
+	background-image: linear-gradient(
+		rgba($greeny-blue, 0.8),
+		rgba($greeny-blue, 0.8)
+		),
+	url('https://img.youtube.com/vi/kk6KpKK5Jjc/maxresdefault.jpg');
+	background-size: cover;
+	text-align: center;
+	&.greeny-blue {
+		// background: $greeny-blue;
+	}
+	& h3 {
+		// position: relative;
+		// top: rem-calc(-148.7);
+		margin-top: rem-calc(10.3);
+		color: $white;
+		z-index: 1000;
+		font-size: rem-calc(15.4);
+		font-weight: 600;
+		margin-bottom: rem-calc(41.7);
+	}
+	& p {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-top: rem-calc(9.4);
+		padding-bottom: rem-calc(11.6);
+		margin-bottom: 0;
+		background-image: linear-gradient(
+			rgba($greeny-blue, 0.8),
+			rgba($greeny-blue, 0.8)
+			);
+
+		// top: rem-calc(-80);
+		color: $white;
+		z-index: 1000;
+		font-size: rem-calc(15.4);
+		font-weight: 600;
+
+	}
+
+	& a {
+		// position: absolute; 
+		// top: 0;
+		// left: 0;
+		// right: 0;
+		// background: url('../images/2015-redesign/overlay-icon-play.svg');
+		// width: rem-calc(48);
+		// height: rem-calc(48);
+
+	}
+	// & img { 
+	// 	display: block;
+	// 	opacity: 0.5;
+	// }
+}
