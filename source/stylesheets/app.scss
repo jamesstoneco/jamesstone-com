@@ -50,9 +50,43 @@ section.hero {
 	height: 580px;
 	h2, p {
 		color: #fff;
+		font-weight: 400;
+		font-size: rem-calc(16);
+		text-align: center;
 	}
 	h2 { 
-		margin-top: rem-calc(130);
+		margin-top: rem-calc(160);
+		padding: 0;
+		margin-bottom: rem-calc(15);
+		font-size: rem-calc(30);
+	}
+	p {
+		margin-bottom: rem-calc(25);
+	}
+	.button {
+		font-size: rem-calc(15);
+		font-weight: 600;
+		width: rem-calc(181);
+		padding-top: rem-calc(12);
+		padding-bottom: rem-calc(12);
+		position: relative;
+		padding-left: 0;
+		margin:0;
+		padding-right: rem-calc(27);
+		&:after {
+			content: " ";
+			// background:#f00;
+			background: url('../images/2015-redesign/icon-down-arrow.svg');
+			background-repeat: no-repeat;
+			background-size: rem-calc(21 21);
+			background-position: top left;
+			height: rem-calc(25);
+			width: rem-calc(21);
+			position: absolute;
+			top: rem-calc(9);
+			right: rem-calc(35);
+			// z-index: 1000;
+		}
 	}
 }
 
@@ -197,7 +231,10 @@ section {
 section.membership-promo {
 	& h2 {
 		padding-top: rem-calc(69);
-		margin-bottom: rem-calc(50);
+		padding-bottom: rem-calc(50);
+	}
+	& .signup-row {
+		padding-bottom: rem-calc(80);
 	}
 
 	& .promo-box {
