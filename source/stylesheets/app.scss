@@ -26,6 +26,8 @@ $white: #ffffff;
 
 $primary-color: $topaz;
 
+@import 'settings';
+
 
 
 @import 'foundation';
@@ -94,28 +96,57 @@ $card-radius: 12px;
 
 
 
+@mixin bg-hack($bg-color, $bg-opacity) {
+	
+	background-image: linear-gradient(
+		rgba($bg-color, $bg-opacity),
+		rgba($bg-color, $bg-opacity)
+		);
+}
 
 .video-overlay {
+
+	&.greeny-blue {
+		&::before { @include bg-hack($greeny-blue, 0.8); }
+		& p { @include bg-hack($greeny-blue, 0.8); }
+	}
+	&.windows-blue {
+		&::before { @include bg-hack($windows-blue, 0.8); }
+		& p { @include bg-hack($windows-blue, 0.8); }
+	}
+	&.leather {
+		&::before { @include bg-hack($leather, 0.8); }
+		& p { @include bg-hack($leather, 0.8); }
+	}
+	&.dark-salmon {
+		&::before { @include bg-hack($dark-salmon, 0.8); }
+		& p { @include bg-hack($dark-salmon, 0.8); }
+	}
+	&.deep-lavender {
+		&::before { @include bg-hack($deep-lavender, 0.8); }
+		& p { @include bg-hack($deep-lavender, 0.8); }
+	}
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 	display: inline-block;
 	position: relative;
 	height: 0;
 	width: 100%;
-	// padding-top: 0;
 	padding-bottom: 56.25%;
-	margin-bottom: rem-calc(15);
-	background-image: linear-gradient(
-		rgba($greeny-blue, 0.8),
-		rgba($greeny-blue, 0.8)
-		),
-	url('https://img.youtube.com/vi/kk6KpKK5Jjc/maxresdefault.jpg');
-	background-size: cover;
+	margin-bottom: rem-calc(50);
 	text-align: center;
-	&.greeny-blue {
-		// background: $greeny-blue;
-	}
 	& h3 {
-		// position: relative;
-		// top: rem-calc(-148.7);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
 		margin-top: rem-calc(10.3);
 		color: $white;
 		z-index: 1000;
@@ -131,31 +162,123 @@ $card-radius: 12px;
 		padding-top: rem-calc(9.4);
 		padding-bottom: rem-calc(11.6);
 		margin-bottom: 0;
-		background-image: linear-gradient(
-			rgba($greeny-blue, 0.8),
-			rgba($greeny-blue, 0.8)
-			);
-
-		// top: rem-calc(-80);
 		color: $white;
-		z-index: 1000;
 		font-size: rem-calc(15.4);
 		font-weight: 600;
 
 	}
+	& span {
+		position: absolute;
+		top: rem-calc(45);
+		bottom: rem-calc(45);
+		left: 0;
+		right: 0;
+		padding-top: rem-calc(25);
+	}
+}
+section {
 
-	& a {
-		// position: absolute; 
-		// top: 0;
-		// left: 0;
-		// right: 0;
-		// background: url('../images/2015-redesign/overlay-icon-play.svg');
-		// width: rem-calc(48);
-		// height: rem-calc(48);
+	& h2 {
+		text-align: center;
+		color: $steel-grey;
+		font-size: rem-calc(26);
+		font-weight: 400;
+		padding-top: rem-calc(72);
+		padding-bottom: rem-calc(72);
+	}
+}
+
+section {
+	&.membership-promo, &.videos {
+		background: $ice-blue;
+	}
+}
+
+section.membership-promo {
+	& h2 {
+		padding-top: rem-calc(69);
+		margin-bottom: rem-calc(50);
+	}
+
+	& .promo-box {
+		background: $white;
+		text-align: center;
+		padding-top: rem-calc(20);
+		padding-left: rem-calc(20);
+		padding-right: rem-calc(20);
+		margin-bottom: rem-calc(25);
+		border-radius: rem-calc(4);
+		height: rem-calc(125);
+		font-size: rem-calc(14);
+		color: $brownish-grey;
+		& p { 
+			margin-top: rem-calc(15);
+		}
+	}
+
+	input[type="text"], input[type="email"] {
+		width: rem-calc(240);
+		margin-right: rem-calc(15);
+		display: inline-block;
+		font-size: rem-calc(15);
+		font-weight: 300;
+		height: rem-calc(42);
+		border-color: $pale-grey;
+		padding-top: rem-calc(12);
+		padding-bottom: rem-calc(12);
+		padding-left: rem-calc(15);
+		padding-right: rem-calc(15);
+		// todo: placeholder color $pinkish-grey
 
 	}
-	// & img { 
-	// 	display: block;
-	// 	opacity: 0.5;
-	// }
+	.button {
+		margin-top: rem-calc(10);
+		width: rem-calc(240);
+		height: rem-calc(42);
+		padding-top: rem-calc(8);
+		padding-bottom: rem-calc(8);
+		font-size: rem-calc(15);
+		font-weight: 600;
+		border: none;
+	}
+}
+
+section.videos {
+	& .row {
+		max-width: ($grid-row-width + 32px)
+		// width: ($grid-row-width + 75px);
+		// padding: 0;
+		// margin-left: 0;
+		// margin-right: 0;
+		// width: 
+		// margin-left: rem-calc(-33);
+		// margin-right: rem-calc(-32);
+
+	}
+	& .columns {
+		padding-left: rem-calc(32);
+		padding-right: rem-calc(32);
+	}
+}
+
+h1.logo a {
+	margin-left: rem-calc(50);
+	margin-top: rem-calc(16);
+	margin-bottom: rem-calc(15);
+}
+
+nav {
+	max-height: rem-calc(70);
+	ul.menu li {
+		margin-top: rem-calc(22);
+		& a {
+			color: $brownish-grey;
+			font-size: rem-calc(15);
+		}
+		&:nth-child(1) {
+			padding-right: rem-calc(50);
+		}
+
+		// 30px gutter
+	}
 }
