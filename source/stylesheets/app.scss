@@ -282,3 +282,33 @@ nav {
 		// 30px gutter
 	}
 }
+
+section.bling {
+
+	ul { 
+		@include grid-row(5); 
+		margin-bottom: 0;
+		list-style-type: none;
+	}
+	ul li {
+		@include grid-column(1);
+		text-align: center;
+		span {
+			display: inline-block;
+			padding-top: rem-calc(43);
+			padding-bottom: rem-calc(43);
+			text-transform: uppercase;
+			font-size: rem-calc(15);
+			font-weight: 600;
+			color: $brownish-grey;
+		}
+		&:nth-child(2) { margin-top: rem-calc(44); }
+		&:nth-child(3) { margin-top: rem-calc(25); }
+		&:nth-child(4) { margin-top: rem-calc(45); }
+		&:nth-child(5) { 
+			margin-top: rem-calc(45);
+			text-align: right;
+			 }
+	}
+
+}
