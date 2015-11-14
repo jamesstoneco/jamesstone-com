@@ -102,21 +102,41 @@ $card-radius: 12px;
 	display: flex;
 	flex-direction: column;
 
-	text-align: center;
-	border: 1px solid #EAF1F5;
-	border-radius: $card-radius;
+
 	& img {
 		border-top-left-radius: $card-radius;
 		border-top-right-radius: $card-radius;
-
+	}
+	& .content {
+		padding-left: rem-calc(18);
+		padding-right: rem-calc(18);
+		text-align: center;
+		border: 1px solid #EAF1F5;
+		border-bottom-left-radius: $card-radius;
+		border-bottom-right-radius: $card-radius;
 	}
 	& .button { 
 		border-color: #E4E4E4;
 		border-radius: 9999px;
+		padding: rem-calc(8 33 8 33);
+		font-size: rem-calc(14);
+		font-weight: 600;
+		color: $topaz;
+		margin-right: 0;
+		margin-bottom: rem-calc(20);
 	}
 	& p {
-		border: solid 1px #00f;
+		// border: solid 1px #00f;
 		flex: 1 0 auto;
+		font-size: $brownish-grey;
+		line-height: rem-calc(21);
+	}
+	& h4 {
+		color: $pale-teal;
+		margin-top: rem-calc(34);
+		margin-bottom: rem-calc(11);
+		font-size: rem-calc(16);
+		font-weight: 600;
 	}
 }
 
@@ -345,7 +365,7 @@ section.bling {
 		&:nth-child(5) { 
 			margin-top: rem-calc(45);
 			text-align: right;
-			 }
+		}
 	}
 
 }

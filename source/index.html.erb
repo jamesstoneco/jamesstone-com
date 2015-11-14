@@ -225,20 +225,21 @@ videos:
         <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
         <% if test_video == "true" %>
         <% if test_video_type == "youtube" %>
-        <div class="flex-video yt-thumb-container">
-          <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/hqdefault.jpg" alt="">
-        </div>
+        <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/maxresdefault.jpg" alt="">
         <% end %>
         <% elsif ( defined?(test_featured_image)) %>
         <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
         <% end %>
         <% end %>
-        <h4><%= article.title %></h4>
-        <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
-        <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic rem quo, minima blanditiis quisquam iure!
-        </p>
-        <!-- %= strip_html(article.summary(125)) % -->
-        <a href="<%= article.url %>" class="button hollow">Read Article</a>
+        <div class="content">
+          <h4><%= article.title %></h4>
+          <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+          <p class="summary">
+            <%= strip_html(article.summary(125)) %>
+          </p>
+          
+          <a href="<%= article.url %>" class="button hollow">Read Article</a>
+        </div>
       </div>
     </div>
     <% end %> <!-- article -->
