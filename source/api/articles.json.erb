@@ -1,0 +1,13 @@
+---
+blog: blog
+---
+[
+<% blog.articles.each_with_index do | p, index | %>
+<% tempHash = p.metadata[:page] %>
+<% tempHash[:url] = p.url %>
+<% tempHash[:tags] = p.tags %>
+<% tempHash[:summary] = strip_all_html( p.summary ) %>
+<%= tempHash.to_json %>
+<%= ',' unless index == blog.articles.size - 1 %>
+<%  end %>
+]
