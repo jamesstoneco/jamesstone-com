@@ -25,6 +25,8 @@
 // require vendor/socialite/socialite
 // require wookmark-jquery/jquery.wookmark.js
 // require vendor/lazyYT
+//= require moment/min/moment.min
+//= require lunr.min
 // require_directory .
 
 
@@ -33,10 +35,49 @@ var app = angular.module('memberApp', [
 	'firebase',
 	'mm.foundation',
   'oblador.lazytube',
-	]);
+  ]);
+
+app.controller('ArticlesCtrl', function($scope, $http, $window) {
+  $scope.numberOfArticles = 8;
+
+  $http.get('api/tags.json').
+  success(function(data, status, headers, config) {
+    $scope.articleTags = data;
+  }).
+  error(function(data, status, headers, config) {
+        // log error
+      });
+  $http.get('api/articles.json').
+  success(function(data, status, headers, config) {
+    $scope.articles = data;
+  }).
+  error(function(data, status, headers, config) {
+        // log error
+      });
+  $http.get('api/lunr-index.json').
+  success(function(data, status, headers, config) {
+    // $scope.lunrIndex = data;
+    $scope.lunrData = data;
+    $scope.lunrIndex = lunr.Index.load(data.index);
+  }).
+  error(function(data, status, headers, config) {
+        // log error
+      });
+  $scope.stringToDate = function(item) {
+    return moment(item).format('YYYY-MM-DD');
+  };
+  $scope.searchResults = function(searchInput) {
+    return $scope.lunrIndex.search(searchInput);
+  }
+
+
+
+});
 
 app.controller('MembershipCtrl', ['$scope', '$firebase', '$firebaseAuth', '$window',
 	function($scope, $firebase, $firebaseAuth, $window) {
+
+
     var ref = new Firebase("https://jamesstone.firebaseio.com/");
 
     $scope.authObj = $firebaseAuth(ref);
@@ -98,7 +139,111 @@ $scope.logout = function() {
 $scope.openLink = function(linkToOpen) {
   $window.location.href = linkToOpen;
 }
+$scope.makeDateSortable = function(input) {
+  return moment(input).format("YYYY-MM-DD");
+}
+
 }]);
 
+app.filter('filterByTags', function () {
+  return function (items, tags) {
+        var filtered = []; // Put here only items that match
+        (items || []).forEach(function (item) { // Check each item
+            var matches = tags.some(function (tag) {          // If there is some tag
+              // console.log("item = " + item);
+              return (item.tags.indexOf(tag.text) > -1)
+            });                                               // we have a match
+            if (matches) {           // If it matches
+                filtered.push(item); // put it into the `filtered` array
+              }
+            });
+        return filtered; // Return the array with items that match any tag
+      };
+    });
+app.filter('filterByTag', function () {
+  return function (items, tag) {
+    if (tag) {
+
+        var filtered = []; // Put here only items that match
+        (items || []).forEach(function (item) { // Check each item
+          // console.log(item);
+
+          item.tags.forEach(function(t) {
+            // console.log("t = " + t);
+            // console.log("tag = " + tag);
+            if (t === tag) {
+              filtered.push(item);
+            }
+          });
+        });
+        return filtered; // Return the array with items that match any tag
+      } else return items;
+    };
+  });
 
 
+
+
+
+/***************** ***********************/
+/*
+(function() {
+  'use strict';
+
+  var App = angular.module('application', [
+    'ui.router',
+    'ngAnimate',
+
+    //foundation
+    'foundation',
+    'foundation.dynamicRouting',
+    'foundation.dynamicRouting.animations'
+  ])
+    .controller('ArticlesCtrl', function($scope, $http, $window) {
+    $http.get('api/articles.json').
+      success(function(data, status, headers, config) {
+        $scope.articles = data;
+      }).
+      error(function(data, status, headers, config) {
+        // log error
+      });
+    $scope.go = function ( path ) {
+        // $location.path( path );
+        $window.open( path, "_self" );
+      };
+
+  })
+
+    .config(config)
+    .run(run)
+  ;
+
+
+  config.$inject = ['$urlRouterProvider', '$locationProvider'];
+
+  function config($urlProvider, $locationProvider) {
+    $urlProvider.otherwise('/');
+
+    $locationProvider.html5Mode({
+      enabled:false,
+      requireBase: false
+    });
+
+    $locationProvider.hashPrefix('!');
+  }
+
+  function run() {
+    FastClick.attach(document.body);
+  }
+
+
+
+})();
+
+
+// routes
+
+var foundationRoutes = [{"name":"home","url":"/","path":"/ng-templates/home.html"}]; 
+
+
+*/

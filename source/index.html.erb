@@ -89,7 +89,7 @@ published: true
   </div>
 
   <div class="row">
-  <% data.widgets.testimonials[0..3].each do | t | %>
+    <% data.widgets.testimonials[0..3].each do | t | %>
     <div class="medium-3 columns">
       <div class="card">
         <h3><%= t.name %></h3>
@@ -130,8 +130,8 @@ published: true
 </section>
 
 
-<section class="articles" id="articles">
-  <h2 class="text-center flush-bottom">Articles that open your mind to the possibilities with ZURB Foundation</h2>
+<section class="articles" id="articles" ng-controller="ArticlesCtrl">
+  <h2 class="flush-bottom">Articles that open your mind to the possibilities with ZURB Foundation</h2>
 
   <div class="row align-spaced">
     <div class="large-3 columns">
@@ -140,10 +140,8 @@ published: true
           <label for="subject">Subject</label>
         </div>
         <div class="small-9 columns">
-          <select name="subject" id="">
-            <% blog('blog').tags.keys.sort.each do |tag| %>
-            <option value="<%= tag %>"><%= tag %></option>
-            <% end %>
+          <select name="subject" id="" ng-model="selectedTag">
+            <option ng-repeat="tag in articleTags" value="{{ tag }}"> {{ tag }}</option>
           </select>
         </div>
       </div>
@@ -154,9 +152,11 @@ published: true
           <label for="subject">Sort by</label>
         </div>
         <div class="small-9 columns">
-          <select name="subject" id="">
-            <option selected>Featured</option>
-            <option>Newest First</option>
+          <select name="subject" id="" ng-model="selectedSort">
+            <!-- <option>Featured</option> -->
+            <option selected>Newest First</option>
+            <option>Oldest First</option>
+            <option>Most Comments</option>
           </select>
         </div>
       </div>     
@@ -164,10 +164,10 @@ published: true
     <div class="large-3 columns">
       <div class="row collapse">
         <div class="small-3 columns">
-          <label for="subject">Search</label>
+          <label for="search">Search</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="search" placeholder="Search Articles">
+          <input type="text" name="search" placeholder="Search Articles" ng-model="searchInput" ng-change="activeSearchResults = searchResults(searchInput)">
         </div>
       </div>
     </div>
@@ -175,54 +175,35 @@ published: true
 
 
 
+<ul>
+  <li ng-repeat="r in activeSearchResults"><a href="{{lunrData.docs[r.ref].url}}">{{ lunrData.docs[r.ref].title }}</a></li>
+</ul>
 
-  <p class="text-center flush-bottom">
-  </p>
 
-
-
-  <% page_articles('blog').each_slice(4) do | row | %>
   <div class="row">
 
-    <% row.each do |article| %>
-    <div class="columns"> <!-- main content -->
-      <% test_video          = article.data.video %>
-      <% test_video_type     = article.data.video_type %>
-      <% test_video_id       = article.data.video_id %>
-      <% test_featured_image = article.data.featured_image %>
+    <div class="medium-3 columns" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
+
+      <div class="flex-card article clickable" ng-click="openLink(article.url)">
 
 
-      <div class="flex-card article clickable" ng-click="openLink('<%= article.url %>')">
-
-
-        <% image_url           = "" %>
-        <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
-        <% if test_video == "true" %>
-        <% if test_video_type == "youtube" %>
-        <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/maxresdefault.jpg" alt="">
-        <% end %>
-        <% elsif ( defined?(test_featured_image)) %>
-        <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
-        <% end %>
-        <% end %>
+        <a href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
         <div class="content">
-          <h4><%= article.title %></h4>
-          <time class="timeago published hide" datetime="<%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").to_time.iso8601 %>"><%= Time.parse("#{article.date.strftime('%B %e, %Y')} #{article.data.time}").strftime('%B %e, %Y %I:%M %p') %></time>
+          <h4>{{ article.title }}</h4>
+          <!-- <time class="timeago published hide" datetime="time">time</time> -->
           <p class="summary">
-            <%= strip_html(article.summary(125)) %>
+            {{ article.summary }}
           </p>
           
-          <a href="<%= article.url %>" class="button hollow">Read Article</a>
+          <a href="{{ article.url }}" class="button hollow">Read Article</a>
         </div>
       </div>
     </div>
-    <% end %> <!-- article -->
 
 
   </div>
-  <% end %> <!-- row -->
   
-  <p class="text-center"> <a class="button round hollow" href="/blog/p2">More Articles</a> </p>
+  <p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4">More Articles</a> </p>
 
 
 </section>
