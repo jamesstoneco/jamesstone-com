@@ -33,7 +33,7 @@ videos:
 ---
 
 
-<section class="hero">
+<section class="hero index">
   <div class="row">
     <div class="small-12 columns">
       <h2>Join our community today to get a ton of exclusive goodies</h2>
@@ -179,23 +179,42 @@ videos:
   <h2 class="text-center flush-bottom">Dive deeper with comprehensive articles</h2>
 
   <div class="row align-spaced">
-    <div class="medium-3 columns">
-      <label for="subject">Subject</label>
-      <select name="subject" id="">
-        <% blog('blog').tags.keys.sort.each do |tag| %>
-        <option value="<%= tag %>"><%= tag %></option>
-        <% end %>
-      </select>
+    <div class="large-3 columns">
+      <div class="row collapse">
+        <div class="small-3 columns">
+          <label for="subject">Subject</label>
+        </div>
+        <div class="small-9 columns">
+          <select name="subject" id="">
+            <% blog('blog').tags.keys.sort.each do |tag| %>
+            <option value="<%= tag %>"><%= tag %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
     </div>
-    <div class="medium-3 columns">
-      <label for="subject">Sort by</label>
-      <select name="subject" id="">
-        <option>Newest First</option>
-      </select>
+    <div class="large-3 columns">
+      <div class="row collapse">
+        <div class="small-3 columns">
+          <label for="subject">Sort by</label>
+        </div>
+        <div class="small-9 columns">
+          <select name="subject" id="">
+            <option selected>Featured</option>
+            <option>Newest First</option>
+          </select>
+        </div>
+      </div>     
     </div>
-    <div class="medium-3 columns">
-      <label for="subject">Search</label>
-      <input type="text" name="search">
+    <div class="large-3 columns">
+      <div class="row collapse">
+        <div class="small-3 columns">
+          <label for="subject">Search</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" name="search" placeholder="Search Articles">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -246,15 +265,11 @@ videos:
 
 
   </div>
-  <br>
   <% end %> <!-- row -->
+  
+  <p class="text-center"> <a class="button round hollow" href="/blog/p2">More Articles</a> </p>
 
-<!--   <div class="row">
-    <div class="small-12 columns">
-      <p> <a href="/blog/p2">&laquo; previous articles</a> </p>
-    </div>
-  </div>
- -->
+
 </section>
 
 
