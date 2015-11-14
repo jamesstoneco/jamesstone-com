@@ -11,7 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery/dist/jquery
-//= require fastclick/lib/fastclick
+// require fastclick/lib/fastclick
 //= require foundation/js/foundation
 //= require foundation/js/foundation/foundation.abide
 //= require foundation/js/foundation/foundation.accordion

@@ -237,7 +237,7 @@ section {
 		color: $steel-grey;
 		font-size: rem-calc(26);
 		font-weight: 400;
-		padding-top: rem-calc(72);
+		padding-top: rem-calc(68);
 		padding-bottom: rem-calc(72);
 	}
 }
@@ -301,6 +301,7 @@ section.membership-promo {
 }
 
 section.videos {
+	padding-bottom: rem-calc(30);
 	& .row {
 		max-width: ($grid-row-width + 32px)
 		// width: ($grid-row-width + 75px);
