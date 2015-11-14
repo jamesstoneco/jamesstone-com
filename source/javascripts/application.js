@@ -19,6 +19,7 @@
 //= require angularfire/dist/angularfire
 //= require mm-foundation-templates-override
 //= require angular-lazytube/angular-lazytube
+//= require allmighty-autocomplete/script/autocomplete
 // require angular-foundation/mm-foundation
 // require fastclick/lib/fastclick
 // require vendor/highlight
@@ -35,6 +36,7 @@ var app = angular.module('memberApp', [
 	'firebase',
 	'mm.foundation',
   'oblador.lazytube',
+  'autocomplete',
   ]);
 
 app.controller('ArticlesCtrl', function($scope, $http, $window) {

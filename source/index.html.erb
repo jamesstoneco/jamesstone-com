@@ -167,43 +167,60 @@ published: true
           <label for="search">Search</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="search" placeholder="Search Articles" ng-model="searchInput" ng-change="activeSearchResults = searchResults(searchInput)">
-        </div>
+
+         <!-- <autocomplete ng-model="yourchoice" data="lunrData.index.documentStore.store['2']" on-type="updateMovies"></autocomplete> -->
+
+         <input class="" type="text" name="search" placeholder="Search Articles" ng-model="searchInput" ng-change="activeSearchResults = searchResults(searchInput)">
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- search results -->
+ <div class="row" ng-if="searchInput">
+  <div class="medium-12 columns">
+   <p ng-if="activeSearchResults.length < 1" class="text-center" style="margin-bottom: 30px;">No results found. Try different or fewer keywords.</p>
+   <div class="row">
+    <div class="medium-5 columns" ng-class="$even ? 'medium-offset-1' : 'end'" ng-repeat="r in activeSearchResults">
+      <div class="row small-articles">
+       <div class="medium-3 columns">
+         <a ng-if="lunrData.docs[r.ref].featured_image"  href="{{lunrData.docs[r.ref].url}}"><img ng-src="{{ lunrData.docs[r.ref].featured_image }}" alt="{{ lunrData.docs[r.ref].title }}"></a>
+       </div>
+       <div class="medium-9 columns">
+         <p>
+           <a href="{{lunrData.docs[r.ref].url}}">{{ lunrData.docs[r.ref].title }}</a>
+         </p>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+
+<div class="row">
+
+  <div class="medium-3 columns" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
+
+    <div class="flex-card article clickable" ng-click="openLink(article.url)">
+
+
+      <a href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
+      <div class="content">
+        <h4>{{ article.title }}</h4>
+        <!-- <time class="timeago published hide" datetime="time">time</time> -->
+        <p class="summary">
+          {{ article.summary }}
+        </p>
+
+        <a href="{{ article.url }}" class="button hollow">Read Article</a>
       </div>
     </div>
   </div>
 
 
+</div>
 
-<ul>
-  <li ng-repeat="r in activeSearchResults"><a href="{{lunrData.docs[r.ref].url}}">{{ lunrData.docs[r.ref].title }}</a></li>
-</ul>
-
-
-  <div class="row">
-
-    <div class="medium-3 columns" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
-
-      <div class="flex-card article clickable" ng-click="openLink(article.url)">
-
-
-        <a href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
-        <div class="content">
-          <h4>{{ article.title }}</h4>
-          <!-- <time class="timeago published hide" datetime="time">time</time> -->
-          <p class="summary">
-            {{ article.summary }}
-          </p>
-          
-          <a href="{{ article.url }}" class="button hollow">Read Article</a>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-  
-  <p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4">More Articles</a> </p>
+<p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4">More Articles</a> </p>
 
 
 </section>

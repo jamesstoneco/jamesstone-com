@@ -74,7 +74,7 @@ section.hero {
 		height: 880px;
 	}
  */
-	 &.services {
+ &.services {
 		// @include bg-hack-image($pale-teal, 0.3,'../images/james-graffiti-wide.jpg');
 		background-image: url('../images/james-graffiti-wide.jpg');
 		background-repeat: no-repeat;
@@ -534,16 +534,7 @@ footer {
 		max-width: 100%;
 
 	}
-	.small-articles {
-		img {
-			border-radius: rem-calc(8);
-			margin-bottom: rem-calc(15);
-		}
-		h2 { text-align: left; }
-		p {
-			padding-top: rem-calc(10);
-		}
-	}
+
 
 	a {
 		color: $cement;
@@ -571,5 +562,24 @@ footer {
 			padding-right: 0;
 		}
 
+	}
+}
+
+
+.small-articles {
+	img {
+		border-radius: rem-calc(8);
+		margin-bottom: rem-calc(15);
+	}
+	a {
+		color: $cement;
+		font-size: rem-calc(14);
+		font-weight: 400;
+	}
+
+	h2 { text-align: left; }
+	p {
+		padding-top: rem-calc(10);
+		min-height: rem-calc(40);
 	}
 }

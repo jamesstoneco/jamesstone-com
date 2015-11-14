@@ -17,6 +17,7 @@
     "foundation-sites-6": "git@github.com:zurb/foundation-sites-6.git#develop",
     "motion-ui": "~1.0.3",
     "moment": "~2.10.6",
-    "angular-ui-select3": "ui-select#*"
+    "angular-ui-select3": "ui-select#*",
+    "allmighty-autocomplete": "*"
   }
 }

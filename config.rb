@@ -101,6 +101,7 @@ activate :search do |search|
   search.fields = {
     title:   {boost: 100, store: true, required: true},
     content: {boost: 50},
+    featured_image: {index: false, store: true},
     url:     {index: false, store: true}
   }
 end
