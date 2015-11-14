@@ -243,7 +243,7 @@ section {
 }
 
 section {
-	&.membership-promo, &.videos {
+	&.membership-promo, &.videos, &.promo {
 		background: $ice-blue;
 	}
 }
@@ -411,4 +411,25 @@ section.testimonials {
 		padding-right: rem-calc(20);
 		margin-bottom: rem-calc(20);
 	}
+}
+
+section.promo {
+	text-align: center;
+	padding-top: rem-calc(30);
+	padding-bottom: rem-calc(40);
+	h2 {
+		padding: 0;
+		margin-bottom: rem-calc(8);
+	}
+
+	.button {
+		padding: rem-calc(12 89 12 88);
+		font-size: rem-calc(15);
+		font-weight: 600;
+		margin-bottom: rem-calc(20);
+
+	}
+
+
+
 }
