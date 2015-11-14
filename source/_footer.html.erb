@@ -1,67 +1,98 @@
 
-<!-- 
+<footer>
+
+  <div class="row">
+    <div class="medium-12 columns">
 
 
-<div class="row" style="padding-top:30px;">
-  <div class="medium-4 columns">
-    <div class="card">
-      <h3>Resources</h3>
-        <ul class="no-bullet" style="padding-bottom:1rem;">
-         <li><a href="/resources/getting-started">Getting Started</a></li>
-         <li><a href="//www.youtube.com/user/JamesManOfStone">Screencasts on YouTube</a></li>
-         <li><a href="/zurb-foundation-quick-reference">Quick Reference</a></li>
-         <li><a href="/zurb-foundation-blueprints">Blueprints Book</a></li>
-         <li><a href="//leanpub.com/zurb-foundation-performance-guide">ZURB Performance Guide</a></li>
-         <li><a href="/resources/hosting">Hosting</a></li>
-       </ul>
+      <div class="row">
+        <div class="medium-5 columns small-articles">
 
-      <h3 class="hide">Top Articles</h3>
-      <ul class="no-bullet hide">      
-        <% data.widgets.top_articles.each do | article | %>
-          <li><a href="<%= article["url"]%>"><%= article["title"]%></a></li>
-        <% end %>
-      </ul>
+          <% page_articles('blog')[0..2].each do | article | %>
+
+          <% test_video          = article.data.video %>
+          <% test_video_type     = article.data.video_type %>
+          <% test_video_id       = article.data.video_id %>
+          <% test_featured_image = article.data.featured_image %>
+
+
+          <div class="row colapse">
+            <div class="medium-3 columns">
+              <% image_url           = "" %>
+              <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+              <% if test_video == "true" %>
+              <% if test_video_type == "youtube" %>
+              <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/maxresdefault.jpg" alt="">
+              <% end %>
+              <% elsif ( defined?(test_featured_image)) %>
+              <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+              <% end %>
+              <% end %>
+            </div>
+            <div class="medium-9 columns">
+              <p> <a href="<%= article.url %>"><%= article.title %></a> </p>
+            </div>
+          </div>
+
+
+          <% end %>
+
+        </div>
+        <div class="medium-2 columns medium-offset-3">
+          <h2>Useful Links</h2>
+
+
+          <ul>
+            <li><a href="">Book 15 Minutes</a></li>
+            <li><a href="">Videos</a></li>
+            <li><a href="">Articles</a></li>
+            <li><a href="">Resources</a></li>
+          </ul>
+
+        </div>
+        <div class="medium-2 columns">
+          <h2>Follow Me</h2>
+
+          <ul>
+            <li><a href="">YouTube</a></li>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Google Plus</a></li>
+            <li><a href="">LinkedIn</a></li>
+          </ul>  
+        </div>
+      </div>
+
+    </div> 
+  </div>
+
+  <hr>
+
+
+  <div class="row">
+    <div class="medium-12 columns">
+
+
+
+      <div class="sub-footer">
+        <ul class="menu align-right">
+          <li><a href="/contact">Contact</a></li>
+        <li><a href="/TODO">Comment Policy</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+
+<!--           <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/resources/getting-started">Start Here</a></li>
+
+ -->        </ul>
+        <p>Copyright 2009-2015, James Stone Intermedia, All Rights Reserved.</p>
+      </div>
+
 
     </div>
   </div>
-  <div class="medium-4 columns">
-    <div class="card">
-      <h3>Lets Talk</h3>
-        <p>
-        <a href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request" class="button expand radius tiny secondary" target="_blank">Quick Question? Book 15 mintues &raquo;</a> <br>
-        <a href="/consulting" class="button expand radius tiny secondary">Consulting Services &raquo;</a>
-        <a href="/contact" class="button expand radius tiny secondary">Send James a Message &raquo;</a>
-        <a href="//www.twitter.com/JAMESSTONEco" class="button expand radius tiny secondary" target="_blank">Reach out on Twitter &raquo;</a>
-        </p>
-    </div>
-  </div>
-  <div class="medium-4 columns">
-    <div class="card">
-      <h3>If you made it all the way down here...</h3>
-      <p>you probally want more great stuff. Sign up for my updates and you will be the first to recieve it.</p>
-      <% #= partial "emailsignup" %>
-    </div>
-  </div>
-</div> -->
 
-<div class="row">
-  <div class="small-12 columns">
-    <h5 class="text-center"><a href="/bb">Hosting sponsored by <span class="label">BitBalloon</span> &ndash; The ultimate hosting platform for your HTML5 sites &amp; apps</a></h5>
-    <br>
-  </div>
-</div>
+</footer>
+    <!-- <h5 class="text-center"><a href="/bb">Hosting sponsored by <span class="label">BitBalloon</span> &ndash; The ultimate hosting platform for your HTML5 sites &amp; apps</a></h5> -->
 
-
-<div class="row">
-  <div class="medium-7 columns">
-    <p>Copyright 2009-2015, James Stone Intermedia, All Rights Reserved.</p>
-  </div>
-  <div class="medium-5 columns">
-    <ul class="button-group right">
-      <li><a href="/privacy" class="button secondary tiny">Privacy Policy</a></li>
-      <li><a href="/tos" class="button secondary tiny">Terms of Service</a></li>
-      <li><a href="/contact" class="button secondary tiny">Contact</a></li>
-    </ul>
-  </div>
-</div>
 
