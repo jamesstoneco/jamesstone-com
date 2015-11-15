@@ -34,37 +34,79 @@ $primary-color: $topaz;
 // @import 'motion-ui';
 
 
-@include foundation-flex-grid;
 
-@include foundation-everything; // blanket include
+// @include foundation-everything; // blanket include
+
+@include foundation-global-styles;
+  // @include foundation-grid; // don't enable with flexbox grid
+  @include foundation-flex-grid;
+  @include foundation-typography;
+  @include foundation-button;
+  @include foundation-forms;
+  @include foundation-visibility-classes;
+  @include foundation-float-classes;
+  @include foundation-accordion;
+  @include foundation-badge;
+  @include foundation-breadcrumbs;
+  @include foundation-button-group;
+  @include foundation-callout;
+  @include foundation-close-button;
+  @include foundation-drilldown-menu;
+  @include foundation-dropdown;
+  @include foundation-dropdown-menu;
+  @include foundation-flex-video;
+  // @include foundation-joyride;
+  @include foundation-label;
+  @include foundation-media-object;
+  @include foundation-menu;
+  @include foundation-off-canvas;
+  @include foundation-orbit;
+  @include foundation-pagination;
+  @include foundation-progress-bar;
+  @include foundation-slider;
+  @include foundation-sticky;
+  @include foundation-reveal;
+  @include foundation-switch;
+  @include foundation-table;
+  @include foundation-tabs;
+  @include foundation-thumbnail;
+  @include foundation-title-bar;
+  @include foundation-tooltip;
+  @include foundation-top-bar;
 
 
-@mixin bg-hack($bg-color, $bg-opacity) {
-	
-	background-image: linear-gradient(
-		rgba($bg-color, $bg-opacity),
-		rgba($bg-color, $bg-opacity)
-		);
-}
-@mixin bg-hack-image($bg-color, $bg-opacity, $bg-image) {
-	background-image: linear-gradient(
-		rgba($bg-color, $bg-opacity),
-		rgba($bg-color, $bg-opacity)
-		),
-	url(#{$bg-image});
-}
+  @mixin bg-hack($bg-color, $bg-opacity) {
+
+  	background-image: linear-gradient(
+  		rgba($bg-color, $bg-opacity),
+  		rgba($bg-color, $bg-opacity)
+  		);
+  }
+  @mixin bg-hack-image($bg-color, $bg-opacity, $bg-image) {
+  	background-image: linear-gradient(
+  		rgba($bg-color, $bg-opacity),
+  		rgba($bg-color, $bg-opacity)
+  		),
+  	url(#{$bg-image});
+  }
 
 
-section.hero {
+  section.hero {
 
-	&.index {
-		background: url('../images/2015-redesign/background-ted.png');
-		background-position: bottom center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 580px;
-		h2 { margin-top: rem-calc(240); }
-	}
+  	&.index {
+  		background: url('../images/2015-redesign/background-ted.png');
+  		@include breakpoint(small only) {
+  			background-size: 200%;
+  			background-position: top center;
+  		}
+  		@include breakpoint(medium) {
+  			height: 580px;
+  			h2 { margin-top: rem-calc(240); }
+  			background-size: cover;
+  			background-position: bottom center;
+  		}
+  		background-repeat: no-repeat;
+  	}
 /* 	&.services {
 		background: url('../images/james-new-headshot-wide.jpg');
 		background-repeat: no-repeat;
@@ -83,7 +125,6 @@ section.hero {
 		h2 { margin-top: rem-calc(380); }
 		height: 660px;
 	}
-	width: 100%;
 	h2, p {
 		color: #fff;
 		font-weight: 400;
@@ -93,7 +134,12 @@ section.hero {
 	h2 { 
 		padding: 0;
 		margin-bottom: rem-calc(15);
-		font-size: rem-calc(30);
+		@include breakpoint(small only) {
+			font-size: rem-calc(20);
+		}
+		@include breakpoint(medium) {
+			font-size: rem-calc(30);
+		}
 	}
 	p {
 		margin-bottom: rem-calc(25);
@@ -382,16 +428,31 @@ section.videos {
 	}
 }
 
-h1.logo a {
-	margin-left: rem-calc(50);
-	margin-top: rem-calc(16);
-	margin-bottom: rem-calc(15);
+h1.logo {
+	@include breakpoint(small only) {
+		// position: relative;
+		padding-left: rem-calc(10);
+		padding-top: rem-calc(10);
+		margin: 0;
+		margin-bottom: rem-calc(12);
+		& img {
+			width: 55%;
+			height: auto;
+		}
+	}
+	@include breakpoint(medium) {
+		margin-left: rem-calc(50);
+		margin-top: rem-calc(16);
+		margin-bottom: rem-calc(15);
+	}
 }
 
 header {
 
 	nav {
-		max-height: rem-calc(70);
+		@include breakpoint(medium) {
+			max-height: rem-calc(70);
+		}
 		ul.menu li {
 			margin-top: rem-calc(22);
 			& a {
@@ -457,28 +518,42 @@ header {
 section.bling {
 
 	ul { 
-		@include grid-row(5); 
+		@include breakpoint(medium) {
+			@include grid-row(5); 
+		}
 		margin-bottom: 0;
 		list-style-type: none;
 	}
 	ul li {
-		@include grid-column(1);
+		@include breakpoint(medium) {
+			@include grid-column(1);
+		}
 		text-align: center;
 		span {
 			display: inline-block;
-			padding-top: rem-calc(43);
-			padding-bottom: rem-calc(43);
+			@include breakpoint(small-only) {
+				padding-top: rem-calc(20);
+			}
+			@include breakpoint(medium) {
+				padding-top: rem-calc(43);
+				padding-bottom: rem-calc(43);
+			}
 			text-transform: uppercase;
 			font-size: rem-calc(15);
 			font-weight: 600;
 			color: $brownish-grey;
 		}
-		&:nth-child(2) { margin-top: rem-calc(44); }
-		&:nth-child(3) { margin-top: rem-calc(25); }
-		&:nth-child(4) { margin-top: rem-calc(45); }
-		&:nth-child(5) { 
-			margin-top: rem-calc(45);
-			text-align: right;
+		@include breakpoint(medium) {
+			&:nth-child(2) { margin-top: rem-calc(44); }
+			&:nth-child(3) { margin-top: rem-calc(25); }
+			&:nth-child(4) { margin-top: rem-calc(45); }
+			&:nth-child(5) { 
+				margin-top: rem-calc(45);
+				text-align: right;
+			}
+		}
+		@include breakpoint(small only) {
+			margin-bottom: rem-calc(20);
 		}
 	}
 
@@ -639,3 +714,8 @@ input[type="text"], input[type="email"], select, option {
 	}
 
 }
+
+
+// * {
+// 	border: solid 1px #f00;
+// }

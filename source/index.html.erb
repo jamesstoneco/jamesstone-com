@@ -21,8 +21,8 @@ published: true
 
 
 <section class="bling">
-  <div class="row collapse">
-    <div class="medium-10 columns medium-centered">
+  <div class="row align-center">
+    <div class="column medium-10 small-12">
       <ul>
         <li><span>I'm featured on</span></li>
         <li> <a target="_blank" href="http://tedxtalks.ted.com/video/TEDxPSU-James-Stone-A-Technolog;search%3Ajames%20stone"><img src="images/2015-redesign/featured-logo-tedxpsu.svg" alt=""></a> </li>
@@ -37,8 +37,13 @@ published: true
 <section class="membership-promo">
 
   <h2>A specialized community you can keep in your back pocket</h2>
-  <div class="row">
-    <div class="medium-2 columns medium-offset-1">
+  <div class="row align-center">
+    <div class="small-12 medium-6 columns order-1 medium-order-2">
+      <p class="text-center">
+        <img src="images/2015-redesign/yeti_screens.svg" alt="">
+      </p>
+    </div>
+    <div class="small-6 medium-2 columns order-2 medium-order-2">
       <div class="promo-box">
         <img class="round" src="images/2015-redesign/circle-icon-video.svg" alt="">
         <p>Screencasts</p>
@@ -48,15 +53,8 @@ published: true
         <img class="round" src="images/2015-redesign/circle-icon-timer.svg" alt="">
         <p>Short Courses</p>
       </div>
-
-
     </div>
-    <div class="medium-6 columns">
-      <p class="text-center">
-        <img src="images/2015-redesign/yeti_screens.svg" alt="">
-      </p>
-    </div>
-    <div class="medium-2 columns end">
+    <div class="small-6 medium-2 columns end">
       <div class="promo-box">
         <img class="round" src="images/2015-redesign/circle-icon-book.svg" alt="">
         <p>Ebooks &amp; Guides</p>
@@ -88,9 +86,9 @@ published: true
     </div>
   </div>
 
-  <div class="row">
+  <div class="row align-stretch">
     <% data.widgets.testimonials[0..3].each do | t | %>
-    <div class="medium-3 columns">
+    <div class="column small-12 medium-3" style="display: flex;">
       <div class="card">
         <h3><%= t.name %></h3>
         <a target="_blank" href="<%= t.tweet_url %>"><img class="round" src="<%= t.image_url %>" alt=""></a>
@@ -114,9 +112,9 @@ published: true
 
 <section class="videos" id="videos">
   <h2>Great videos that make ZURB Foundation simple to understand</h2>
-  <div class="row">
+  <div class="row align-stretch">
     <% data.widgets.videos.each do | vid | %>
-    <div class="medium-4 columns">
+    <div class="column small-12 medium-4" style="display: flex;">
       <div class="video-overlay <%= vid.color %>" ng-click="openLink('https://www.youtube.com/watch?v=<%= vid.id %>')">
         <img src="https://img.youtube.com/vi/<%= vid.id %>/maxresdefault.jpg" alt="">
         <!-- TODO: padding for text, responsive flexbox centered button -->
@@ -134,7 +132,7 @@ published: true
   <h2 class="flush-bottom">Articles that open your mind to the possibilities with ZURB Foundation</h2>
 
   <div class="row align-spaced">
-    <div class="large-3 columns">
+    <div class="small-12 medium-3 columns">
       <div class="row collapse">
         <div class="small-3 columns">
           <label for="subject">Subject</label>
@@ -147,7 +145,7 @@ published: true
         </div>
       </div>
     </div>
-    <div class="large-3 columns">
+    <div class="small-12 medium-3 columns">
       <div class="row collapse">
         <div class="small-3 columns">
           <label for="subject">Sort by</label>
@@ -161,7 +159,7 @@ published: true
         </div>
       </div>     
     </div>
-    <div class="large-3 columns">
+    <div class="small-12 medium-3 columns">
       <div class="row collapse">
         <div class="small-3 columns">
           <label for="search">Search</label>
@@ -181,12 +179,12 @@ published: true
   <div class="medium-12 columns">
    <p ng-if="activeSearchResults.length < 1" class="text-center" style="margin-bottom: 30px;">No results found. Try different or fewer keywords.</p>
    <div class="row">
-    <div class="medium-5 columns" ng-class="$even ? 'medium-offset-1' : 'end'" ng-repeat="r in activeSearchResults">
+    <div class="small-12 medium-5 columns" ng-class="$even ? 'medium-offset-1' : 'end'" ng-repeat="r in activeSearchResults">
       <div class="row small-articles">
-       <div class="medium-3 columns">
+       <div class="small-3 columns">
          <a ng-if="lunrData.docs[r.ref].featured_image"  href="{{lunrData.docs[r.ref].url}}"><img ng-src="{{ lunrData.docs[r.ref].featured_image }}" alt="{{ lunrData.docs[r.ref].title }}"></a>
        </div>
-       <div class="medium-9 columns">
+       <div class="small-9 columns">
          <p>
            <a href="{{lunrData.docs[r.ref].url}}">{{ lunrData.docs[r.ref].title }}</a>
          </p>
@@ -197,23 +195,25 @@ published: true
 </div>
 </div>
 
-<div class="row">
+<div class="row align-stretch">
+  <!-- <div style="display:flex;  flex-wrap: wrap; "> -->
+  <!-- class="medium-3 columns" -->
+  <div class="column small-12 medium-3" style="display:flex; width:25%; " style="display:flex;" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
 
-  <div class="medium-3 columns" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
-
-    <div class="flex-card article clickable" ng-click="openLink(article.url)">
+    <div class="flex-card article clickable" style="display:flex; flex-direction:" ng-click="openLink(article.url)">
 
 
-      <a href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
-      <div class="content">
-        <h4>{{ article.title }}</h4>
+      <a style="flex: 0 1 auto;" href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
+      <!-- <div class="content" style="display:flex; flex-direction: column;"> -->
+      <div style="flex: 1 0 auto;" class="content">
+        <h4 style="flex: 0 1 auto;">{{ article.title }}</h4>
         <!-- <time class="timeago published hide" datetime="time">time</time> -->
-        <p class="summary">
+        <p style="flex: 1 0 auto;" class="summary">
           {{ article.summary }}
         </p>
-
+        
         <a href="{{ article.url }}" class="button hollow">Read Article</a>
-      </div>
+      </div>      <!-- </div> -->
     </div>
   </div>
 
