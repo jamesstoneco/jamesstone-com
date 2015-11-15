@@ -169,10 +169,15 @@ section.articles {
 		background-repeat: no-repeat;
 		background-size: 13px 14px;
 		background-position: 90% 50%;
-		&::-webkit-input-placeholder {color: $pale-grey; }
-		&:-moz-placeholder { color: $pale-grey; }
-		&::-moz-placeholder { color: $pale-grey; }
-		&:-ms-input-placeholder { color: $pale-grey; }
+		&:focus {
+			border-color: $primary-color;
+			background-image: url('../images/2015-redesign/search-icon-glass-focus.svg');
+			// border: none;
+			outline: none;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
 	}
 	a.button {
 		margin-top: rem-calc(20);
@@ -370,14 +375,6 @@ section.videos {
 	padding-bottom: rem-calc(30);
 	& .row {
 		max-width: ($grid-row-width + 32px)
-		// width: ($grid-row-width + 75px);
-		// padding: 0;
-		// margin-left: 0;
-		// margin-right: 0;
-		// width: 
-		// margin-left: rem-calc(-33);
-		// margin-right: rem-calc(-32);
-
 	}
 	& .columns {
 		padding-left: rem-calc(32);
@@ -400,6 +397,43 @@ header {
 			& a {
 				color: $brownish-grey;
 				font-size: rem-calc(15);
+				padding-bottom: rem-calc(8);
+				position: relative;
+				&::after {
+					content: " ";
+					position: absolute;
+					bottom: 0;
+					border-bottom: solid 2px #0aaf8e;
+					left: 0;
+					right: 0;
+					margin-left:auto;
+					margin-right:auto;
+					width: auto;
+					max-width: 0;
+					transition: all 0.35s;
+				}
+				&.active::after {
+					@keyframes intro-active {
+						0%   { max-width: 10px; }
+						100% { max-width: 100%; }
+					}
+					animation-name: intro-active;
+					animation-duration: 1s;
+					animation-iteration-count: 1;
+					left: rem-calc(16);
+					right: rem-calc(16);
+					max-width: 100%;
+				}
+				&:hover::after {
+					left: 0;
+					right: 0;
+					max-width: 10px;
+				}
+				&.active:hover::after {
+					left: rem-calc(11);
+					right: rem-calc(11);
+					max-width: 100%;
+				}
 			}
 			&:nth-child(1) {
 				padding-right: rem-calc(50);
@@ -582,4 +616,26 @@ footer {
 		padding-top: rem-calc(10);
 		min-height: rem-calc(40);
 	}
+}
+
+input[type="text"], input[type="email"], select, option {
+	color: $body-font-color;
+	outline: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	&::-webkit-input-placeholder {color: $pale-grey; }
+	&:-moz-placeholder { color: $pale-grey; }
+	&::-moz-placeholder { color: $pale-grey; }
+	&:-ms-input-placeholder { color: $pale-grey; }
+	&:focus {
+		// border-color: $primary-color;
+		border: solid 1px $primary-color !important;
+		outline: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+
+	}
+
 }

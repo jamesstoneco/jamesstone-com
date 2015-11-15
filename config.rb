@@ -95,32 +95,6 @@ activate :blog do |blog|
 end
 
 
-activate :search do |search|
-  search.resources = ['blog/', 'about/index.html',  'services/index.html']
-  search.index_path = 'api/lunr-index.json'
-  search.fields = {
-    title:   {boost: 100, store: true, required: true},
-    content: {boost: 50},
-    featured_image: {index: false, store: true},
-    url:     {index: false, store: true}
-  }
-end
-
-# activate :search do
-
-#   search.resources = ['blog/', 'index.html', 'services/index.html', 'about/index.html', 'resources/getting-started/index.html']
-
-#   search.index_path = 'search/lunr-index.json' # defaults to `search.json`
-
-#   search.fields = {
-#     title:   {boost: 100, store: true, required: true},
-#     content: {boost: 50},
-#     url:     {index: false, store: true},
-#     author:  {boost: 30}
-#   }
-# end
-
-
 
 # pretty urls, as directories, this must run after the blog block
 activate :directory_indexes
@@ -175,6 +149,18 @@ configure :build do
   # set :asset_host do |asset|
   #   '//assets.jamesstone.co'.to_s
   # end
+
+  activate :search do |search|
+    search.resources = ['blog/', 'about/index.html',  'services/index.html']
+    search.index_path = 'api/lunr-index.json'
+    search.fields = {
+      title:   {boost: 100, store: true, required: true},
+      content: {boost: 50},
+      featured_image: {index: false, store: true},
+      url:     {index: false, store: true}
+    }
+  end
+
 
 end
 

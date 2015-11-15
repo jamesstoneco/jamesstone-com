@@ -141,6 +141,7 @@ published: true
         </div>
         <div class="small-9 columns">
           <select name="subject" id="" ng-model="selectedTag">
+            <option value="" selected>All</option>
             <option ng-repeat="tag in articleTags" value="{{ tag }}"> {{ tag }}</option>
           </select>
         </div>
@@ -153,8 +154,7 @@ published: true
         </div>
         <div class="small-9 columns">
           <select name="subject" id="" ng-model="selectedSort">
-            <!-- <option>Featured</option> -->
-            <option selected>Newest First</option>
+            <option value="" selected>Newest First</option>
             <option>Oldest First</option>
             <option>Most Comments</option>
           </select>

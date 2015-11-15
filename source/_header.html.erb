@@ -1,10 +1,10 @@
 <header>
   <nav>
     <ul class="menu align-right">
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/resources/getting-started">Start Here</a></li>
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'contact' %> href="/contact">Contact</a></li>
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'services' %> href="/services">Services</a></li>
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'about' %> href="/about">About</a></li>
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'start-here' %> href="/resources/getting-started">Start Here</a></li>
     </ul>
     <h1 class="logo"><a href="/"><img src="/images/2015-redesign/logo-full.svg" alt=""></a></h1>
   </nav>
