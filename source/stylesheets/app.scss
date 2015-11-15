@@ -348,7 +348,6 @@ section.articles {
 	}
 }
 section {
-
 	& h2 {
 		text-align: center;
 		color: $steel-grey;
@@ -516,18 +515,21 @@ header {
 }
 
 section.bling {
-
 	ul { 
-		@include breakpoint(medium) {
-			@include grid-row(5); 
+		@include flex-grid-row($columns: 5);
+		@include breakpoint(small only) {
+			justify-content: space-around;
+			align-items: center;
 		}
 		margin-bottom: 0;
 		list-style-type: none;
 	}
 	ul li {
-		@include breakpoint(medium) {
-			@include grid-column(1);
+		@include breakpoint(small only) {
+			&:nth-child(1) { @include flex-grid-column(5); }
+			&:not(:nth-child(1)) { @include flex-grid-column(2); }
 		}
+		@include breakpoint(medium) { @include flex-grid-column(1); }
 		text-align: center;
 		span {
 			display: inline-block;
@@ -572,9 +574,7 @@ section.testimonials {
 		border-radius: rem-calc(4);
 		margin-bottom: rem-calc(20);
 		text-align: center;
-
 	}
-
 	h3 {
 		font-size: rem-calc(16);
 		font-weight: 600;
@@ -591,9 +591,7 @@ section.testimonials {
 		margin-bottom: rem-calc(20);
 
 	}
-
 	p {
-
 		font-size: rem-calc(15);
 		font-weight: 200;
 		padding-left: rem-calc(20);
@@ -610,7 +608,6 @@ section.promo {
 		padding: 0;
 		margin-bottom: rem-calc(8);
 	}
-
 	.button {
 		padding: rem-calc(12 89 12 88);
 		font-size: rem-calc(15);
@@ -618,16 +615,12 @@ section.promo {
 		margin-bottom: rem-calc(20);
 
 	}
-
-
-
 }
 
 
 footer {
 	padding-top: rem-calc(40);
 	padding-top: rem-calc(50);
-
 	h2 {
 		color: $brownish-grey;
 		font-weight: 600;
@@ -641,30 +634,25 @@ footer {
 		padding: 0;
 		border-color: $pale-grey;
 		max-width: 100%;
-
 	}
-
-
 	a {
 		color: $cement;
 		font-size: rem-calc(14);
 		font-weight: 400;
 	}
-
 	ul {
 		list-style-type: none;
 		margin-left: 0;
+		margin-bottom: rem-calc(50);
 		li {
 			margin-bottom: rem-calc(16);
 			text-align: right;
 		}
-		margin-bottom: rem-calc(50);
 	}
 
 	.sub-footer {
 		padding-top: rem-calc(16);
 		font-size: rem-calc(14);
-
 		ul.menu li a {
 			padding-top: rem-calc(3);
 			padding-left: rem-calc(26);
@@ -685,7 +673,6 @@ footer {
 		font-size: rem-calc(14);
 		font-weight: 400;
 	}
-
 	h2 { text-align: left; }
 	p {
 		padding-top: rem-calc(10);
@@ -704,18 +691,10 @@ input[type="text"], input[type="email"], select, option {
 	&::-moz-placeholder { color: $pale-grey; }
 	&:-ms-input-placeholder { color: $pale-grey; }
 	&:focus {
-		// border-color: $primary-color;
 		border: solid 1px $primary-color !important;
 		outline: none;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
-
 	}
-
 }
-
-
-// * {
-// 	border: solid 1px #f00;
-// }

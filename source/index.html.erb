@@ -14,11 +14,9 @@ published: true
       <h2>This is not just a reference. This is not a collection of tricks. This site teaches you how to think in <strong>ZURB Foundation</strong>, which is far more important.</h2>
       <p>I simply built what I wished my 20 year old self had when learning all of this stuff. Everything that comes with the territory of being a front-end developer.</p>
       <p> <a href="" class="button">Learn More </a> </p>
-
     </div>
   </div>
 </section>
-
 
 <section class="bling">
   <div class="row align-center">
@@ -35,7 +33,6 @@ published: true
 </section>
 
 <section class="membership-promo">
-
   <h2>A specialized community you can keep in your back pocket</h2>
   <div class="row align-center">
     <div class="small-12 medium-6 columns order-1 medium-order-2">
@@ -48,7 +45,6 @@ published: true
         <img class="round" src="images/2015-redesign/circle-icon-video.svg" alt="">
         <p>Screencasts</p>
       </div>
-
       <div class="promo-box">
         <img class="round" src="images/2015-redesign/circle-icon-timer.svg" alt="">
         <p>Short Courses</p>
@@ -59,12 +55,10 @@ published: true
         <img class="round" src="images/2015-redesign/circle-icon-book.svg" alt="">
         <p>Ebooks &amp; Guides</p>
       </div>
-
       <div class="promo-box">
         <img class="round" src="images/2015-redesign/circle-icon-doc.svg" alt="">
         <p>Quick References</p>
       </div>
-
     </div>
   </div>
 
@@ -74,16 +68,13 @@ published: true
         <input type="email" placeholder="Email Address">
         <input class="button" type="submit" value="Let me join!">
       </p>
-
     </div>
   </div>
 </section>
 
 <section class="testimonials">
-  <div class="row">
-    <div class="small-12 columns">
-      <h2 class="text-center">James Stone doesn’t dumb anything down. He explains things accurately and understandably.</h2>
-    </div>
+  <div class="column-row">
+    <h2 class="text-center">James Stone doesn’t dumb anything down. He explains things accurately and understandably.</h2>
   </div>
 
   <div class="row align-stretch">
@@ -99,19 +90,13 @@ published: true
 
   </div>
 </div>
-
-<div class="row hide">
-  <div class="small-12 columns">
-    <p class="text-right"> <a href="http://www.twitter.com/JAMESSTONEco">Latest from the Twitterverse &raquo;</a> </p>
-  </div>
-</div>
-
-
 </section>
 
 
 <section class="videos" id="videos">
-  <h2>Great videos that make ZURB Foundation simple to understand</h2>
+  <div class="column-row">
+    <h2>Great videos that make ZURB Foundation simple to understand</h2>
+  </div>
   <div class="row align-stretch">
     <% data.widgets.videos.each do | vid | %>
     <div class="column small-12 medium-4" style="display: flex;">
@@ -129,8 +114,9 @@ published: true
 
 
 <section class="articles" id="articles" ng-controller="ArticlesCtrl">
-  <h2 class="flush-bottom">Articles that open your mind to the possibilities with ZURB Foundation</h2>
-
+  <div class="column-row">
+    <h2 class="flush-bottom">Articles that open your mind to the possibilities with ZURB Foundation</h2>
+  </div>
   <div class="row align-spaced">
     <div class="small-12 medium-3 columns">
       <div class="row collapse">
@@ -175,8 +161,7 @@ published: true
  </div>
 
  <!-- search results -->
- <div class="row" ng-if="searchInput">
-  <div class="medium-12 columns">
+ <div class="column-row" ng-if="searchInput">
    <p ng-if="activeSearchResults.length < 1" class="text-center" style="margin-bottom: 30px;">No results found. Try different or fewer keywords.</p>
    <div class="row">
     <div class="small-12 medium-5 columns" ng-class="$even ? 'medium-offset-1' : 'end'" ng-repeat="r in activeSearchResults">
@@ -192,7 +177,6 @@ published: true
      </div>
    </div>
  </div>
-</div>
 </div>
 
 <div class="row align-stretch">
