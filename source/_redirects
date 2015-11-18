@@ -1,3 +1,7 @@
+https://jamesstone.com/*  https://www.jamesstone.com/:splat 301
+https://www.jamesstone.com/*  https://www.jamesstone.com/:splat 301
+https://manofstone.com/*  https://www.jamesstone.com/:splat 301
+https://www.manofstone.com/*  https://www.jamesstone.com/:splat 301
 /aso               http://www.asmallorange.com?a_aid=JAMESSTONEco
 /asmallorange      http://www.asmallorange.com?a_aid=JAMESSTONEco
 /do                https://www.digitalocean.com/?refcode=519feb181144
