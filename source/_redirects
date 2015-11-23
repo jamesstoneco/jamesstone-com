@@ -1,3 +1,7 @@
+https://jamesstone.com/*  https://www.jamesstone.com/:splat 301
+https://www.jamesstone.com/*  https://www.jamesstone.com/:splat 301
+https://manofstone.com/*  https://www.jamesstone.com/:splat 301
+https://www.manofstone.com/*  https://www.jamesstone.com/:splat 301
 /aso               http://www.asmallorange.com?a_aid=JAMESSTONEco
 /asmallorange      http://www.asmallorange.com?a_aid=JAMESSTONEco
 /do                https://www.digitalocean.com/?refcode=519feb181144
@@ -11,4 +15,6 @@
 /rackspace         http://tracking.rackspace.com/SHYa
 /focus             http://www.shareasale.com/r.cfm?b=553089&u=989116&m=50055&urllink=&afftrack=
 /focusatwill       http://www.shareasale.com/r.cfm?b=553089&u=989116&m=50055&urllink=&afftrack=
-/mouseflow       http://www.shareasale.com/r.cfm?b=232006&u=989116&m=27182&urllink=&afftrack=
+/mouseflow         http://www.shareasale.com/r.cfm?b=232006&u=989116&m=27182&urllink=&afftrack=
+/camp              http://www.zurbfoundationcamp.com
+/campref           https://gum.co/foundationquickref/zurbcamp
