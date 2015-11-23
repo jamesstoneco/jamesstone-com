@@ -95,6 +95,7 @@ $primary-color: $topaz;
 
   	&.index {
   		background: url('../images/2015-redesign/background-ted.png');
+  		background-repeat: no-repeat;
   		@include breakpoint(small only) {
   			background-size: 200%;
   			background-position: top center;
@@ -105,119 +106,130 @@ $primary-color: $topaz;
   			background-size: cover;
   			background-position: bottom center;
   		}
-  		background-repeat: no-repeat;
+  		.button {
+  			font-size: rem-calc(15);
+  			font-weight: 600;
+  			width: rem-calc(240);
+  			padding-top: rem-calc(12);
+  			padding-bottom: rem-calc(12);
+  			position: relative;
+  			padding-left: 0;
+  			margin:0;
+  			padding-right: rem-calc(27);
+  			&:after {
+  				content: " ";
+  				background: url('../images/2015-redesign/icon-down-arrow.svg');
+  				background-repeat: no-repeat;
+  				background-size: rem-calc(21 21);
+  				background-position: top left;
+  				height: rem-calc(25);
+  				width: rem-calc(21);
+  				position: absolute;
+  				top: rem-calc(9);
+  				right: rem-calc(35);
+  			}
+  		}
+
   	}
-/* 	&.services {
-		background: url('../images/james-new-headshot-wide.jpg');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: top center;
-		h2 { margin-top: rem-calc(550); }
-		height: 880px;
-	}
- */
- &.services {
-		// @include bg-hack-image($pale-teal, 0.3,'../images/james-graffiti-wide.jpg');
-		background-image: url('../images/james-graffiti-wide.jpg');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: 20% center;
-		h2 { margin-top: rem-calc(380); }
-		height: 660px;
-	}
-	h2, p {
-		color: #fff;
-		font-weight: 400;
-		font-size: rem-calc(16);
-		text-align: center;
-	}
-	h2 { 
-		padding: 0;
-		margin-bottom: rem-calc(15);
-		@include breakpoint(small only) {
-			font-size: rem-calc(20);
-		}
-		@include breakpoint(medium) {
-			font-size: rem-calc(30);
-		}
-	}
-	p {
-		margin-bottom: rem-calc(25);
-	}
-	.button {
-		font-size: rem-calc(15);
-		font-weight: 600;
-		width: rem-calc(181);
-		padding-top: rem-calc(12);
-		padding-bottom: rem-calc(12);
-		position: relative;
-		padding-left: 0;
-		margin:0;
-		padding-right: rem-calc(27);
-		&:after {
-			content: " ";
-			// background:#f00;
-			background: url('../images/2015-redesign/icon-down-arrow.svg');
-			background-repeat: no-repeat;
-			background-size: rem-calc(21 21);
-			background-position: top left;
-			height: rem-calc(25);
-			width: rem-calc(21);
-			position: absolute;
-			top: rem-calc(9);
-			right: rem-calc(35);
-			// z-index: 1000;
-		}
-	}
-}
+  	&.services {
+  		background-image: url('../images/james-graffiti-wide.jpg');
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  		background-position: 20% center;
+  		h2 { margin-top: rem-calc(380); }
+  		height: 660px;
+  		.button {
+  			font-size: rem-calc(15);
+  			font-weight: 600;
+  			width: rem-calc(181);
+  			padding-top: rem-calc(12);
+  			padding-bottom: rem-calc(12);
+  			position: relative;
+  			padding-left: 0;
+  			margin:0;
+  			padding-right: rem-calc(27);
+  			&:after {
+  				content: " ";
+  				background: url('../images/2015-redesign/icon-down-arrow.svg');
+  				background-repeat: no-repeat;
+  				background-size: rem-calc(21 21);
+  				background-position: top left;
+  				height: rem-calc(25);
+  				width: rem-calc(21);
+  				position: absolute;
+  				top: rem-calc(9);
+  				right: rem-calc(35);
+  			}
+  		}
+  	}
+  	h2, p {
+  		color: #fff;
+  		font-weight: 400;
+  		font-size: rem-calc(16);
+  		text-align: center;
+  	}
+  	h2 { 
+  		padding: 0;
+  		margin-bottom: rem-calc(15);
+  		@include breakpoint(small only) {
+  			font-size: rem-calc(20);
+  		}
+  		@include breakpoint(medium) {
+  			font-size: rem-calc(30);
+  		}
+  	}
+  	p {
+  		margin-bottom: rem-calc(25);
+  	}
+  }
 
-.round {
-	border-radius: 9999px;
-}
+  .round {
+  	border-radius: 9999px;
+  }
 
-$card-radius: 12px;
+  $card-radius: 12px;
 
-section.articles {
-	padding-bottom: rem-calc(30);
-	.row {
-		margin-bottom: 0;
-	}
-	h2 {
-		color: $greyblue;
-		padding-top: rem-calc(59);
-		padding-bottom: rem-calc(42);
-	}
+  section.articles {
+  	padding-bottom: rem-calc(30);
+  	.row {
+  		margin-bottom: 0;
+  	}
+  	h2 {
+  		color: $greyblue;
+  		padding-top: rem-calc(59);
+  		padding-bottom: rem-calc(42);
+  	}
 
-	label {
-		color: $cool-grey;
-		font-size: rem-calc(14);
-		font-weight: 400;
-		padding-top: rem-calc(8);
-	}
-	select, input[type="text"] {
-		border: solid 1px $pale-grey;
-		border-radius: 9999px;
-		padding: rem-calc(7 20 7 20);
-		font-size: rem-calc(14);
-		margin-bottom: rem-calc(50);
-	}
+  	label {
+  		color: $cool-grey;
+  		font-size: rem-calc(14);
+  		font-weight: 400;
+  		padding-top: rem-calc(8);
+  	}
+  	select, input[type="text"] {
+  		border: solid 1px $pale-grey;
+  		border-radius: 9999px;
+  		padding: rem-calc(7 20 7 20);
+  		font-size: rem-calc(14);
+  		margin-bottom: rem-calc(50);
+  	}
 
-	select {
-		background-color: $white;
-		background-image: url('../images/2015-redesign/search-icon-down.svg');
-		background-repeat: no-repeat;
-		background-size: 12px 7px;
-		background-position: 90% 55%;
-	}
+  	select {
+  		background-color: $white;
+  		background-image: url('../images/2015-redesign/search-icon-down.svg');
+  		background-repeat: no-repeat;
+  		background-size: 12px 7px;
+  		background-position: 90% 55%;
+  	}
 
-	input[type="text"] {
-		background-image: url('../images/2015-redesign/search-icon-glass.svg');
-		background-repeat: no-repeat;
-		background-size: 13px 14px;
-		background-position: 90% 50%;
-		&:focus {
-			border-color: $primary-color;
-			background-image: url('../images/2015-redesign/search-icon-glass-focus.svg');
+  	input[type="text"] {
+  		background-image: url('../images/2015-redesign/search-icon-glass.svg');
+  		background-repeat: no-repeat;
+  		background-size: 13px 14px;
+  		background-position: 90% 50%;
+  		&:focus {
+  			border-color: $primary-color;
+  			background-image: url('../images/2015-redesign/search-icon-glass-focus.svg');
 			// border: none;
 			outline: none;
 			-webkit-box-shadow: none;
