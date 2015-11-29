@@ -6,7 +6,7 @@ production:
   backend:
     name: github-api
     repo: jamesstoneco/jamesstone-com
-    branch: cms
+    branch: v3
 
 media_folder: "source/images/uploads" # Folder where user uploaded files should go
 public_folder: "source"
