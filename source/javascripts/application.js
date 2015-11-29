@@ -97,7 +97,7 @@ app.controller('MembershipCtrl', ['$scope', '$firebase', '$firebaseAuth', '$wind
     }).then(function(authData) {
       $scope.authData = authData;
       $scope.accountError = "";
-      $window.location.href="/dashboard"; 
+      $window.location.href="/members"; 
     }).catch(function(error) {
       if (error.toString().indexOf("password is incorrect") > -1) {
        $scope.accountError = "password is incorrect";

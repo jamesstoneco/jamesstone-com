@@ -635,21 +635,21 @@ section.bling {
 
 }
 
-section.testimonials {
+section.testimonials, section.categories {
 	padding-bottom: rem-calc(60);
-	h2 {
+	& h2 {
 		color: #77b5c8;
 		margin-top: rem-calc(68);
 		margin-bottom: rem-calc(73);
 		padding: 0;
 	}
-	.card {
+	& .card {
 		border: solid 1px $pale-grey;
 		border-radius: rem-calc(4);
 		margin-bottom: rem-calc(20);
 		text-align: center;
 	}
-	h3 {
+	& h3 {
 		font-size: rem-calc(16);
 		font-weight: 600;
 		margin: 0;
@@ -659,13 +659,13 @@ section.testimonials {
 		background: $pale-teal;
 		color: $white;
 	}
-	img {
+	& img {
 		height: rem-calc(80);
 		width: rem-calc(80);
 		margin-bottom: rem-calc(20);
 
 	}
-	p {
+	& p {
 		font-size: rem-calc(15);
 		font-weight: 200;
 		padding-left: rem-calc(20);

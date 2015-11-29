@@ -1,0 +1,16 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class=" menu">
+      <li ng-if="authData"><a href="/members">Member's Area</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li ng-if="authData" href="/profile"> <a href="/profile"> <span ng-bind="authData.password.email"></span></a> </li>
+      <li ng-if="authData"><a ng-click="logout()"><span ng-bind="'Logout'"></span></a></li>
+      <li ng-if="!authData"><a href="/login"><span ng-bind="'Login'"></span></a></li>
+      <li ng-if="!authData"><a href="/signup"><span ng-bind="'Sign up'"></span></a></li>
+    </ul>
+  </div>
+</div>
+

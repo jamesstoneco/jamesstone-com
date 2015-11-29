@@ -3,6 +3,7 @@
     <ul class="menu align-right hide-for-small-only">
       <li><a <%= 'class="active" ' if current_page.data.active_nav == 'contact' %> href="/contact">Contact</a></li>
       <li><a <%= 'class="active" ' if current_page.data.active_nav == 'services' %> href="/services">Services</a></li>
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'members' %> href="/members">Members</a></li>
       <li><a <%= 'class="active" ' if current_page.data.active_nav == 'about' %> href="/about">About</a></li>
       <li><a <%= 'class="active" ' if current_page.data.active_nav == 'start-here' %> href="/resources/getting-started">Start Here</a></li>
     </ul>
@@ -24,19 +25,3 @@
   </div>
 </header>
 
-<!-- 
-
-                      <a href="/dashboard">{{ authData.password.email || "Account"}}</a>
-          <ul class="dropdown" top-bar-dropdown>
-            <li ng-if="authData"><a href="/dashboard">Dashboard</a></li>
-            <li ng-if="authData"><a href="/profile">Profile</a></li>
-            <li ng-if="authData"><a ng-click="logout()">Logout</a></li>
-            <li ng-if="!authData"><a href="/login">Login</a></li>
-            <li ng-if="!authData"><a href="/signup">Sign up</a></li>
-          </ul> -->
-
-<!-- 
-            <li><a href="/#videos">Videos</a></li>
-            <li><a href="/#articles">Articles</a></li>
-            <li><a href="/resources/hosting">Resources</a></li>
-            <li><a target="_blank" href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request">Book 15 Minutes</a></li> -->

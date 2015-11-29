@@ -68,21 +68,23 @@
 
 
             <%= partial "header" %>
+            <%= partial "header_auth" %>
 
-            <br>
             
-            <div class="row">
-                <div class="small-12 columns">
 
-                  <alert ng-if="!authData">You must be <a href="/login">logged in</a> to view this content. Don't worry, its free and you can <a href="/signup">create an account</a> is seconds.</alert>
+<div class="row align-center" ng-if="!authData">
+    <div class="small-10 columns">
+    <br>
+        <div class="callout">
+        <p class="text-center">You must be <a href="/login">logged in</a> to view this content. Don't worry, its free and you can <a href="/signup">create an account</a> in seconds.</p>
+        </div>
+    </div>
+</div>
+
+                  
                   <div ng-if="authData">
 
-                  <div class="panel"><p class="text-center">Member's Only Content</p></div>
                   <%= yield %>
-                  </div>
-              </div>
-          </div>
-
 
           <%= partial "footer" %>
 
