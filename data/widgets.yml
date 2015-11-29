@@ -70,6 +70,7 @@ featured:
 - name: "ZURB"
   url: "https://zurb.com/expo/lessons/clickable-prototypes-for-those-who-hate-code"
   image: "images/2015-redesign/featured-logo-zurb.svg"
+testimonials_headline: "What people are saying about James"
 testimonials:
 - name: "Kevin Nicholson"
   image_url: "https://pbs.twimg.com/profile_images/486943617135566848/CuDhEfHk.jpeg"
@@ -87,3 +88,6 @@ testimonials:
   image_url: "https://pbs.twimg.com/profile_images/661361463651643394/9qGFOlB3.jpg"
   tweet_url: "https://twitter.com/perrin_thetical/status/614898850411622400"
   text: "Quote of the day 'I am the product of a car/RV salesman and a microbiologist so I am like a hustling scientist'. @JAMESSTONEco #classic"
+promo_headline: "If this site was a book you'd keep it right by your computer"
+promo_subhead: "Here you will find the answer to just about any ZURB Foundation problem you'll face"
+promo_cta: "Tell me more"

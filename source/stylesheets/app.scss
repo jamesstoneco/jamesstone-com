@@ -162,6 +162,68 @@ $primary-color: $topaz;
   			}
   		}
   	}
+  	&.about {
+  		background-image: url('../images/james-new-headshot-wide.jpg');
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  		background-position: 20% center;
+  		h2 { margin-top: rem-calc(380); }
+  		height: 660px;
+  		.button {
+  			font-size: rem-calc(15);
+  			font-weight: 600;
+  			width: rem-calc(181);
+  			padding-top: rem-calc(12);
+  			padding-bottom: rem-calc(12);
+  			position: relative;
+  			padding-left: 0;
+  			margin:0;
+  			padding-right: rem-calc(27);
+  			&:after {
+  				content: " ";
+  				background: url('../images/2015-redesign/icon-down-arrow.svg');
+  				background-repeat: no-repeat;
+  				background-size: rem-calc(21 21);
+  				background-position: top left;
+  				height: rem-calc(25);
+  				width: rem-calc(21);
+  				position: absolute;
+  				top: rem-calc(9);
+  				right: rem-calc(35);
+  			}
+  		}
+  	}
+  	&.get-started {
+  		background-image: url('../images/bio/zf-camp-wide.jpg');
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  		background-position: 20% center;
+  		h2 { margin-top: rem-calc(180); }
+  		height: 400px;
+  		.button {
+  			font-size: rem-calc(15);
+  			font-weight: 600;
+  			width: rem-calc(181);
+  			padding-top: rem-calc(12);
+  			padding-bottom: rem-calc(12);
+  			position: relative;
+  			padding-left: 0;
+  			margin:0;
+  			padding-right: rem-calc(27);
+  			&:after {
+  				content: " ";
+  				background: url('../images/2015-redesign/icon-down-arrow.svg');
+  				background-repeat: no-repeat;
+  				background-size: rem-calc(21 21);
+  				background-position: top left;
+  				height: rem-calc(25);
+  				width: rem-calc(21);
+  				position: absolute;
+  				top: rem-calc(9);
+  				right: rem-calc(35);
+  			}
+  		}
+  	}
   	h2, p {
   		color: #fff;
   		font-weight: 400;
@@ -371,7 +433,7 @@ section {
 }
 
 section {
-	&.membership-promo, &.videos, &.promo {
+	&.membership-promo, &.videos, &.promo, &.about-intro, &.about-bio {
 		background: $ice-blue;
 	}
 }
@@ -708,5 +770,11 @@ input[type="text"], input[type="email"], select, option {
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
+	}
+}
+
+section.about-bio {
+	img {
+		margin-bottom: rem-calc(50);
 	}
 }

@@ -61,8 +61,17 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "article_view", name: "article_view", widget: "string"}
           - {label: "article_more", name: "article_more", widget: "string"}
           - {label: "promo_headline", name: "promo_headline", widget: "string"}
-          - {label: "promo_subheadline", name: "promo_subheadline", widget: "string"}
+          - {label: "promo_subhead", name: "promo_subhead", widget: "string"}
           - {label: "promo_cta", name: "promo_cta", widget: "string"}
+      - name: "index"
+        label: "Services Headlines"
+        file: "source/services/index.html.erb"
+        fields:
+          - {label: "title", name: "title", widget: "string"}
+          - {label: "seo_desc", name: "seo_desc", widget: "string"}
+          - {label: "hero_headline", name: "hero_headline", widget: "string"}
+          - {label: "hero_subhead", name: "hero_subhead", widget: "string"}
+          - {label: "hero_cta", name: "hero_cta", widget: "string"}
       - name: "widgets"
         label: "Widget settings"
         file: "data/widgets.yml"
@@ -73,12 +82,12 @@ collections: # A list of collections the CMS should be able to edit
             fields: 
               - {label: "name", name: "name", widget: "string"}
               - {label: "url", name: "url", widget: "string"}
-              - {label: "image", name: "image", widget: "string"}
+              - {label: "image", name: "image", widget: "image"}
           - label: "testimonials"
             name: "testimonials"
             widget: list
             fields: 
               - {label: "name", name: "name", widget: "string"}
-              - {label: "image_url", name: "image_url", widget: "string"}
+              - {label: "image_url", name: "image_url", widget: "image"}
               - {label: "tweet_url", name: "tweet_url", widget: "string"}
               - {label: "text", name: "text", widget: "string"}

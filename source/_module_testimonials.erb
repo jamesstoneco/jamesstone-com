@@ -1,0 +1,19 @@
+<section class="testimonials">
+  <div class="column-row">
+    <h2 class="text-center"><%= data.widgets.testimonials_headline %></h2>
+  </div>
+
+  <div class="row align-stretch">
+    <% data.widgets.testimonials[0..3].each do | t | %>
+    <div class="column small-12 medium-3" style="display: flex;">
+      <div class="card">
+        <h3><%= t.name %></h3>
+        <a target="_blank" href="<%= t.tweet_url %>"><img class="round" src="<%= t.image_url %>" alt=""></a>
+        <p><%= t.text %></p>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+</section>

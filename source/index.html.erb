@@ -15,9 +15,6 @@ article_headline: "Fresh relevant info that does not waste your time"
 error_noresults: "No results found. Try different or fewer keywords."
 article_view: "Read Article"
 article_more: "More Articles"
-promo_headline: "If this site was a book you'd keep it right by your computer"
-promo_subheadline: "Here you will find the answer to just about any ZURB Foundation problem you'll face"
-promo_cta: "Tell me more"
 ---
 
 
@@ -44,65 +41,9 @@ promo_cta: "Tell me more"
   </div>
 </section>
 
-<section class="membership-promo">
-  <h2><%= current_page.data.membership_headline %></h2>
-  <div class="row align-center">
-    <div class="small-12 medium-6 columns order-1 medium-order-2">
-      <p class="text-center">
-        <img src="images/2015-redesign/yeti_screens.svg" alt="">
-      </p>
-    </div>
-    <div class="small-6 medium-2 columns order-2 medium-order-2">
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-video.svg" alt="">
-        <p>Screencasts</p>
-      </div>
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-timer.svg" alt="">
-        <p>Short Courses</p>
-      </div>
-    </div>
-    <div class="small-6 medium-2 columns end">
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-book.svg" alt="">
-        <p>Ebooks &amp; Guides</p>
-      </div>
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-doc.svg" alt="">
-        <p>Quick References</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="row signup-row">
-    <div class="small-12 columns">
-      <p class="text-center"><input type="text" placeholder="Name">
-        <input type="email" placeholder="Email Address">
-        <input class="button" type="submit" value="Let me join!">
-      </p>
-    </div>
-  </div>
-</section>
+<%= partial "module_testimonials" %>
 
-<section class="testimonials">
-  <div class="column-row">
-    <h2 class="text-center"><%= current_page.data.testimonial_headline %></h2>
-  </div>
-
-  <div class="row align-stretch">
-    <% data.widgets.testimonials[0..3].each do | t | %>
-    <div class="column small-12 medium-3" style="display: flex;">
-      <div class="card">
-        <h3><%= t.name %></h3>
-        <a target="_blank" href="<%= t.tweet_url %>"><img class="round" src="<%= t.image_url %>" alt=""></a>
-        <p><%= t.text %></p>
-      </div>
-    </div>
-    <% end %>
-
-  </div>
-</div>
-</section>
 
 
 <section class="videos" id="videos">
@@ -207,8 +148,7 @@ promo_cta: "Tell me more"
 <p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4"><%= current_page.data.article_more %></a> </p>
 </section>
 
-<section class="promo">
-  <h2><%= current_page.data.promo_headline %></h2>
-  <p class="subhead"><%= current_page.data.promo_subhead %></p>
-  <a href="" class="button"><%= current_page.data.promo_cta %></a>
-</section>
+
+<%= partial "module_promo" %>
+
+
