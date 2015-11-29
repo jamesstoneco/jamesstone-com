@@ -26,13 +26,13 @@ layout: false
     <div class="row">
       <div class="large-12 columns medium-centered">
         {{#if entry.featured_image_wide }}
-          {{cms-preview field="featured_image_wide" }}
-          <h1 class="text-center" style="padding-top: 1rem;">{{ entry.title }}</h1>
+        {{cms-preview field="featured_image_wide" }}
+        <h1 class="text-center" style="padding-top: 1rem;">{{ entry.title }}</h1>
         {{else}}
-          <p class="text-center">
-            {{cms-preview field="featured_image" }}
-          </p>
-          <h1 class="text-center"> {{entry.title}} </h1>
+        <p class="text-center">
+          {{cms-preview field="featured_image" }}
+        </p>
+        <h1 class="text-center"> {{entry.title}} </h1>
         {{/if}}
       </div>
     </div>
@@ -42,11 +42,16 @@ layout: false
 
     <ul class="button-group">
       {{#cms-preview field="outline" as |item|}}
-        <li><a class="button secondary tiny" href="#{{ item.id }}">{{item.heading}}</a></li>
+      <li><a class="button secondary tiny" href="#{{ item.id }}">{{item.heading}}</a></li>
       {{/cms-preview}}
     </ul>
 
   </script>
+
+
+
+
+
 
   <script src="//cms.netlify.com/assets/vendor.js"></script>
   <script src="//cms.netlify.com/assets/cms.js"></script>

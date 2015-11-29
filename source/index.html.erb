@@ -4,20 +4,29 @@ seo_desc: "The best place to learn ZURB Foundation, SVG and JavaScript. James is
 pageable: false
 per_page: 8
 active_nav: home
-published: true
+hero_headline: "ZURB Foundation is all about development speed"
+hero_subhead: "My workflow takes this universal framework and makes it crazy fast for designers + devs to build just about anything"
+hero_cta: "Learn my workflow"
+featured_headline: "I'm featured on"
+membership_headline: "A place for intermediate-level web designers to fine tune their ZF skills"
+testimonial_headline: "What people are saying about James"
+video_headline: "Top-shelf screencasts that you won’t wear out"
+article_headline: "Fresh relevant info that does not waste your time"
+error_noresults: "No results found. Try different or fewer keywords."
+article_view: "Read Article"
+article_more: "More Articles"
+promo_headline: "If this site was a book you'd keep it right by your computer"
+promo_subheadline: "Here you will find the answer to just about any ZURB Foundation problem you'll face"
+promo_cta: "Tell me more"
 ---
 
 
 <section class="hero index">
   <div class="row">
     <div class="small-12 columns">
-      <!-- <h2>A community built around ZURB Foundation and the Modern Web</h2> -->
-      <!-- <h2>Have you tried to learn ZURB Foundation online, but it never seemed to click?</h2> -->
-      <!-- <h2>Learning the front-end is complex. I help point you in the right direction.</h2> -->
-      <!-- <p>Using ZURB Foundation &ndash; a universal framework for front-end developers &ndash; as our guide.</p> -->
-      <h2>ZURB Foundation is all about development speed</h2>
-      <p>My workflow takes this universal framework and makes it crazy fast for designers + devs to build just about anything</p>
-      <p> <a href="" class="button">Learn my workflow</a> </p>
+      <h2><%= current_page.data.hero_headline %></h2>
+      <p><%= current_page.data.hero_subhead %></p>
+      <p> <a href="" class="button"><%= current_page.data.hero_cta %></a> </p>
     </div>
   </div>
 </section>
@@ -26,19 +35,17 @@ published: true
   <div class="row align-center">
     <div class="column medium-10 small-12">
       <ul>
-        <li><span>I'm featured on</span></li>
-        <li> <a target="_blank" href="http://tedxtalks.ted.com/video/TEDxPSU-James-Stone-A-Technolog;search%3Ajames%20stone"><img src="images/2015-redesign/featured-logo-tedxpsu.svg" alt=""></a> </li>
-        <li> <a target="_blank" href="http://html5devconf.com/archives/april2013/speakers.html#j_stone"><img src="images/2015-redesign/featured-logo-html5.svg" alt=""></a> </li>
-        <li> <a target="_blank" href="https://www.codeschool.com/screencasts/sublime-text-3"><img src="images/2015-redesign/featured-logo-cs.svg" alt=""></a> </li>
-        <li> <a target="_blank" href="https://zurb.com/expo/lessons/clickable-prototypes-for-those-who-hate-code"><img src="images/2015-redesign/featured-logo-zurb.svg" alt=""></a> </li>
+        <li><span><%= current_page.data.featured_headline %></span></li>
+        <% data.widgets.featured[0..3].each do | feature | %>
+        <li> <a target="_blank" href="<%= feature.url %>"><img src="<%= feature.image %>" alt="<%= feature.name %> logo"></a> </li>
+        <% end %>
       </ul>
     </div>
   </div>
 </section>
 
 <section class="membership-promo">
-  <!-- <h2>Videos, Tutorials and a Community to help you get your head around ZURB Foundation</h2> -->
-  <h2>A place for intermediate-level web designers to fine tune their ZF skills</h2>
+  <h2><%= current_page.data.membership_headline %></h2>
   <div class="row align-center">
     <div class="small-12 medium-6 columns order-1 medium-order-2">
       <p class="text-center">
@@ -79,7 +86,7 @@ published: true
 
 <section class="testimonials">
   <div class="column-row">
-    <h2 class="text-center">What people are saying about James</h2>
+    <h2 class="text-center"><%= current_page.data.testimonial_headline %></h2>
   </div>
 
   <div class="row align-stretch">
@@ -100,7 +107,7 @@ published: true
 
 <section class="videos" id="videos">
   <div class="column-row">
-    <h2>Top-shelf screencasts that you won’t wear out</h2>
+    <h2><%= current_page.data.video_headline %></h2>
   </div>
   <div class="row align-stretch">
     <% data.widgets.videos.each do | vid | %>
@@ -120,7 +127,7 @@ published: true
 
 <section class="articles" id="articles" ng-controller="ArticlesCtrl">
   <div class="column-row">
-    <h2 class="flush-bottom">Fresh relevant info that does not waste your time</h2>
+    <h2 class="flush-bottom"><%= current_page.data.article_headline %></h2>
   </div>
   <div class="row align-spaced">
     <div class="small-12 medium-3 columns">
@@ -167,7 +174,7 @@ published: true
 
  <!-- search results -->
  <div class="column-row" ng-if="searchInput">
-   <p ng-if="activeSearchResults.length < 1" class="text-center" style="margin-bottom: 30px;">No results found. Try different or fewer keywords.</p>
+   <p ng-if="activeSearchResults.length < 1" class="text-center" style="margin-bottom: 30px;"><%= current_page.data.error_noresults %></p>
    <div class="row">
     <div class="small-12 medium-5 columns" ng-class="$even ? 'medium-offset-1' : 'end'" ng-repeat="r in activeSearchResults">
       <div class="row small-articles">
@@ -185,39 +192,23 @@ published: true
 </div>
 
 <div class="row align-stretch">
-  <!-- <div style="display:flex;  flex-wrap: wrap; "> -->
-  <!-- class="medium-3 columns" -->
   <div class="column small-12 medium-3" style="display:flex; width:25%; " style="display:flex;" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
-
     <div class="flex-card article clickable" style="display:flex; flex-direction:" ng-click="openLink(article.url)">
-
-
       <a style="flex: 0 1 auto;" href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
-      <!-- <div class="content" style="display:flex; flex-direction: column;"> -->
       <div style="flex: 1 0 auto;" class="content">
         <h4 style="flex: 0 1 auto;">{{ article.title }}</h4>
-        <!-- <time class="timeago published hide" datetime="time">time</time> -->
-        <p style="flex: 1 0 auto;" class="summary">
-          {{ article.summary }}
-        </p>
-        
-        <a href="{{ article.url }}" class="button hollow">Read Article</a>
-      </div>      <!-- </div> -->
+        <p style="flex: 1 0 auto;" class="summary"> {{ article.summary }} </p>
+        <a href="{{ article.url }}" class="button hollow"><%= current_page.data.article_view %></a>
+      </div>
     </div>
   </div>
-
-
 </div>
 
-<p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4">More Articles</a> </p>
-
-
+<p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4"><%= current_page.data.article_more %></a> </p>
 </section>
 
-
-
 <section class="promo">
-  <h2>If this site was a book you'd keep it right by your computer</h2>
-  <p class="subhead">Here you will find the answer to just about any ZURB Foundation problem you'll face</p>
-  <a href="" class="button">Tell me more</a>
+  <h2><%= current_page.data.promo_headline %></h2>
+  <p class="subhead"><%= current_page.data.promo_subhead %></p>
+  <a href="" class="button"><%= current_page.data.promo_cta %></a>
 </section>

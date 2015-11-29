@@ -2,11 +2,16 @@ backend:
   name: netlify-api
   url: http://localhost:8080
 
-production:
+staging:
   backend:
     name: github-api
     repo: jamesstoneco/jamesstone-com
     branch: v3
+production:
+  backend:
+    name: github-api
+    repo: jamesstoneco/jamesstone-com
+    branch: master
 
 media_folder: "source/images/uploads" # Folder where user uploaded files should go
 public_folder: "source"
@@ -33,15 +38,38 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Publish Time", name: "time", widget: "time"}
       - {label: "Tags", name: "tags", widget: "string"}
-  - name: "settings"
-    label: "Settings"
+  - name: "index"
+    label: "Home Page Content"
+    extension: "erb"
+    format: "markdown-frontmatter"
     files:
-      - name: "general"
-        label: "General settings"
+      - name: "index"
+        label: "Home Page Headlines"
+        file: "source/index.html.erb"
+        fields:
+          - {label: "title", name: "title", widget: "string"}
+          - {label: "seo_desc", name: "seo_desc", widget: "string"}
+          - {label: "hero_headline", name: "hero_headline", widget: "string"}
+          - {label: "hero_subhead", name: "hero_subhead", widget: "string"}
+          - {label: "hero_cta", name: "hero_cta", widget: "string"}
+          - {label: "featured_headline", name: "featured_headline", widget: "string"}
+      - name: "widgets"
+        label: "Widget settings"
         file: "data/widgets.yml"
+        fields:
+          - label: "featured"
+            name: "featured"
+            widget: list
+            fields: 
+              - {label: "name", name: "name", widget: "string"}
+              - {label: "url", name: "url", widget: "string"}
+              - {label: "image", name: "image", widget: "string"}
         fields:
           - label: "testimonials"
             name: "testimonials"
             widget: list
             fields: 
               - {label: "name", name: "name", widget: "string"}
+              - {label: "image_url", name: "image_url", widget: "string"}
+              - {label: "tweet_url", name: "tweet_url", widget: "string"}
+              - {label: "text", name: "text", widget: "string"}
