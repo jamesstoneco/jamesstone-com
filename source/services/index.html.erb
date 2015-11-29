@@ -1,14 +1,17 @@
 ---
 title: "ZURB Foundation Gun for Hire"
 active_nav: services
+hero_headline: "ZURB Foundation Gun for Hire"
+hero_subhead: "I build really awesome web sites using the world's most advanced front-end framework"
+hero_cta: "Learn More"
 ---
 
 <section class="hero services">
   <div class="row">
     <div class="small-12 columns">
-      <h2>ZURB Foundation Gun for Hire</h2>
-      <p>I build really awesome web sites using the world's most advanced front-end framework</p>
-      <p> <a href="" class="button">Learn More </a> </p>
+      <h2><%= current_page.data.hero_headline %></h2>
+      <p><%= current_page.data.hero_subhead %></p>
+      <p> <a href="" class="button"><%= current_page.data.hero_cta %></a> </p>
 
     </div>
   </div>

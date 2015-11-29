@@ -53,7 +53,6 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "hero_subhead", name: "hero_subhead", widget: "string"}
           - {label: "hero_cta", name: "hero_cta", widget: "string"}
           - {label: "featured_headline", name: "featured_headline", widget: "string"}
-
           - {label: "membership_headline", name: "membership_headline", widget: "string"}
           - {label: "testimonial_headline", name: "testimonial_headline", widget: "string"}
           - {label: "video_headline", name: "video_headline", widget: "string"}
@@ -75,7 +74,6 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "name", name: "name", widget: "string"}
               - {label: "url", name: "url", widget: "string"}
               - {label: "image", name: "image", widget: "string"}
-        fields:
           - label: "testimonials"
             name: "testimonials"
             widget: list
