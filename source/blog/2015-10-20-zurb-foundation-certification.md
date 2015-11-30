@@ -1,5 +1,5 @@
 ---
-title: "ZURB Foundation Certification My Personal Experience"
+title: "ZURB Foundation Certification Walkthrough"
 date: 2015/10/20
 time: 3:28 PM PST
 tags: foundation-sites
