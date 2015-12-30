@@ -23,7 +23,7 @@ article_more: "More Articles"
     <div class="small-12 columns">
       <h2><%= current_page.data.hero_headline %></h2>
       <p><%= current_page.data.hero_subhead %></p>
-      <p> <a href="" class="button"><%= current_page.data.hero_cta %></a> </p>
+      <p> <a ng-click="scrollToId('scroll-to-membership-promo')" class="button"><%= current_page.data.hero_cta %></a> </p>
     </div>
   </div>
 </section>
@@ -42,7 +42,7 @@ article_more: "More Articles"
 </section>
 
 
-<section class="membership-promo">
+<section class="membership-promo" id="scroll-to-membership-promo">
   <h2><%= current_page.data.membership_headline %></h2>
   <div class="row align-center">
     <div class="small-12 medium-6 columns order-1 medium-order-2">
