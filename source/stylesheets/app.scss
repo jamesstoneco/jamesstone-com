@@ -554,18 +554,18 @@ header {
 					animation-name: intro-active;
 					animation-duration: 1s;
 					animation-iteration-count: 1;
+          left: rem-calc(16);
+          right: rem-calc(16);
+          max-width: 100%;
+        }
+        &:hover::after {
 					left: rem-calc(16);
 					right: rem-calc(16);
 					max-width: 100%;
 				}
-				&:hover::after {
-					left: 0;
-					right: 0;
-					max-width: 10px;
-				}
 				&.active:hover::after {
-					left: rem-calc(11);
-					right: rem-calc(11);
+					left: rem-calc(6);
+					right: rem-calc(6);
 					max-width: 100%;
 				}
 			}
