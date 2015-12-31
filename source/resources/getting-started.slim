@@ -11,9 +11,9 @@ section.hero.get-started
     .small-12.columns
       h2 = current_page.data.hero_headline
       p = current_page.data.hero_subhead
-      p: a.button href='#' = current_page.data.hero_cta
+      p: a.button ng-click="scrollToId('scroll-to-start-intro')" = current_page.data.hero_cta
 
-section
+section#scroll-to-start-intro
   h2  Truly master the syntax and you will truly master ZURB Foundation
   .row.column
     p If you are wanting to get started building modern responsive sites with ZURB Foundation, you are in the right place. I am a ZURB Certified Preferred Developer and the author of ZURB Foundation Blueprints. In the videos and articles below I try to explain the confusing bits of Foundation so you can spend less time reading documentaion and more time building awesome stuff.

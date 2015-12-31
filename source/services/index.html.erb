@@ -11,17 +11,18 @@ hero_cta: "Learn More"
     <div class="small-12 columns">
       <h2><%= current_page.data.hero_headline %></h2>
       <p><%= current_page.data.hero_subhead %></p>
-      <p> <a href="" class="button"><%= current_page.data.hero_cta %></a> </p>
+      <p> <a ng-click="scrollToId('scroll-to-services-intro')" class="button"><%= current_page.data.hero_cta %></a> </p>
 
     </div>
   </div>
 </section>
 
 
+<section class="services-intro" id="scroll-to-services-intro">
   <br>
   <br>
   <br>
-
+  
   <div class="row">
     <div class="medium-6 columns">
       <img src="/images/services/index/emp-find@2x.png" alt="">
@@ -33,10 +34,10 @@ hero_cta: "Learn More"
       <!-- <a href="" class="button">Read about this success story &raquo;</a> -->
     </div>
   </div>
-
+  
   <br>
   <br>
-
+</section>
   <div style="background:#FF6600;">
     <div class="row">
       <div class="small-12 columns">

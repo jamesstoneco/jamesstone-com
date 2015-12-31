@@ -13,13 +13,13 @@ intro_headline: "Have you ever tried to learn ZURB Foundation, but it never seem
     <div class="small-12 columns">
       <h2><%= current_page.data.hero_headline %></h2>
       <p><%= current_page.data.hero_subhead %></p>
-      <p> <a href="" class="button"><%= current_page.data.hero_cta %></a> </p>
+      <p> <a ng-click="scrollToId('scroll-to-about-intro')" class="button"><%= current_page.data.hero_cta %></a> </p>
 
     </div>
   </div>
 </section>
 
-<section class="about-intro">
+<section class="about-intro" id="scroll-to-about-intro">
   <h2><%= current_page.data.intro_headline %></h2>
 
   <div class="row">
