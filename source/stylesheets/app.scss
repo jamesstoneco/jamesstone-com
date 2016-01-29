@@ -97,12 +97,33 @@ $primary-color: $topaz;
   		background: url('../images/2015-redesign/background-ted.png');
   		background-repeat: no-repeat;
   		@include breakpoint(small only) {
-  			background-size: 200%;
-  			background-position: top center;
-  		}
-  		@include breakpoint(medium) {
-  			height: 580px;
-  			h2 { margin-top: rem-calc(240); }
+  			background-size: 150%;
+        background-position: bottom center;
+        height: 200px;
+        h2 {
+          font-size: 13px;
+                    margin-top: rem-calc(80);
+          margin-bottom: 20px;
+
+        }
+        p {
+          font-size: 13px;
+        }
+      }
+      @include breakpoint(medium) {
+        height: 580px;
+        h2 { 
+          margin-top: rem-calc(215);
+          font-size: 38px;
+          line-height: 48px;
+          letter-spacing: 0.3px;
+          margin-bottom: 43px;
+           }
+           p { 
+            font-size: 24px;
+            line-height: 24px;
+            letter-spacing: 0.3px;
+           }
   			background-size: cover;
   			background-position: bottom center;
   		}
@@ -421,16 +442,8 @@ $primary-color: $topaz;
 		padding-top: rem-calc(25);
 	}
 }
-section {
-	& h2 {
-		text-align: center;
-		color: $steel-grey;
-		font-size: rem-calc(26);
-		font-weight: 400;
-		padding-top: rem-calc(68);
-		padding-bottom: rem-calc(72);
-	}
-}
+
+
 
 section {
 	&.membership-promo, &.videos, &.promo, &.about-intro, &.about-bio {
@@ -559,33 +572,33 @@ header {
           max-width: 100%;
         }
         &:hover::after {
-					left: rem-calc(16);
-					right: rem-calc(16);
-					max-width: 100%;
-				}
-				&.active:hover::after {
-					left: rem-calc(6);
-					right: rem-calc(6);
-					max-width: 100%;
-				}
-			}
-			&:nth-child(1) {
-				padding-right: rem-calc(50);
-			}
-		}
-	}
-	.sub-nav {
-		padding-left: rem-calc(50);
-		padding-right: rem-calc(50);
-		ul li a {
-			color: $brownish-grey;
-			font-size: rem-calc(15);
-			padding-top: 0;
-			&:nth-child(1) {
-				padding-left: 0;
-			}
-		}
-	}
+         left: rem-calc(16);
+         right: rem-calc(16);
+         max-width: 100%;
+       }
+       &.active:hover::after {
+         left: rem-calc(6);
+         right: rem-calc(6);
+         max-width: 100%;
+       }
+     }
+     &:nth-child(1) {
+      padding-right: rem-calc(50);
+    }
+  }
+}
+.sub-nav {
+  padding-left: rem-calc(50);
+  padding-right: rem-calc(50);
+  ul li a {
+   color: $brownish-grey;
+   font-size: rem-calc(15);
+   padding-top: 0;
+   &:nth-child(1) {
+    padding-left: 0;
+  }
+}
+}
 }
 
 section.bling {
@@ -783,8 +796,48 @@ img.round {
   border-radius: 9999px;
 }
 
+
+
+section {
+  & h2 {
+    text-align: center;
+    // color: $steel-grey;
+    color: #77b5c8;
+    font-size: rem-calc(26);
+    font-weight: 400;
+    // padding-top: rem-calc(68);
+    // padding-bottom: rem-calc(72);
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
 section.blue {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #F0F9FF;
+  background: $ice-blue;
+  & h2 {
+    padding-top: 0;
+    // padding-bottom: 20px;
+  }
+}
+
+section.iterate {
+  & h2 {
+    margin-top: rem-calc(50);
+    margin-bottom: 20px;
+    // margin-bottom: rem-calc(73);
+    padding: 0;
+
+  }
+}
+
+section.testimonials, section.categories {
+  padding-bottom: rem-calc(60);
+  & h2 {
+    // color: #77b5c8;
+    margin-top: rem-calc(35);
+    margin-bottom: 20px;
+    padding: 0;
+  }
 }
