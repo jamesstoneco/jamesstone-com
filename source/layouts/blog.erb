@@ -3,7 +3,7 @@
 
 <% unless current_page.data.outline.nil? %>
 
-<ul class="button-group">
+<ul class="button-group hide">
     <% current_page.data.outline.each do |h| %>
   <li><a class="button secondary tiny" href="#<%= h.id %>"><%= h.heading %></a></li>
     <% end %>
@@ -135,7 +135,7 @@
 </div>
 
 <div class="page-index">
-  <section class="articles">
+  <section class="articles hide">
 
   <h4 class="text-center">Related Articles and Topics</h4>
 
@@ -214,7 +214,7 @@
 
 
 <!-- Reveal Modals begin -->
-<div id="disclaimer-amazon-modal" class="reveal-modal small" data-reveal>
+<div id="disclaimer-amazon-modal" class="reveal-modal small hide" data-reveal>
   <h2>Amazon Affiliate Disclaimer</h2>
   <p>I sometimes link to books or other products that I have read, used, enjoyed or even possibly hated. I proclaim that my views and context are that of my own but <strong>it is important that you know that I am compensated by Amazon Affiliates if you use the link and decide to purchase</strong> that item.</p>
   <p>Currently I accept this payment as an Amazon Kindle Giftcard so basically, by purchasing through this link, you are supporting both your and my reading habit simultaneously, and for that I thank you.</p>
