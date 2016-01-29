@@ -94,7 +94,7 @@ $primary-color: $topaz;
   section.hero {
 
   	&.index {
-  		background: url('../images/2015-redesign/background-ted.png');
+  		background: url('../images/2015-redesign/background-ted.jpg');
   		background-repeat: no-repeat;
   		@include breakpoint(small only) {
   			background-size: 150%;
