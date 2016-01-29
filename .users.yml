@@ -1,0 +1,9 @@
+users:
+- id: d1e50fab-68ed-4f32-a922-4a47962086b9
+  name: James
+  email: james@jamesstone.com
+  hash: $2a$10$MFWesV9ZJr0jB9zgxMBXf.5xmX1049C3SQ7g/9Ya4HZLI3vbGcJX.
+- id: fd66c5ae-af5b-4f51-839a-d5c1ca86ae0c
+  name: James Stone
+  email: j@jamesstone.com
+  hash: $2a$10$3O.DCy5o/XFLNCL7Z.LqBeweDvS33bDMU/3oDCRc33vg4theQvBfG

@@ -10,74 +10,251 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery/dist/jquery
-//= require fastclick/lib/fastclick
-//= require foundation/js/foundation
-//= require foundation/js/foundation/foundation.abide
-//= require foundation/js/foundation/foundation.accordion
+// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
+// GO AFTER THE REQUIRES BELOW.
+//
+//= require angular/angular
+// require ui-router/release/angular-ui-router
+//= require firebase/firebase-debug
+//= require angularfire/dist/angularfire
+//= require mm-foundation-templates-override
+//= require angular-lazytube/angular-lazytube
+//= require allmighty-autocomplete/script/autocomplete
+// require angular-foundation/mm-foundation
+// require fastclick/lib/fastclick
+// require vendor/highlight
+// require vendor/socialite/socialite
+// require wookmark-jquery/jquery.wookmark.js
+// require vendor/lazyYT
+//= require moment/min/moment.min
+//= require lunr.min
+//= require angular-scroll/angular-scroll.js
+// require_directory .
 
 
-// require foundation/js/foundation/foundation.alert
+// NG APP
+var app = angular.module('memberApp', [
+	'firebase',
+	'mm.foundation',
+  'oblador.lazytube',
+  'autocomplete',
+  'duScroll',
+  ]);
 
-// move this to specific pages on blog, load on the fly
-// require foundation/js/foundation/foundation.clearing
+app.controller('ArticlesCtrl', function($scope, $http, $window) {
+  $scope.numberOfArticles = 8;
 
-// require foundation/js/foundation/foundation.dropdown
-// require foundation/js/foundation/foundation.equalizer
-// require foundation/js/foundation/foundation.interchange
-// require foundation/js/foundation/foundation.joyride
-//= require foundation/js/foundation/foundation.magellan
-// require foundation/js/foundation/foundation.offcanvas
-//= require foundation/js/foundation/foundation.orbit
-//= require foundation/js/foundation/foundation.reveal
-// require foundation/js/foundation/foundation.slider
-// require foundation/js/foundation/foundation.tab
-// require foundation/js/foundation/foundation.tooltip
-// require foundation/js/foundation/foundation.topbar
-//= require vendor/highlight
-// require vendor/processing
-// move this to specific pages on blog, load on the fly
-//= require vendor/socialite/socialite
-//= require wookmark-jquery/jquery.wookmark.js
-//= require vendor/lazyYT
-//= require_directory .
+  $http.get('api/tags.json').
+  success(function(data, status, headers, config) {
+    $scope.articleTags = data;
+  }).
+  error(function(data, status, headers, config) {
+        // log error
+      });
+  $http.get('api/articles.json').
+  success(function(data, status, headers, config) {
+    $scope.articles = data;
+  }).
+  error(function(data, status, headers, config) {
+        // log error
+      });
+  $http.get('api/lunr-index.json').
+  success(function(data, status, headers, config) {
+    // $scope.lunrIndex = data;
+    $scope.lunrData = data;
+    $scope.lunrIndex = lunr.Index.load(data.index);
+  }).
+  error(function(data, status, headers, config) {
+        // log error
+      });
+  $scope.stringToDate = function(item) {
+    return moment(item).format('YYYY-MM-DD');
+  };
+  $scope.searchResults = function(searchInput) {
+    return $scope.lunrIndex.search(searchInput);
+  }
 
-$(document).foundation();
 
-$(".card.article, .sidebar-test").click(function(){
-	window.location = $(this).find("a:first").attr("href");
-	return false;
+
 });
 
-// Show URL on Mouse Hover
-$(".card.article, .card.product, .sidebar-test").hover(function () {
-	window.status = $(this).find("a:first").attr("href");
-}, function () {
-	window.status = "";
-});
+app.controller('MembershipCtrl', ['$scope', '$firebase', '$firebaseAuth', '$window', '$document',
+	function($scope, $firebase, $firebaseAuth, $window, $document) {
 
 
-// $(".front").click(function(){
-// 	$( "div.flip-container" ).toggleClass( "flip" )
-// });
+    var ref = new Firebase("https://jamesstone.firebaseio.com/");
+
+    $scope.authObj = $firebaseAuth(ref);
+
+    $scope.authObj.$onAuth(function(authData) {
+     if (authData) {
+        		$scope.authData = authData; // load auth data into scope onAuth
+        	}
+        })
+
+    $scope.login = function() {
+     $scope.authObj.$authWithPassword({
+      email: $scope.email,
+      password: $scope.password
+    }).then(function(authData) {
+      $scope.authData = authData;
+      $scope.accountError = "";
+      $window.location.href="/members"; 
+    }).catch(function(error) {
+      if (error.toString().indexOf("password is incorrect") > -1) {
+       $scope.accountError = "password is incorrect";
+     } else if (error.toString().indexOf("user does not exist") > -1) {
+       $scope.accountError = "user does not exist, maybe you want to signup?";
+     } else {
+      $scope.accountError = error.toString();
+    }
+  });
+  }
+
+  $scope.resetPassword = function() {
+   if ($scope.debug) console.log("password reset");
+   $scope.authObj.$resetPassword({
+    email: $scope.email
+  }).then(function() {
+    $scope.accountError = "Your password has been sent to " + $scope.email;
+  }).catch(function(error) {
+    $scope.accountError = error.toString();
+  });
+}
+
+$scope.signup = function() {
+  $scope.authObj.$createUser({
+    email: $scope.email,
+    password: $scope.password
+  }).then(function(authData) {
+    $scope.accountError = "Account was created for " + $scope.email;
+    $scope.login();
+  }).catch(function(error) {
+    $scope.accountError = error.toString();
+  });
+}
+
+$scope.logout = function() {
+ $scope.authObj.$unauth();
+ $scope.authData = false;
+ $scope.accountError = "You have been logged out.";
+
+}
+$scope.openLink = function(linkToOpen) {
+  $window.location.href = linkToOpen;
+}
+$scope.makeDateSortable = function(input) {
+  return moment(input).format("YYYY-MM-DD");
+}
+
+
+$scope.scrollToId = function(targetId) {
+  var el = angular.element(document.querySelector('#' + targetId));
+   $document.scrollToElementAnimated(el, 0, 2000);
+}
+
+
+}]);
+
+app.filter('filterByTags', function () {
+  return function (items, tags) {
+        var filtered = []; // Put here only items that match
+        (items || []).forEach(function (item) { // Check each item
+            var matches = tags.some(function (tag) {          // If there is some tag
+              // console.log("item = " + item);
+              return (item.tags.indexOf(tag.text) > -1)
+            });                                               // we have a match
+            if (matches) {           // If it matches
+                filtered.push(item); // put it into the `filtered` array
+              }
+            });
+        return filtered; // Return the array with items that match any tag
+      };
+    });
+app.filter('filterByTag', function () {
+  return function (items, tag) {
+    if (tag) {
+
+        var filtered = []; // Put here only items that match
+        (items || []).forEach(function (item) { // Check each item
+          // console.log(item);
+
+          item.tags.forEach(function(t) {
+            // console.log("t = " + t);
+            // console.log("tag = " + tag);
+            if (t === tag) {
+              filtered.push(item);
+            }
+          });
+        });
+        return filtered; // Return the array with items that match any tag
+      } else return items;
+    };
+  });
 
 
 
-// ga code below
-
-// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-// })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-// ga('create', 'UA-19284762-1', 'jamesstone.co');
-// ga('send', 'pageview');
 
 
-$('.lazyYT').lazyYT();
+/***************** ***********************/
+/*
+(function() {
+  'use strict';
 
-Socialite.load("blog-social");
-hljs.initHighlightingOnLoad();
+  var App = angular.module('application', [
+    'ui.router',
+    'ngAnimate',
+
+    //foundation
+    'foundation',
+    'foundation.dynamicRouting',
+    'foundation.dynamicRouting.animations'
+  ])
+    .controller('ArticlesCtrl', function($scope, $http, $window) {
+    $http.get('api/articles.json').
+      success(function(data, status, headers, config) {
+        $scope.articles = data;
+      }).
+      error(function(data, status, headers, config) {
+        // log error
+      });
+    $scope.go = function ( path ) {
+        // $location.path( path );
+        $window.open( path, "_self" );
+      };
+
+  })
+
+    .config(config)
+    .run(run)
+  ;
+
+
+  config.$inject = ['$urlRouterProvider', '$locationProvider'];
+
+  function config($urlProvider, $locationProvider) {
+    $urlProvider.otherwise('/');
+
+    $locationProvider.html5Mode({
+      enabled:false,
+      requireBase: false
+    });
+
+    $locationProvider.hashPrefix('!');
+  }
+
+  function run() {
+    FastClick.attach(document.body);
+  }
 
 
 
+})();
+
+
+// routes
+
+var foundationRoutes = [{"name":"home","url":"/","path":"/ng-templates/home.html"}]; 
+
+
+*/

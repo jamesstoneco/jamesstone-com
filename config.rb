@@ -3,7 +3,7 @@ require 'sanitize'
 require 'uri'
 require 'slim'
 require 'nokogiri'
-
+# require 'middleman-search/extension'
 
 
 # set :markdown_engine, :redcarpet
@@ -60,7 +60,8 @@ set :trailing_slash, false
 # bourbon_path = Gem::Specification.find_by_name('bourbon').gem_dir
 set :js_assets_paths, [File.join(root, 'bower_components')]
 # set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss', 'bower_compononents/lazyYT')]
-set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
+# set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
+set :sass_assets_paths, [File.join(root, 'bower_components/foundation-sites-6/scss'), File.join(root, 'bower_components/motion-ui')]
 
 
 
@@ -94,6 +95,7 @@ activate :blog do |blog|
 end
 
 
+
 # pretty urls, as directories, this must run after the blog block
 activate :directory_indexes
 
@@ -106,6 +108,9 @@ page "/404.html", :directory_index => false
 
 page "/blog/feed.xml", :layout => false
 
+page "/template/*", :directory_index => false
+
+
 # landing pages below
 
 page "/zurb-foundation-blueprints.html", :layout => "landing"
@@ -113,6 +118,7 @@ page "/zurb-foundation-quick-reference.html", :layout => "landing"
 page "/advanced-zurb-foundation.html", :layout => "landing"
 page "/advanced-zurb-foundation-course.html", :layout => "landing"
 page "/free-zurb-foundation-course.html", :layout => "landing"
+# page "/course/zurb-foundation-beyond-the-template/*", :layout => "locked"
 # page "/zurb-foundation-4-blueprints.html", :layout => "landing"
 # page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
 
@@ -143,6 +149,18 @@ configure :build do
   # set :asset_host do |asset|
   #   '//assets.jamesstone.co'.to_s
   # end
+
+  activate :search do |search|
+    search.resources = ['blog/', 'about/index.html',  'services/index.html']
+    search.index_path = 'api/lunr-index.json'
+    search.fields = {
+      title:   {boost: 100, store: true, required: true},
+      content: {boost: 50},
+      featured_image: {index: false, store: true},
+      url:     {index: false, store: true}
+    }
+  end
+
 
 end
 

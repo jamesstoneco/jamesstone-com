@@ -1,16 +1,24 @@
 ---
 title: "Getting Started on JAMESSTONE.co"
 seo_desc: James Stone is an Author and a Blogger. He taught game and creative coding at Penn State and served as faculty for Eyebeam.
+active_nav: "start-here"
+hero_headline: "Learning the front-end is complex"
+hero_subhead: "I help point you in the right direction"
+hero_cta: "Learn more"
 ---
+section.hero.get-started
+  .row
+    .small-12.columns
+      h2 = current_page.data.hero_headline
+      p = current_page.data.hero_subhead
+      p: a.button ng-click="scrollToId('scroll-to-start-intro')" = current_page.data.hero_cta
 
-.content-top-spacing
-.row
-  .small-12.columns
-    div
-      h1.text-center Get Started Learning ZURB Foundation
-      p If you are wanting to get started building modern responsive sites with ZURB Foundation, you are in the right place. I am a ZURB Certified Preferred Developer and the author of ZURB Foundation Blueprints. In the videos and articles below I try to explain the confusing bits of Foundation so you can spend less time reading documentaion and more time building awesome stuff.
-      p If you have any questions along the way, click through to the YouTube Video and leave me a comment on YouTube.
-      p Good luck! I can't wait to see what you come up with when you are done.
+section#scroll-to-start-intro
+  h2  Truly master the syntax and you will truly master ZURB Foundation
+  .row.column
+    p If you are wanting to get started building modern responsive sites with ZURB Foundation, you are in the right place. I am a ZURB Certified Preferred Developer and the author of ZURB Foundation Blueprints. In the videos and articles below I try to explain the confusing bits of Foundation so you can spend less time reading documentaion and more time building awesome stuff.
+    p If you have any questions along the way, click through to the YouTube Video and leave me a comment on YouTube.
+    p Good luck! I can't wait to see what you come up with when you are done.
 
     div
 
@@ -23,14 +31,16 @@ seo_desc: James Stone is an Author and a Blogger. He taught game and creative co
       .medium-6.columns
         div
           .flex-video.widescreen
-            iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/Pm5vvimIJKY?rel=0" width="960"
+            div ob-lazytube="" href="http://www.youtube.com/watch?v=Pm5vvimIJKY" rel="0"
+
           h2 Understanding the Ecosystem
           p In this video you will learn about what are all of the different technologies that make up ZURB Foundation. You might find it useful to watch this video first, then maybe again after you install Foundation and work with your first project.
 
       .medium-6.columns
         div
           .flex-video.widescreen
-            iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/KdFZnvLPnz4?rel=0" width="960"
+            div ob-lazytube="" href="http://www.youtube.com/watch?v=KdFZnvLPnz4" rel="0"
+
           h2 Mavericks Install
           p In this video I walk you through how to set up ZURB Foundation on Mac OS X Mavericks. I am working on a Windows version of this video and will post it soon.
 
@@ -44,21 +54,25 @@ seo_desc: James Stone is an Author and a Blogger. He taught game and creative co
       .medium-6.columns
         div
           .flex-video.widescreen
-            iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/kk6KpKK5Jjc?rel=0" width="960"
+            div ob-lazytube="" href="http://www.youtube.com/watch?v=kk6KpKK5Jjc" rel="0"
+
           h2 Getting Started with the Grid
           p This is my first video on ZURB Foundation and has been viewed by over 19k people. Here I will introduce exactly how grids work in ZURB Foundation and how you can use common patterns to build just about any website.
 
       .medium-6.columns
         div
           .flex-video.widescreen
-            iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/Gx-9cgNlZlQ?rel=0" width="960"
+            div ob-lazytube="" href="http://www.youtube.com/watch?v=Gx-9cgNlZlQ" rel="0"
+
           h2 Get Sassy
           p In this video you will learn how to quickly customize ZURB Foundation using Sass variables.
     .row
       .medium-6.columns
         div
           .flex-video.widescreen
-            iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/UjN_aX84Qco?rel=0" width="960"
+            div ob-lazytube="" href="http://www.youtube.com/watch?v=UjN_aX84Qco" rel="0"
+
+
           h2 ZURB Grids + Dynamic Data
           p If you are building dynamic sites or apps with ZURB Foundation, you should be aware that you need to close your rows. Find out how to accomplish this using the modulus operator in JavaScript. NOTE: This video is a bit more advanced.
       .medium-6.columns
@@ -98,13 +112,15 @@ seo_desc: James Stone is an Author and a Blogger. He taught game and creative co
       .medium-6.columns
         div
           .flex-video.widescreen
-            iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/8n9eNLSjg7U?rel=0" width="960"
+            div ob-lazytube="" href="http://www.youtube.com/watch?v=8n9eNLSjg7U" rel="0"
+
           h2 Update via Bower
           p Those awesome people at ZURB and the Foundation Community push out updates likes its nobody's business. Learn how to quickly update your projects using Bower in this video.
       .medium-6.columns
         div
           .flex-video.widescreen
-            iframe allowfullscreen="" frameborder="0" height="720" src="//www.youtube.com/embed/uxpfzE5CNvk?rel=0" width="960"
+            div ob-lazytube="" href="http://www.youtube.com/watch?v=uxpfzE5CNvk" rel="0"
+
           h2 ZURB Foundation 5 Sublime Snippets
           p Don't waste your time going back and forth to the documentation site. Use these snippets for all of the JS component boilerplate. Ony problem is you have to do a manual install (it's not in the package manager, yet). Learn how to do that in this video.
 

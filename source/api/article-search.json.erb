@@ -1,0 +1,29 @@
+---
+blog: blog
+---
+<%
+  map = {articles:{}}
+  index = {}
+  blog.articles.each do |article|
+    map[:articles][article.url] = {
+      title: article.title, 
+      date: article.date, 
+      tags: article.tags 
+    }
+
+    words = "#{article.title} #{article.body}"
+    words = words
+      .downcase              # make lowercase
+      .gsub( /<.*?>/, "" )   # get rid of tags
+      .gsub( /[^\w ]/, "" )  # get rid of not letters
+      .split( /\s+/ )        # split by words
+      .sort.uniq
+
+    words.each do |w|
+      index[w] ||= []
+      index[w] << article.url
+    end
+  end
+  map[:index] = index
+%>
+<%= map.to_json %>

@@ -18,3 +18,5 @@ https://www.manofstone.com/*  https://www.jamesstone.com/:splat 301
 /mouseflow         http://www.shareasale.com/r.cfm?b=232006&u=989116&m=27182&urllink=&afftrack=
 /camp              http://www.zurbfoundationcamp.com
 /campref           https://gum.co/foundationquickref/zurbcamp
+/services          https://www.jamesstone.com
+/services/         https://www.jamesstone.com

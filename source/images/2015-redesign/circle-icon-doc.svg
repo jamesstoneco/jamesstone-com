@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="53px" height="53px" viewBox="0 0 53 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>circle-icon-doc</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="JS---Home---Light" sketch:type="MSArtboardGroup" transform="translate(-1104.000000, -1075.000000)">
+            <g id="Signup" sketch:type="MSLayerGroup" transform="translate(0.000000, 754.000000)">
+                <g id="references" transform="translate(1067.000000, 301.000000)" sketch:type="MSShapeGroup">
+                    <g id="Rectangle-29-Copy-3-+-thin-0003_write_pencil_new_edit-+-Type-something">
+                        <g id="thin-0003_write_pencil_new_edit-+-Type-something" transform="translate(8.000000, 20.000000)">
+                            <g id="Oval-4-Copy-3-+-thin-0003_write_pencil_new_edit-copy-+-Type-something">
+                                <g id="circle-icon-doc" transform="translate(29.000000, 0.000000)">
+                                    <circle id="Oval-4-Copy-3" fill="#7AB6C8" cx="26.5" cy="26.5" r="26.5"></circle>
+                                    <g id="thin-0003_write_pencil_new_edit-copy" transform="translate(17.000000, 13.000000)" stroke="#FFFFFF" stroke-width="1.5">
+                                        <g id="Group" transform="translate(0.593750, 0.583333)">
+                                            <path d="M13.65625,19 L4.15625,19" id="Shape"></path>
+                                            <path d="M13.65625,15 L4.15625,15" id="Shape"></path>
+                                            <path d="M13.65625,12 L4.15625,12" id="Shape"></path>
+                                            <path d="M7.71875,9 L4.15625,9" id="Shape"></path>
+                                            <path d="M16.8616688,26.8333333 L1.05058125,26.8333333 C0.53686875,26.8333333 0,26.4182333 0,25.9072333 L0,0.9261 C0,0.4151 0.53686875,0 1.05058125,0 L13.1409938,0 L17.8125,4.62746667 L17.8125,25.9072333 C17.8125,26.4182333 17.3752625,26.8333333 16.8616688,26.8333333 L16.8616688,26.8333333 Z" id="Shape"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

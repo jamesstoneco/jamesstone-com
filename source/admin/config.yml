@@ -1,0 +1,93 @@
+backend:
+  name: netlify-api
+  url: http://localhost:8080
+
+staging:
+  backend:
+    name: github-api
+    repo: jamesstoneco/jamesstone-com
+    branch: v3
+production:
+  backend:
+    name: github-api
+    repo: jamesstoneco/jamesstone-com
+    branch: master
+
+media_folder: "source/images/uploads" # Folder where user uploaded files should go
+public_folder: "source"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Blog Post" # Used in the UI, ie.: "New Post"
+    folder: "source/blog" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "source/blog/featured-images"}
+      - {label: "Featured Image Wide Version", name: "featured_image_wide", widget: "image", media_folder: "source/blog/featured-images"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Outline"
+        name: "outline"
+        widget: "list"
+        fields:
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Unique ID", name: "id", widget: "string"}
+    meta: # Meta data fields. Just like fields, but without any preview element
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Publish Time", name: "time", widget: "time"}
+      - {label: "Tags", name: "tags", widget: "string"}
+  - name: "index"
+    label: "Home Page Content"
+    extension: "erb"
+    format: "markdown-frontmatter"
+    files:
+      - name: "index"
+        label: "Home Page Headlines"
+        file: "source/index.html.erb"
+        fields:
+          - {label: "title", name: "title", widget: "string"}
+          - {label: "seo_desc", name: "seo_desc", widget: "string"}
+          - {label: "hero_headline", name: "hero_headline", widget: "string"}
+          - {label: "hero_subhead", name: "hero_subhead", widget: "string"}
+          - {label: "hero_cta", name: "hero_cta", widget: "string"}
+          - {label: "featured_headline", name: "featured_headline", widget: "string"}
+          - {label: "membership_headline", name: "membership_headline", widget: "string"}
+          - {label: "testimonial_headline", name: "testimonial_headline", widget: "string"}
+          - {label: "video_headline", name: "video_headline", widget: "string"}
+          - {label: "article_headline", name: "article_headline", widget: "string"}
+          - {label: "error_noresults", name: "error_noresults", widget: "string"}
+          - {label: "article_view", name: "article_view", widget: "string"}
+          - {label: "article_more", name: "article_more", widget: "string"}
+          - {label: "promo_headline", name: "promo_headline", widget: "string"}
+          - {label: "promo_subhead", name: "promo_subhead", widget: "string"}
+          - {label: "promo_cta", name: "promo_cta", widget: "string"}
+      - name: "index"
+        label: "Services Headlines"
+        file: "source/services/index.html.erb"
+        fields:
+          - {label: "title", name: "title", widget: "string"}
+          - {label: "seo_desc", name: "seo_desc", widget: "string"}
+          - {label: "hero_headline", name: "hero_headline", widget: "string"}
+          - {label: "hero_subhead", name: "hero_subhead", widget: "string"}
+          - {label: "hero_cta", name: "hero_cta", widget: "string"}
+      - name: "widgets"
+        label: "Widget settings"
+        file: "data/widgets.yml"
+        fields:
+          - label: "featured"
+            name: "featured"
+            widget: list
+            fields: 
+              - {label: "name", name: "name", widget: "string"}
+              - {label: "url", name: "url", widget: "string"}
+              - {label: "image", name: "image", widget: "image"}
+          - label: "testimonials"
+            name: "testimonials"
+            widget: list
+            fields: 
+              - {label: "name", name: "name", widget: "string"}
+              - {label: "image_url", name: "image_url", widget: "image"}
+              - {label: "tweet_url", name: "tweet_url", widget: "string"}
+              - {label: "text", name: "text", widget: "string"}

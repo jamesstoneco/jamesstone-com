@@ -1,27 +1,11 @@
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/"><img src="/images/header/js-logo.svg" alt=""></a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+<header>
+  <nav>
+    <ul class="menu align-right hide-for-small-only">
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'contact' %> href="/contact">Contact</a></li>
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'schedule' %> target="_blank" href="https://calendly.com/jamesstone/1-2-1">Schedule Session</a></li>
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'resource' %> href="/resource-center">Resource Center</a></li>
     </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <!-- <li><a href="/#products">Products</a></li> -->
-        <li><a href="/#videos">Videos</a></li>
-        <li><a href="/#articles">Articles</a></li>
-        <li class="active"><a href="/resources/getting-started">Get Started</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a target="_blank" href="https://clarity.fm/jamesstone/precall?c=t&utm_source=blog_widget_request&utm_medium=blog_widget_request&utm_term=widget_jamesstone_25579&utm_campaign=blog_widget_request">Book 15 Minutes</a></li>
-        <li><a href="/resources/hosting">Resources</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-
-      <!-- Left Nav Section -->
-      <ul class="left">
-      </ul>
-    </section>
+    <h1 class="logo"><a href="/"><img src="/images/2015-redesign/logo-full.svg" alt="James Stone Logo"></a></h1>
   </nav>
+</header>
+

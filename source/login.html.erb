@@ -1,0 +1,35 @@
+---
+title: "James Stone: Members Login"
+---
+
+<br class="hide-for-small-only">
+
+
+<div ng-if="accountError" class="row align-center">
+  <div class="column medium-8">
+    <p class="text-center">
+      <span class="warning label"><i class="fi-x"></i> {{ accountError }}</span>
+      <br>
+    </p>
+  </div>
+</div>
+
+
+<div class="row align-center">
+  <div class="column medium-4 callout">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" ng-model="email">
+    <label for="password">Password</label>
+    <input type="password" name="password" ng-model="password">
+    <button style="margin-top: 20px;" class="button postfix" ng-click="login()">Login &raquo;</button>
+    <p class="text-center"><a ng-click="resetPassword()">Forgot password?</a></p>
+    <p class="text-center">Need an account? <a href="/signup">Signup</a></p>
+  </div>
+  <div class="column medium-4 columns">
+    <h3>James Stone Login</h3>
+    <hr>
+
+  </div>
+</div>
+
