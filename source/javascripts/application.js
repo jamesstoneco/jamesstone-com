@@ -44,21 +44,21 @@ var app = angular.module('memberApp', [
 app.controller('ArticlesCtrl', function($scope, $http, $window) {
   $scope.numberOfArticles = 8;
 
-  $http.get('api/tags.json').
+  $http.get('/api/tags.json').
   success(function(data, status, headers, config) {
     $scope.articleTags = data;
   }).
   error(function(data, status, headers, config) {
         // log error
       });
-  $http.get('api/articles.json').
+  $http.get('/api/articles.json').
   success(function(data, status, headers, config) {
     $scope.articles = data;
   }).
   error(function(data, status, headers, config) {
         // log error
       });
-  $http.get('api/lunr-index.json').
+  $http.get('/api/lunr-index.json').
   success(function(data, status, headers, config) {
     // $scope.lunrIndex = data;
     $scope.lunrData = data;
