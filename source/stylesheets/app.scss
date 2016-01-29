@@ -778,3 +778,13 @@ section.about-bio {
 		margin-bottom: rem-calc(50);
 	}
 }
+
+img.round {
+  border-radius: 9999px;
+}
+
+section.blue {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #F0F9FF;
+}

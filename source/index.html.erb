@@ -1,12 +1,12 @@
 ---
-title: "James Stone: ZURB Foundation is all about development speed"
+title: "James Stone, Scalable ZURB Foundation Solutions"
 seo_desc: "My workflow takes this universal framework and makes it crazy fast for designers + devs to build just about anything."
 pageable: false
 per_page: 8
 active_nav: home
-hero_headline: "ZURB Foundation is all about development speed"
-hero_subhead: "My workflow takes this universal framework and makes it crazy fast for designers + devs to build just about anything"
-hero_cta: "Learn my workflow"
+hero_headline: "You already know that <strong>now</strong> is the most important<br>time to find a stable front-end developer"
+hero_subhead: "I&rsquo;ll help you scale-up with ZURB Foundation quickly"
+hero_cta: "Learn more"
 featured_headline: "I'm featured on"
 membership_headline: "A place for intermediate-level web designers to fine tune their ZF skills"
 testimonial_headline: "What people are saying about James"
@@ -23,172 +23,37 @@ article_more: "More Articles"
     <div class="small-12 columns">
       <h2><%= current_page.data.hero_headline %></h2>
       <p><%= current_page.data.hero_subhead %></p>
-      <p> <a ng-click="scrollToId('scroll-to-membership-promo')" class="button"><%= current_page.data.hero_cta %></a> </p>
     </div>
   </div>
 </section>
 
-<section class="bling">
+
+<section class="blue">
   <div class="row align-center">
-    <div class="column medium-10 small-12">
-      <ul>
-        <li><span><%= current_page.data.featured_headline %></span></li>
-        <% data.widgets.featured[0..3].each do | feature | %>
-        <li> <a target="_blank" href="<%= feature.url %>"><img src="<%= feature.image %>" alt="<%= feature.name %> logo"></a> </li>
-        <% end %>
-      </ul>
+    <div class="medium-2 columns">
+      <img style="padding:20px;" class="round" src="images/index/james-paris-profile.jpg" alt="Photo of James Stone">
     </div>
   </div>
-</section>
-
-
-<section class="membership-promo" id="scroll-to-membership-promo">
-  <h2><%= current_page.data.membership_headline %></h2>
   <div class="row align-center">
-    <div class="small-12 medium-6 columns order-1 medium-order-2">
-      <p class="text-center">
-        <img src="images/2015-redesign/yeti_screens.svg" alt="">
-      </p>
-    </div>
-    <div class="small-6 medium-2 columns order-2 medium-order-2">
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-video.svg" alt="">
-        <p>Screencasts</p>
-      </div>
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-timer.svg" alt="">
-        <p>Short Courses</p>
-      </div>
-    </div>
-    <div class="small-6 medium-2 columns end">
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-book.svg" alt="">
-        <p>Ebooks &amp; Guides</p>
-      </div>
-      <div class="promo-box">
-        <img class="round" src="images/2015-redesign/circle-icon-doc.svg" alt="">
-        <p>Quick References</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row signup-row">
-    <div class="small-12 columns">
-      <p class="text-center"><input type="text" placeholder="Name">
-        <input type="email" placeholder="Email Address">
-        <input class="button" type="submit" value="Let me join!">
-      </p>
+    <div class="column medium-8">
+      <h2 class="text-center">&ldquo;I&rsquo;m James, I&rsquo;ll plug the gap between your next hire and the job that needs to be done <strong>right now</strong>.&rdquo;</h2>
+      <p class="text-center">I&rsquo;ll work with your team building out a solid front-end blueprint while helping you locate and train in-house talent to take it to the next level.</p>
     </div>
   </div>
 </section>
 
-
-
+<section>
+  <div class="row align-center">
+    <div class="column medium-8">
+      <h2 class="text-center">Iterate &amp; scale (without clocking miles at career fairs)</h2>
+      <p>Unlike freelancer, contractors and junior hires that might burn through cash, take eons to ramp up or just got AWOL; <strong>I'll solve your immediate pain now, allowing you to iterate fast and scale quickly</strong>.</p>
+      <p>When you&rsquo;re ready I&rsquo;ll help you find and train in-house staff, who will know exactly how your product works (inside and out) to help you secure funding and hit that next major milestone.</p>
+    </div>
+  </div>
+</section>
 <%= partial "module_testimonials" %>
 
 
-
-<section class="videos" id="videos">
-  <div class="column-row">
-    <h2><%= current_page.data.video_headline %></h2>
-  </div>
-  <div class="row align-stretch">
-    <% data.widgets.videos.each do | vid | %>
-    <div class="column small-12 medium-4" style="display: flex;">
-      <div class="video-overlay <%= vid.color %>" ng-click="openLink('https://www.youtube.com/watch?v=<%= vid.id %>')">
-        <img src="https://img.youtube.com/vi/<%= vid.id %>/maxresdefault.jpg" alt="">
-        <!-- TODO: padding for text, responsive flexbox centered button -->
-        <h3><%= vid.name %></h3>
-        <span><img src="images/2015-redesign/overlay-icon-play.svg" alt=""></span>
-        <p><%= vid.time %></p>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</section>
-
-
-<section class="articles" id="articles" ng-controller="ArticlesCtrl">
-  <div class="column-row">
-    <h2 class="flush-bottom"><%= current_page.data.article_headline %></h2>
-  </div>
-  <div class="row align-spaced">
-    <div class="small-12 medium-3 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <label for="subject">Subject</label>
-        </div>
-        <div class="small-9 columns">
-          <select name="subject" id="" ng-model="selectedTag">
-            <option value="" selected>All</option>
-            <option ng-repeat="tag in articleTags" value="{{ tag }}"> {{ tag }}</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="small-12 medium-3 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <label for="subject">Sort by</label>
-        </div>
-        <div class="small-9 columns">
-          <select name="subject" id="" ng-model="selectedSort">
-            <option value="" selected>Newest First</option>
-            <option>Oldest First</option>
-            <option>Most Comments</option>
-          </select>
-        </div>
-      </div>     
-    </div>
-    <div class="small-12 medium-3 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <label for="search">Search</label>
-        </div>
-        <div class="small-9 columns">
-
-         <!-- <autocomplete ng-model="yourchoice" data="lunrData.index.documentStore.store['2']" on-type="updateMovies"></autocomplete> -->
-
-         <input class="" type="text" name="search" placeholder="Search Articles" ng-model="searchInput" ng-change="activeSearchResults = searchResults(searchInput)">
-       </div>
-     </div>
-   </div>
- </div>
-
- <!-- search results -->
- <div class="column-row" ng-if="searchInput">
-   <p ng-if="activeSearchResults.length < 1" class="text-center" style="margin-bottom: 30px;"><%= current_page.data.error_noresults %></p>
-   <div class="row">
-    <div class="small-12 medium-5 columns" ng-class="$even ? 'medium-offset-1' : 'end'" ng-repeat="r in activeSearchResults">
-      <div class="row small-articles">
-       <div class="small-3 columns">
-         <a ng-if="lunrData.docs[r.ref].featured_image"  href="{{lunrData.docs[r.ref].url}}"><img ng-src="{{ lunrData.docs[r.ref].featured_image }}" alt="{{ lunrData.docs[r.ref].title }}"></a>
-       </div>
-       <div class="small-9 columns">
-         <p>
-           <a href="{{lunrData.docs[r.ref].url}}">{{ lunrData.docs[r.ref].title }}</a>
-         </p>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-
-<div class="row align-stretch">
-  <div class="column small-12 medium-3" style="display:flex; width:25%; " style="display:flex;" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
-    <div class="flex-card article clickable" style="display:flex; flex-direction:" ng-click="openLink(article.url)">
-      <a style="flex: 0 1 auto;" href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
-      <div style="flex: 1 0 auto;" class="content">
-        <h4 style="flex: 0 1 auto;">{{ article.title }}</h4>
-        <p style="flex: 1 0 auto;" class="summary"> {{ article.summary }} </p>
-        <a href="{{ article.url }}" class="button hollow"><%= current_page.data.article_view %></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4"><%= current_page.data.article_more %></a> </p>
-</section>
 
 
 <%= partial "module_promo" %>

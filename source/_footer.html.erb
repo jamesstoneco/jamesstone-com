@@ -20,17 +20,17 @@
 
           <div class="row">
             <div class="medium-3 columns">
-            <a href="<%= article.url %>">
-              <% image_url           = "" %>
-              <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
-              <% if test_video == "true" %>
-              <% if test_video_type == "youtube" %>
-              <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/maxresdefault.jpg" alt="">
-              <% end %>
-              <% elsif ( defined?(test_featured_image)) %>
-              <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
-              <% end %>
-              <% end %>
+              <a href="<%= article.url %>">
+                <% image_url           = "" %>
+                <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
+                <% if test_video == "true" %>
+                <% if test_video_type == "youtube" %>
+                <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/maxresdefault.jpg" alt="">
+                <% end %>
+                <% elsif ( defined?(test_featured_image)) %>
+                <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
+                <% end %>
+                <% end %>
               </a>
             </div>
             <div class="medium-9 columns">
@@ -47,10 +47,12 @@
 
 
           <ul>
-            <li><a target="_blank" href="https://clarity.fm/jamesstone">Book 15 Minutes</a></li>
-            <li><a href="/#videos">Videos</a></li>
-            <li><a href="/#articles">Articles</a></li>
-            <li><a href="/">Resources</a></li>
+
+          <li> <a target="_blank" href="https://www.youtube.com/user/JamesManOfStone">YouTube 205k+ views</a> </li>
+          <li> <a target="_blank" href="http://foundation.zurb.com/forum/451-james-stone">ZURB Certified Preferred</a> </li>
+          <li> <a target="_blank" href="https://www.linkedin.com/in/jamesstoneco">Linked In</a> </li>
+          <li> <a target="_blank" href="https://www.quora.com/James-Stone-6">Quora</a> </li>
+
           </ul>
 
         </div>
@@ -80,15 +82,15 @@
       <div class="sub-footer">
         <ul class="menu align-right">
           <li><a href="/contact">Contact</a></li>
-        <li><a href="/TODO">Comment Policy</a></li>
-        <li><a href="/tos">Terms of Service</a></li>
-        <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/TODO">Comment Policy</a></li>
+          <li><a href="/tos">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
 
 <!--           <li><a href="/services">Services</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/resources/getting-started">Start Here</a></li>
 
- -->        </ul>
+        -->        </ul>
         <p>Copyright 2009-2015, James Stone Intermedia, All Rights Reserved.</p>
       </div>
 
@@ -97,6 +99,6 @@
   </div>
 
 </footer>
-    <!-- <h5 class="text-center"><a href="/bb">Hosting sponsored by <span class="label">BitBalloon</span> &ndash; The ultimate hosting platform for your HTML5 sites &amp; apps</a></h5> -->
+<!-- <h5 class="text-center"><a href="/bb">Hosting sponsored by <span class="label">BitBalloon</span> &ndash; The ultimate hosting platform for your HTML5 sites &amp; apps</a></h5> -->
 
 
