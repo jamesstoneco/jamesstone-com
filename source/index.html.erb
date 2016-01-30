@@ -56,3 +56,18 @@ article_more: "More Articles"
 <%= partial "module_testimonials" %>
 
 <%= partial "module_promo" %>
+
+<section class="bling">
+  <div class="row align-center">
+    <div class="column medium-10 small-12">
+      <ul>
+        <li><span><%= current_page.data.featured_headline %></span></li>
+        <% data.widgets.featured[0..3].each do | feature | %>
+        <li> <a target="_blank" href="<%= feature.url %>"><img src="<%= feature.image %>" alt="<%= feature.name %> logo"></a> </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+

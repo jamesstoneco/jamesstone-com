@@ -1,19 +1,29 @@
 <section class="testimonials">
+
+
+
   <div class="column-row">
     <h2 class="text-center"><%= data.widgets.testimonials_headline %></h2>
   </div>
 
-  <div class="row align-stretch">
-    <% data.widgets.testimonials[0..3].each do | t | %>
-    <div class="column small-12 medium-3" style="display: flex;">
-      <div class="card">
-        <h3><%= t.name %></h3>
-        <a target="_blank" href="<%= t.tweet_url %>"><img class="round" src="<%= t.image_url %>" alt=""></a>
-        <p><%= t.text %></p>
+  <div class="row align-center">
+    <div class="column medium-11 small-12"><div class="row align-stretch">
+      <% data.widgets.testimonials[0..1].each do | t | %>
+      <div class="column small-12 medium-6" style="display: flex;">
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="<%= t.image_url %>" alt="">
+          </div>
+          <p>
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+          </p>
+          <p><%= t.text %></p>
+          <p><%= t.name %><span class="company">, <%= t.company %></span></p>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
-
   </div>
+</div>
 </div>
 </section>

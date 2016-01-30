@@ -17,14 +17,16 @@ $deep-lavender: #8352af;
 $greyblue: #76b4c5;
 $cool-grey: #95a5a6;
 $brownish-grey: #66655d;
-$pale-teal: #7ab6c8;
+// $pale-teal: #7ab6c8; 
+$pale-teal: #7bb7cb; 
 $grey-white: #dcdcdc;
 $steel-grey: #7f8c8d;
 $cement: #9f9e97;
 $white: #ffffff;
+$algae-green: #27cd6a;
 
 
-$primary-color: $topaz;
+$primary-color: $algae-green;
 
 @import 'settings';
 
@@ -102,7 +104,7 @@ $primary-color: $topaz;
         height: 200px;
         h2 {
           font-size: 13px;
-                    margin-top: rem-calc(80);
+          margin-top: rem-calc(80);
           margin-bottom: 20px;
 
         }
@@ -118,201 +120,201 @@ $primary-color: $topaz;
           line-height: 48px;
           letter-spacing: 0.3px;
           margin-bottom: 43px;
-           }
-           p { 
-            font-size: 24px;
-            line-height: 24px;
-            letter-spacing: 0.3px;
-           }
-  			background-size: cover;
-  			background-position: bottom center;
-  		}
-  		.button {
-  			font-size: rem-calc(15);
-  			font-weight: 600;
-  			width: rem-calc(240);
-  			padding-top: rem-calc(12);
-  			padding-bottom: rem-calc(12);
-  			position: relative;
-  			padding-left: 0;
-  			margin:0;
-  			padding-right: rem-calc(27);
-  			&:after {
-  				content: " ";
-  				background: url('../images/2015-redesign/icon-down-arrow.svg');
-  				background-repeat: no-repeat;
-  				background-size: rem-calc(21 21);
-  				background-position: top left;
-  				height: rem-calc(25);
-  				width: rem-calc(21);
-  				position: absolute;
-  				top: rem-calc(9);
-  				right: rem-calc(35);
-  			}
-  		}
+        }
+        p { 
+          font-size: 24px;
+          line-height: 24px;
+          letter-spacing: 0.3px;
+        }
+        background-size: cover;
+        background-position: bottom center;
+      }
+      .button {
+       font-size: rem-calc(15);
+       font-weight: 600;
+       width: rem-calc(240);
+       padding-top: rem-calc(12);
+       padding-bottom: rem-calc(12);
+       position: relative;
+       padding-left: 0;
+       margin:0;
+       padding-right: rem-calc(27);
+       &:after {
+        content: " ";
+        background: url('../images/2015-redesign/icon-down-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: rem-calc(21 21);
+        background-position: top left;
+        height: rem-calc(25);
+        width: rem-calc(21);
+        position: absolute;
+        top: rem-calc(9);
+        right: rem-calc(35);
+      }
+    }
 
-  	}
-  	&.services {
-  		background-image: url('../images/james-graffiti-wide.jpg');
-  		background-repeat: no-repeat;
-  		background-size: cover;
-  		background-position: 20% center;
-  		h2 { margin-top: rem-calc(380); }
-  		height: 660px;
-  		.button {
-  			font-size: rem-calc(15);
-  			font-weight: 600;
-  			width: rem-calc(181);
-  			padding-top: rem-calc(12);
-  			padding-bottom: rem-calc(12);
-  			position: relative;
-  			padding-left: 0;
-  			margin:0;
-  			padding-right: rem-calc(27);
-  			&:after {
-  				content: " ";
-  				background: url('../images/2015-redesign/icon-down-arrow.svg');
-  				background-repeat: no-repeat;
-  				background-size: rem-calc(21 21);
-  				background-position: top left;
-  				height: rem-calc(25);
-  				width: rem-calc(21);
-  				position: absolute;
-  				top: rem-calc(9);
-  				right: rem-calc(35);
-  			}
-  		}
-  	}
-  	&.about {
-  		background-image: url('../images/james-new-headshot-wide.jpg');
-  		background-repeat: no-repeat;
-  		background-size: cover;
-  		background-position: 20% center;
-  		h2 { margin-top: rem-calc(380); }
-  		height: 660px;
-  		.button {
-  			font-size: rem-calc(15);
-  			font-weight: 600;
-  			width: rem-calc(181);
-  			padding-top: rem-calc(12);
-  			padding-bottom: rem-calc(12);
-  			position: relative;
-  			padding-left: 0;
-  			margin:0;
-  			padding-right: rem-calc(27);
-  			&:after {
-  				content: " ";
-  				background: url('../images/2015-redesign/icon-down-arrow.svg');
-  				background-repeat: no-repeat;
-  				background-size: rem-calc(21 21);
-  				background-position: top left;
-  				height: rem-calc(25);
-  				width: rem-calc(21);
-  				position: absolute;
-  				top: rem-calc(9);
-  				right: rem-calc(35);
-  			}
-  		}
-  	}
-  	&.get-started {
-  		background-image: url('../images/bio/zf-camp-wide.jpg');
-  		background-repeat: no-repeat;
-  		background-size: cover;
-  		background-position: 20% center;
-  		h2 { margin-top: rem-calc(180); }
-  		height: 400px;
-  		.button {
-  			font-size: rem-calc(15);
-  			font-weight: 600;
-  			width: rem-calc(181);
-  			padding-top: rem-calc(12);
-  			padding-bottom: rem-calc(12);
-  			position: relative;
-  			padding-left: 0;
-  			margin:0;
-  			padding-right: rem-calc(27);
-  			&:after {
-  				content: " ";
-  				background: url('../images/2015-redesign/icon-down-arrow.svg');
-  				background-repeat: no-repeat;
-  				background-size: rem-calc(21 21);
-  				background-position: top left;
-  				height: rem-calc(25);
-  				width: rem-calc(21);
-  				position: absolute;
-  				top: rem-calc(9);
-  				right: rem-calc(35);
-  			}
-  		}
-  	}
-  	h2, p {
-  		color: #fff;
-  		font-weight: 400;
-  		font-size: rem-calc(16);
-  		text-align: center;
-  	}
-  	h2 { 
-  		padding: 0;
-  		margin-bottom: rem-calc(15);
-  		@include breakpoint(small only) {
-  			font-size: rem-calc(20);
-  		}
-  		@include breakpoint(medium) {
-  			font-size: rem-calc(30);
-  		}
-  	}
-  	p {
-  		margin-bottom: rem-calc(25);
-  	}
   }
-
-  .round {
-  	border-radius: 9999px;
+  &.services {
+    background-image: url('../images/james-graffiti-wide.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% center;
+    h2 { margin-top: rem-calc(380); }
+    height: 660px;
+    .button {
+     font-size: rem-calc(15);
+     font-weight: 600;
+     width: rem-calc(181);
+     padding-top: rem-calc(12);
+     padding-bottom: rem-calc(12);
+     position: relative;
+     padding-left: 0;
+     margin:0;
+     padding-right: rem-calc(27);
+     &:after {
+      content: " ";
+      background: url('../images/2015-redesign/icon-down-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: rem-calc(21 21);
+      background-position: top left;
+      height: rem-calc(25);
+      width: rem-calc(21);
+      position: absolute;
+      top: rem-calc(9);
+      right: rem-calc(35);
+    }
   }
+}
+&.about {
+  background-image: url('../images/james-new-headshot-wide.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% center;
+  h2 { margin-top: rem-calc(380); }
+  height: 660px;
+  .button {
+   font-size: rem-calc(15);
+   font-weight: 600;
+   width: rem-calc(181);
+   padding-top: rem-calc(12);
+   padding-bottom: rem-calc(12);
+   position: relative;
+   padding-left: 0;
+   margin:0;
+   padding-right: rem-calc(27);
+   &:after {
+    content: " ";
+    background: url('../images/2015-redesign/icon-down-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: rem-calc(21 21);
+    background-position: top left;
+    height: rem-calc(25);
+    width: rem-calc(21);
+    position: absolute;
+    top: rem-calc(9);
+    right: rem-calc(35);
+  }
+}
+}
+&.get-started {
+  background-image: url('../images/bio/zf-camp-wide.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% center;
+  h2 { margin-top: rem-calc(180); }
+  height: 400px;
+  .button {
+   font-size: rem-calc(15);
+   font-weight: 600;
+   width: rem-calc(181);
+   padding-top: rem-calc(12);
+   padding-bottom: rem-calc(12);
+   position: relative;
+   padding-left: 0;
+   margin:0;
+   padding-right: rem-calc(27);
+   &:after {
+    content: " ";
+    background: url('../images/2015-redesign/icon-down-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: rem-calc(21 21);
+    background-position: top left;
+    height: rem-calc(25);
+    width: rem-calc(21);
+    position: absolute;
+    top: rem-calc(9);
+    right: rem-calc(35);
+  }
+}
+}
+h2, p {
+  color: #fff;
+  font-weight: 400;
+  font-size: rem-calc(16);
+  text-align: center;
+}
+h2 { 
+  padding: 0;
+  margin-bottom: rem-calc(15);
+  @include breakpoint(small only) {
+   font-size: rem-calc(20);
+ }
+ @include breakpoint(medium) {
+   font-size: rem-calc(30);
+ }
+}
+p {
+  margin-bottom: rem-calc(25);
+}
+}
 
-  $card-radius: 12px;
+.round {
+ border-radius: 9999px;
+}
 
-  section.articles {
-  	padding-bottom: rem-calc(30);
-  	.row {
-  		margin-bottom: 0;
-  	}
-  	h2 {
-  		color: $greyblue;
-  		padding-top: rem-calc(59);
-  		padding-bottom: rem-calc(42);
-  	}
+$card-radius: 12px;
 
-  	label {
-  		color: $cool-grey;
-  		font-size: rem-calc(14);
-  		font-weight: 400;
-  		padding-top: rem-calc(8);
-  	}
-  	select, input[type="text"] {
-  		border: solid 1px $pale-grey;
-  		border-radius: 9999px;
-  		padding: rem-calc(7 20 7 20);
-  		font-size: rem-calc(14);
-  		margin-bottom: rem-calc(50);
-  	}
+section.articles {
+ padding-bottom: rem-calc(30);
+ .row {
+  margin-bottom: 0;
+}
+h2 {
+  color: $greyblue;
+  padding-top: rem-calc(59);
+  padding-bottom: rem-calc(42);
+}
 
-  	select {
-  		background-color: $white;
-  		background-image: url('../images/2015-redesign/search-icon-down.svg');
-  		background-repeat: no-repeat;
-  		background-size: 12px 7px;
-  		background-position: 90% 55%;
-  	}
+label {
+  color: $cool-grey;
+  font-size: rem-calc(14);
+  font-weight: 400;
+  padding-top: rem-calc(8);
+}
+select, input[type="text"] {
+  border: solid 1px $pale-grey;
+  border-radius: 9999px;
+  padding: rem-calc(7 20 7 20);
+  font-size: rem-calc(14);
+  margin-bottom: rem-calc(50);
+}
 
-  	input[type="text"] {
-  		background-image: url('../images/2015-redesign/search-icon-glass.svg');
-  		background-repeat: no-repeat;
-  		background-size: 13px 14px;
-  		background-position: 90% 50%;
-  		&:focus {
-  			border-color: $primary-color;
-  			background-image: url('../images/2015-redesign/search-icon-glass-focus.svg');
+select {
+  background-color: $white;
+  background-image: url('../images/2015-redesign/search-icon-down.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 7px;
+  background-position: 90% 55%;
+}
+
+input[type="text"] {
+  background-image: url('../images/2015-redesign/search-icon-glass.svg');
+  background-repeat: no-repeat;
+  background-size: 13px 14px;
+  background-position: 90% 50%;
+  &:focus {
+   border-color: $primary-color;
+   background-image: url('../images/2015-redesign/search-icon-glass-focus.svg');
 			// border: none;
 			outline: none;
 			-webkit-box-shadow: none;
@@ -443,13 +445,6 @@ $primary-color: $topaz;
 	}
 }
 
-
-
-section {
-	&.membership-promo, &.videos, &.promo, &.about-intro, &.about-bio {
-		background: $ice-blue;
-	}
-}
 
 section.membership-promo {
 	& h2 {
@@ -648,7 +643,8 @@ section.bling {
 
 }
 
-section.testimonials, section.categories {
+// section.testimonials,
+ section.categories {
 	padding-bottom: rem-calc(60);
 	& h2 {
 		color: #77b5c8;
@@ -693,15 +689,20 @@ section.promo {
 	padding-bottom: rem-calc(40);
 	h2 {
 		padding: 0;
-		margin-bottom: rem-calc(8);
+		margin-bottom: rem-calc(25);
 	}
 	.button {
 		padding: rem-calc(12 89 12 88);
 		font-size: rem-calc(15);
 		font-weight: 600;
 		margin-bottom: rem-calc(20);
+    background: $algae-green;
+    border-radius: 4px;
 
 	}
+  p {
+    margin-bottom: 10px;
+  }
 }
 
 
@@ -742,7 +743,7 @@ footer {
 		font-size: rem-calc(14);
 		ul.menu li a {
 			padding-top: rem-calc(3);
-			padding-left: rem-calc(26);
+			padding-left: rem-calc(30);
 			padding-right: 0;
 		}
 
@@ -832,7 +833,8 @@ section.iterate {
   }
 }
 
-section.testimonials, section.categories {
+// section.testimonials,
+ section.categories {
   padding-bottom: rem-calc(60);
   & h2 {
     // color: #77b5c8;
@@ -840,4 +842,96 @@ section.testimonials, section.categories {
     margin-bottom: 20px;
     padding: 0;
   }
+}
+
+// blue bg
+section {
+  &.membership-promo, &.videos, &.about-intro, &.about-bio, &.bling, &.testimonials {
+    background: $ice-blue;
+  }
+}
+.sub-footer {
+  background: $ice-blue;
+}
+
+// grey border at top of section
+section.bling, footer, .sub-footer {
+  border-top: 1px solid $pale-grey;
+}
+
+.sub-footer li.active a {
+  font-weight: 600;
+
+}
+
+
+footer > .row {
+  padding-bottom: rem-calc(25);
+}
+
+footer .js-logo-wrapper {
+  position: relative;
+}
+
+footer .js-logo { 
+  position: absolute;
+  top: rem-calc(126-40);
+  left: -40px;
+  min-height: 39px;
+  min-width: 305px;
+}
+
+section.testimonials {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  h2 {
+    margin-bottom: 90px;
+  }
+  .image-wrapper {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    // background: #f00;
+    text-align: center;
+    
+  }
+  img { 
+    width: 80px;
+    height: 80px;
+    border-radius: 9999px;
+  }
+  .card {
+    position: relative;
+    background: $white;
+    border: solid 1px $pale-grey;
+    border-radius: 4px;
+    padding-top: 65px;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+  p { 
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  span.company {
+    color: $pale-teal;
+  }
+}
+
+
+span.star {
+  content: '';
+  // background: #f00;
+  background: url('/images/2016-refresh/icon-star-blue.svg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  // position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  height: 11px;
+  width: 12px;
 }
