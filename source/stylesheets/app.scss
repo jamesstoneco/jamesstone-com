@@ -36,7 +36,7 @@ $primary-color: $algae-green;
 $header-font-weight: 400;
 $font-weight-bold: 400;
 $global-weight-normal: 300;
-$paragraph-font-size: rem-calc(18);
+// $global-font-size: 112.5%;
 
 
 @import 'foundation';
@@ -132,6 +132,10 @@ $input-error-color: $pale-teal;
       transition: opacity 0.85s;
     }
   }
+
+
+
+  p { font-size: rem-calc(18); }
 
 
   section.hero {
@@ -764,6 +768,9 @@ section.promo {
 footer {
 	padding-top: rem-calc(40);
 	padding-top: rem-calc(50);
+  p {
+font-size: rem-calc(14);
+  }
 	h2 {
 		color: $brownish-grey;
 		font-weight: 600;
@@ -1133,3 +1140,4 @@ img.js-profile {
   border-radius: 9999px;
   margin-bottom: 20px;
 }
+
