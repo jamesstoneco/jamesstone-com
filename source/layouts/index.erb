@@ -15,23 +15,10 @@
   <meta name="description" content="<%= current_page.data.seo_desc %>">
   <% end %>
   <title><%= current_page.data.title || "James Stone" %></title>
-
   <%= stylesheet_link_tag "app" %>
-  <script>
-    (function(d) {
-      var config = {
-        kitId: 'rsk1rxq',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
 </head>
 
 <body>
-  <div ng-app="memberApp">
-    <div ng-controller="MembershipCtrl">
 
       <section class="hero index">
         <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "alt" }) %> </div>
@@ -46,11 +33,6 @@
       <%= yield %>
 
       <%= partial "footer" %>
-
-      <%= javascript_include_tag  "application", :defer => "defer" %>
-
-    </div>
-  </div>
 
 </body>
 </html>
