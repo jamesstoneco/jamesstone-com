@@ -15,7 +15,7 @@
   <meta name="description" content="<%= current_page.data.seo_desc %>">
   <% end %>
   <title><%= current_page.data.title || "James Stone" %></title>
-  
+
   <%= stylesheet_link_tag "app" %>
   <script>
     (function(d) {
@@ -33,8 +33,15 @@
   <div ng-app="memberApp">
     <div ng-controller="MembershipCtrl">
 
-
-        <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "" }) %> </div>
+      <section class="hero index">
+        <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "alt" }) %> </div>
+        <div class="row">
+          <div class="small-12 columns">
+            <h2><%= current_page.data.hero_headline %></h2>
+            <p><%= current_page.data.hero_subhead %></p>
+          </div>
+        </div>
+      </section>
 
       <%= yield %>
 
