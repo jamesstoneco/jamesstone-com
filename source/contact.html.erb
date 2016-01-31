@@ -16,7 +16,7 @@ layout: contact
         
       </p>
 
-      <form data-abide novalidate>
+      <form name="contact" action="thank-you" data-abide novalidate netlify netlify-honeypot="bot-field">
 
         <div data-abide-error class="callout alert" style="display: none;">
           <p>There are some errors in your form.</p>
@@ -33,6 +33,8 @@ layout: contact
 
             <label for="title">Title</label>
             <input name="title" type="text">
+
+            <p class="hide"><label>Bot field: <input name="bot-field"></label></p>
 
             <label for="company">Company</label>
             <input name="company" type="text">
