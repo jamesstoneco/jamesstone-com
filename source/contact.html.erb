@@ -2,35 +2,76 @@
 title: "Contact James Stone"
 seo_desc: "Please fill out the form below or email me directly"
 active_nav: contact
+layout: contact
 ---
 
-<div class="content-top-spacing"></div>
+<section class="contact">
+  <div class="row align-center">
+    <div class="column medium-8">
+      <h2>Get in touch and let’s get started!</h2>
+      <p>If you have a project you want to discuss with me or would like to ask a question, call me, send me an email or fill out the form below.</p>
+      <p class="text-center">
+        <span>Phone - <a href="tel:+14155282001">(415) 528-2001</a></span>
+        <span>Email - <a href="mailto:james@jamesstone.com">james@jamesstone.com</a></span>
+        
+      </p>
 
-<div class="row">
-  <div class="medium-8 medium-centered columns"> <!-- main content -->
-<div >
-    <p>Please fill out the form below or email me directly at <strong>ja<span>me</span>s<span>@</span>jamess<span>tone.co</span>m</strong>. I will respond to most messages within a few hours on business days.</p>
-    <div id="wufoo-m1t2o4t90m5dy06">
-      Fill out my <a href="https://manofstone.wufoo.com/forms/m1t2o4t90m5dy06">online form</a>.
+      <form data-abide novalidate>
+
+        <div data-abide-error class="callout alert" style="display: none;">
+          <p>There are some errors in your form.</p>
+        </div>
+
+
+        <div class="row">
+          <div class="column medium-6">
+
+            <label for="name">Name*
+              <input name="name" type="text" required>
+              <!-- <span class="form-error"> Yo, you had better fill this out, it's required. </span> -->
+            </label>
+
+            <label for="title">Title</label>
+            <input name="title" type="text">
+
+            <label for="company">Company</label>
+            <input name="company" type="text">
+          </div>
+          <div class="column medium-6">
+
+            <label for="website">Website</label>
+            <input name="website" type="text">
+
+            <label for="email">Email*
+            <input name="email" type="email" required>
+            </label>
+
+            <label for="phone">Phone Number</label>
+            <input name="phone" type="tel">
+          </div>
+        </div>
+
+
+
+
+
+
+        <label for="subject">Subject*
+        <input name="subject" type="text" required>
+        </label>
+
+
+
+        <label for="message">Message*
+        <textarea name="message" id="" cols="30" rows="10" required></textarea>
+        </label>
+
+        <p class="text-center">
+          <input type="submit" class="button" value="Let's do this!">
+        </p>
+
+      </form>
+      
     </div>
-  </div> 
-   </div>
-</div>
-
-
-  <script type="text/javascript" defer>var m1t2o4t90m5dy06;(function(d, t) {
-    var s = d.createElement(t), options = {
-      'userName':'manofstone',
-      'formHash':'m1t2o4t90m5dy06',
-      'autoResize':true,
-      'height':'437',
-      'async':true,
-      'host':'wufoo.com',
-      'header':'show',
-      'ssl':true};
-      s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-      s.onload = s.onreadystatechange = function() {
-        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-        try { m1t2o4t90m5dy06 = new WufooForm();m1t2o4t90m5dy06.initialize(options);m1t2o4t90m5dy06.display(); } catch (e) {}};
-        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-      })(document, 'script');</script>
+  </div>
+</section>
