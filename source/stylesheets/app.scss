@@ -33,6 +33,9 @@ $primary-color: $algae-green;
 @import 'settings';
 
 
+$header-font-weight: 400;
+$font-weight-bold: 400;
+
 
 @import 'foundation';
 // @import 'motion-ui';
@@ -163,6 +166,7 @@ $input-error-color: $pale-teal;
         p { 
           text-shadow: 0 2px 2px $black-50;
           font-size: 18px;
+          font-weight: 400;
           // line-height: 24px;
           // letter-spacing: 0.3px;
         }
@@ -289,11 +293,11 @@ $input-error-color: $pale-teal;
 }
 h2, p {
   color: #fff;
-  font-weight: 400;
   font-size: rem-calc(16);
   text-align: center;
 }
 h2 { 
+  font-weight: 400;
   padding: 0;
   margin-bottom: rem-calc(15);
   @include breakpoint(small only) {
@@ -772,7 +776,7 @@ footer {
 	a {
 		color: $cement;
 		font-size: rem-calc(14);
-		font-weight: 400;
+		font-weight: 300;
 	}
 	ul {
 		list-style-type: none;
@@ -808,7 +812,7 @@ footer {
 	a {
 		color: $cement;
 		font-size: rem-calc(14);
-		font-weight: 400;
+		font-weight: 300;
 	}
 	h2 { text-align: left; }
 	p {
@@ -854,7 +858,7 @@ section {
     // color: $steel-grey;
     color: #77b5c8;
     font-size: rem-calc(26);
-    font-weight: 400;
+    // font-weight: 300;
     // padding-top: rem-calc(68);
     // padding-bottom: rem-calc(72);
     padding-top: 0;
@@ -1059,7 +1063,7 @@ section.contact {
 label {
   color: $brownish-grey;
   font-size: rem-calc(14);
-  font-weight: 400;
+  font-weight: 300;
   // padding-top: rem-calc(8);
 }
 select, input[type="text"], input[type="tel"], input[type="email"], textarea {
@@ -1088,4 +1092,12 @@ select, input[type="text"], input[type="tel"], input[type="email"], textarea {
   }
 
   input[type="text"] {
+  }
+
+
+
+  h1, h2, h3, h4, h5, h6 {
+    & strong {
+      font-weight: 600;
+    }
   }

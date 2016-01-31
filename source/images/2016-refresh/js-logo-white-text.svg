@@ -17,9 +17,9 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="Asset-Prep" sketch:type="MSArtboardGroup" transform="translate(-687.000000, -215.000000)">
             <g id="js-logo-white-text" sketch:type="MSLayerGroup" transform="translate(687.000000, 215.000000)">
-                <text id="text" fill="white" filter="url(#filter-1)" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="13" font-weight="526" line-spacing="14" letter-spacing="0.928571403">
+                <text id="text" fill="white" filter="url(#filter-1)" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="13" font-weight="600" line-spacing="14" letter-spacing="0.928571403">
                     <tspan x="68" y="19" fill="#FFFFFF">James Stone</tspan>
-                    <tspan x="68.013" y="33" font-weight="260" fill="#F0F9FF">Scalable ZURB Foundation Solutions</tspan>
+                    <tspan x="68.013" y="33" font-weight="300" fill="#F0F9FF">Scalable ZURB Foundation Solutions</tspan>
                 </text>
                 <rect id="box" fill="#7BB7CB" sketch:type="MSShapeGroup" x="0" y="0" width="58" height="39"></rect>
                 <path d="M39.6310321,31.33 C44.4820321,31.33 47.8810321,28.756 47.8810321,24.433 L47.8810321,24.367 C47.8810321,20.539 45.3400321,18.79 40.4560321,17.602 C36.0340321,16.546 34.9780321,15.754 34.9780321,13.972 L34.9780321,13.906 C34.9780321,12.388 36.3640321,11.167 38.7400321,11.167 C40.8520321,11.167 42.9310321,11.992 45.0100321,13.543 L47.1880321,10.474 C44.8450321,8.593 42.1720321,7.57 38.8060321,7.57 C34.2190321,7.57 30.9190321,10.309 30.9190321,14.269 L30.9190321,14.335 C30.9190321,18.592 33.6910321,20.044 38.6080321,21.232 C42.8980321,22.222 43.8220321,23.113 43.8220321,24.763 L43.8220321,24.829 C43.8220321,26.578 42.2380321,27.733 39.7300321,27.733 C36.8590321,27.733 34.6480321,26.644 32.4370321,24.73 L29.9950321,27.634 C32.7670321,30.109 36.1000321,31.33 39.6310321,31.33 L39.6310321,31.33 Z" id="s" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
