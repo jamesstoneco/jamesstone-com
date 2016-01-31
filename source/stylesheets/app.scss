@@ -548,11 +548,12 @@ height: 120px;
         position: absolute;
         top: rem-calc(40);
         left: rem-calc(50);
-        width: 305px;
+        width: 310px;
         height: 39px;
         background: url("../images/2016-refresh/js-logo-black-text.svg");
         background-position: top left;
         background-repeat: no-repeat;
+        background-size: 305px 39px;
       }
     }
 
@@ -613,7 +614,7 @@ height: 120px;
     h1.logo a {
       background: url("../images/2016-refresh/js-logo-white-text.svg");
       background-position: top left;
-      background-size: 305px 39px;
+      background-size: 310px 39px;
       background-repeat: no-repeat;
     }
     ul.menu li {
@@ -792,6 +793,9 @@ footer {
 			padding-top: rem-calc(3);
 			padding-left: rem-calc(30);
 			padding-right: 0;
+      &.active {
+        font-weight: 600;
+      }
 		}
 
 	}

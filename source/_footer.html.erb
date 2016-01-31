@@ -81,10 +81,10 @@
     <div class="row">
       <div class="medium-12 columns">
         <ul class="menu align-right">
-          <li><a href="/contact">Contact</a></li>
-          <li><a target="_blank" href="https://calendly.com/jamesstone/1-2-1">Schedule Session</a></li>
-          <li><a href="/privacy">Resource Center</a></li>
-          <li class="active"><a href="/">Home</a></li>
+          <li><a <%= 'class="active" ' if current_page.data.active_nav == 'contact' %> href="/contact">Contact</a></li>
+          <li><a <%= 'class="active" ' if current_page.data.active_nav == 'schedule' %> target="_blank" href="https://calendly.com/jamesstone/1-2-1">Schedule Session</a></li>
+          <li><a <%= 'class="active" ' if current_page.data.active_nav == 'resource' %> href="/resource-center">Resource Center</a></li>
+          <li><a <%= 'class="active" ' if current_page.data.active_nav == 'home' %> href="/">Home</a></li>
         </ul>
         <p>Copyright 2009-2016, James Stone Intermedia, All Rights Reserved.</p>
       </div>
