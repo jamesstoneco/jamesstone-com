@@ -17,7 +17,7 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="Asset-Prep" sketch:type="MSArtboardGroup" transform="translate(-687.000000, -215.000000)">
             <g id="js-logo-white-text" sketch:type="MSLayerGroup" transform="translate(687.000000, 215.000000)">
-                <text id="text" fill="white" filter="url(#filter-1)" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="13" font-weight="600" line-spacing="14" letter-spacing="0.928571403">
+                <text id="text" fill="white" filter="url(#filter-1)" sketch:type="MSTextLayer" style="font-family: 'proxima-nova','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" font-size="13" font-weight="600" line-spacing="14" letter-spacing="0.928571403">
                     <tspan x="68" y="19" fill="#FFFFFF">James Stone</tspan>
                     <tspan x="68.013" y="33" font-weight="300" fill="#F0F9FF">Scalable ZURB Foundation Solutions</tspan>
                 </text>

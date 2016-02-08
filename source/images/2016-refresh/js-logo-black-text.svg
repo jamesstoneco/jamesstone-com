@@ -8,10 +8,10 @@
         <g id="JS---Home" sketch:type="MSArtboardGroup" transform="translate(-566.000000, -2650.000000)">
             <g id="Footer" sketch:type="MSLayerGroup" transform="translate(-2.000000, 2522.000000)">
                 <g id="js-logo-black-text" transform="translate(568.000000, 128.000000)">
-                    <text id="James-Stone" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="13" font-weight="600" line-spacing="14" letter-spacing="0.9" fill="#66655D">
+                    <text id="James-Stone" sketch:type="MSTextLayer" style="font-family: 'proxima-nova','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" font-size="13" font-weight="600" line-spacing="14" letter-spacing="0.9" fill="#66655D">
                         <tspan x="68" y="19">James Stone</tspan>
                     </text>
-                    <text id="James-Stone" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="13" font-weight="300" line-spacing="14" letter-spacing="0.9" fill="#66655D">
+                    <text id="James-Stone" sketch:type="MSTextLayer" style="font-family: 'proxima-nova','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" font-size="13" font-weight="300" line-spacing="14" letter-spacing="0.9" fill="#66655D">
                         <tspan x="68.013" y="33" font-weight="260">Scalable ZURB Foundation Solutions</tspan>
                     </text>
                     <g id="logo-muli-+-Scalable-ZURB" sketch:type="MSShapeGroup">
