@@ -34,11 +34,15 @@
     <div ng-controller="MembershipCtrl">
 
 
-        <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "" }) %> </div>
+      <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "" }) %> </div>
+      
+      <div class="row column"> 
+        <h2 class="text-center"><%= current_page.data.title %></h2> 
+      </div>
 
-<div class="row align-center">
-  <div class="column medium-8"><%= yield %></div>
-</div>
+      <div class="row align-center">
+        <div class="column medium-8"><%= yield %></div>
+      </div>
       <%= partial "footer" %>
 
       <%= javascript_include_tag  "application", :defer => "defer" %>
