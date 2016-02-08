@@ -27,6 +27,9 @@ end
 # Word frequency sort:
 activate :similar
 
+activate :syntax, :line_numbers => true
+
+
 # set :markdown_engine, :redcarpet
 # set :markdown, renderer: toc_renderer, with_toc_data: true
 

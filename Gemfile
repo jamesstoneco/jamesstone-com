@@ -12,6 +12,7 @@ gem "middleman"
 gem "builder"
 gem "redcarpet"
 gem "middleman-blog"
+gem "middleman-syntax"
 gem "middleman-autoprefixer"
 gem "slim"
 gem 'sanitize'
