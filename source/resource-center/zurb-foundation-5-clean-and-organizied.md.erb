@@ -1,0 +1,427 @@
+---
+title: "ZURB Foundation 5: Clean + Organized"
+seo_desc: "In this presentation I share my best practices working with ZURB Foundation. Keep your projects clean and organized and make your code more maintainable and readable."
+pageable: false
+per_page: 8
+active_nav: home
+video_headline: "Top-shelf screencasts that you won’t wear out"
+article_headline: "ZURB Foundation Resource Center"
+error_noresults: "No results found. Try different or fewer keywords."
+article_view: "Read Article"
+article_more: "More Articles"
+active_nav: resource
+layout: resource
+---
+
+
+<h2 class="text-center">ZURB Foundation 5: Clean + Organized</h2>
+
+<center>
+  <iframe src="//www.slideshare.net/slideshow/embed_code/key/MykWsMZWj98LYY" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/JAMESSTONEco/zurb-foundation-5-clean-organized" title="ZURB Foundation 5: Clean + Organized" target="_blank">ZURB Foundation 5: Clean + Organized</a> </strong> from <strong><a href="//www.slideshare.net/JAMESSTONEco" target="_blank">James Stone</a></strong> </div>
+</center>
+
+>> In this presentation I share my best practices working with ZURB Foundation. Keep your projects clean and organized and make your code more maintainable and readable.
+
+---
+
+# A **mostly** css framework
+
+* jQuery + JS: required by some components
+* Sass: CSS Preprocessor
+* Everything On by Default
+
+---
+
+# The Basics
+
+---
+
+# JavaScript
+
+* Individual Imports Per Component
+* Import jQuery First
+* Activate *FastClick.js* for better mobile ux
+* Use *DEFER* Attribute
+
+---
+
+# Use Sass
+
+* Allows you to quickly "theme"
+* Easily upgradeable via Bower
+* Extend ZURB Components with *@mixins*
+
+---
+
+## _**Presentational Classes**_
+
+---
+
+# Presentational Classes
+
+* always use *.small-12* instead of .medium-12 or .large-12
+* always start with the medium grid (unless mobile first)
+* then refine small + large as needed
+* if radically different use visibility classes
+
+---
+
+# be consistent
+
+.show-for-small-only _**vs.**_ .hide-for-small-only
+
+.hide-for-small-only _**vs.**_ .show-for-medium-up
+
+**pick one – consistency is key – keep the order keep the form**
+
+---
+
+# word order
+
+class=" *small-8 medium-9 large-10 columns small-centered* "
+
+grid, columns, grid modifiers
+small to large
+offset, centered, push/pull
+
+---
+
+# omit anything you can
+
+*small-centered* medium-centered large-uncentered
+
+*small-centered medium-uncentered* large-uncentered
+
+*small-12* medium-12 large-12
+
+---
+
+# when classes go bad
+
+small-8 columns medium-offset-2 small-centered medium-uncentered large-pull-4
+
+**maybe it's time for a @mixin**
+
+---
+
+![inline](http://imgs.xkcd.com/comics/good_code.png)
+
+source: xkcd.com/844
+
+---
+
+# *CSS*
+
+### **OOCSS BEM Something Else?**
+
+---
+
+# CSS
+
+* Use OOCSS Principals when it makes sense
+* Follow ZURB Foundation Naming Conventions (BEM is out)
+* Great Reference: SMACSS Book
+
+**If you want to go full BEM – just use the sass mixins**
+
+---
+
+# Sass Workflow
+* Grunt
+* Libsass (no Sass 3.3-3.4 features)
+* Sourcemaps or Inline Comments
+* Autoprefixer (config for sourcemaps)
+* Development vs. Production
+
+---
+
+# Sass Organization - app.scss
+
+    1. Brand Variables
+    2. ZURB Foundation Overrides
+    3. Foundation Imports
+    4. Components
+    5. Modules (Views, Templates)
+    6. Sitewide
+    7. Etc.
+    8. Live Prototyping
+
+---
+
+``` scss
+/********************************/
+/* ~/scss/brand/_variables.scss */
+/********************************/
+
+// set common colors and calculations
+$brand-light-blue: lighten($brand-blue, 20%);
+$brand-dark-gray-text: #333333;
+// set any other globals
+$brand-spacing: rem-calc(20);
+
+```
+
+---
+
+``` scss
+/********************************/
+/* ~/scss/brand/_settings.scss */
+/********************************/
+
+// copy and paste from foundation/_settings.scss
+$primary-color: $brand-light-blue;
+// refactor same values or colors into brand/vars
+
+```
+
+---
+
+_\_settings.scss_
+
+* not to be confused with the foundation/foundation/\_settings.scss
+* no dead sass vars
+* these can change from time-to-time, easy upgrade
+* can be thought of as the theme, skin, look of site
+* be careful, changes everything sitewide
+
+---
+
+# foundation imports
+
+* just pull from bower\_components/\_foundation.scss
+* turn on / off what you need for performance
+* to leave @mixins set: 
+$include-html-classes or include-html-n-classes
+* in theory they all work
+
+---
+
+# quicktip
+
+for rapid prototyping leave *// @import "foundation";* and or *// $include-html-classes: true;* at the top and commented out.
+
+Then just uncomment when prototyping.
+
+Recomment and adjust when done.
+
+---
+
+_**Components**_ **blocks of html + css used in more than one page**
+_**Modules**_ **everything that is page sepcific**
+_**Sitewide**_ **single elements / selectors on more than one page**
+_**Shame/Drupalisms/etc.**_ **stuff that doesn't fit appropriately named**
+_**Prototype**_ **work fast in app.scss but find it a home fast**
+
+---
+
+# **components _WWZD?_**
+
+---
+
+``` html
+<a class="button small secondary disabled"></a>
+<button class="small secondary disabled"></button>
+
+<ul class="button-group">
+  <li><a class="button">Lorem.</a></li>
+  <li><a class="button">Quo.</a></li>
+  <li><a class="button">Reiciendis.</a></li>
+</ul>
+
+```
+
+---
+
+## say what it is
+## *say it the __ZURB__ way*
+## KISS
+
+---
+
+``` scss
+$vars: true;
+@function magic-calc($some-value: true) { @return }
+@mixin my-component-base($some-value: true) { // css }
+
+ul.my-component {
+  & li {
+    & a.button {
+      &.disabled {
+        // ...
+      }
+    }
+  }
+}
+
+```
+---
+
+# *nesting*
+
+---
+
+# sass is pretty smart
+
+``` scss
+ul.my-component { }
+ul.my-component li { }
+ul.my-component li a.button { }
+ul.my-component li a.button.disabled { }
+```
+
+## **makes refactoring class names fast and easy**
+
+---
+
+``` scss
+my-component, another-component a {
+  & small {
+  }
+}
+```
+becomes
+
+``` scss
+my-component small { }
+another-component a small { }
+```
+watch out for
+
+``` scss
+my-component {
+  & p, & a { /* each selector needs an & */ }
+}
+```
+---
+
+# modules
+
+* same structure, same process, only the scope is different
+* based on project structure: views, templates, pages, etc.
+
+
+
+``` css
+/* component */
+.everything-else
+ul.my-component>li>a
+.everything-else
+
+/* module, wrap entire page with a div */
+.view-index-find>
+  .everything-else
+```
+
+---
+
+# naming conventions
+
+* make it easy to find, have a direct 1-to-1 correlation
+* keep the list alphabetical
+*scss/view/index/\_find.scss*
+*scss/view/partial/auth/\_header.scss*
+*scss/page/about-us/\_mission.scss*
+*scss/template/blog/\_article.scss*
+
+---
+# example app.scss
+
+``` scss
+@import "some-app/brand/defaults";
+@import "some-app/brand/settings";
+@import "settings"; // DO NOT MODIFY
+
+// For troubleshooting or prototyping, uncomment line below
+// @import "foundation";
+```
+
+---
+
+``` scss
+// Performance: uncomment above and comment unused components so they don't generate CSS
+//@import "foundation/components/accordion";
+@import "foundation/components/alert-boxes";
+@import "foundation/components/block-grid";
+@import "foundation/components/breadcrumbs";
+@import "foundation/components/button-groups";
+@import "foundation/components/buttons";
+//@import "foundation/components/clearing";
+//@import "foundation/components/dropdown";
+//@import "foundation/components/dropdown-buttons";
+//@import "foundation/components/flex-video";
+@import "foundation/components/forms";
+@import "foundation/components/grid";
+@import "foundation/components/inline-lists";
+//@import "foundation/components/joyride";
+```
+
+---
+
+``` scss
+//@import "foundation/components/keystrokes";
+@import "foundation/components/labels";
+// @import "foundation/components/magellan";
+@import "foundation/components/orbit";
+@import "foundation/components/pagination";
+@import "foundation/components/panels";
+//@import "foundation/components/pricing-tables";
+@import "foundation/components/progress-bars";
+@import "foundation/components/reveal";
+//@import "foundation/components/side-nav";
+//@import "foundation/components/split-buttons";
+@import "foundation/components/sub-nav";
+@import "foundation/components/switches";
+//@import "foundation/components/tables";
+@import "foundation/components/tabs";
+@import "foundation/components/thumbs";
+@import "foundation/components/tooltips";
+@import "foundation/components/top-bar";
+@import "foundation/components/type";
+//@import "foundation/components/offcanvas";
+@import "foundation/components/visibility";
+```
+
+---
+
+``` scss
+// VIEWS
+@import "some-app/view/about-us";
+@import "some-app/view/article";
+@import "some-app/view/become-a-member";
+@import "some-app/view/contact";
+@import "some-app/view/create-account";
+@import "some-app/view/footer";
+@import "some-app/view/header";
+@import "some-app/view/index";
+@import "some-app/view/share";
+@import "some-app/view/verify";
+```
+
+---
+
+``` scss
+// COMPONENTS
+@import "some-app/component/audio-player";
+@import "some-app/component/card";
+@import "some-app/component/datepicker";
+@import "some-app/component/progress";
+@import "some-app/component/rating";
+@import "some-app/component/sidebar";
+@import "some-app/component/slider";
+@import "some-app/component/timeline";
+@import "some-app/component/triangle";
+@import "some-app/component/user-profile";
+@import "some-app/component/visualization";
+
+// SITEWIDE
+
+@import "some-app/drupalisms";
+@import "some-app/sitewide";
+
+```
+
+---
+
+## _**JamesStone.com**_
+### __@JAMESSTONEco__
+
