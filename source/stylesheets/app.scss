@@ -670,35 +670,35 @@ section.bling {
 		@include breakpoint(medium) { 
       @include flex-grid-column(1);
       padding: 0;
-       }
-		text-align: center;
-		span {
-			display: inline-block;
-			@include breakpoint(small-only) {
-				padding-top: rem-calc(20);
-			}
-			@include breakpoint(medium) {
-				padding-top: rem-calc(43);
-				padding-bottom: rem-calc(43);
-			}
-			text-transform: uppercase;
-			font-size: rem-calc(15);
-			font-weight: 600;
-			color: $brownish-grey;
-		}
-		@include breakpoint(medium) {
-			&:nth-child(2) { margin-top: rem-calc(44); }
-			&:nth-child(3) { margin-top: rem-calc(25); }
-			&:nth-child(4) { margin-top: rem-calc(45); }
-			&:nth-child(5) { 
-				margin-top: rem-calc(45);
-				text-align: right;
-			}
-		}
-		@include breakpoint(small only) {
-			margin-bottom: rem-calc(20);
-		}
-	}
+    }
+    text-align: center;
+    span {
+     display: inline-block;
+     @include breakpoint(small-only) {
+      padding-top: rem-calc(20);
+    }
+    @include breakpoint(medium) {
+      padding-top: rem-calc(43);
+      padding-bottom: rem-calc(43);
+    }
+    text-transform: uppercase;
+    font-size: rem-calc(15);
+    font-weight: 600;
+    color: $brownish-grey;
+  }
+  @include breakpoint(medium) {
+   &:nth-child(2) { margin-top: rem-calc(44); }
+   &:nth-child(3) { margin-top: rem-calc(25); }
+   &:nth-child(4) { margin-top: rem-calc(45); }
+   &:nth-child(5) { 
+    margin-top: rem-calc(45);
+    text-align: right;
+  }
+}
+@include breakpoint(small only) {
+ margin-bottom: rem-calc(20);
+}
+}
 
 }
 
@@ -769,50 +769,50 @@ footer {
 	padding-top: rem-calc(40);
 	padding-top: rem-calc(50);
   p {
-font-size: rem-calc(14);
+    font-size: rem-calc(14);
   }
-	h2 {
-		color: $brownish-grey;
-		font-weight: 600;
-		font-size: rem-calc(16);
-		margin-bottom: rem-calc(29);
-		text-align: right;
-
-	}
-	hr {
-		margin: 0;
-		padding: 0;
-		border-color: $pale-grey;
-		max-width: 100%;
-	}
-	a {
-		color: $cement;
-		font-size: rem-calc(14);
-		font-weight: 300;
-	}
-	ul {
-		list-style-type: none;
-		margin-left: 0;
-		margin-bottom: rem-calc(50);
-		li {
-			margin-bottom: rem-calc(16);
-			text-align: right;
-		}
-	}
-
-	.sub-footer {
-		padding-top: rem-calc(16);
-		font-size: rem-calc(14);
-		ul.menu li a {
-			padding-top: rem-calc(3);
-			padding-left: rem-calc(30);
-			padding-right: 0;
-      &.active {
-        font-weight: 600;
-      }
-    }
+  h2 {
+    color: $brownish-grey;
+    font-weight: 600;
+    font-size: rem-calc(16);
+    margin-bottom: rem-calc(29);
+    text-align: right;
 
   }
+  hr {
+    margin: 0;
+    padding: 0;
+    border-color: $pale-grey;
+    max-width: 100%;
+  }
+  a {
+    color: $cement;
+    font-size: rem-calc(14);
+    font-weight: 300;
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: rem-calc(50);
+    li {
+     margin-bottom: rem-calc(16);
+     text-align: right;
+   }
+ }
+
+ .sub-footer {
+  padding-top: rem-calc(16);
+  font-size: rem-calc(14);
+  ul.menu li a {
+   padding-top: rem-calc(3);
+   padding-left: rem-calc(30);
+   padding-right: 0;
+   &.active {
+    font-weight: 600;
+  }
+}
+
+}
 }
 
 
@@ -1115,10 +1115,10 @@ select, input[type="text"], input[type="tel"], input[type="email"], textarea {
   }
 
 
-footer .small-articles .row {
-  padding-left: 25px;
-}
-footer .small-articles .columns {
+  footer .small-articles .row {
+    padding-left: 25px;
+  }
+  footer .small-articles .columns {
   // background: #f00;
   padding: 0;
   & > p {

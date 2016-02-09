@@ -36,8 +36,26 @@
 
       <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "" }) %> </div>
       
-      <div class="row column"> 
-        <h2 class="text-center"><%= current_page.data.title %></h2> 
+
+<!--       <nav aria-label="You are here:" role="navigation" style="position: absolute; top: 10px; left: 50px;">
+        <ul class="breadcrumbs">
+          <li><a href="/resource-center">Resource Center</a></li>
+          <li>
+            <span class="show-for-sr">Current: </span> <%= current_page.data.title %>
+          </li>
+        </ul>
+      </nav>
+ -->
+    <div class="row align-center">
+      <div class="column medium-4">
+        <p class="text-center">
+          <img src="<%= current_page.data.featured_image %>" alt="">
+        </p>
+      </div>
+    </div>
+
+      <div class="row"> 
+        <div class="column small-12"><h2 class="text-center"><%= current_page.data.title %></h2> </div>
       </div>
 
       <div class="row align-center">
