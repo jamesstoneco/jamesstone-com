@@ -18,38 +18,42 @@ layout: contact
 
       <form name="contact" data-abide novalidate netlify netlify-honeypot="bot-field">
 
-        <div data-abide-error class="callout alert" style="display: none;">
-          <p>There are some errors in your form.</p>
+        <div data-abide-error class="alert callout" style="display: none;">
+          <p class="text-center">You must fill out all required information</p>
         </div>
-
 
         <div class="row">
           <div class="column medium-6">
 
             <label for="name">Name*
               <input name="name" type="text" required>
-              <!-- <span class="form-error"> Yo, you had better fill this out, it's required. </span> -->
+              <span class="form-error">
+              Name is required.
+              </span>
             </label>
 
             <label for="title">Title</label>
             <input name="title" type="text">
 
+            <label for="phone">Phone Number</label>
+            <input name="phone" type="tel">
+
             <p class="hide"><label>Bot field: <input name="bot-field"></label></p>
+
+          </div>
+          <div class="column medium-6">
+
+            <label for="email">Email*
+              <input name="email" type="email" required>
+            </label>
 
             <label for="company">Company</label>
             <input name="company" type="text">
-          </div>
-          <div class="column medium-6">
 
             <label for="website">Website</label>
             <input name="website" type="text">
 
-            <label for="email">Email*
-            <input name="email" type="email" required>
-            </label>
 
-            <label for="phone">Phone Number</label>
-            <input name="phone" type="tel">
           </div>
         </div>
 
@@ -59,13 +63,13 @@ layout: contact
 
 
         <label for="subject">Subject*
-        <input name="subject" type="text" required>
+          <input name="subject" type="text" required>
         </label>
 
 
 
         <label for="message">Message*
-        <textarea name="message" id="" cols="30" rows="10" required></textarea>
+          <textarea name="message" id="" cols="30" rows="10" required></textarea>
         </label>
 
         <p class="text-center">

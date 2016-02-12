@@ -35,7 +35,8 @@ $dark-sky-blue: #54cddf;
 $bright-orange: #ff6909;
 
 
-$primary-color: $algae-green;
+$primary-color: $dark-sky-blue;
+$info-color: $bright-orange;
 
 @import 'settings';
 
@@ -46,20 +47,19 @@ $global-weight-normal: 300;
 // $global-font-size: 112.5%;
 
 
-@import 'foundation';
 // @import 'motion-ui';
 
 // abide settings
 
-// $abide-inputs Boolean true  
+$abide-inputs: true;
 // Sets if error styles should be added to inputs.
-// $abide-labels Boolean true  
+$abide-labels: true;
 // Sets if error styles should be added to labels.
 // $input-background-invalid Color $alert-color  
 // Background color to use for invalid text inputs.
-$form-label-color-invalid: $pale-teal;
+$form-label-color-invalid: $dark-sky-blue;
 // Color to use for labels of invalid inputs.
-$input-error-color: $pale-teal;
+$input-error-color: $dark-sky-blue;
 // Default font color for form error text.
 // $input-error-font-size  Number  rem-calc(12)  
 // Default font size for form error text.
@@ -68,6 +68,7 @@ $input-error-color: $pale-teal;
 
 
 
+@import 'foundation';
 
 // @include foundation-everything; // blanket include
 
@@ -936,6 +937,7 @@ footer,
   }
 }
 
+section.contact:before, 
 .sub-footer:before {
   margin: 0;
 }
@@ -1063,19 +1065,36 @@ padding: 0;
 section.contact {
   padding-top: 100px;
   padding-bottom: 100px;
+  .alert.callout {
+    background: $dark-sky-blue;
+    color: $white;
+    border: none;
+    font-weight: 600;
+  }
+
+  .is-invalid-input {
+    border-color: $dark-sky-blue !important;
+  }
+  .is-invalid-label {
+    font-weight: 600;
+  }
+
   input[type="submit"].button {
     padding: rem-calc(12 89 12 88);
     font-size: rem-calc(15);
     font-weight: 600;
     margin-bottom: rem-calc(20);
-    background: $algae-green;
     border-radius: 4px;
+    background: $bright-orange;
+    margin-right: 0;
   }
   textarea {
     margin-bottom: 35px;
   }
   h2 {
     margin-bottom: 82px;
+  }
+  .button {
   }
   p {
     margin-bottom: 50px;
