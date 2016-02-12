@@ -109,6 +109,11 @@ $input-error-color: $dark-sky-blue;
 @include foundation-tooltip;
 @include foundation-top-bar;
 
+// slick imports
+
+@import "slick";
+@import "slick-theme";
+
 
 @mixin bg-hack($bg-color, $bg-opacity) {
 
@@ -924,15 +929,15 @@ footer,
   position: relative;
   &:before {
 
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 0;
-  border-top: 2px dashed $pinkish-grey;
-  margin-left: 50px;
-  margin-right: 50px;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 0;
+    border-top: 2px dashed $pinkish-grey;
+    margin-left: 50px;
+    margin-right: 50px;
 
   }
 }
@@ -965,35 +970,48 @@ footer .js-logo {
 }
 
 section.testimonials {
+  text-align: center;
   padding-top: 100px;
-  padding-bottom: 100px;
+  // padding-bottom: 100px;
+  padding-bottom: 50px;
   h2 {
     margin-bottom: 90px;
   }
   .image-wrapper {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    right: 0;
+    text-align: center !important;
+    // position: absolute;
+    // top: -40px;
+    // left: 0;
+    // right: 0;
 // background: #f00;
-text-align: center;
+margin-bottom: 20px;
 
 }
 img { 
   width: 80px;
   height: 80px;
   border-radius: 9999px;
+  display: inline-block; // to override slick
 }
 .card {
   position: relative;
   background: $white;
-  border: solid 1px $pale-grey;
+  // border: solid 1px $pale-grey;
   border-radius: 4px;
   padding-top: 65px;
   padding-left: 45px;
   padding-right: 45px;
   margin-left: 45px;
   margin-right: 45px;
+  box-shadow: 2px 2px 4px 0 #d3d3d3;
+  margin-top: 3px;
+  margin-bottom: 50px;
+  &.active {
+    box-shadow: 0 19px 38px 0 rgba(214, 214, 214, 0.5), 0 15px 12px 0 rgba(214, 214, 214, 0.5);
+    border: dashed 1px $pinkish-grey;
+  // margin-bottom: 50px;
+  }
+
 }
 p { 
   text-align: center;
@@ -1184,3 +1202,21 @@ img.js-profile {
   margin-bottom: 20px;
 }
 
+
+
+// slick prototype below
+.slick-prev, .slick-next, .slick-prev:hover, .slick-next:hover {
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 37px 21px;
+  height: 37px;
+  width: 21px;
+}
+.slick-prev, .slick-prev:hover {
+  left: -105px;
+  background: url('/images/2016-refresh/slider-arrow-prev.svg');
+}
+.slick-next, .slick-next:hover {
+  background: url('/images/2016-refresh/slider-arrow-next.svg');
+  right: -105px;
+}

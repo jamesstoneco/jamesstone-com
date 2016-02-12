@@ -6,11 +6,12 @@
     <h2 class="text-center"><%= data.widgets.testimonials_headline %></h2>
   </div>
 
-  <div class="row align-center">
-    <div class="column medium-11 small-12"><div class="row align-stretch">
-      <% data.widgets.testimonials[0..1].each do | t | %>
-      <div class="column small-12 medium-6" style="display: flex;">
-        <div class="card">
+<div class="row">
+  <div class="column small-12">
+    <slick infinate="true" touch-move="true" dots="true" speed="700" slides-to-show="2" touch-move="false" slides-to-scroll="1" adaptive-height="false">
+    
+      <% data.widgets.testimonials.each do | t | %>
+        <div class="card active">
           <div class="image-wrapper">
             <img src="<%= t.image_url %>" alt="">
           </div>
@@ -18,12 +19,11 @@
             <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
           </p>
           <p><%= t.text %></p>
-          <p><%= t.name %><span class="company">, <%= t.company %></span></p>
+          <p><%= t.name %>, <%= t.title %> <br>
+          <a target="_blank" href="<%= t.company_url %>"><span class="company"><%= t.company %></span></a></p>
         </div>
-      </div>
       <% end %>
-    </div>
+    </slick>
   </div>
-</div>
 </div>
 </section>

@@ -13,6 +13,7 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require jquery/dist/jquery
 //= require angular/angular
 // require ui-router/release/angular-ui-router
 //= require firebase/firebase-debug
@@ -29,6 +30,8 @@
 //= require moment/min/moment.min
 //= require lunr.min
 //= require angular-scroll/angular-scroll.js
+//= require slick-carousel/slick/slick
+//= require angular-slick/dist/slick
 // require_directory .
 
 
@@ -39,6 +42,7 @@ var app = angular.module('memberApp', [
   'oblador.lazytube',
   'autocomplete',
   'duScroll',
+  'slick'
   ]);
 
 app.controller('ArticlesCtrl', function($scope, $http, $window) {

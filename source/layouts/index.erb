@@ -20,6 +20,10 @@
 
 <body>
 
+  <div ng-app="memberApp">
+    <div ng-controller="MembershipCtrl">
+
+
       <section class="hero index">
         <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "alt" }) %> </div>
         <div class="row">
@@ -34,5 +38,11 @@
 
       <%= partial "footer" %>
 
+
+
+    </div>
+  </div>
+
+  <%= javascript_include_tag  "application", :defer => "defer" %>
 </body>
 </html>
