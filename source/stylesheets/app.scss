@@ -922,6 +922,7 @@ padding: 0;
 section.contact, 
 section.iterate, 
 section.testimonials, 
+section.case-studies, 
 section.promo, 
 section.bling, 
 footer, 
@@ -1217,6 +1218,7 @@ img.js-profile {
 
 
 
+
 // slick prototype below
 .slick-prev, .slick-next, .slick-prev:hover, .slick-next:hover {
   background-repeat: no-repeat;
@@ -1232,4 +1234,13 @@ img.js-profile {
 .slick-next, .slick-next:hover {
   background: url('/images/2016-refresh/slider-arrow-next.svg');
   right: -105px;
+}
+
+
+.icon-thumbs-up {
+  margin-bottom: 10px;
+}
+
+.flush-bottom {
+  margin-bottom: 0 !important;
 }
