@@ -1,0 +1,27 @@
+  <% if defined?(add_class) %>
+  <section class="resource-center  <%= add_class %>">
+   <% else %>
+   <section class="resource-center">
+    <% end %>
+
+    <div class="column-row">
+      <h2 class="text-center"><%= data.widgets.resource_center_headline %></h2>
+    </div>
+
+    <div class="row">
+      <div class="column small-12">
+        <slick infinate="true" touch-move="true" dots="false" speed="700" slides-to-show="2" touch-move="false" slides-to-scroll="1" adaptive-height="false">
+
+          <% data.widgets.resource_center.each do | t | %>
+          <div class="card active <%= t.image_class%>">
+            <p><%= t.text %></p>
+
+            <p class="text-center"><a href="<%= t.article_url %>" class="button hollow">Read Now</a></p>
+
+          </div>
+          <% end %>
+        </slick>
+      </div>
+    </div>
+  </section>
+

@@ -341,7 +341,7 @@ section.articles {
   padding-bottom: rem-calc(30);
   .row { margin-bottom: 0; }
   h2 {
-    color: $greyblue;
+    color: $primary-color;
     padding-top: rem-calc(59);
     padding-bottom: rem-calc(42);
   }
@@ -923,6 +923,8 @@ section.contact,
 section.iterate, 
 section.testimonials, 
 section.case-studies, 
+section.resource-center, 
+section.articles, 
 section.promo, 
 section.bling, 
 footer, 
@@ -944,7 +946,8 @@ footer,
 }
 
 section.contact:before, 
-.sub-footer:before {
+.sub-footer:before,
+section.resource-center.no-margin:before {
   margin: 0;
 }
 
@@ -979,7 +982,7 @@ section.testimonials {
 }
 
 }
-section.case-studies {
+section.case-studies, section.resource-center {
   img {
     margin-bottom: 20px;
   }
@@ -989,15 +992,28 @@ section.case-studies {
     border-color: $dark-sky-blue;
     color: $dark-sky-blue;
     margin-right: 0;
+    background: $white;
+    
     &:hover {
-    border-color: lighten($dark-sky-blue, 20%);
-    color: lighten($dark-sky-blue, 20%);
+      border-color: lighten($dark-sky-blue, 20%);
+      color: lighten($dark-sky-blue, 20%);
+    background: $white;
 
     }
   }
 }
 
-section.testimonials, section.case-studies {
+section.resource-center {
+  p {
+    font-weight:600;
+    text-align: center;
+  }
+  .button {
+    background: $white;
+  }
+}
+
+section.testimonials, section.case-studies, section.resource-center {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -1007,22 +1023,22 @@ section.testimonials, section.case-studies {
     margin-bottom: 20px;
   }
   img { display: inline-block; } // to override slick
-.card {
-  position: relative;
-  background: $white;
-  border-radius: 4px;
-  padding-top: 65px;
-  padding-left: 45px;
-  padding-right: 45px;
-  margin-left: 45px;
-  margin-right: 45px;
-  box-shadow: 2px 2px 4px 0 #d3d3d3;
-  margin-top: 3px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  &.active {
-    box-shadow: 0 19px 38px 0 rgba(214, 214, 214, 0.5), 0 15px 12px 0 rgba(214, 214, 214, 0.5);
-    border: dashed 1px $pinkish-grey;
+  .card {
+    position: relative;
+    background: $white;
+    border-radius: 4px;
+    padding-top: 65px;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-left: 45px;
+    margin-right: 45px;
+    box-shadow: 2px 2px 4px 0 #d3d3d3;
+    margin-top: 3px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    &.active {
+      box-shadow: 0 19px 38px 0 rgba(214, 214, 214, 0.5), 0 15px 12px 0 rgba(214, 214, 214, 0.5);
+      border: dashed 1px $pinkish-grey;
   // margin-bottom: 50px;
 }
 
@@ -1243,4 +1259,28 @@ img.js-profile {
 
 .flush-bottom {
   margin-bottom: 0 !important;
+}
+
+.bg-shuttle {
+  background: 
+  linear-gradient(
+    rgba(255,255,255, 0.80), 
+    rgba(255,255,255, 0.80)
+    ),
+  url('/images/2016-refresh/shuttle-launch.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% center !important;
+  background-size: 100% 100%, 70% auto !important;
+}
+
+.bg-projector {
+  background: 
+  linear-gradient(
+    rgba(255,255,255, 0.80), 
+    rgba(255,255,255, 0.80)
+    ),
+  url('/images/2016-refresh/illustration-projector-screen.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% center !important;
+  background-size: 100% 100%, 70% auto !important;
 }
