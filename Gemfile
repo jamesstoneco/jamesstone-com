@@ -7,7 +7,7 @@ source 'http://rubygems.org'
 gem "compass"
 gem "sass"
 
-gem "middleman"
+gem "middleman", "3.4.1"
 
 gem "builder"
 gem "redcarpet"

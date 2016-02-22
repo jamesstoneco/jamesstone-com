@@ -174,7 +174,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   compass
-  middleman
+  middleman (= 3.4.1)
   middleman-autoprefixer
   middleman-blog
   middleman-blog-similar
