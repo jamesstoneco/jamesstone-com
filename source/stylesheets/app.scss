@@ -153,6 +153,19 @@ p { font-size: rem-calc(18); }
 
 section.hero {
 
+  &.case-study {
+    background: $pale-grey;
+    @include breakpoint(small only) {
+      // height: 200px;
+      padding-bottom: 25px;
+      margin-bottom: 50px;
+    }
+    @include breakpoint(medium) {
+      // height: 620px;
+      padding-bottom: 25px;
+      margin-bottom: 50px;
+    }
+  }
   &.index {
     background: url('../images/2016-refresh/tedx-background.jpg');
     background-repeat: no-repeat;
@@ -179,156 +192,153 @@ section.hero {
         margin-top: rem-calc(120);
         font-size: 35px;
         line-height: 36px;
-// letter-spacing: 0.3px;
-margin-bottom: 20px;
-}
-p { 
-  text-shadow: 0 2px 2px $black-50;
-  font-size: 18px;
-  font-weight: 400;
-// line-height: 24px;
-// letter-spacing: 0.3px;
-}
-background-size: cover;
-background-position: bottom center;
-}
-.button {
-  font-size: rem-calc(15);
-  font-weight: 600;
-  width: rem-calc(240);
-  padding-top: rem-calc(12);
-  padding-bottom: rem-calc(12);
-  position: relative;
-  padding-left: 0;
-  margin:0;
-  padding-right: rem-calc(27);
-  &:after {
-    content: " ";
-    background: url('../images/2015-redesign/icon-down-arrow.svg');
-    background-repeat: no-repeat;
-    background-size: rem-calc(21 21);
-    background-position: top left;
-    height: rem-calc(25);
-    width: rem-calc(21);
-    position: absolute;
-    top: rem-calc(9);
-    right: rem-calc(35);
-  }
-}
+        margin-bottom: 20px;
+      }
+      p { 
+        text-shadow: 0 2px 2px $black-50;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      background-size: cover;
+      background-position: bottom center;
+    }
+    .button {
+      font-size: rem-calc(15);
+      font-weight: 600;
+      width: rem-calc(240);
+      padding-top: rem-calc(12);
+      padding-bottom: rem-calc(12);
+      position: relative;
+      padding-left: 0;
+      margin:0;
+      padding-right: rem-calc(27);
+      &:after {
+        content: " ";
+        background: url('../images/2015-redesign/icon-down-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: rem-calc(21 21);
+        background-position: top left;
+        height: rem-calc(25);
+        width: rem-calc(21);
+        position: absolute;
+        top: rem-calc(9);
+        right: rem-calc(35);
+      }
+    }
 
-}
-&.services {
-  background-image: url('../images/james-graffiti-wide.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% center;
-  h2 { margin-top: rem-calc(380); }
-  height: 660px;
-  .button {
-    font-size: rem-calc(15);
-    font-weight: 600;
-    width: rem-calc(181);
-    padding-top: rem-calc(12);
-    padding-bottom: rem-calc(12);
-    position: relative;
-    padding-left: 0;
-    margin:0;
-    padding-right: rem-calc(27);
-    &:after {
-      content: " ";
-      background: url('../images/2015-redesign/icon-down-arrow.svg');
-      background-repeat: no-repeat;
-      background-size: rem-calc(21 21);
-      background-position: top left;
-      height: rem-calc(25);
-      width: rem-calc(21);
-      position: absolute;
-      top: rem-calc(9);
-      right: rem-calc(35);
+  }
+  &.services {
+    background-image: url('../images/james-graffiti-wide.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% center;
+    h2 { margin-top: rem-calc(380); }
+    height: 660px;
+    .button {
+      font-size: rem-calc(15);
+      font-weight: 600;
+      width: rem-calc(181);
+      padding-top: rem-calc(12);
+      padding-bottom: rem-calc(12);
+      position: relative;
+      padding-left: 0;
+      margin:0;
+      padding-right: rem-calc(27);
+      &:after {
+        content: " ";
+        background: url('../images/2015-redesign/icon-down-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: rem-calc(21 21);
+        background-position: top left;
+        height: rem-calc(25);
+        width: rem-calc(21);
+        position: absolute;
+        top: rem-calc(9);
+        right: rem-calc(35);
+      }
     }
   }
-}
-&.about {
-  background-image: url('../images/james-new-headshot-wide.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% center;
-  h2 { margin-top: rem-calc(380); }
-  height: 660px;
-  .button {
-    font-size: rem-calc(15);
-    font-weight: 600;
-    width: rem-calc(181);
-    padding-top: rem-calc(12);
-    padding-bottom: rem-calc(12);
-    position: relative;
-    padding-left: 0;
-    margin:0;
-    padding-right: rem-calc(27);
-    &:after {
-      content: " ";
-      background: url('../images/2015-redesign/icon-down-arrow.svg');
-      background-repeat: no-repeat;
-      background-size: rem-calc(21 21);
-      background-position: top left;
-      height: rem-calc(25);
-      width: rem-calc(21);
-      position: absolute;
-      top: rem-calc(9);
-      right: rem-calc(35);
+  &.about {
+    background-image: url('../images/james-new-headshot-wide.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% center;
+    h2 { margin-top: rem-calc(380); }
+    height: 660px;
+    .button {
+      font-size: rem-calc(15);
+      font-weight: 600;
+      width: rem-calc(181);
+      padding-top: rem-calc(12);
+      padding-bottom: rem-calc(12);
+      position: relative;
+      padding-left: 0;
+      margin:0;
+      padding-right: rem-calc(27);
+      &:after {
+        content: " ";
+        background: url('../images/2015-redesign/icon-down-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: rem-calc(21 21);
+        background-position: top left;
+        height: rem-calc(25);
+        width: rem-calc(21);
+        position: absolute;
+        top: rem-calc(9);
+        right: rem-calc(35);
+      }
     }
   }
-}
-&.get-started {
-  background-image: url('../images/bio/zf-camp-wide.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% center;
-  h2 { margin-top: rem-calc(180); }
-  height: 400px;
-  .button {
-    font-size: rem-calc(15);
-    font-weight: 600;
-    width: rem-calc(181);
-    padding-top: rem-calc(12);
-    padding-bottom: rem-calc(12);
-    position: relative;
-    padding-left: 0;
-    margin:0;
-    padding-right: rem-calc(27);
-    &:after {
-      content: " ";
-      background: url('../images/2015-redesign/icon-down-arrow.svg');
-      background-repeat: no-repeat;
-      background-size: rem-calc(21 21);
-      background-position: top left;
-      height: rem-calc(25);
-      width: rem-calc(21);
-      position: absolute;
-      top: rem-calc(9);
-      right: rem-calc(35);
+  &.get-started {
+    background-image: url('../images/bio/zf-camp-wide.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% center;
+    h2 { margin-top: rem-calc(180); }
+    height: 400px;
+    .button {
+      font-size: rem-calc(15);
+      font-weight: 600;
+      width: rem-calc(181);
+      padding-top: rem-calc(12);
+      padding-bottom: rem-calc(12);
+      position: relative;
+      padding-left: 0;
+      margin:0;
+      padding-right: rem-calc(27);
+      &:after {
+        content: " ";
+        background: url('../images/2015-redesign/icon-down-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: rem-calc(21 21);
+        background-position: top left;
+        height: rem-calc(25);
+        width: rem-calc(21);
+        position: absolute;
+        top: rem-calc(9);
+        right: rem-calc(35);
+      }
     }
   }
-}
-h2, p {
-  color: #fff;
-  font-size: rem-calc(16);
-  text-align: center;
-}
-h2 { 
-  font-weight: 400;
-  padding: 0;
-  margin-bottom: rem-calc(15);
-  @include breakpoint(small only) {
-    font-size: rem-calc(20);
+  h2, p {
+    color: #fff;
+    font-size: rem-calc(16);
+    text-align: center;
   }
-  @include breakpoint(medium) {
-    font-size: rem-calc(30);
+  h2 { 
+    font-weight: 400;
+    padding: 0;
+    margin-bottom: rem-calc(15);
+    @include breakpoint(small only) {
+      font-size: rem-calc(20);
+    }
+    @include breakpoint(medium) {
+      font-size: rem-calc(30);
+    }
   }
-}
-p {
-  margin-bottom: rem-calc(25);
-}
+  p {
+    margin-bottom: rem-calc(25);
+  }
 }
 
 .round {
@@ -997,7 +1007,7 @@ section.case-studies, section.resource-center {
     &:hover {
       border-color: lighten($dark-sky-blue, 20%);
       color: lighten($dark-sky-blue, 20%);
-    background: $white;
+      background: $white;
 
     }
   }

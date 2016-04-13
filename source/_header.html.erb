@@ -2,7 +2,8 @@
   <nav class="<%= nav_class %>">
     <ul class="menu align-right hide-for-small-only">
       <li><a <%= 'class="active" ' if current_page.data.active_nav == 'contact' %> href="/contact">Contact</a></li>
-      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'schedule' %> target="_blank" href="https://calendly.com/jamesstone/1-2-1">Schedule Session</a></li>
+      <!-- <li><a <%= 'class="active" ' if current_page.data.active_nav == 'schedule' %> target="_blank" href="https://calendly.com/jamesstone/1-2-1">Schedule Session</a></li> -->
+      <li><a <%= 'class="active" ' if current_page.data.active_nav == 'casestudy' %>  href="/case-study/snowflake-stories">Case Studies</a></li>
       <li><a <%= 'class="active" ' if current_page.data.active_nav == 'resource' %> href="/resource-center">Resource Center</a></li>
       <li><a <%= 'class="active" ' if current_page.data.active_nav == 'home' %> href="/">Home</a></li>
     </ul>

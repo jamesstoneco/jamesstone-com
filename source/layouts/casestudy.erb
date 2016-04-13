@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/jamesstonecom" />
+  <link rel="author" href="//plus.google.com/+JamesStoneAuthorSpeakerDeveloperMediaArtist/posts"/>
+  <% test_seo_desc = current_page.data.seo_desc %>
+  <% if defined?(test_seo_desc) %>
+  <meta name="description" content="<%= current_page.data.seo_desc %>">
+  <% end %>
+  <title><%= current_page.data.title || "James Stone" %></title>
+  <%= stylesheet_link_tag "app" %>
+</head>
+
+<body>
+
+  <div ng-app="memberApp">
+    <div ng-controller="MembershipCtrl">
+
+
+      <section class="hero case-study">
+        <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "" }) %> </div>
+        <div class="row align-center">
+          <div class="column medium-6">
+
+            <img src="../images/case-study/snowflake-stories/site.png" alt="">
+            <h2><%= current_page.data.hero_headline %></h2>
+            <p><%= current_page.data.hero_subhead %></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="row align-center">
+        <div class="column medium-8">
+
+          <%= yield %>
+
+        </div>
+      </div>
+
+      <%= partial "footer" %>
+
+
+
+    </div>
+  </div>
+
+  <%= javascript_include_tag  "application", :defer => "defer" %>
+</body>
+</html>
