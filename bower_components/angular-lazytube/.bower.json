@@ -1,6 +1,6 @@
 {
   "name": "angular-lazytube",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "angular-lazytube.js",
   "ignore": [
     "**/.*",
@@ -19,13 +19,13 @@
     "angular-mocks": "^1.2.16"
   },
   "homepage": "https://github.com/oblador/angular-lazytube",
-  "_release": "0.2.2",
+  "_release": "0.2.3",
   "_resolution": {
     "type": "version",
-    "tag": "v0.2.2",
-    "commit": "cd37c2e87487aa0fe2e8052ea11063daee6a7a3d"
+    "tag": "v0.2.3",
+    "commit": "7a4cf55c99aa0fbbf96f2d72d0d9461c7dad99ad"
   },
-  "_source": "git://github.com/oblador/angular-lazytube.git",
+  "_source": "https://github.com/oblador/angular-lazytube.git",
   "_target": "~0.2.2",
   "_originalSource": "angular-lazytube"
 }
