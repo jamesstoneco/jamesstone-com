@@ -2,6 +2,7 @@
 title: "Case Study: Snowflake Stories LLC"
 layout: casestudy
 active_nav: casestudy
+site_image: "/images/case-study/snowflake-stories/site.png"
 ---
 
 ## Making Forms Fun Again

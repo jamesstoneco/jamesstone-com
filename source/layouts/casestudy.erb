@@ -28,10 +28,7 @@
         <div class="clearfix"> <%= partial(:header, :locals => { :nav_class => "" }) %> </div>
         <div class="row align-center">
           <div class="column medium-6">
-
-            <img src="../images/case-study/snowflake-stories/site.png" alt="">
-            <h2><%= current_page.data.hero_headline %></h2>
-            <p><%= current_page.data.hero_subhead %></p>
+            <img src="<%= current_page.data.site_image %>" alt="">
           </div>
         </div>
       </section>
