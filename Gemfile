@@ -10,16 +10,16 @@ gem "sass"
 gem "middleman"
 
 gem "builder"
-gem "redcarpet"
-gem "middleman-blog"
+# gem "redcarpet"
+# gem "middleman-blog"
 gem "middleman-autoprefixer"
-gem "slim"
-gem 'sanitize'
+# gem "slim"
+# gem 'sanitize'
 
 gem "middleman-livereload"
 
-gem "middleman-blog-similar"
+# gem "middleman-blog-similar"
 # gem 'levenshtein-ffi', :require => 'levenshtein'
 
-gem 'middleman-search'
+# gem 'middleman-search'
 # gem 'damerau-levenshtein'

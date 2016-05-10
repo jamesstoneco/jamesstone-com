@@ -5,32 +5,11 @@
     </div>
   </div>
   <div class="medium-3 columns">
-    <!-- <h3>More Episodes</h3> -->
-<ul class="vertical menu" data-accordion-menu>
-<li>
-  <a href="#">More Episodes</a>
-    <ul class="menu vertical nested">
       <% data.episodes.each do | ep | %>
-      <li>
-        <a href="/<%= ep.number %>">  
+        <a href="/<%= ep.number %>" class="button tiny hollow expanded <%= "secondary" unless ep.number == episode.number %> text-left">  
           Ep. <%= ep.number %>:
           <%= ep.title %>
         </a>
-      </li>
       <% end %>
-    </ul>
-</li>
-  </ul>  </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-<%= episode.youtube_id %>
-<%= episode %>

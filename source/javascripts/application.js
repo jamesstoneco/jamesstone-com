@@ -22,19 +22,20 @@
 
 
 // NG APP
-var app = angular.module('fcastsApp', [
-	'mm.foundation',
+var app = angular.module('fcastsApp', ['mm.foundation',
   'oblador.lazytube',
-  'duScroll',
+  'duScroll'
   ]);
 
-app.controller('fcastsCtrl', ['$scope' '$window', '$document',
-	function($scope, $window, $document) {
 
+// app.controller('MembershipCtrl', ['$scope', '$firebase', '$firebaseAuth', '$window', '$document',
+//   function($scope, $firebase, $firebaseAuth, $window, $document) {
+
+
+app.controller('FcastsCtrl', ['$scope', '$window', '$document',
+	function($scope, $window, $document) {
     $scope.scrollToId = function(targetId) {
       var el = angular.element(document.querySelector('#' + targetId));
       $document.scrollToElementAnimated(el, 0, 2000);
     }
-
-
   }]);

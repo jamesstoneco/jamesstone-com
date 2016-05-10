@@ -7,7 +7,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
     autoprefixer-rails (6.0.3)
       execjs
       json
@@ -35,14 +34,12 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    crass (1.0.2)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
     eventmachine (1.0.8)
     execjs (2.6.0)
-    fast-stemmer (1.0.2)
     ffi (1.9.10)
     haml (4.0.7)
       tilt
@@ -53,7 +50,6 @@ GEM
     i18n (0.7.0)
     json (1.8.3)
     kramdown (1.9.0)
-    libv8 (3.16.14.13)
     listen (3.0.4)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -71,14 +67,6 @@ GEM
     middleman-autoprefixer (2.6.1)
       autoprefixer-rails (~> 6.0.1)
       middleman-core (>= 3.3.3)
-    middleman-blog (3.5.3)
-      addressable (~> 2.3.5)
-      middleman-core (~> 3.2)
-      tzinfo (>= 0.3.0)
-    middleman-blog-similar (1.1.1)
-      fast-stemmer (~> 1.0.2)
-      middleman-blog (~> 3.5)
-      middleman-core (~> 3.2)
     middleman-core (3.4.0)
       activesupport (~> 4.1)
       bundler (~> 1.1)
@@ -95,10 +83,6 @@ GEM
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
       rack-livereload (~> 0.3.15)
-    middleman-search (0.4.0)
-      middleman-core (~> 3.2)
-      nokogiri (~> 1.5)
-      therubyracer (~> 0.12)
     middleman-sprockets (3.4.2)
       middleman-core (>= 3.3)
       sprockets (~> 2.12.1)
@@ -110,8 +94,6 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    nokogumbo (1.4.1)
-      nokogiri
     padrino-helpers (0.12.5)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.12.5)
@@ -126,16 +108,7 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (3.3.3)
-    ref (2.0.0)
-    sanitize (4.0.0)
-      crass (~> 1.0.2)
-      nokogiri (>= 1.4.4)
-      nokogumbo (= 1.4.1)
     sass (3.4.19)
-    slim (3.0.6)
-      temple (~> 0.7.3)
-      tilt (>= 1.3.3, < 2.1)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -146,10 +119,6 @@ GEM
     sprockets-sass (1.3.1)
       sprockets (~> 2.0)
       tilt (~> 1.1)
-    temple (0.7.6)
-    therubyracer (0.12.2)
-      libv8 (~> 3.16.14.0)
-      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -170,11 +139,8 @@ DEPENDENCIES
   compass
   middleman
   middleman-autoprefixer
-  middleman-blog
-  middleman-blog-similar
   middleman-livereload
-  middleman-search
-  redcarpet
-  sanitize
   sass
-  slim
+
+BUNDLED WITH
+   1.11.2

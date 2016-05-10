@@ -1,8 +1,5 @@
 require 'builder'
-require 'sanitize'
 require 'uri'
-require 'slim'
-require 'nokogiri'
 # require 'middleman-search/extension'
 
 
@@ -37,13 +34,6 @@ helpers do
   def nav_active(page)
     @page_id == page ? {:class => "disabled"} : {}
   end
-  def strip_html(str)
-    Sanitize.clean(str, :elements => ['p'])
-  end
-  def strip_all_html(str)
-    Sanitize.clean(str)
-  end
-
 end
 
 
@@ -61,7 +51,7 @@ set :trailing_slash, false
 set :js_assets_paths, [File.join(root, 'bower_components')]
 # set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss', 'bower_compononents/lazyYT')]
 # set :sass_assets_paths, [File.join(root, 'bower_components/foundation/scss')]
-set :sass_assets_paths, [File.join(root, 'bower_components/foundation-sites-6/scss'), File.join(root, 'bower_components/motion-ui')]
+set :sass_assets_paths, [File.join(root, 'bower_components/foundation-sites/scss'), File.join(root, 'bower_components/motion-ui')]
 
 
 
@@ -126,10 +116,10 @@ page "/template/*", :directory_index => false
 
 # redcarpet configuration
 
-set :markdown_engine, :redcarpet
-set :markdown,  :fenced_code_blocks => true,
-                :autolink => true,
-                :smartypants => true
+# set :markdown_engine, :redcarpet
+# set :markdown,  :fenced_code_blocks => true,
+#                 :autolink => true,
+#                 :smartypants => true
 
 
 data.episodes.each do |ep|
