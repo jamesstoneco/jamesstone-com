@@ -1,73 +1,6 @@
 
 <footer>
 
-  <div class="row">
-    <div class="medium-12 columns">
-
-
-      <div class="row">
-        <div class="medium-5 columns small-articles">
-
-          <h2>Recent Articles</h2>
-
-          <% page_articles('blog')[0..2].each do | article | %>
-
-          <% test_video          = article.data.video %>
-          <% test_video_type     = article.data.video_type %>
-          <% test_video_id       = article.data.video_id %>
-          <% test_featured_image = article.data.featured_image %>
-
-
-          <div class="row">
-            <div class="medium-3 columns">
-            <a href="<%= article.url %>">
-              <% image_url           = "" %>
-              <% if (defined?(test_video)) && (defined?(test_video_type)) && (defined?(test_video_id)) %>
-              <% if test_video == "true" %>
-              <% if test_video_type == "youtube" %>
-              <img class="yt-thumb" src="//img.youtube.com/vi/<%= test_video_id %>/maxresdefault.jpg" alt="">
-              <% end %>
-              <% elsif ( defined?(test_featured_image)) %>
-              <img src="<%= test_featured_image %>" alt="<%= article.title %>" style="">
-              <% end %>
-              <% end %>
-              </a>
-            </div>
-            <div class="medium-9 columns">
-              <p> <a href="<%= article.url %>"><%= article.title %></a> </p>
-            </div>
-          </div>
-
-
-          <% end %>
-
-        </div>
-        <div class="medium-2 columns medium-offset-3">
-          <h2>Useful Links</h2>
-
-
-          <ul>
-            <li><a target="_blank" href="https://clarity.fm/jamesstone">Book 15 Minutes</a></li>
-            <li><a href="/#videos">Videos</a></li>
-            <li><a href="/#articles">Articles</a></li>
-            <li><a href="/">Resources</a></li>
-          </ul>
-
-        </div>
-        <div class="medium-2 columns">
-          <h2>Follow Me</h2>
-
-          <ul>
-            <li><a target="_blank" href="https://www.youtube.com/channel/UCW1aqiJm20n2lDMp4Pr2myw">YouTube</a></li>
-            <li><a target="_blank" href="https://www.twitter.com/JAMESSTONEco">Twitter</a></li>
-            <li><a target="_blank" href="https://plus.google.com/+JamesStoneAuthorSpeakerDeveloperMediaArtist">Google Plus</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/jamesstoneco">LinkedIn</a></li>
-          </ul>  
-        </div>
-      </div>
-
-    </div> 
-  </div>
 
   <hr>
 
@@ -79,7 +12,6 @@
 
       <div class="sub-footer">
         <ul class="menu align-right">
-          <li><a href="/contact">Contact</a></li>
         <li><a href="/TODO">Comment Policy</a></li>
         <li><a href="/tos">Terms of Service</a></li>
         <li><a href="/privacy">Privacy Policy</a></li>

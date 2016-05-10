@@ -22,12 +22,13 @@ $grey-white: #dcdcdc;
 $steel-grey: #7f8c8d;
 $cement: #9f9e97;
 $white: #ffffff;
+$cta-orange: #FF6900;
 
-
-$primary-color: $topaz;
+// $primary-color: $topaz;
 
 @import 'settings';
 
+$primary-color: $cta-orange;
 
 
 @import 'foundation';
@@ -94,7 +95,8 @@ $primary-color: $topaz;
   section.hero {
 
   	&.index {
-  		background: url('../images/2015-redesign/background-ted.png');
+      // background: url('../images/2015-redesign/background-ted.png');
+  		background: url('../images/fc/hero-bg.jpg');
   		background-repeat: no-repeat;
   		@include breakpoint(small only) {
   			background-size: 200%;
@@ -487,6 +489,7 @@ section.membership-promo {
 		font-size: rem-calc(15);
 		font-weight: 600;
 		border: none;
+    // background:$cta-orange;
 	}
 }
 

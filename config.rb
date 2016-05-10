@@ -65,34 +65,34 @@ set :sass_assets_paths, [File.join(root, 'bower_components/foundation-sites-6/sc
 
 
 
-activate :blog do |blog|
-  # set options on blog
-  blog.name = "blog"
-  blog.prefix = "blog"
-  blog.permalink = ":title.html"
-  # Time.zone = "Paris"
-  Time.zone = "Pacific Time (US & Canada)"
-  blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
-  blog.layout = "blog"
-  blog.taglink = "tag/:tag.html"
-  blog.tag_template = "blog/tag.html"
-  blog.paginate = true
-  blog.page_link = "p:num"
-end
+# activate :blog do |blog|
+#   # set options on blog
+#   blog.name = "blog"
+#   blog.prefix = "blog"
+#   blog.permalink = ":title.html"
+#   # Time.zone = "Paris"
+#   Time.zone = "Pacific Time (US & Canada)"
+#   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
+#   blog.layout = "blog"
+#   blog.taglink = "tag/:tag.html"
+#   blog.tag_template = "blog/tag.html"
+#   blog.paginate = true
+#   blog.page_link = "p:num"
+# end
 
-activate :blog do |blog|
-  # set options on blog
-  blog.name = "daily-dispatch"
-  blog.prefix = "daily-dispatch"
-  blog.permalink = ":year/:month/:day/:title.html"
-  Time.zone = "Pacific Time (US & Canada)"
-  blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
-  blog.layout = "dailydispatch"
-  # blog.taglink = ":tag.html"
-  # blog.tag_template = "blog/tag.html"
-  # blog.paginate = true
-  # blog.page_link = "p:num"
-end
+# activate :blog do |blog|
+#   # set options on blog
+#   blog.name = "daily-dispatch"
+#   blog.prefix = "daily-dispatch"
+#   blog.permalink = ":year/:month/:day/:title.html"
+#   Time.zone = "Pacific Time (US & Canada)"
+#   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
+#   blog.layout = "dailydispatch"
+#   # blog.taglink = ":tag.html"
+#   # blog.tag_template = "blog/tag.html"
+#   # blog.paginate = true
+#   # blog.page_link = "p:num"
+# end
 
 
 
@@ -106,18 +106,18 @@ page "/redirects.html.erb", :layout => false
 # page '404.html', append_extension: false
 page "/404.html", :directory_index => false
 
-page "/blog/feed.xml", :layout => false
+# page "/blog/feed.xml", :layout => false
 
 page "/template/*", :directory_index => false
 
 
 # landing pages below
 
-page "/zurb-foundation-blueprints.html", :layout => "landing"
-page "/zurb-foundation-quick-reference.html", :layout => "landing"
-page "/advanced-zurb-foundation.html", :layout => "landing"
-page "/advanced-zurb-foundation-course.html", :layout => "landing"
-page "/free-zurb-foundation-course.html", :layout => "landing"
+# page "/zurb-foundation-blueprints.html", :layout => "landing"
+# page "/zurb-foundation-quick-reference.html", :layout => "landing"
+# page "/advanced-zurb-foundation.html", :layout => "landing"
+# page "/advanced-zurb-foundation-course.html", :layout => "landing"
+# page "/free-zurb-foundation-course.html", :layout => "landing"
 # page "/course/zurb-foundation-beyond-the-template/*", :layout => "locked"
 # page "/zurb-foundation-4-blueprints.html", :layout => "landing"
 # page "/zurb-foundation-4-blueprints-s.html", :layout => "landing"
@@ -130,6 +130,12 @@ set :markdown_engine, :redcarpet
 set :markdown,  :fenced_code_blocks => true,
                 :autolink => true,
                 :smartypants => true
+
+
+data.episodes.each do |ep|
+    proxy "/#{ep[:number]}.html", "/episodes/template.html", :layout => 'layout', :locals => { :episode => ep }, :ignore => true
+end
+
 
 
 # Build-specific configuration
@@ -150,16 +156,16 @@ configure :build do
   #   '//assets.jamesstone.co'.to_s
   # end
 
-  activate :search do |search|
-    search.resources = ['blog/', 'about/index.html',  'services/index.html']
-    search.index_path = 'api/lunr-index.json'
-    search.fields = {
-      title:   {boost: 100, store: true, required: true},
-      content: {boost: 50},
-      featured_image: {index: false, store: true},
-      url:     {index: false, store: true}
-    }
-  end
+  # activate :search do |search|
+  #   search.resources = ['blog/', 'about/index.html',  'services/index.html']
+  #   search.index_path = 'api/lunr-index.json'
+  #   search.fields = {
+  #     title:   {boost: 100, store: true, required: true},
+  #     content: {boost: 50},
+  #     featured_image: {index: false, store: true},
+  #     url:     {index: false, store: true}
+  #   }
+  # end
 
 
 end
@@ -173,7 +179,7 @@ after_build do |builder|
   builder.copy_file(src,dst)
 
   activate :autoprefixer do |config|
-    config.browsers = ['last 2 versions', 'Explorer >= 9']
+    config.browsers = ['last 2 versions', 'Explorer >= 10']
   end
 
 end

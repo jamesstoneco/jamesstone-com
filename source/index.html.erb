@@ -4,8 +4,8 @@ seo_desc: "My workflow takes this universal framework and makes it crazy fast fo
 pageable: false
 per_page: 8
 active_nav: home
-hero_headline: "ZURB Foundation is all about development speed"
-hero_subhead: "My workflow takes this universal framework and makes it crazy fast for designers + devs to build just about anything"
+hero_headline: "Feel confident building your next ZURB Foundation site"
+hero_subhead: "You have pretty much everything you need to build it right here"
 hero_cta: "Learn my workflow"
 featured_headline: "I'm featured on"
 membership_headline: "A place for intermediate-level web designers to fine tune their ZF skills"
@@ -23,7 +23,9 @@ article_more: "More Articles"
     <div class="small-12 columns">
       <h2><%= current_page.data.hero_headline %></h2>
       <p><%= current_page.data.hero_subhead %></p>
-      <p> <a ng-click="scrollToId('scroll-to-membership-promo')" class="button"><%= current_page.data.hero_cta %></a> </p>
+      <p> <a ng-click="scrollToId('scroll-to-membership-promo')">
+        <img src="images/fc/hero-drop-icon.svg" alt="">
+      </a> </p>
     </div>
   </div>
 </section>
@@ -57,13 +59,13 @@ article_more: "More Articles"
       </div>
       <div class="promo-box">
         <img class="round" src="images/2015-redesign/circle-icon-timer.svg" alt="">
-        <p>Short Courses</p>
+        <p>Early Access</p>
       </div>
     </div>
     <div class="small-6 medium-2 columns end">
       <div class="promo-box">
         <img class="round" src="images/2015-redesign/circle-icon-book.svg" alt="">
-        <p>Ebooks &amp; Guides</p>
+        <p>Guides</p>
       </div>
       <div class="promo-box">
         <img class="round" src="images/2015-redesign/circle-icon-doc.svg" alt="">
@@ -105,89 +107,6 @@ article_more: "More Articles"
     </div>
     <% end %>
   </div>
-</section>
-
-
-<section class="articles" id="articles" ng-controller="ArticlesCtrl">
-  <div class="column-row">
-    <h2 class="flush-bottom"><%= current_page.data.article_headline %></h2>
-  </div>
-  <div class="row align-spaced">
-    <div class="small-12 medium-3 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <label for="subject">Subject</label>
-        </div>
-        <div class="small-9 columns">
-          <select name="subject" id="" ng-model="selectedTag">
-            <option value="" selected>All</option>
-            <option ng-repeat="tag in articleTags" value="{{ tag }}"> {{ tag }}</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="small-12 medium-3 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <label for="subject">Sort by</label>
-        </div>
-        <div class="small-9 columns">
-          <select name="subject" id="" ng-model="selectedSort">
-            <option value="" selected>Newest First</option>
-            <option>Oldest First</option>
-            <option>Most Comments</option>
-          </select>
-        </div>
-      </div>     
-    </div>
-    <div class="small-12 medium-3 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <label for="search">Search</label>
-        </div>
-        <div class="small-9 columns">
-
-         <!-- <autocomplete ng-model="yourchoice" data="lunrData.index.documentStore.store['2']" on-type="updateMovies"></autocomplete> -->
-
-         <input class="" type="text" name="search" placeholder="Search Articles" ng-model="searchInput" ng-change="activeSearchResults = searchResults(searchInput)">
-       </div>
-     </div>
-   </div>
- </div>
-
- <!-- search results -->
- <div class="column-row" ng-if="searchInput">
-   <p ng-if="activeSearchResults.length < 1" class="text-center" style="margin-bottom: 30px;"><%= current_page.data.error_noresults %></p>
-   <div class="row">
-    <div class="small-12 medium-5 columns" ng-class="$even ? 'medium-offset-1' : 'end'" ng-repeat="r in activeSearchResults">
-      <div class="row small-articles">
-       <div class="small-3 columns">
-         <a ng-if="lunrData.docs[r.ref].featured_image"  href="{{lunrData.docs[r.ref].url}}"><img ng-src="{{ lunrData.docs[r.ref].featured_image }}" alt="{{ lunrData.docs[r.ref].title }}"></a>
-       </div>
-       <div class="small-9 columns">
-         <p>
-           <a href="{{lunrData.docs[r.ref].url}}">{{ lunrData.docs[r.ref].title }}</a>
-         </p>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-
-<div class="row align-stretch">
-  <div class="column small-12 medium-3" style="display:flex; width:25%; " style="display:flex;" ng-repeat="article in articles | orderBy:makeDateSortable(date):(selectedSort === 'Oldest First') | filterByTag: selectedTag | limitTo: numberOfArticles"> 
-    <div class="flex-card article clickable" style="display:flex; flex-direction:" ng-click="openLink(article.url)">
-      <a style="flex: 0 1 auto;" href="{{ article.url }}"><img ng-src="{{article.featured_image}}" alt="{{ article.title }}" style=""></a>
-      <div style="flex: 1 0 auto;" class="content">
-        <h4 style="flex: 0 1 auto;">{{ article.title }}</h4>
-        <p style="flex: 1 0 auto;" class="summary"> {{ article.summary }} </p>
-        <a href="{{ article.url }}" class="button hollow"><%= current_page.data.article_view %></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p class="text-center"> <a class="button round hollow" ng-click="numberOfArticles = numberOfArticles + 4"><%= current_page.data.article_more %></a> </p>
 </section>
 
 
