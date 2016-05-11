@@ -7,12 +7,25 @@ production:
 media_folder: "source/images/uploads" # Folder where user uploaded files should go
 public_folder: "source"
 collections: # A list of collections the CMS should be able to edit
-- name: "settings"
-  label: "Settings"
+- name: "index"
+  label: "Home Page Content"
+  extension: "erb"
+  format: "markdown-frontmatter"
   files:
+    - name: "index"
+      label: "Home Page Headlines"
+      file: "source/index.html.erb"
+      fields:
+        - {label: "title", name: "title", widget: "string"}
+        - {label: "seo_desc", name: "seo_desc", widget: "string"}
+        - {label: "hero_headline", name: "hero_headline", widget: "string"}
+        - {label: "hero_subhead", name: "hero_subhead", widget: "string"}
+        - {label: "hero_cta", name: "hero_cta", widget: "string"}
+        - {label: "featured_headline", name: "featured_headline", widget: "string"}
     - name: "episodes"
       label: "Episode Information"
-      file: "source/data/episodes.yml"
+      file: "data/episodes.yml"
+      widget: list
       fields:
         - {label: "Episode Number", name: "number", widget: "number"}
         - {label: "Title", name: "title", widget: "string"}
