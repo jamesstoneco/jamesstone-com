@@ -6,14 +6,13 @@ production:
 
 media_folder: "source/images/uploads" # Folder where user uploaded files should go
 public_folder: "source"
-
 collections: # A list of collections the CMS should be able to edit
 - name: "settings"
   label: "Settings"
   files:
     - name: "episodes"
       label: "Episode Information"
-      file: "source/data/episodes.yml"
+      file: "data/episodes.yml"
       fields:
         - {label: "Episode Number", name: "number", widget: "number"}
         - {label: "Title", name: "title", widget: "string"}
