@@ -25,8 +25,11 @@ collections: # A list of collections the CMS should be able to edit
     - name: "episodes"
       label: "Episode Information"
       file: "data/episodes.yml"
-      widget: list
       fields:
-        - {label: "Episode Number", name: "number", widget: "number"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "YouTube ID", name: "youtube_id", widget: "string"}
+        - label: "episode"
+          name: "episode"
+          widget: list
+          fields: 
+            - {label: "Episode Number", name: "number", widget: "number"}
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "YouTube ID", name: "youtube_id", widget: "string"}

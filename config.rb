@@ -122,7 +122,7 @@ page "/template/*", :directory_index => false
 #                 :smartypants => true
 
 
-data.episodes.each do |ep|
+data.episodes.episode.each do |ep|
     proxy "/#{ep[:number]}.html", "/episodes/template.html", :layout => 'layout', :locals => { :episode => ep }, :ignore => true
 end
 
