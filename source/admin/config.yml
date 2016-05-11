@@ -12,7 +12,7 @@ collections: # A list of collections the CMS should be able to edit
   files:
     - name: "episodes"
       label: "Episode Information"
-      file: "data/episodes.yml"
+      file: "source/data/episodes.yml"
       fields:
         - {label: "Episode Number", name: "number", widget: "number"}
         - {label: "Title", name: "title", widget: "string"}
